@@ -1,0 +1,25 @@
+// This file is auto-generated or manually updated to list all existing images in public/images/
+// This ensures client-side components can verify file existence without calling Node's fs module.
+
+export const existingImages: Record<string, boolean> = {
+  "/images/logo/logo.svg": true,
+  "/images/logo/logo.png": true,
+  "/images/logo/logo-white.svg": true,
+  "/images/logo/logo-white.png": true,
+  "/images/doctors/dr-sudarshan-dev-arya.jpg": true,
+  "/images/doctors/dr-manisha-bangarwa-arya.jpg": true,
+  "/images/clinic/exterior.jpg": true,
+  "/images/clinic/reception.jpg": true,
+  "/images/clinic/waiting-area.jpg": true,
+  "/images/clinic/vaccination-room.jpg": true,
+  "/images/clinic/consultation-room.jpg": true,
+  "/images/hero/hero-1.jpg": true,
+  "/images/gallery/gallery-1.jpg": true,
+  "/images/gallery/gallery-2.jpg": true,
+  "/images/gallery/gallery-3.jpg": true,
+  "/images/gallery/gallery-4.jpg": true,
+  "/images/gallery/gallery-5.jpg": true,
+  "/images/gallery/gallery-6.jpg": true,
+  "/images/gallery/gallery-7.jpg": true,
+  "/images/gallery/gallery-8.jpg": true,
+};
