@@ -2,8 +2,12 @@
 
 import Link from "next/link";
 import { ShieldCheck, Calendar, ThermometerSnowflake } from "lucide-react";
+import { motion, useReducedMotion, Variants } from "framer-motion";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 
 export default function VaccineTeaser() {
+  const shouldReduceMotion = useReducedMotion();
+
   const milestones = [
     { age: "At Birth", vaccines: "BCG, OPV-0, Hep-B 1", note: "Essential initial protection" },
     { age: "6 Weeks", vaccines: "Hexavalent (DTwP-1, IPV-1, Hep-B 2, Hib-1), Rotavirus-1, PCV-1", note: "Primary series start" },
@@ -13,13 +17,40 @@ export default function VaccineTeaser() {
     { age: "9 Months", vaccines: "MMR-1 (Measles, Mumps, Rubella)", note: "Core viral immunization" }
   ];
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
+
   return (
-    <section className="py-20 bg-surface-tint">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <section className="relative overflow-hidden pt-20 pb-32 bg-surface-tint">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <motion.div 
+          variants={containerVariants}
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        >
           
           {/* Left Block: Description */}
-          <div className="lg:col-span-5 flex flex-col gap-6 text-center lg:text-left">
+          <motion.div 
+            variants={itemVariants} 
+            className="lg:col-span-5 flex flex-col gap-6 text-center lg:text-left"
+          >
             <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block mx-auto lg:mx-0 w-max">
               Immunization Schedule
             </span>
@@ -29,7 +60,7 @@ export default function VaccineTeaser() {
             <p className="text-sm sm:text-base text-muted-text font-sans leading-relaxed">
               We follow the official immunization schedule recommended by the <strong className="text-gray-900 font-medium">Indian Academy of Pediatrics (IAP)</strong>. Proper vaccination ensures high-efficacy protection against critical childhood illnesses.
             </p>
-
+ 
             {/* Factual Highlight List */}
             <div className="flex flex-col gap-4 text-sm text-muted-text font-sans">
               <div className="flex items-start gap-3 text-left">
@@ -45,7 +76,7 @@ export default function VaccineTeaser() {
                 </span>
               </div>
             </div>
-
+ 
             <div className="pt-2">
               <Link
                 href="/tools/vaccination-schedule"
@@ -55,19 +86,22 @@ export default function VaccineTeaser() {
                 <span>View Complete Schedule</span>
               </Link>
             </div>
-          </div>
-
+          </motion.div>
+ 
           {/* Right Block: Preview Timeline */}
-          <div className="lg:col-span-7 bg-white border border-gray-150 p-6 sm:p-8 rounded-3xl shadow-soft">
+          <motion.div 
+            variants={itemVariants}
+            className="lg:col-span-7 bg-white border border-gray-150 p-6 sm:p-8 rounded-3xl shadow-soft"
+          >
             <h3 className="text-lg font-bold font-heading text-primary-dark mb-6 border-b border-gray-100 pb-3">
               Early Childhood Schedule Preview (IAP Recommendations)
             </h3>
-
+ 
             <div className="flex flex-col gap-4">
               {milestones.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-50 pb-4 last:border-b-0 last:pb-0 gap-2 text-left"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-50 pb-4 last:border-b-0 last:pb-0 gap-2 text-left hover:bg-surface-tint/30 px-3 py-2 -mx-3 rounded-xl transition-colors duration-200"
                 >
                   <div className="flex items-start sm:items-center gap-3">
                     <span className="w-2.5 h-2.5 rounded-full bg-secondary shrink-0 mt-1.5 sm:mt-0" />
@@ -86,10 +120,18 @@ export default function VaccineTeaser() {
                 </div>
               ))}
             </div>
-          </div>
-
-        </div>
+          </motion.div>
+ 
+        </motion.div>
       </div>
+
+      {/* Bottom wave divider transitioning to white */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-white"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

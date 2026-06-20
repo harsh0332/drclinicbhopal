@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { Plus, Minus, HelpCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { motion, AnimatePresence, useReducedMotion, Variants } from "framer-motion";
+import ClinicImage from "@/components/ui/clinic-image";
 
 export default function FAQs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const shouldReduceMotion = useReducedMotion();
 
   const faqs = [
     {
@@ -38,12 +41,36 @@ export default function FAQs() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
+
   return (
-    <section id="faqs" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faqs" className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4">
+        <motion.div
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={itemVariants}
+          className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
+        >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
             FAQ
           </span>
@@ -53,43 +80,81 @@ export default function FAQs() {
           <p className="text-sm sm:text-base text-muted-text font-sans leading-relaxed">
             Factual information regarding appointments, vaccine protocols, and pediatric consultations.
           </p>
-        </div>
+        </motion.div>
 
-        {/* FAQs List */}
-        <div className="max-w-3xl mx-auto flex flex-col gap-4">
-          {faqs.map((faq, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={index}
-                className="bg-white border border-gray-150 rounded-2xl shadow-soft overflow-hidden transition-all duration-300"
-              >
-                {/* Accordion Trigger */}
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left gap-4 hover:bg-surface-tint/25 transition-colors"
+        {/* FAQs Dual Column Layout */}
+        <motion.div 
+          variants={containerVariants}
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto items-start"
+        >
+          {/* Left Block: FAQ Accordion */}
+          <div className="lg:col-span-7 flex flex-col gap-4 w-full">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+              return (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className={`bg-white border rounded-2xl shadow-soft overflow-hidden transition-all duration-300 ${
+                    isOpen ? "border-primary/45 ring-1 ring-primary/5" : "border-gray-150"
+                  }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <HelpCircle className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-sm sm:text-base font-bold font-heading text-primary-dark">
-                      {faq.q}
-                    </span>
-                  </div>
-                  <div className="p-1 rounded-lg border border-gray-100 bg-white shrink-0 text-muted-text">
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
-                  </div>
-                </button>
+                  {/* Accordion Trigger */}
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className={`w-full flex items-center justify-between p-6 text-left gap-4 transition-colors duration-250 cursor-pointer ${
+                      isOpen ? "bg-surface-tint/20" : "hover:bg-surface-tint/25"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <HelpCircle className="w-5 h-5 text-primary shrink-0" />
+                      <span className="text-sm sm:text-base font-bold font-heading text-primary-dark transition-colors duration-300">
+                        {faq.q}
+                      </span>
+                    </div>
+                    <div className="p-1 rounded-lg border border-gray-100 bg-white shrink-0 text-muted-text">
+                      {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    </div>
+                  </button>
 
-                {/* Accordion Content */}
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-2 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left animate-in fade-in duration-200">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                  {/* Accordion Content with AnimatePresence */}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 pt-2 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Right Block: Cute Illustration */}
+          <motion.div 
+            variants={itemVariants}
+            className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden border border-gray-150 shadow-soft bg-surface-tint hidden lg:block sticky top-24"
+          >
+            <ClinicImage
+              src="/images/illustrations/doctor-baby.webp"
+              alt="Pediatrician consulting baby - Baby Steps Neelbad Bhopal"
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </motion.div>
 
       </div>
     </section>

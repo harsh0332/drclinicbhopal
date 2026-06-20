@@ -2,8 +2,12 @@
 
 import Link from "next/link";
 import { BookOpen, Sparkles, HeartHandshake, HelpCircle } from "lucide-react";
+import { motion, useReducedMotion, Variants } from "framer-motion";
+import ClinicImage from "@/components/ui/clinic-image";
 
 export default function ParentGuidance() {
+  const shouldReduceMotion = useReducedMotion();
+
   const guides = [
     {
       topic: "Breastfeeding Support",
@@ -27,17 +31,44 @@ export default function ParentGuidance() {
     }
   ];
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <motion.div 
+          variants={containerVariants}
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
+        >
           
           {/* Left Block: Grid of Guides */}
           <div className="lg:col-span-7 order-2 lg:order-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {guides.map((guide, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="p-6 bg-white border border-gray-150 rounded-2xl shadow-soft hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-left"
+                variants={itemVariants}
+                whileHover={shouldReduceMotion ? {} : { y: -5, boxShadow: "0 10px 25px rgba(22, 60, 122, 0.06)", borderColor: "rgba(46, 108, 246, 0.2)" }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                className="p-6 bg-white border border-gray-150 rounded-2xl shadow-soft hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-left cursor-default"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] font-bold text-primary bg-surface-tint border border-primary/10 py-1 px-2.5 rounded-full uppercase tracking-wider">
@@ -51,15 +82,34 @@ export default function ParentGuidance() {
                 <p className="text-xs text-muted-text font-sans leading-relaxed">
                   {guide.info}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Right Block: Content */}
-          <div className="lg:col-span-5 order-1 lg:order-2 flex flex-col gap-6 text-center lg:text-left">
-            <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto lg:mx-0 w-max">
-              Parent Resources
-            </span>
+          <motion.div 
+            variants={itemVariants}
+            className="lg:col-span-5 order-1 lg:order-2 flex flex-col gap-6 text-center lg:text-left"
+          >
+            {/* Reassuring Illustration */}
+            <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full rounded-3xl overflow-hidden border border-gray-150 shadow-soft bg-surface-tint mb-2">
+              <ClinicImage
+                src="/images/illustrations/family-child.webp"
+                alt="Caring for your newborn - baby steps clinic"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            <div className="flex flex-col gap-1.5 mx-auto lg:mx-0 text-center lg:text-left">
+              <span className="text-xs font-bold text-secondary uppercase tracking-wider block">
+                Caring for every little step
+              </span>
+              <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block w-max mx-auto lg:mx-0">
+                Parent Resources
+              </span>
+            </div>
+
             <h2 className="text-3xl sm:text-4xl font-extrabold text-primary-dark font-heading leading-tight">
               Educational Guidance for New Parents
             </h2>
@@ -91,9 +141,9 @@ export default function ParentGuidance() {
                 <span>Read Parent Guide Blog</span>
               </Link>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

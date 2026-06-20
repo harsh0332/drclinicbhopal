@@ -2,8 +2,11 @@
 
 import ClinicImage from "@/components/ui/clinic-image";
 import { Image as ImageIcon } from "lucide-react";
+import { motion, useReducedMotion, Variants } from "framer-motion";
 
 export default function GalleryPreview() {
+  const shouldReduceMotion = useReducedMotion();
+
   const galleryItems = [
     { src: "/images/gallery/gallery-1.jpg", alt: "Baby Steps Clinic Waiting Area", title: "Waiting Area" },
     { src: "/images/gallery/gallery-2.jpg", alt: "Baby Steps Clinic Building Exterior", title: "Clinic Exterior" },
@@ -15,12 +18,46 @@ export default function GalleryPreview() {
     { src: "/images/gallery/gallery-8.jpg", alt: "Pediatric scale and examination bed", title: "Growth & Vaccination Room" }
   ];
 
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.95, y: 15 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
+
+  const headerVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
+    },
+  };
+
   return (
-    <section id="gallery" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4">
+        <motion.div
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headerVariants}
+          className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
+        >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
             Clinic Gallery
           </span>
@@ -30,20 +67,29 @@ export default function GalleryPreview() {
           <p className="text-sm sm:text-base text-muted-text font-sans leading-relaxed">
             Factual photos of our child-friendly spaces, examination rooms, and diagnostic facilities in Neelbad.
           </p>
-        </div>
+        </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <motion.div 
+          variants={containerVariants}
+          initial={shouldReduceMotion ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto"
+        >
           {galleryItems.map((item, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-2xl border border-gray-100 shadow-soft aspect-square bg-gray-100"
+              variants={itemVariants}
+              whileHover={shouldReduceMotion ? {} : { y: -4, boxShadow: "0 10px 25px rgba(22, 60, 122, 0.08)" }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="group relative overflow-hidden rounded-2xl border border-gray-150 shadow-soft aspect-square bg-gray-100 cursor-pointer"
             >
               <ClinicImage
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="object-cover transition-transform duration-500 group-hover:scale-106"
               />
               
               {/* Overlay with details */}
@@ -56,9 +102,9 @@ export default function GalleryPreview() {
                   {item.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>
