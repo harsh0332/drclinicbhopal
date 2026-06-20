@@ -1,3 +1,19 @@
+import {
+  Syringe,
+  Baby,
+  HeartPulse,
+  TrendingUp,
+  Apple,
+  ClipboardCheck,
+  Heart,
+  Thermometer,
+  Wind,
+  Activity,
+  ShieldAlert,
+  GraduationCap,
+  Milestone
+} from "lucide-react";
+
 export interface ServiceFAQ {
   q: string;
   a: string;
@@ -372,3 +388,20 @@ export const servicesData: Record<string, ServiceItem> = {
     ]
   }
 };
+
+export const serviceIconMap: Record<string, any> = {
+  "vaccination-clinic": Syringe,
+  "newborn-care": Baby,
+  "nicu-follow-up": HeartPulse,
+  "growth-monitoring": TrendingUp,
+  "child-nutrition": Apple,
+  "development-assessment": ClipboardCheck,
+  "breastfeeding-counseling": Heart,
+  "fever-management": Thermometer,
+  "allergy-asthma-care": Wind,
+  "adolescent-health": Activity,
+  "emergency-child-care": ShieldAlert,
+  "parent-education": GraduationCap,
+  "milestone-tracking": Milestone,
+};
+

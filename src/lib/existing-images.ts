@@ -22,4 +22,7 @@ export const existingImages: Record<string, boolean> = {
   "/images/gallery/gallery-6.jpg": true,
   "/images/gallery/gallery-7.jpg": true,
   "/images/gallery/gallery-8.jpg": true,
+  "/images/illustrations/doctor-baby.webp": true,
+  "/images/illustrations/family-child.webp": true,
+  "/images/illustrations/growth-journey.webp": true,
 };
