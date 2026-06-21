@@ -108,16 +108,30 @@ export default function MilestoneTeaser() {
                   variants={cardRise}
                   whileHover={hoverLift(shouldReduceMotion, -5, { boxShadow: `0 20px 40px ${milestone.glowColor}`, borderColor: "rgba(46, 108, 246, 0.2)" })}
                   transition={{ duration: 0.25, ease: "easeOut" }}
-                  className="p-6 bg-white border border-gray-150 rounded-2xl shadow-soft group-hover:shadow-md transition-all duration-300 flex flex-col gap-4 text-left h-full"
+                  className="relative overflow-hidden p-6 bg-white border border-gray-150 rounded-2xl shadow-soft group-hover:shadow-md transition-all duration-300 flex flex-col gap-4 text-left h-full"
                 >
-                  <h3 className="text-lg font-bold font-heading text-primary border-b border-gray-50 pb-2 flex items-center justify-between">
+                  {/* Gentle background glow on hover */}
+                  <div 
+                    className="absolute -right-10 -bottom-10 w-28 h-28 rounded-full blur-[35px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
+                    style={{
+                      background: index === 0
+                        ? "radial-gradient(circle, rgba(46,108,246,0.12) 0%, transparent 70%)"
+                        : index === 1
+                        ? "radial-gradient(circle, rgba(52,199,164,0.12) 0%, transparent 70%)"
+                        : index === 2
+                        ? "radial-gradient(circle, rgba(255,197,61,0.12) 0%, transparent 70%)"
+                        : "radial-gradient(circle, rgba(255,138,122,0.12) 0%, transparent 70%)"
+                    }}
+                  />
+
+                  <h3 className="relative z-10 text-lg font-bold font-heading text-primary border-b border-gray-50 pb-2 flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
                       <span className="text-xl select-none">{emoji}</span>
                       <span className="group-hover:text-primary-dark transition-colors">{milestone.age}</span>
                     </span>
                     <span className="w-2 h-2 rounded-full bg-secondary group-hover:scale-125 transition-transform" />
                   </h3>
-                  <ul className="flex flex-col gap-2.5 flex-grow">
+                  <ul className="relative z-10 flex flex-col gap-2.5 flex-grow">
                     {milestone.skills.map((skill, sIdx) => (
                       <li key={sIdx} className="flex items-start gap-2 text-xs text-muted-text font-sans leading-relaxed">
                         <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0 mt-0.5" />
@@ -127,7 +141,7 @@ export default function MilestoneTeaser() {
                   </ul>
 
                   {/* Track Skills Invitation Affordance */}
-                  <div className="mt-auto pt-3 border-t border-gray-150 flex items-center justify-between text-xs text-primary font-bold font-sans">
+                  <div className="relative z-10 mt-auto pt-3 border-t border-gray-150 flex items-center justify-between text-xs text-primary font-bold font-sans">
                     <span>Track skills</span>
                     <div className="w-5 h-5 rounded-lg bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-200">
                       <span className="text-[10px] font-sans transition-transform group-hover:translate-x-0.5">▶</span>

@@ -133,13 +133,29 @@ export default function ServicesGrid() {
               >
                 <Link
                   href={`/services/${slug}`}
-                  className={`group p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-full min-h-[210px] cursor-pointer ${
+                  className={`group relative overflow-hidden p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-full min-h-[210px] cursor-pointer ${
                     isEmergency
                       ? "bg-[#FFF6F5]/30 border-red-100"
                       : "bg-white border-gray-150"
                   } ${theme.hoverBorder} ${theme.hoverBg}`}
                 >
-                  <div>
+                  {/* Gentle background glow on hover */}
+                  <div 
+                    className="absolute -right-12 -bottom-12 w-32 h-32 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0"
+                    style={{
+                      background: isEmergency 
+                        ? "radial-gradient(circle, rgba(229,72,77,0.15) 0%, transparent 70%)"
+                        : index % 4 === 0 
+                        ? "radial-gradient(circle, rgba(46,108,246,0.15) 0%, transparent 70%)"
+                        : index % 4 === 1
+                        ? "radial-gradient(circle, rgba(52,199,164,0.15) 0%, transparent 70%)"
+                        : index % 4 === 2
+                        ? "radial-gradient(circle, rgba(255,197,61,0.15) 0%, transparent 70%)"
+                        : "radial-gradient(circle, rgba(255,138,122,0.15) 0%, transparent 70%)"
+                    }}
+                  />
+
+                  <div className="relative z-10">
                     <div className="flex items-start justify-between">
                       {/* Unified Pediatric Icon Tile */}
                       <ServiceIconTile
@@ -167,7 +183,7 @@ export default function ServicesGrid() {
                   </div>
 
                   {/* Arrow indicator */}
-                  <div className="mt-4 flex justify-end">
+                  <div className="relative z-10 mt-4 flex justify-end">
                     <span
                       className={`text-xs font-semibold inline-flex items-center gap-1 transition-colors duration-300 ${
                         isEmergency

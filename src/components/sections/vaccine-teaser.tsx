@@ -91,15 +91,19 @@ export default function VaccineTeaser() {
               Early Childhood Schedule Preview (IAP Recommendations)
             </h3>
  
-            <div className="flex flex-col gap-3">
+            <div className="relative pl-6 flex flex-col gap-4 border-l-2 border-dashed border-gray-150">
               {milestones.map((item, index) => (
                 <Link
                   key={index}
                   href="/tools/vaccination-schedule"
-                  className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-100 pb-3 last:border-b-0 last:pb-0 gap-2 text-left hover:bg-surface-tint px-3 py-2.5 -mx-3 rounded-xl transition-all duration-200 group/row cursor-pointer"
+                  className="relative flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-100/70 pb-3.5 last:border-b-0 last:pb-0 gap-2 text-left hover:bg-surface-tint px-3 py-2.5 -ml-3 rounded-xl transition-all duration-200 group/row cursor-pointer"
                 >
-                  <div className="flex items-start sm:items-center gap-3">
-                    <span className="w-2.5 h-2.5 rounded-full bg-secondary shrink-0 mt-1.5 sm:mt-0 group-hover/row:scale-125 group-hover/row:bg-primary transition-all duration-200" />
+                  {/* Timeline Dot centered on vertical track */}
+                  <span className="absolute left-[12px] -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-secondary flex items-center justify-center group-hover/row:scale-125 group-hover/row:border-primary group-hover/row:bg-primary/10 transition-all duration-200 z-10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-secondary group-hover/row:bg-primary transition-all duration-200" />
+                  </span>
+
+                  <div className="flex items-start sm:items-center gap-3 pl-4 sm:pl-5">
                     <div className="flex flex-col">
                       <span className="text-sm font-semibold text-primary-dark font-heading group-hover/row:text-primary transition-colors">
                         {item.age}
