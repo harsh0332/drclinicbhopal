@@ -164,12 +164,11 @@ interface LayoutDef {
 }
 
 interface SkyProps {
-  p: number;
+  sunGlowRef: React.RefObject<HTMLDivElement | null>;
+  coolLightRef: React.RefObject<HTMLDivElement | null>;
 }
 
-function Sky({ p }: SkyProps) {
-  const dawn = 0.5 + 0.5 * Math.sin(TAU * p);           // 0..1
-  const sunBreath = 0.55 + 0.45 * breathe(p, 0.0);
+function Sky({ sunGlowRef, coolLightRef }: SkyProps) {
   return (
     <div style={{ position: "absolute", inset: 0 }}>
       {/* base sky gradient */}
@@ -178,14 +177,16 @@ function Sky({ p }: SkyProps) {
         background: `linear-gradient(180deg, ${C.skyTop} 0%, ${C.skyMid} 46%, ${C.skyLow} 78%, #F1FBF7 100%)`,
       }} />
       {/* warm sun-glow, upper-right corner — breathes */}
-      <div style={{
+      <div ref={sunGlowRef} style={{
         position: "absolute", inset: 0,
-        background: `radial-gradient(46% 50% at 86% 8%, rgba(255,197,61,${0.34 * sunBreath}) 0%, rgba(255,197,61,0) 62%)`,
+        background: `radial-gradient(46% 50% at 86% 8%, rgba(255,197,61,0.34) 0%, rgba(255,197,61,0) 62%)`,
+        willChange: "opacity",
       }} />
       {/* faint cool light, upper-left, gives depth but stays clear */}
-      <div style={{
+      <div ref={coolLightRef} style={{
         position: "absolute", inset: 0,
-        background: `radial-gradient(55% 60% at 16% 2%, rgba(46,108,246,${0.05 + 0.04 * dawn}) 0%, rgba(46,108,246,0) 55%)`,
+        background: `radial-gradient(55% 60% at 16% 2%, rgba(46,108,246,1) 0%, rgba(46,108,246,0) 55%)`,
+        willChange: "opacity",
       }} />
       {/* soft mint floor glow */}
       <div style={{
@@ -196,138 +197,15 @@ function Sky({ p }: SkyProps) {
   );
 }
 
-interface CloudsProps {
-  W: number;
-  H: number;
-  p: number;
-  defs: CloudDef[];
-}
-
-function Clouds({ W, H, p, defs }: CloudsProps) {
-  return (
-    <div style={{ position: "absolute", inset: 0 }}>
-      {defs.map((c, i) => {
-        const cw = c.w * W;
-        const span = W + cw;                       // exactly one wrap per loop
-        const x = frac(c.start + p) * span - cw;   // drifts right, wraps seamlessly
-        const y = c.y * H + Math.sin(TAU * (p + c.phase)) * c.bob;
-        return (
-          <div key={i} style={{
-            position: "absolute", left: 0, top: 0,
-            transform: `translate(${x}px, ${y}px)`,
-            filter: "drop-shadow(0 16px 26px rgba(96,134,205,0.28))",
-            willChange: "transform",
-          }}>
-            <CloudShape w={cw} opacity={c.op} />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-interface StarsProps {
-  W: number;
-  H: number;
-  p: number;
-  defs: StarDef[];
-}
-
-function Stars({ W, H, p, defs }: StarsProps) {
-  return (
-    <div style={{ position: "absolute", inset: 0 }}>
-      {defs.map((s, i) => {
-        const tw = 0.5 + 0.5 * Math.sin(TAU * (s.n * p + s.phase));
-        const op = s.op * (0.18 + 0.82 * tw);
-        const sc = 0.7 + 0.45 * tw;
-        return (
-          <div key={i} style={{
-            position: "absolute",
-            left: `${s.x * W}px`,
-            top: `${s.y * H}px`,
-            transform: `translate(-50%,-50%) scale(${sc})`,
-            opacity: op, willChange: "transform, opacity",
-          }}>
-            <Sparkle size={s.size} color={s.color} />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
-interface BalloonProps {
-  W: number;
-  H: number;
-  p: number;
-  cfg: BalloonCfg;
-}
-
-function Balloon({ W, H, p, cfg }: BalloonProps) {
-  const bw = cfg.w * W;
-  const bh = bw * 1.42;
-  const travel = H + bh * 2.2;
-  const pp = frac(p + cfg.offset);                 // own phase
-  const y = (H + bh) - pp * travel;                // bottom → up & out, wraps off-screen
-  const x = cfg.x * W + Math.sin(TAU * (p + cfg.swayPhase)) * (cfg.sway * W);
-  return (
-    <div style={{
-      position: "absolute", left: 0, top: 0,
-      transform: `translate(${x}px, ${y}px) rotate(${Math.sin(TAU * (p + cfg.swayPhase)) * 4}deg)`,
-      transformOrigin: "50% 0%",
-      willChange: "transform",
-    }}>
-      <BalloonShape w={bw} />
-    </div>
-  );
-}
-
-interface FootprintsProps {
-  W: number;
-  H: number;
-  p: number;
-  path: FootprintPt[];
-}
-
-function Footprints({ W, H, p, path }: FootprintsProps) {
-  const revealStart = 0.10, revealEnd = 0.64;      // window over which prints appear
-  const fadeStart = 0.80, fadeEnd = 0.97;          // whole trail fades out
-  const trailFade = 1 - smooth(clamp((p - fadeStart) / (fadeEnd - fadeStart), 0, 1));
-  const n = path.length;
-
-  return (
-    <div style={{ position: "absolute", inset: 0 }}>
-      {path.map((pt, i) => {
-        const t0 = revealStart + (revealEnd - revealStart) * (i / n);
-        const appear = smooth(clamp((p - t0) / 0.06, 0, 1));
-        const op = pt.op * appear * trailFade;
-        if (op < 0.002) return null;
-        const fw = pt.w * W;
-        return (
-          <div key={i} style={{
-            position: "absolute",
-            left: `${pt.x * W}px`,
-            top: `${pt.y * H}px`,
-            transform: `translate(-50%,-50%) rotate(${pt.rot}deg) scale(${pt.mirror ? -1 : 1}, 1)`,
-            opacity: op,
-          }}>
-            <FootShape w={fw} color={C.foot} />
-          </div>
-        );
-      })}
-    </div>
-  );
-}
-
 interface RainbowProps {
   W: number;
   H: number;
-  p: number;
   cfg: RainbowCfg;
+  wide: boolean;
+  rainbowRef: React.RefObject<SVGGElement | null>;
 }
 
-function Rainbow({ W, H, p, cfg }: RainbowProps) {
-  const op = cfg.op * (0.35 + 0.65 * breathe(p, cfg.phase));
+function Rainbow({ W, H, cfg, wide, rainbowRef }: RainbowProps) {
   const cx = cfg.cx * W, cy = cfg.cy * H, r = cfg.r * W;
   const bands = ["#FF8A7A", "#FFC53D", "#34C7A4", "#2E6CF6"];
   const bw = r * 0.055;
@@ -335,7 +213,7 @@ function Rainbow({ W, H, p, cfg }: RainbowProps) {
   const a1 = (cfg.a1 ?? 154) * Math.PI / 180;
   return (
     <svg width={W} height={H} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
-      <g opacity={op} fill="none" strokeLinecap="round" style={{ filter: "blur(2px)" }}>
+      <g ref={rainbowRef} fill="none" strokeLinecap="round" style={{ filter: wide ? "blur(2px)" : "none", willChange: "opacity" }}>
         {bands.map((col, k) => {
           const rr = r - k * bw * 1.3;
           const x0 = cx + rr * Math.cos(a0), y0 = cy - rr * Math.sin(a0);
@@ -347,6 +225,112 @@ function Rainbow({ W, H, p, cfg }: RainbowProps) {
         })}
       </g>
     </svg>
+  );
+}
+
+interface CloudsProps {
+  W: number;
+  defs: CloudDef[];
+  wide: boolean;
+  cloudRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+
+function Clouds({ W, defs, wide, cloudRefs }: CloudsProps) {
+  return (
+    <div style={{ position: "absolute", inset: 0 }}>
+      {defs.map((c, i) => {
+        const cw = c.w * W;
+        return (
+          <div key={i}
+            ref={(el) => { cloudRefs.current[i] = el; }}
+            style={{
+              position: "absolute", left: 0, top: 0,
+              filter: wide ? "drop-shadow(0 16px 26px rgba(96,134,205,0.28))" : "none",
+              willChange: "transform",
+            }}>
+            <CloudShape w={cw} opacity={c.op} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+interface StarsProps {
+  W: number;
+  H: number;
+  defs: StarDef[];
+  starRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+
+function Stars({ W, H, defs, starRefs }: StarsProps) {
+  return (
+    <div style={{ position: "absolute", inset: 0 }}>
+      {defs.map((s, i) => {
+        return (
+          <div key={i}
+            ref={(el) => { starRefs.current[i] = el; }}
+            style={{
+              position: "absolute",
+              left: `${s.x * W}px`,
+              top: `${s.y * H}px`,
+              willChange: "transform, opacity",
+            }}>
+            <Sparkle size={s.size} color={s.color} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+interface BalloonProps {
+  W: number;
+  cfg: BalloonCfg;
+  balloonRef: React.RefObject<HTMLDivElement | null>;
+}
+
+function Balloon({ W, cfg, balloonRef }: BalloonProps) {
+  const bw = cfg.w * W;
+  return (
+    <div ref={balloonRef} style={{
+      position: "absolute", left: 0, top: 0,
+      transformOrigin: "50% 0%",
+      willChange: "transform",
+    }}>
+      <BalloonShape w={bw} />
+    </div>
+  );
+}
+
+interface FootprintsProps {
+  W: number;
+  H: number;
+  path: FootprintPt[];
+  footprintRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+
+function Footprints({ W, H, path, footprintRefs }: FootprintsProps) {
+  return (
+    <div style={{ position: "absolute", inset: 0 }}>
+      {path.map((pt, i) => {
+        const fw = pt.w * W;
+        return (
+          <div key={i}
+            ref={(el) => { footprintRefs.current[i] = el; }}
+            style={{
+              position: "absolute",
+              left: `${pt.x * W}px`,
+              top: `${pt.y * H}px`,
+              transform: `translate(-50%,-50%) rotate(${pt.rot}deg) scale(${pt.mirror ? -1 : 1}, 1)`,
+              opacity: 0,
+              willChange: "opacity",
+            }}>
+            <FootShape w={fw} color={C.foot} />
+          </div>
+        );
+      })}
+    </div>
   );
 }
 
@@ -395,13 +379,13 @@ function layoutFor(wide: boolean): LayoutDef {
       rainbow: { cx: 0.79, cy: 0.60, r: 0.24, op: 0.26, phase: 0.5, a0: 28, a1: 152 },
     };
   }
-  // vertical (9:16) — keep upper area lively, mid clear for headline
+  // vertical (9:16) — keep upper area lively, mid clear for headline.
+  // Sliced to 3 clouds and 5 stars for mobile lightening.
   return {
     clouds: [
       { w: 0.42, y: 0.06, start: 0.05, op: 0.95, bob: 12, phase: 0.0 },
       { w: 0.30, y: 0.02, start: 0.45, op: 0.7,  bob: 9,  phase: 0.3 },
       { w: 0.36, y: 0.15, start: 0.70, op: 0.9,  bob: 14, phase: 0.6 },
-      { w: 0.24, y: 0.23, start: 0.85, op: 0.5,  bob: 8,  phase: 0.15 },
     ],
     stars: [
       { x: 0.32, y: 0.08, size: 14, op: 0.9, n: 2, phase: 0.0,  color: C.sun },
@@ -409,9 +393,6 @@ function layoutFor(wide: boolean): LayoutDef {
       { x: 0.45, y: 0.05, size: 15, op: 0.85, n: 2, phase: 0.7, color: C.sun },
       { x: 0.58, y: 0.15, size: 11, op: 0.7, n: 3, phase: 0.2,  color: "#ffffff" },
       { x: 0.28, y: 0.22, size: 13, op: 0.75, n: 2, phase: 0.55, color: C.sun },
-      { x: 0.72, y: 0.20, size: 11, op: 0.65, n: 3, phase: 0.85, color: "#ffffff" },
-      { x: 0.38, y: 0.18, size: 10, op: 0.6, n: 2, phase: 0.33, color: C.sun },
-      { x: 0.62, y: 0.06, size: 9,  op: 0.7, n: 3, phase: 0.1,  color: "#ffffff" },
     ],
     balloon: { w: 0.16, x: 0.62, sway: 0.02, swayPhase: 0.0, offset: 0.2 },
     footpath: [
@@ -430,21 +411,38 @@ function layoutFor(wide: boolean): LayoutDef {
 interface HeroCanvasProps {
   W: number;
   H: number;
-  p: number;
   wide: boolean;
+  sunGlowRef: React.RefObject<HTMLDivElement | null>;
+  coolLightRef: React.RefObject<HTMLDivElement | null>;
+  rainbowRef: React.RefObject<SVGGElement | null>;
+  cloudRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+  starRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+  balloonRef: React.RefObject<HTMLDivElement | null>;
+  footprintRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
 }
 
-function HeroCanvas({ W, H, p, wide }: HeroCanvasProps) {
+function HeroCanvas({
+  W,
+  H,
+  wide,
+  sunGlowRef,
+  coolLightRef,
+  rainbowRef,
+  cloudRefs,
+  starRefs,
+  balloonRef,
+  footprintRefs,
+}: HeroCanvasProps) {
   const L = useMemo(() => layoutFor(wide), [wide]);
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-      <Sky p={p} />
-      <Rainbow W={W} H={H} p={p} cfg={L.rainbow} />
-      <Clouds W={W} H={H} p={p} defs={L.clouds} />
-      <Stars W={W} H={H} p={p} defs={L.stars} />
-      <Balloon W={W} H={H} p={p} cfg={L.balloon} />
-      <Footprints W={W} H={H} p={p} path={L.footpath} />
-      <Grain />
+      <Sky sunGlowRef={sunGlowRef} coolLightRef={coolLightRef} />
+      <Rainbow W={W} H={H} cfg={L.rainbow} wide={wide} rainbowRef={rainbowRef} />
+      <Clouds W={W} defs={L.clouds} wide={wide} cloudRefs={cloudRefs} />
+      <Stars W={W} H={H} defs={L.stars} starRefs={starRefs} />
+      <Balloon W={W} cfg={L.balloon} balloonRef={balloonRef} />
+      <Footprints W={W} H={H} path={L.footpath} footprintRefs={footprintRefs} />
+      {wide && <Grain />}
     </div>
   );
 }
@@ -456,18 +454,35 @@ export default function HeroBackground() {
   const [isIntersecting, setIsIntersecting] = useState(true);
   const [wide, setWide] = useState(true);
   const [scale, setScale] = useState(1);
-  const [time, setTime] = useState(dur * 0.35); // Start at calm visual frame (~0.35 p-value)
 
   const wrapRef = useRef<HTMLDivElement>(null);
   const lastTime = useRef<number | null>(null);
   const rafRef = useRef<number | null>(null);
+
+  // Time is tracked in a Ref to avoid per-frame React state triggers
+  const timeRef = useRef(dur * 0.35); // Start at calm visual frame (~0.35 p-value)
+
+  // Imperative Refs for animating elements
+  const sunGlowRef = useRef<HTMLDivElement>(null);
+  const coolLightRef = useRef<HTMLDivElement>(null);
+  const rainbowRef = useRef<SVGGElement>(null);
+  const cloudRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const starRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const balloonRef = useRef<HTMLDivElement>(null);
+  const footprintRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const W = wide ? 1600 : 900;
   const H = wide ? 900 : 1600;
 
   const reducedMotion = reducedMotionLib === true;
 
-  // Responsive dimension tracking & Cover Scaling (like background-size: cover)
+  // Sync state values with refs to avoid closure stale state in rAF loop
+  const wideRef = useRef(wide);
+  const scaleRef = useRef(scale);
+  useEffect(() => { wideRef.current = wide; }, [wide]);
+  useEffect(() => { scaleRef.current = scale; }, [scale]);
+
+  // Responsive dimension tracking & Cover Scaling
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
@@ -479,7 +494,6 @@ export default function HeroBackground() {
       const currentW = isWide ? 1600 : 900;
       const currentH = isWide ? 900 : 1600;
 
-      // Cover scaling so it fills the screen perfectly without letterboxing
       setScale(Math.max(el.clientWidth / currentW, el.clientHeight / currentH));
     };
 
@@ -503,7 +517,7 @@ export default function HeroBackground() {
     }
   }, []);
 
-  // IntersectionObserver to pause loop player when out of view (saves battery/INP)
+  // IntersectionObserver to pause loop player when out of view
   useEffect(() => {
     const el = wrapRef.current;
     if (!el) return;
@@ -517,6 +531,82 @@ export default function HeroBackground() {
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Purely Imperative Animation Updater
+  const updateAnimation = (p: number) => {
+    const isWide = wideRef.current;
+    const L = layoutFor(isWide);
+    const currentW = isWide ? 1600 : 900;
+    const currentH = isWide ? 900 : 1600;
+
+    // 1. Sky Glower
+    const dawn = 0.5 + 0.5 * Math.sin(TAU * p);
+    const sunBreath = 0.55 + 0.45 * breathe(p, 0.0);
+    if (sunGlowRef.current) {
+      sunGlowRef.current.style.opacity = sunBreath.toString();
+    }
+    if (coolLightRef.current) {
+      coolLightRef.current.style.opacity = (0.05 + 0.04 * dawn).toString();
+    }
+
+    // 2. Rainbow opacity
+    if (rainbowRef.current) {
+      const op = L.rainbow.op * (0.35 + 0.65 * breathe(p, L.rainbow.phase));
+      rainbowRef.current.style.opacity = op.toString();
+    }
+
+    // 3. Clouds position
+    L.clouds.forEach((c, i) => {
+      const cloudDiv = cloudRefs.current[i];
+      if (cloudDiv) {
+        const cw = c.w * currentW;
+        const span = currentW + cw;
+        const x = frac(c.start + p) * span - cw;
+        const y = c.y * currentH + Math.sin(TAU * (p + c.phase)) * c.bob;
+        cloudDiv.style.transform = `translate(${x}px, ${y}px)`;
+      }
+    });
+
+    // 4. Stars twinkle
+    L.stars.forEach((s, i) => {
+      const starDiv = starRefs.current[i];
+      if (starDiv) {
+        const tw = 0.5 + 0.5 * Math.sin(TAU * (s.n * p + s.phase));
+        const op = s.op * (0.18 + 0.82 * tw);
+        const sc = 0.7 + 0.45 * tw;
+        starDiv.style.transform = `translate(-50%,-50%) scale(${sc})`;
+        starDiv.style.opacity = op.toString();
+      }
+    });
+
+    // 5. Balloon rise & sway
+    if (balloonRef.current) {
+      const bw = L.balloon.w * currentW;
+      const bh = bw * 1.42;
+      const travel = currentH + bh * 2.2;
+      const pp = frac(p + L.balloon.offset);
+      const y = (currentH + bh) - pp * travel;
+      const x = L.balloon.x * currentW + Math.sin(TAU * (p + L.balloon.swayPhase)) * (L.balloon.sway * currentW);
+      const rot = Math.sin(TAU * (p + L.balloon.swayPhase)) * 4;
+      balloonRef.current.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+    }
+
+    // 6. Footprints Reveal
+    const revealStart = 0.10, revealEnd = 0.64;
+    const fadeStart = 0.80, fadeEnd = 0.97;
+    const trailFade = 1 - smooth(clamp((p - fadeStart) / (fadeEnd - fadeStart), 0, 1));
+    const n = L.footpath.length;
+
+    L.footpath.forEach((pt, i) => {
+      const footprintDiv = footprintRefs.current[i];
+      if (footprintDiv) {
+        const t0 = revealStart + (revealEnd - revealStart) * (i / n);
+        const appear = smooth(clamp((p - t0) / 0.06, 0, 1));
+        const op = pt.op * appear * trailFade;
+        footprintDiv.style.opacity = op.toString();
+      }
+    });
+  };
 
   // requestAnimationFrame loop player
   useEffect(() => {
@@ -536,11 +626,12 @@ export default function HeroBackground() {
       const dt = (ts - lastTime.current) / 1000;
       lastTime.current = ts;
 
-      setTime((t) => {
-        let n = t + dt;
-        if (n >= dur) n = n % dur;
-        return n;
-      });
+      let nextTime = timeRef.current + dt;
+      if (nextTime >= dur) nextTime = nextTime % dur;
+      timeRef.current = nextTime;
+
+      const p = frac(nextTime / dur);
+      updateAnimation(p);
 
       rafRef.current = requestAnimationFrame(step);
     };
@@ -555,7 +646,14 @@ export default function HeroBackground() {
     };
   }, [reducedMotion, isIntersecting]);
 
-  const p = frac(time / dur);
+  // One-time static render whenever layout, scale, intersection, or motion mode changes
+  useEffect(() => {
+    const p = frac(timeRef.current / dur);
+    const frameId = requestAnimationFrame(() => {
+      updateAnimation(p);
+    });
+    return () => cancelAnimationFrame(frameId);
+  }, [wide, scale, reducedMotion, isIntersecting]);
 
   return (
     <div
@@ -584,7 +682,18 @@ export default function HeroBackground() {
           transformOrigin: "center",
         }}
       >
-        <HeroCanvas W={W} H={H} p={p} wide={wide} />
+        <HeroCanvas
+          W={W}
+          H={H}
+          wide={wide}
+          sunGlowRef={sunGlowRef}
+          coolLightRef={coolLightRef}
+          rainbowRef={rainbowRef}
+          cloudRefs={cloudRefs}
+          starRefs={starRefs}
+          balloonRef={balloonRef}
+          footprintRefs={footprintRefs}
+        />
       </div>
     </div>
   );
