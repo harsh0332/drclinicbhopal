@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
-import { Calendar, Phone, MessageSquare } from "lucide-react";
+import { Calendar, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
 const HeroBackground = dynamic(() => import("./hero-background"), { ssr: false });
 
@@ -92,10 +92,10 @@ export default function Hero() {
 
             {/* Micro Trust Line */}
             <div 
-              className={`text-xs font-semibold text-[#163C7A]/80 mb-6 flex items-center gap-1.5 font-sans ${animClass}`}
+              className={`text-xs font-semibold text-[#163C7A]/80 mb-6 flex items-start gap-1.5 text-left font-sans ${animClass}`}
               style={shouldReduceMotion ? {} : { animationDelay: "450ms", animationFillMode: "both" }}
             >
-              <span className="w-1 h-1 rounded-full bg-[#2E6CF6]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6] mt-[5px] shrink-0" />
               <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Open Mon–Sat</span>
             </div>
 
@@ -118,15 +118,6 @@ export default function Hero() {
               >
                 <Phone className="w-5 h-5 text-[#2E6CF6]" />
                 <span>Call {siteConfig.phone}</span>
-              </a>
-              <a
-                href={siteConfig.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2FB86B]/10 text-[#1c8b50] font-bold text-base py-3.5 px-5 rounded-full border border-[#2FB86B]/28 hover:bg-[#2FB86B]/15 transition-all min-h-[48px]"
-              >
-                <MessageSquare className="w-5 h-5 fill-[#2FB86B] stroke-none" />
-                <span>WhatsApp</span>
               </a>
             </div>
 
