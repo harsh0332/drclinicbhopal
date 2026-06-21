@@ -243,7 +243,8 @@ function Stars({ W, H, p, defs }: StarsProps) {
         return (
           <div key={i} style={{
             position: "absolute",
-            left: s.x * W, top: s.y * H,
+            left: `${s.x * W}px`,
+            top: `${s.y * H}px`,
             transform: `translate(-50%,-50%) scale(${sc})`,
             opacity: op, willChange: "transform, opacity",
           }}>
@@ -305,7 +306,8 @@ function Footprints({ W, H, p, path }: FootprintsProps) {
         return (
           <div key={i} style={{
             position: "absolute",
-            left: pt.x * W, top: pt.y * H,
+            left: `${pt.x * W}px`,
+            top: `${pt.y * H}px`,
             transform: `translate(-50%,-50%) rotate(${pt.rot}deg) scale(${pt.mirror ? -1 : 1}, 1)`,
             opacity: op,
           }}>
@@ -562,8 +564,8 @@ export default function HeroBackground() {
     >
       <div
         style={{
-          width: W,
-          height: H,
+          width: `${W}px`,
+          height: `${H}px`,
           position: "relative",
           flexShrink: 0,
           transform: `scale(${scale})`,
