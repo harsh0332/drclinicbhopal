@@ -93,8 +93,11 @@ export default function FAQs() {
                 >
                   {/* Accordion Trigger */}
                   <button
+                    id={`home-faq-btn-${index}`}
                     onClick={() => toggleFAQ(index)}
-                    className={`w-full flex items-center justify-between p-6 text-left gap-4 transition-colors duration-250 cursor-pointer ${
+                    aria-expanded={isOpen}
+                    aria-controls={`home-faq-answer-${index}`}
+                    className={`w-full flex items-center justify-between p-6 text-left gap-4 transition-colors duration-250 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl ${
                       isOpen ? "bg-surface-tint/20" : "hover:bg-surface-tint/25"
                     }`}
                   >
@@ -120,7 +123,12 @@ export default function FAQs() {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <div className="px-6 pb-6 pt-2 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left">
+                        <div
+                          id={`home-faq-answer-${index}`}
+                          role="region"
+                          aria-labelledby={`home-faq-btn-${index}`}
+                          className="px-6 pb-6 pt-2 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left"
+                        >
                           {faq.a}
                         </div>
                       </motion.div>

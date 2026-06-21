@@ -87,14 +87,14 @@ export default function Header() {
           <div className="flex lg:hidden items-center gap-3">
             <a
               href={siteConfig.phoneLink}
-              className="p-2.5 text-primary-dark bg-surface-tint rounded-xl hover:bg-blue-100 transition-colors"
+              className="p-2.5 text-primary-dark bg-surface-tint rounded-xl hover:bg-blue-100 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-label="Call Clinic"
             >
               <Phone className="w-5 h-5" />
             </a>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2.5 text-muted-text hover:text-primary-dark transition-colors"
+              className="p-2.5 text-muted-text hover:text-primary-dark transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-xl"
               aria-label="Toggle Menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
