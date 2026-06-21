@@ -2,9 +2,17 @@
 
 import Link from "next/link";
 import { Compass, CheckCircle2 } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
 import Star from "@/components/ui/decor/Star";
+import { 
+  fadeRise, 
+  cardRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function MilestoneTeaser() {
   const shouldReduceMotion = useReducedMotion();
@@ -32,32 +40,6 @@ export default function MilestoneTeaser() {
     }
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section className="relative overflow-hidden pt-24 pb-36 bg-surface-tint">
@@ -70,10 +52,10 @@ export default function MilestoneTeaser() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={headerVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <div className="flex flex-col gap-1.5 mx-auto text-center">
@@ -95,17 +77,17 @@ export default function MilestoneTeaser() {
 
         {/* Milestones Grid */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
         >
           {milestones.map((milestone, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
-              whileHover={shouldReduceMotion ? {} : { y: -5, boxShadow: `0 10px 25px ${milestone.glowColor}` }}
+              variants={cardRise}
+              whileHover={hoverLift(shouldReduceMotion, -5, { boxShadow: `0 10px 25px ${milestone.glowColor}` })}
               transition={{ duration: 0.25, ease: "easeOut" }}
               className="p-6 bg-white border border-gray-150 rounded-2xl shadow-soft hover:shadow-md transition-all duration-300 flex flex-col gap-4 text-left cursor-default"
             >

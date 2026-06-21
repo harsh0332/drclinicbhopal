@@ -2,8 +2,14 @@
 
 import Link from "next/link";
 import { ShieldCheck, Calendar, ThermometerSnowflake } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
+import { 
+  fadeRise, 
+  staggerContainer, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function VaccineTeaser() {
   const shouldReduceMotion = useReducedMotion();
@@ -17,38 +23,20 @@ export default function VaccineTeaser() {
     { age: "9 Months", vaccines: "MMR-1 (Measles, Mumps, Rubella)", note: "Core viral immunization" }
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
   return (
     <section className="relative overflow-hidden pt-20 pb-32 bg-surface-tint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
         >
           
           {/* Left Block: Description */}
           <motion.div 
-            variants={itemVariants} 
+            variants={fadeRise} 
             className="lg:col-span-5 flex flex-col gap-6 text-center lg:text-left"
           >
             <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block mx-auto lg:mx-0 w-max">
@@ -90,7 +78,7 @@ export default function VaccineTeaser() {
  
           {/* Right Block: Preview Timeline */}
           <motion.div 
-            variants={itemVariants}
+            variants={fadeRise}
             className="lg:col-span-7 bg-white border border-gray-150 p-6 sm:p-8 rounded-3xl shadow-soft"
           >
             <h3 className="text-lg font-bold font-heading text-primary-dark mb-6 border-b border-gray-100 pb-3">

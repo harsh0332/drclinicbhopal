@@ -2,7 +2,15 @@
 
 import ClinicImage from "@/components/ui/clinic-image";
 import { Image as ImageIcon } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { 
+  fadeRise, 
+  softScaleIn, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function GalleryPreview() {
   const shouldReduceMotion = useReducedMotion();
@@ -18,33 +26,6 @@ export default function GalleryPreview() {
     { src: "/images/gallery/gallery-8.jpg", alt: "Pediatric scale and examination bed", title: "Growth & Vaccination Room" }
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, scale: 0.95, y: 15 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section id="gallery" className="py-24 bg-white relative overflow-hidden">
@@ -52,10 +33,10 @@ export default function GalleryPreview() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={headerVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -71,17 +52,17 @@ export default function GalleryPreview() {
 
         {/* Gallery Grid */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto"
         >
           {galleryItems.map((item, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              whileHover={shouldReduceMotion ? {} : { y: -4, boxShadow: "0 10px 25px rgba(22, 60, 122, 0.08)" }}
+              variants={softScaleIn}
+              whileHover={hoverLift(shouldReduceMotion, -4, { boxShadow: "0 10px 25px rgba(22, 60, 122, 0.08)" })}
               transition={{ duration: 0.25, ease: "easeOut" }}
               className="group relative overflow-hidden rounded-2xl border border-gray-150 shadow-soft aspect-square bg-gray-100 cursor-pointer"
             >

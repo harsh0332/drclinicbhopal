@@ -2,30 +2,26 @@
 
 import { siteConfig } from "@/lib/site-config";
 import { Star, MessageSquare, MapPin } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { 
+  fadeRise, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function GoogleReviews() {
   const shouldReduceMotion = useReducedMotion();
   const showGoogleRating = siteConfig.showGoogleRating;
-
-  const revealVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
-    }
-  };
 
   return (
     <section className="py-16 bg-white border-y border-gray-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={revealVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="max-w-4xl mx-auto bg-surface-tint border border-primary/5 rounded-3xl p-8 sm:p-10 shadow-soft flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
         >
           {showGoogleRating ? (

@@ -3,29 +3,25 @@
 import { siteConfig } from "@/lib/site-config";
 import AppointmentForm from "@/components/ui/appointment-form";
 import { CheckCircle2, ShieldCheck, Phone } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { 
+  fadeRise, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function BookAppointment() {
   const shouldReduceMotion = useReducedMotion();
-
-  const revealVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
-    }
-  };
 
   return (
     <section id="appointment" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={revealVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="max-w-5xl mx-auto bg-white border border-gray-150 rounded-3xl shadow-soft p-8 sm:p-10 lg:p-12 relative overflow-hidden"
         >
           {/* Top border Accent */}

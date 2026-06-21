@@ -3,8 +3,14 @@
 import { useState } from "react";
 import { Plus, Minus, HelpCircle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
-import { motion, AnimatePresence, useReducedMotion, Variants } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import ClinicImage from "@/components/ui/clinic-image";
+import { 
+  fadeRise, 
+  staggerContainer, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function FAQs() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -41,23 +47,6 @@ export default function FAQs() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section id="faqs" className="py-24 bg-white relative overflow-hidden">
@@ -65,10 +54,10 @@ export default function FAQs() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={itemVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -84,10 +73,10 @@ export default function FAQs() {
 
         {/* FAQs Dual Column Layout */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto items-start"
         >
           {/* Left Block: FAQ Accordion */}
@@ -97,7 +86,7 @@ export default function FAQs() {
               return (
                 <motion.div
                   key={index}
-                  variants={itemVariants}
+                  variants={fadeRise}
                   className={`bg-white border rounded-2xl shadow-soft overflow-hidden transition-all duration-300 ${
                     isOpen ? "border-primary/45 ring-1 ring-primary/5" : "border-gray-150"
                   }`}
@@ -144,7 +133,7 @@ export default function FAQs() {
 
           {/* Right Block: Cute Illustration */}
           <motion.div 
-            variants={itemVariants}
+            variants={fadeRise}
             className="lg:col-span-5 relative aspect-[4/3] rounded-3xl overflow-hidden border border-gray-150 shadow-soft bg-surface-tint hidden lg:block sticky top-24"
           >
             <ClinicImage

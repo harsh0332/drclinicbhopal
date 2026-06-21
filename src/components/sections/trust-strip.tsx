@@ -1,9 +1,16 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { motion, useInView, useReducedMotion, animate, Variants } from "framer-motion";
+import { motion, useInView, useReducedMotion, animate } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
+import { 
+  fadeRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 interface StatItemProps {
   value: number;
@@ -11,15 +18,6 @@ interface StatItemProps {
   label: string;
   description: string;
 }
-
-const statItemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
-  }
-};
 
 function StatItem({ value, suffix, label, description }: StatItemProps) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -50,8 +48,8 @@ function StatItem({ value, suffix, label, description }: StatItemProps) {
 
   return (
     <motion.div
-      variants={statItemVariants}
-      whileHover={shouldReduceMotion ? {} : { y: -6, boxShadow: "0 12px 30px rgba(46, 108, 246, 0.1)", borderColor: "rgba(46, 108, 246, 0.2)" }}
+      variants={fadeRise}
+      whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: "0 12px 30px rgba(46, 108, 246, 0.1)", borderColor: "rgba(46, 108, 246, 0.2)" })}
       transition={{ duration: 0.25, ease: "easeOut" }}
       className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-gray-150 shadow-soft flex-1 min-w-[200px] transition-colors duration-300"
     >
@@ -71,23 +69,6 @@ function StatItem({ value, suffix, label, description }: StatItemProps) {
 export default function TrustStrip() {
   const shouldReduceMotion = useReducedMotion();
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const textVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
-    }
-  };
 
   return (
     <section className="relative overflow-hidden bg-surface-tint border-t border-gray-100 pt-16 pb-24">
@@ -98,10 +79,10 @@ export default function TrustStrip() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="flex flex-col lg:flex-row items-center justify-between gap-10"
         >
           
@@ -123,7 +104,7 @@ export default function TrustStrip() {
 
           {/* Factual Associations Info */}
           <motion.div 
-            variants={textVariants}
+            variants={fadeRise}
             className="flex flex-col lg:flex-1 text-center lg:text-left gap-4 max-w-xl"
           >
             <h2 className="text-xl sm:text-2xl font-bold text-primary-dark font-heading leading-tight">

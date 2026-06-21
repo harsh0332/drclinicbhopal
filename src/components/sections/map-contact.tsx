@@ -2,37 +2,18 @@
 
 import { siteConfig } from "@/lib/site-config";
 import { MapPin, Phone, Mail, Clock, ShieldAlert } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { 
+  fadeRise, 
+  cardRise, 
+  staggerContainer, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function MapContact() {
   const shouldReduceMotion = useReducedMotion();
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section id="contact" className="py-24 bg-surface-tint relative overflow-hidden">
@@ -40,10 +21,10 @@ export default function MapContact() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={headerVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -59,16 +40,16 @@ export default function MapContact() {
 
         {/* Contact Grid */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto items-stretch"
         >
           
           {/* Left Block: Map Embed */}
           <motion.div 
-            variants={itemVariants}
+            variants={cardRise}
             className="lg:col-span-7 bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft aspect-[4/3] lg:aspect-auto min-h-[350px]"
           >
             <iframe
@@ -80,13 +61,13 @@ export default function MapContact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Baby Steps Clinic Google Map Location"
-              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
+              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-350"
             />
           </motion.div>
 
           {/* Right Block: Details & Hours */}
           <motion.div 
-            variants={itemVariants}
+            variants={cardRise}
             className="lg:col-span-5 bg-white border border-gray-150 p-8 sm:p-10 rounded-3xl shadow-soft flex flex-col justify-between gap-8 text-left"
           >
             {/* Contact NAP Details */}

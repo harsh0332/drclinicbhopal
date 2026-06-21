@@ -1,9 +1,17 @@
 "use client";
 
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Users, ShieldCheck, HeartHandshake, Clock, ThermometerSnowflake, BookOpen } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import Star from "@/components/ui/decor/Star";
+import { 
+  fadeRise, 
+  cardRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function WhyChoose() {
   const shouldReduceMotion = useReducedMotion();
@@ -59,32 +67,6 @@ export default function WhyChoose() {
     },
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section id="about" className="relative overflow-hidden py-24 bg-white">
@@ -102,10 +84,10 @@ export default function WhyChoose() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={headerVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -121,10 +103,10 @@ export default function WhyChoose() {
 
         {/* Benefits Grid */}
         <motion.div
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {benefits.map((benefit, index) => {
@@ -132,8 +114,8 @@ export default function WhyChoose() {
             return (
               <motion.div
                 key={index}
-                variants={cardVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -6, boxShadow: `0 12px 30px ${benefit.glowColor}`, borderColor: benefit.borderColor }}
+                variants={cardRise}
+                whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: `0 12px 30px ${benefit.glowColor}`, borderColor: benefit.borderColor })}
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="group p-8 bg-white border border-gray-150 rounded-2xl shadow-soft hover:border-primary/20 transition-all duration-300 flex flex-col gap-4 cursor-default"
               >

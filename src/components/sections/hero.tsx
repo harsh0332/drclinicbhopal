@@ -11,6 +11,12 @@ import Balloon from "@/components/ui/decor/Balloon";
 import SoftBlob from "@/components/ui/decor/SoftBlob";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 import { 
+  fadeRise, 
+  softScaleIn, 
+  staggerContainer, 
+  getInitial 
+} from "@/lib/motion";
+import { 
   Calendar, 
   Phone, 
   MessageSquare, 
@@ -26,42 +32,6 @@ import {
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  // Entrance variants for container and children
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.05,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.16, 1, 0.3, 1] as const,
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: shouldReduceMotion ? 1 : 0.96 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1] as const,
-      },
-    },
-  };
-
   // Parallax float configurations
   const floatTransition = (duration: number) =>
     shouldReduceMotion
@@ -75,6 +45,7 @@ export default function Hero() {
             ease: "easeInOut" as const,
           },
         };
+
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#F4F8FF] via-white to-[#E8F1FF] py-20 lg:py-28 select-none">
@@ -142,15 +113,15 @@ export default function Hero() {
           {/* Left Column: Text & CTAs */}
           <motion.div 
             className="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left"
-            variants={containerVariants}
-            initial="hidden"
+            variants={staggerContainer}
+            initial={getInitial(shouldReduceMotion)}
             animate="visible"
           >
             
             {/* Trust Badges Bar (Lucide + Token Colored Chips) */}
             <motion.div 
               className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5"
-              variants={itemVariants}
+              variants={fadeRise}
             >
               <span className="bg-blue-50 border border-blue-100/50 text-primary-dark font-sans text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-2 shadow-sm">
                 <GraduationCap className="w-4 h-4 text-primary shrink-0" />
@@ -169,7 +140,7 @@ export default function Hero() {
             {/* Headline */}
             <motion.h1 
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary-dark leading-[1.12] font-heading"
-              variants={itemVariants}
+              variants={fadeRise}
             >
               Gentle, expert care for your newborn &amp; child — <span className="text-primary">in Neelbad</span>
             </motion.h1>
@@ -177,7 +148,7 @@ export default function Hero() {
             {/* Sub-headline / Factual Credentials */}
             <motion.p 
               className="text-base sm:text-lg text-muted-text max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans"
-              variants={itemVariants}
+              variants={fadeRise}
             >
               Led by husband-wife specialist duo: <strong className="text-gray-900 font-semibold">Dr. Sudarshan Dev Arya</strong> (MBBS, DCH, DNB New Delhi, PGPN Boston) &amp; <strong className="text-gray-900 font-semibold">Dr. Manisha Bangarwa Arya</strong> (MBBS, DNB, PGPN Boston, Neonatology Fellowship).
             </motion.p>
@@ -185,7 +156,7 @@ export default function Hero() {
             {/* CTAs Actions */}
             <motion.div 
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-2"
-              variants={itemVariants}
+              variants={fadeRise}
             >
               {/* Primary Book CTA */}
               <Link
@@ -220,7 +191,7 @@ export default function Hero() {
             {/* Honest Trust Block / Reviews Toggle */}
             <motion.div 
               className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2.5 mt-2 text-sm"
-              variants={itemVariants}
+              variants={fadeRise}
             >
               {siteConfig.showGoogleRating ? (
                 <a
@@ -253,8 +224,8 @@ export default function Hero() {
           {/* Right Column: Hero Image with Glassmorphism Cards */}
           <motion.div 
             className="lg:col-span-5 relative flex items-center justify-center"
-            variants={imageVariants}
-            initial="hidden"
+            variants={softScaleIn}
+            initial={getInitial(shouldReduceMotion)}
             animate="visible"
           >
             

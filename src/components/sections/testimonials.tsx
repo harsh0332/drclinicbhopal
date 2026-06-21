@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { Quote, ChevronLeft, ChevronRight, Play, FileCheck } from "lucide-react";
-import { motion, AnimatePresence, useReducedMotion, Variants } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { 
+  fadeRise, 
+  staggerContainer, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -43,23 +49,6 @@ export default function Testimonials() {
     setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   const slideVariants = {
     initial: { opacity: 0, x: shouldReduceMotion ? 0 : 15 },
@@ -73,10 +62,10 @@ export default function Testimonials() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={itemVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -92,16 +81,16 @@ export default function Testimonials() {
 
         {/* Carousel & Video Grid */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-5xl mx-auto items-stretch"
         >
           
           {/* Left Block: Video testimonial placeholder */}
           <motion.div 
-            variants={itemVariants}
+            variants={fadeRise}
             className="lg:col-span-5 bg-white border border-gray-150 rounded-3xl p-6 shadow-soft flex flex-col justify-center items-center relative overflow-hidden aspect-[4/3] lg:aspect-auto"
           >
             {/* Background pattern */}
@@ -120,7 +109,7 @@ export default function Testimonials() {
 
           {/* Right Block: Text Reviews Carousel */}
           <motion.div 
-            variants={itemVariants}
+            variants={fadeRise}
             className="lg:col-span-7 bg-white border border-gray-150 rounded-3xl p-8 sm:p-10 shadow-soft flex flex-col justify-between relative min-h-[320px]"
           >
             <Quote className="absolute top-8 left-8 w-12 h-12 text-primary/5 stroke-[1.5]" />
@@ -181,10 +170,10 @@ export default function Testimonials() {
 
         {/* Ethical Compliance Consent Note */}
         <motion.div 
-          variants={itemVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={fadeRise}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={viewportOnce}
           className="max-w-3xl mx-auto mt-8 p-4 bg-white/60 border border-gray-100 rounded-2xl flex items-start gap-2.5 text-[11px] text-muted-text leading-relaxed font-sans text-left"
         >
           <FileCheck className="w-4 h-4 text-secondary shrink-0 mt-0.5" />

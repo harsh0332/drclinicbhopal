@@ -2,8 +2,15 @@
 
 import Link from "next/link";
 import { BookOpen, Sparkles, HeartHandshake, HelpCircle } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ClinicImage from "@/components/ui/clinic-image";
+import { 
+  fadeRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function ParentGuidance() {
   const shouldReduceMotion = useReducedMotion();
@@ -31,32 +38,15 @@ export default function ParentGuidance() {
     }
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"
         >
           
@@ -65,8 +55,8 @@ export default function ParentGuidance() {
             {guides.map((guide, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -5, boxShadow: "0 10px 25px rgba(22, 60, 122, 0.06)", borderColor: "rgba(46, 108, 246, 0.2)" }}
+                variants={fadeRise}
+                whileHover={hoverLift(shouldReduceMotion, -5, { boxShadow: "0 10px 25px rgba(22, 60, 122, 0.06)", borderColor: "rgba(46, 108, 246, 0.2)" })}
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="p-6 bg-white border border-gray-150 rounded-2xl shadow-soft hover:shadow-md transition-all duration-300 flex flex-col gap-3 text-left cursor-default"
               >
@@ -88,7 +78,7 @@ export default function ParentGuidance() {
 
           {/* Right Block: Content */}
           <motion.div 
-            variants={itemVariants}
+            variants={fadeRise}
             className="lg:col-span-5 order-1 lg:order-2 flex flex-col gap-6 text-center lg:text-left"
           >
             {/* Reassuring Illustration */}

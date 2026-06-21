@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { 
+  fadeRise, 
+  cardRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function LatestArticles() {
   const shouldReduceMotion = useReducedMotion();
@@ -34,33 +42,6 @@ export default function LatestArticles() {
     }
   ];
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
   return (
     <section id="blog" className="py-24 bg-surface-tint relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
@@ -68,10 +49,10 @@ export default function LatestArticles() {
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16">
           <motion.div
-            initial={shouldReduceMotion ? "visible" : "hidden"}
+            initial={getInitial(shouldReduceMotion)}
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={headerVariants}
+            viewport={viewportOnce}
+            variants={fadeRise}
             className="flex flex-col gap-3 text-center md:text-left max-w-2xl"
           >
             <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block w-max mx-auto md:mx-0">
@@ -86,10 +67,10 @@ export default function LatestArticles() {
           </motion.div>
           
           <motion.div
-            initial={shouldReduceMotion ? "visible" : "hidden"}
+            initial={getInitial(shouldReduceMotion)}
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={headerVariants}
+            viewport={viewportOnce}
+            variants={fadeRise}
           >
             <Link
               href="/blog"
@@ -103,17 +84,17 @@ export default function LatestArticles() {
 
         {/* Articles Grid */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {articles.map((article, index) => (
             <motion.article
               key={index}
-              variants={cardVariants}
-              whileHover={shouldReduceMotion ? {} : { y: -6, boxShadow: "0 15px 35px rgba(46, 108, 246, 0.08)", borderColor: "rgba(46, 108, 246, 0.15)" }}
+              variants={cardRise}
+              whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: "0 15px 35px rgba(46, 108, 246, 0.08)", borderColor: "rgba(46, 108, 246, 0.15)" })}
               transition={{ duration: 0.25, ease: "easeOut" }}
               className="group bg-white border border-gray-150 rounded-3xl shadow-soft transition-all duration-300 flex flex-col h-full overflow-hidden text-left cursor-default"
             >

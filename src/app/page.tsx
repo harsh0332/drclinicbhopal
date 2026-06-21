@@ -1,13 +1,45 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/hero";
 import TrustStrip from "@/components/sections/trust-strip";
 import WhyChoose from "@/components/sections/why-choose";
 import MeetDoctors from "@/components/sections/meet-doctors";
 import ServicesGrid from "@/components/sections/services-grid";
-import VaccineTeaser from "@/components/sections/vaccine-teaser";
-import ParentGuidance from "@/components/sections/parent-guidance";
-import MilestoneTeaser from "@/components/sections/milestone-teaser";
-import GrowthTeaser from "@/components/sections/growth-teaser";
+
+// Lazy-load below-the-fold sections to optimize initial JS bundle size & INP on mobile
+const VaccineTeaser = dynamic(() => import("@/components/sections/vaccine-teaser"), {
+  loading: () => <div className="w-full h-[400px] bg-surface-tint" />
+});
+const ParentGuidance = dynamic(() => import("@/components/sections/parent-guidance"), {
+  loading: () => <div className="w-full h-[500px] bg-white" />
+});
+const MilestoneTeaser = dynamic(() => import("@/components/sections/milestone-teaser"), {
+  loading: () => <div className="w-full h-[400px] bg-surface-tint" />
+});
+const GrowthTeaser = dynamic(() => import("@/components/sections/growth-teaser"), {
+  loading: () => <div className="w-full h-[500px] bg-white" />
+});
+const Testimonials = dynamic(() => import("@/components/sections/testimonials"), {
+  loading: () => <div className="w-full h-[450px] bg-surface-tint" />
+});
+const GoogleReviews = dynamic(() => import("@/components/sections/google-reviews"), {
+  loading: () => <div className="w-full h-[150px] bg-white" />
+});
+const FAQs = dynamic(() => import("@/components/sections/faqs"), {
+  loading: () => <div className="w-full h-[500px] bg-white" />
+});
+const LatestArticles = dynamic(() => import("@/components/sections/latest-articles"), {
+  loading: () => <div className="w-full h-[450px] bg-surface-tint" />
+});
+const GalleryPreview = dynamic(() => import("@/components/sections/gallery-preview"), {
+  loading: () => <div className="w-full h-[400px] bg-white" />
+});
+const MapContact = dynamic(() => import("@/components/sections/map-contact"), {
+  loading: () => <div className="w-full h-[500px] bg-surface-tint" />
+});
+const BookAppointment = dynamic(() => import("@/components/sections/book-appointment"), {
+  loading: () => <div className="w-full h-[600px] bg-white" />
+});
 
 export const metadata: Metadata = {
   title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
@@ -16,17 +48,10 @@ export const metadata: Metadata = {
     canonical: "https://www.babystepsclinic.in",
   },
 };
-import Testimonials from "@/components/sections/testimonials";
-import GoogleReviews from "@/components/sections/google-reviews";
-import FAQs from "@/components/sections/faqs";
-import LatestArticles from "@/components/sections/latest-articles";
-import GalleryPreview from "@/components/sections/gallery-preview";
-import MapContact from "@/components/sections/map-contact";
-import BookAppointment from "@/components/sections/book-appointment";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full animate-fadeIn">
       {/* 1. Hero Section */}
       <Hero />
 

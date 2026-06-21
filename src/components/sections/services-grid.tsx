@@ -3,8 +3,16 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { ArrowRight } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ServiceIconTile from "@/components/ui/ServiceIconTile";
+import { 
+  fadeRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
+
 
 // Generates slug from service name
 function getServiceSlug(service: string) {
@@ -64,43 +72,16 @@ function getCardTheme(slug: string, index: number): CardTheme {
 export default function ServicesGrid() {
   const shouldReduceMotion = useReducedMotion();
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
   return (
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={headerVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -116,10 +97,10 @@ export default function ServicesGrid() {
 
         {/* Services Grid */}
         <motion.div
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {siteConfig.services.map((service, index) => {
@@ -130,8 +111,8 @@ export default function ServicesGrid() {
             return (
               <motion.div
                 key={index}
-                variants={cardVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -5, boxShadow: `0 12px 25px ${theme.glowColor}` }}
+                variants={fadeRise}
+                whileHover={hoverLift(shouldReduceMotion, -5, { boxShadow: `0 12px 25px ${theme.glowColor}` })}
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="w-full h-full"
               >

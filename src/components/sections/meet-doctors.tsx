@@ -4,38 +4,20 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import { GraduationCap, Award, Building, ArrowRight } from "lucide-react";
-import { motion, useReducedMotion, Variants } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
+import { 
+  fadeRise, 
+  cardRise, 
+  staggerContainer, 
+  hoverLift, 
+  getInitial, 
+  viewportOnce 
+} from "@/lib/motion";
 
 export default function MeetDoctors() {
   const shouldReduceMotion = useReducedMotion();
 
-  const containerVariants: Variants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.15,
-      },
-    },
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
-
-  const headerVariants: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const },
-    },
-  };
 
   return (
     <section id="doctors" className="relative overflow-hidden pt-28 pb-32 bg-surface-tint">
@@ -51,10 +33,10 @@ export default function MeetDoctors() {
         
         {/* Section Heading */}
         <motion.div
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={headerVariants}
+          viewport={viewportOnce}
+          variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
           <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block mx-auto">
@@ -70,10 +52,10 @@ export default function MeetDoctors() {
 
         {/* Doctors Grid */}
         <motion.div 
-          variants={containerVariants}
-          initial={shouldReduceMotion ? "visible" : "hidden"}
+          variants={staggerContainer}
+          initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={viewportOnce}
           className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto"
         >
           {siteConfig.doctors.map((doctor) => {
@@ -81,8 +63,8 @@ export default function MeetDoctors() {
             return (
               <motion.div
                 key={doctor.id}
-                variants={cardVariants}
-                whileHover={shouldReduceMotion ? {} : { y: -6, boxShadow: "0 15px 35px rgba(22, 60, 122, 0.08)" }}
+                variants={cardRise}
+                whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: "0 15px 35px rgba(22, 60, 122, 0.08)" })}
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="group bg-white border border-gray-150 rounded-3xl shadow-soft transition-all duration-300 overflow-hidden flex flex-col h-full cursor-default"
               >
