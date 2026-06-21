@@ -475,7 +475,7 @@ export default function HeroBackground() {
     if (!el) return;
 
     const measure = () => {
-      const isWide = el.clientWidth >= 768; // breakpoint md
+      const isWide = window.matchMedia("(min-width: 768px)").matches;
       setWide(isWide);
 
       const currentW = isWide ? 1600 : 900;
@@ -488,7 +488,21 @@ export default function HeroBackground() {
     measure();
     const ro = new ResizeObserver(measure);
     ro.observe(el);
-    return () => ro.disconnect();
+
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", measure);
+      return () => {
+        ro.disconnect();
+        mediaQuery.removeEventListener("change", measure);
+      };
+    } else {
+      mediaQuery.addListener(measure);
+      return () => {
+        ro.disconnect();
+        mediaQuery.removeListener(measure);
+      };
+    }
   }, []);
 
   // IntersectionObserver to pause loop player when out of view (saves battery/INP)

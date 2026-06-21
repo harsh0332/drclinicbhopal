@@ -37,7 +37,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24 select-none bg-transparent"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-12 lg:py-24 select-none bg-transparent min-h-[80vh] min-h-[88dvh] lg:min-h-0 flex items-center"
     >
       {/* Animated Canvas Background */}
       <HeroBackground />
@@ -45,10 +45,10 @@ export default function Hero() {
       {/* Readability gradient overlay between background animation and content */}
       <div 
         aria-hidden="true" 
-        className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(244,248,255,0.95)_0%,rgba(244,248,255,0.85)_50%,rgba(244,248,255,0.4)_75%,transparent_100%)] md:bg-[linear-gradient(90deg,#F4F8FF_0%,rgba(244,248,255,0.92)_40%,rgba(244,248,255,0.4)_65%,transparent_100%)] pointer-events-none"
+        className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(244,248,255,0.92)_0%,rgba(244,248,255,0.85)_50%,rgba(244,248,255,0.3)_80%,transparent_100%)] md:bg-[linear-gradient(90deg,#F4F8FF_0%,rgba(244,248,255,0.92)_40%,rgba(244,248,255,0.4)_65%,transparent_100%)] pointer-events-none"
       />
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Headline, Sub-headline, CTAs, Stats */}
