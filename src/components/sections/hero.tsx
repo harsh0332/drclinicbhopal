@@ -215,7 +215,7 @@ export default function Hero() {
             {/* Card 1: Hours */}
             <div className="absolute z-30 top-[50px] left-[-14px] bg-white/75 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-3 flex items-center gap-2.5 animate-[bsFloatA_5.6s_ease-in-out_infinite] pointer-events-none">
               <div className="w-8 h-8 rounded-lg bg-[#34C7A4]/15 flex items-center justify-center">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA98A" stroke-width="2">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA98A" strokeWidth={2}>
                   <circle cx="12" cy="12" r="9" />
                   <path d="M12 7v5l3 2" />
                 </svg>
@@ -229,7 +229,7 @@ export default function Hero() {
             {/* Card 2: Vaccination */}
             <div className="absolute z-30 top-[188px] right-[-16px] bg-white/75 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-3 flex items-center gap-2.5 animate-[bsFloatB_6.4s_ease-in-out_0.6s_infinite] pointer-events-none">
               <div className="w-8 h-8 rounded-lg bg-[#2E6CF6]/12 flex items-center justify-center">
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E6CF6" stroke-width="2">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E6CF6" strokeWidth={2}>
                   <path d="M20 6 9 17l-5-5" />
                 </svg>
               </div>
