@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.babystepsclinic.in/doctors",
   },
+  openGraph: {
+    title: "Our Pediatric Specialists | Baby Steps Clinic Neelbad",
+    description: "Expert medical consultation for newborns, infants, and children by our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
+    url: "https://www.babystepsclinic.in/doctors",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function DoctorsPage() {
@@ -69,7 +76,7 @@ export default function DoctorsPage() {
                 {/* Content */}
                 <div className="p-8 flex flex-col flex-grow gap-5">
                   <div className="flex flex-col gap-1">
-                    <span className="text-xs font-bold text-secondary uppercase tracking-wider">
+                    <span className="text-xs font-bold text-secondary-dark uppercase tracking-wider">
                       {doctor.title}
                     </span>
                     <h3 className="text-2xl font-bold font-heading text-primary-dark">
@@ -118,7 +125,7 @@ export default function DoctorsPage() {
             ))}
           </div>
 
-          {/* Factual Appointment Action block */}
+          {/* Appointment Action block */}
           <div className="max-w-3xl mx-auto bg-surface-tint border border-primary/5 rounded-3xl p-8 text-center mt-16 flex flex-col items-center gap-4">
             <h3 className="text-xl font-bold font-heading text-primary-dark">
               Consult with our pediatricians

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
   cardRise, 
@@ -34,7 +35,7 @@ export default function LatestArticles() {
     },
     {
       title: "Recognizing Normal Physiological Milestones at 6 Months",
-      excerpt: "Factual indicators of physical, language, and motor skills development in infants and when to consult a specialist.",
+      excerpt: "Milestone indicators of physical, language, and motor skills development in infants and when to consult a specialist.",
       date: "May 28, 2026",
       readTime: "4 min read",
       category: "Milestones",
@@ -43,7 +44,7 @@ export default function LatestArticles() {
   ];
 
   return (
-    <section id="blog" className="py-24 bg-surface-tint relative overflow-hidden">
+    <section id="blog" className="relative overflow-hidden pt-20 pb-32 bg-surface-tint">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}
@@ -62,7 +63,7 @@ export default function LatestArticles() {
               Latest educational articles
             </h2>
             <p className="text-sm text-muted-text font-sans leading-relaxed">
-              Factual, evidence-based health guidance authored by our pediatric specialists.
+              Proven health guidance and helpful parenting tips written by our pediatric specialists.
             </p>
           </motion.div>
           
@@ -147,6 +148,14 @@ export default function LatestArticles() {
         </motion.div>
 
       </div>
+
+      {/* Bottom Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-white"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

@@ -47,6 +47,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.babystepsclinic.in",
   },
+  openGraph: {
+    title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
+    description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
+    url: "https://www.babystepsclinic.in",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function Home() {

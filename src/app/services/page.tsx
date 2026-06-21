@@ -18,21 +18,28 @@ import {
   Milestone,
   ArrowRight,
   Calendar,
-  Phone
+  Phone,
+  LucideIcon
 } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
-
 export const metadata: Metadata = {
   title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
-  description: "Factual overview of our services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
+  description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
   alternates: {
     canonical: "https://www.babystepsclinic.in/services",
   },
+  openGraph: {
+    title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
+    description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
+    url: "https://www.babystepsclinic.in/services",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   "vaccination-clinic": Syringe,
   "newborn-care": Baby,
   "nicu-follow-up": HeartPulse,

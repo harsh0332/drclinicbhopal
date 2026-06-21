@@ -39,7 +39,7 @@ export const localitiesData: Record<string, LocalityItem> = {
     name: "Bawadia Kalan",
     slug: "bawadia-kalan",
     title: "Pediatrician near Bawadia Kalan, Bhopal",
-    intro: "For residents of Bawadia Kalan, Baby Steps Clinic offers evidence-based child consultations and WHO-aligned vaccination services. We support parents with expert milestone assessments and child nutrition advice.",
+    intro: "For residents of Bawadia Kalan, Baby Steps Clinic offers gentle, supportive child consultations and WHO-aligned vaccination services. We support parents with expert milestone assessments and child nutrition advice.",
     whyChoose: [
       "Direct consultancies with physicians holding PGPN Boston credentials in child nutrition.",
       "Clean, modern clinical environment with play-friendly child waiting spaces.",
@@ -67,7 +67,7 @@ export const localitiesData: Record<string, LocalityItem> = {
     title: "Pediatrician near Salaiya, Bhopal",
     intro: "Salaiya residents can access qualified newborn and critical child outpatient care at Baby Steps Clinic. We provide regular growth curve plotting, complementary feeding guidance, and adolescent physical monitoring.",
     whyChoose: [
-      "Pediatricians registered with national medical bodies providing factual clinical guidance.",
+      "Pediatricians registered with national medical bodies providing experienced clinical guidance.",
       "Specialized consultation setup for preterm babies post-NICU discharge.",
       "Lactation consult room for private maternal breastfeeding instruction."
     ],
@@ -78,10 +78,10 @@ export const localitiesData: Record<string, LocalityItem> = {
     name: "Chuna Bhatti",
     slug: "chuna-bhatti",
     title: "Pediatrician near Chuna Bhatti, Bhopal",
-    intro: "For parents in Chuna Bhatti looking for evidence-based child healthcare, Baby Steps Clinic offers outpatient services managed by senior consultants. Our clinic specializes in developmental screening and fever management.",
+    intro: "For parents in Chuna Bhatti looking for caring, expert child healthcare, Baby Steps Clinic offers outpatient services managed by senior consultants. Our clinic specializes in developmental screening and fever management.",
     whyChoose: [
       "Direct consultation with DNB (Pediatrics) qualified doctors from New Delhi.",
-      "Evidence-based treatment schedules without diagnostic inflation.",
+      "Clear, honest treatment plans without diagnostic inflation.",
       "Modern vaccine storage systems preserving immunizations efficacy."
     ],
     distanceNote: "Approximately 10.5 km from Chuna Bhatti (via Kerwa Dam Road). Travel time is around 18 minutes.",
@@ -94,7 +94,7 @@ export const localitiesData: Record<string, LocalityItem> = {
     intro: "Families in Katara Hills can reach Baby Steps Clinic for specialized neonatal care, milestones assessments, and childhood nutritional mapping. We offer comprehensive counseling for growth parameters.",
     whyChoose: [
       "Specialized husband-wife pediatrician team providing seamless dual reviews for complex pediatric cases.",
-      "Factual growth tracking plotted on official WHO percentile charts.",
+      "Reliable growth tracking plotted on official WHO percentile charts.",
       "Comprehensive education resources covering infant choke rescue first-aid."
     ],
     distanceNote: "Approximately 18 km from Katara Hills (via Kolar Road). Travel time is around 30 minutes.",

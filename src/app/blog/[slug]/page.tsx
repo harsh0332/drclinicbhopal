@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
-import { siteConfig } from "@/lib/site-config";
 import { getBlogPostingSchema, getFAQSchema, getBreadcrumbSchema } from "@/lib/schemas";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import { Calendar, Clock, GraduationCap, Building, ShieldCheck, ArrowLeft, CalendarDays } from "lucide-react";
@@ -142,7 +141,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="lg:col-span-4 flex flex-col gap-6">
               {/* Reviewer Byline Card */}
               <div className="bg-white border border-gray-150 rounded-2xl p-5 text-left flex flex-col gap-4 shadow-soft">
-                <h3 className="text-xs font-bold text-secondary uppercase tracking-wider border-b border-gray-50 pb-2">
+                <h3 className="text-xs font-bold text-secondary-dark uppercase tracking-wider border-b border-gray-50 pb-2">
                   Medical Reviewer
                 </h3>
                 <div className="flex flex-col gap-1">

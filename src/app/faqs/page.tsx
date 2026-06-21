@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schemas";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import { siteConfig } from "@/lib/site-config";
@@ -7,9 +8,19 @@ import { HelpCircle, Calendar, Phone } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Frequently Asked Questions | Baby Steps Clinic",
-  description: "Factual, educational answers regarding pediatric consultations, vaccine cold-chain standards, and appointment bookings in Neelbad, Bhopal.",
+  description: "Helpful, medically verified answers regarding pediatric consultations, vaccine safety standards, and appointment bookings in Neelbad, Bhopal.",
+  alternates: {
+    canonical: "https://www.babystepsclinic.in/faqs",
+  },
+  openGraph: {
+    title: "Frequently Asked Questions | Baby Steps Clinic",
+    description: "Helpful, medically verified answers regarding pediatric consultations, vaccine safety standards, and appointment bookings in Neelbad, Bhopal.",
+    url: "https://www.babystepsclinic.in/faqs",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function FAQsPage() {
@@ -101,7 +112,7 @@ export default function FAQsPage() {
               Frequently Asked Questions (FAQs)
             </h1>
             <p className="text-sm sm:text-base text-muted-text font-sans max-w-2xl leading-relaxed">
-              Factual, clinically verified answers regarding clinic protocols, vaccine cold-chains, and pediatric consultation guidelines.
+              Medically verified, easy-to-understand answers regarding clinic protocols, vaccine safety, and pediatric consultation guidelines.
             </p>
           </div>
         </div>

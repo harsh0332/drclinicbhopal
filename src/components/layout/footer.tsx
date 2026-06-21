@@ -24,17 +24,17 @@ export default function Footer() {
             <p className="text-sm text-blue-200 leading-relaxed font-sans max-w-sm mt-2">
               Providing premium, international-quality pediatric and newborn care in Neelbad, Bhopal. Guided by expert consultation and clinical excellence.
             </p>
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex flex-wrap items-center gap-3 mt-2">
               {Object.entries(siteConfig.socials).map(([key, value]) => (
                 <a
                   key={key}
                   href={value}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-blue-900/50 hover:bg-primary text-blue-200 hover:text-white rounded-xl transition-all text-xs capitalize flex items-center gap-1"
+                  className="px-4 py-2.5 bg-blue-900/50 hover:bg-primary text-blue-200 hover:text-white rounded-xl transition-all text-xs font-semibold capitalize flex items-center justify-center gap-1.5 min-h-[44px]"
                 >
                   <span>{key}</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               ))}
             </div>
@@ -117,8 +117,18 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300">
-            <p>&copy; {currentYear} {siteConfig.name}. All Rights Reserved.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300 border-t border-blue-900/50 pt-6">
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-7 h-7 shrink-0">
+                <ClinicImage
+                  src="/images/illustrations/mascot.webp"
+                  alt="Baby Steps Mascot"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p>&copy; {currentYear} {siteConfig.name}. All Rights Reserved.</p>
+            </div>
             <div className="flex items-center gap-4">
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy

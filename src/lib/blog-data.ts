@@ -92,7 +92,7 @@ export const blogData: Record<string, BlogPost> = {
     date: "May 28, 2026",
     readTime: "4 min read",
     category: "Milestones",
-    excerpt: "Factual indicators of physical, language, and motor skills development in infants and when to consult a specialist.",
+    excerpt: "Milestone indicators of physical, language, and motor skills development in infants and when to consult a specialist.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "MBBS, DCH, DNB (New Delhi), PGPN (Boston, USA)",
     authorAffiliation: "Consultant Pediatrician, Rainbow Children's Hospital, Bhopal",

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
-import { HeartPulse, Calendar, Phone, Sparkles, Building, Clock, MapPin, CheckCircle2 } from "lucide-react";
+import { HeartPulse, Calendar, Phone, Sparkles, Clock, MapPin } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
   alternates: {
     canonical: "https://www.babystepsclinic.in/about",
+  },
+  openGraph: {
+    title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
+    description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
+    url: "https://www.babystepsclinic.in/about",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
   },
 };
 
@@ -87,16 +94,16 @@ export default function AboutPage() {
                 Our Philosophy
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold font-heading text-primary-dark leading-tight">
-                Gentle, evidence-based clinical pediatric care
+                Gentle, expert clinical pediatric care
               </h2>
               <p className="text-sm sm:text-base text-muted-text font-sans leading-relaxed">
-                At Baby Steps Clinic, we believe in providing pediatric support that prioritizes clinical safety, WHO-standard immunizations, and stress-free environments. We follow evidence-based guidelines and provide families with clear educational tools for milestone monitoring, child nutrition, and newborn care.
+                At Baby Steps Clinic, we believe in providing pediatric support that prioritizes clinical safety, WHO-standard immunizations, and stress-free environments. We follow proven medical guidelines and provide families with clear, practical tools for milestone monitoring, child nutrition, and newborn care.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-muted-text font-sans mt-2">
                 <div className="flex items-start gap-2.5">
                   <Sparkles className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                  <span>No unverified outcome claims; pure clinical guidance.</span>
+                  <span>Clear, honest guidance with your child&apos;s well-being at heart.</span>
                 </div>
                 <div className="flex items-start gap-2.5">
                   <HeartPulse className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
@@ -185,7 +192,7 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-[10px] font-bold text-secondary uppercase tracking-wider">{doctor.title}</span>
+                  <span className="text-[10px] font-bold text-secondary-dark uppercase tracking-wider">{doctor.title}</span>
                   <h3 className="text-lg font-bold font-heading text-primary-dark">{doctor.name}</h3>
                   <p className="text-xs text-muted-text font-sans line-clamp-1">{doctor.degree}</p>
                   <Link
@@ -208,17 +215,30 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch max-w-6xl mx-auto">
             
             {/* Left Column: Map */}
-            <div className="lg:col-span-6 bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft aspect-[4/3] lg:aspect-auto min-h-[300px]">
-              <iframe
-                src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic%20Neelbad%20Bhopal&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="Baby Steps Clinic Google Map Location"
-                className="w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
-              />
+            <div className="lg:col-span-6 bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col min-h-[300px]">
+              <div className="relative w-full flex-grow min-h-[220px]">
+                <iframe
+                  src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic,%20Pooja%20Colony,%20Neelbad,%20Bhopal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Baby Steps Clinic Google Map Location"
+                  className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
+                />
+              </div>
+              <div className="p-3 bg-white border-t border-gray-100 flex items-center justify-between text-xs font-sans">
+                <span className="text-muted-text">Can&apos;t see the map?</span>
+                <a
+                  href={siteConfig.googleMapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 font-semibold text-primary hover:underline min-h-[44px] flex items-center"
+                >
+                  Open in Google Maps &rarr;
+                </a>
+              </div>
             </div>
 
             {/* Right Column: Hours, Address & Booking */}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { bookAppointmentAction } from "@/app/actions";
 import { siteConfig } from "@/lib/site-config";
-import { Calendar, CheckCircle2, AlertCircle, Loader2, MessageSquare } from "lucide-react";
+import { Calendar, CheckCircle2, AlertCircle, Loader2, MessageSquare, Phone } from "lucide-react";
 
 export default function AppointmentForm() {
   // Form State
@@ -19,6 +19,14 @@ export default function AppointmentForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrorMessage("");
+
+    const cleanPhone = phone.trim().replace(/\D/g, "");
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
+      setErrorMessage("Please enter a valid 10-digit Indian mobile number (e.g. 9876543210) starting with 6, 7, 8, or 9.");
+      setStatus("error");
+      return;
+    }
+
     setStatus("loading");
 
     const formData = new FormData();
@@ -35,17 +43,12 @@ export default function AppointmentForm() {
           setStatus("fallback-success");
         } else {
           setStatus("success");
-          // Clear inputs
-          setName("");
-          setPhone("");
-          setChildAge("");
-          setPreferredTime("");
         }
       } else {
         setErrorMessage(res.error || "Submission failed. Please check inputs.");
         setStatus("error");
       }
-    } catch (err) {
+    } catch {
       setErrorMessage("A server error occurred. Please try booking directly via WhatsApp.");
       setStatus("error");
     }
@@ -60,55 +63,53 @@ export default function AppointmentForm() {
 
   return (
     <div className="w-full bg-white text-left">
-      {status === "success" && (
-        <div className="flex flex-col items-center justify-center py-8 gap-4 text-center animate-in zoom-in duration-200">
-          <div className="w-14 h-14 rounded-full bg-success/15 border border-success/30 flex items-center justify-center text-success">
+      {(status === "success" || status === "fallback-success") && (
+        <div className="flex flex-col items-center justify-center py-8 px-4 gap-4 text-center animate-in zoom-in duration-200">
+          <div className="w-14 h-14 rounded-full bg-success/15 border border-success/30 flex items-center justify-center text-success animate-bounce">
             <CheckCircle2 className="w-9 h-9 stroke-[2]" />
           </div>
-          <div className="flex flex-col gap-2 max-w-sm">
+          <div className="flex flex-col gap-2 max-w-md">
             <h3 className="text-xl font-bold font-heading text-primary-dark">
-              Request Received!
+              Appointment Request Sent!
             </h3>
-            <p className="text-xs text-muted-text font-sans leading-relaxed">
-              Your appointment request has been logged. Our coordinator will contact you shortly to confirm your consultation slot.
+            <p className="text-xs sm:text-sm text-muted-text font-sans leading-relaxed">
+              We have received your details. Our clinic coordinator will call or message you shortly to confirm your final slot.
+            </p>
+            <p className="text-xs text-muted-text font-sans mt-2 font-semibold">
+              Want to secure your booking right away? Choose a quick option below:
             </p>
           </div>
-          <button
-            onClick={() => setStatus("idle")}
-            className="mt-2 text-xs font-semibold text-primary hover:underline"
-          >
-            Request another slot
-          </button>
-        </div>
-      )}
-
-      {status === "fallback-success" && (
-        <div className="flex flex-col items-center justify-center py-6 gap-4 text-center animate-in zoom-in duration-200">
-          <div className="w-14 h-14 rounded-full bg-accent-sunshine/15 border border-accent-sunshine/35 flex items-center justify-center text-amber-600">
-            <CheckCircle2 className="w-9 h-9 stroke-[2]" />
-          </div>
-          <div className="flex flex-col gap-2.5 max-w-md">
-            <h3 className="text-xl font-bold font-heading text-primary-dark">
-              Request Validated!
-            </h3>
-            <p className="text-xs text-muted-text font-sans leading-relaxed">
-              Your details are verified. To finalize and secure your preferred slot immediately, please click below to send your request via WhatsApp:
-            </p>
+          
+          <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm mt-2">
             <a
               href={getWhatsAppFallbackLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-sm font-semibold py-3.5 px-6 rounded-2xl shadow-md hover:bg-[#128C7E] transition-all"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-[#25D366] text-white text-xs sm:text-sm font-semibold py-3 px-4 rounded-xl shadow-md hover:bg-[#128C7E] active:scale-[0.98] transition-all min-h-[44px]"
             >
-              <MessageSquare className="w-4.5 h-4.5 fill-white" />
-              <span>Confirm booking via WhatsApp</span>
+              <MessageSquare className="w-4 h-4 fill-white" />
+              <span>Confirm on WhatsApp</span>
+            </a>
+            <a
+              href={siteConfig.phoneLink}
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-white border border-gray-250 text-primary-dark text-xs sm:text-sm font-semibold py-3 px-4 rounded-xl shadow-soft hover:bg-gray-50 active:scale-[0.98] transition-all min-h-[44px]"
+            >
+              <Phone className="w-4 h-4 text-primary shrink-0" />
+              <span>Call Clinic</span>
             </a>
           </div>
+
           <button
-            onClick={() => setStatus("idle")}
-            className="mt-3 text-xs text-muted-text hover:underline"
+            onClick={() => {
+              setName("");
+              setPhone("");
+              setChildAge("");
+              setPreferredTime("");
+              setStatus("idle");
+            }}
+            className="mt-4 text-xs font-semibold text-primary hover:underline min-h-[44px] flex items-center justify-center px-4"
           >
-            Back to form
+            Request another slot
           </button>
         </div>
       )}
@@ -149,6 +150,8 @@ export default function AppointmentForm() {
                 id="form-phone"
                 type="tel"
                 required
+                pattern="[6-9][0-9]{9}"
+                title="Please enter a valid 10-digit Indian mobile number (e.g. 9876543210) starting with 6, 7, 8, or 9."
                 disabled={status === "loading"}
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -193,7 +196,7 @@ export default function AppointmentForm() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-between mt-3 pt-3 border-t border-gray-50">
             <span className="text-[10px] text-muted-text font-sans leading-relaxed text-left max-w-sm sm:max-w-md">
-              * Verification: Clicking request triggers our verification. Standard weight-based pediatric parameters applied in clinic.
+              * Note: Your slot is not officially booked until our clinic team calls or messages you to confirm the timing.
             </span>
             <button
               type="submit"

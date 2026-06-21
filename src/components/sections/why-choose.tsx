@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Users, ShieldCheck, HeartHandshake, Clock, ThermometerSnowflake, BookOpen } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import Star from "@/components/ui/decor/Star";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
   cardRise, 
@@ -69,15 +70,22 @@ export default function WhyChoose() {
 
 
   return (
-    <section id="about" className="relative overflow-hidden py-24 bg-white">
+    <section id="about" className="relative overflow-hidden pt-28 pb-32 bg-surface-tint">
+      {/* Top Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
       {/* Decorative Cloud */}
-      <div className="absolute left-[-4%] top-[8%] opacity-[0.04] pointer-events-none hidden lg:block select-none">
+      <div className="absolute left-[-4%] top-[8%] opacity-[0.04] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Cloud className="w-56 h-36 fill-primary" />
       </div>
 
       {/* Decorative Star */}
-      <div className="absolute right-[5%] bottom-[12%] opacity-[0.06] pointer-events-none hidden lg:block select-none">
-        <Star className="w-14 h-14 fill-accent-sunshine animate-pulse" style={{ animationDuration: "4s" }} />
+      <div className="absolute right-[5%] bottom-[12%] opacity-[0.06] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <Star className="w-14 h-14 fill-accent-sunshine animate-pulse motion-reduce:animate-none" style={{ animationDuration: "4s" }} />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,16 +123,22 @@ export default function WhyChoose() {
               <motion.div
                 key={index}
                 variants={cardRise}
-                whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: `0 12px 30px ${benefit.glowColor}`, borderColor: benefit.borderColor })}
+                whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: `0 20px 40px ${benefit.glowColor}`, borderColor: benefit.borderColor })}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="group p-8 bg-white border border-gray-150 rounded-2xl shadow-soft hover:border-primary/20 transition-all duration-300 flex flex-col gap-4 cursor-default"
+                className="group relative overflow-hidden p-8 bg-white border border-gray-150 hover:border-primary/20 rounded-2xl shadow-soft transition-all duration-300 flex flex-col gap-4 cursor-default"
               >
+                {/* Subtle Editorial Numbering Badge */}
+                <div className="absolute top-6 right-8 text-2xl font-extrabold text-primary-dark/[0.04] font-heading select-none group-hover:text-primary/[0.08] transition-colors duration-300">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+
                 {/* Icon Container */}
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${benefit.color} shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center border ${benefit.color} shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm group-hover:shadow-md`}>
                   <Icon className="w-5 h-5 stroke-[2]" />
                 </div>
+                
                 {/* Content */}
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 relative z-10">
                   <h3 className="text-lg font-heading font-semibold text-primary-dark group-hover:text-primary transition-colors">
                     {benefit.title}
                   </h3>
@@ -138,6 +152,14 @@ export default function WhyChoose() {
         </motion.div>
 
       </div>
+
+      {/* Bottom Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-white"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

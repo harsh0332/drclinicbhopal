@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import AppointmentForm from "@/components/ui/appointment-form";
@@ -7,9 +8,19 @@ import { Calendar, Phone, MessageSquare, ShieldCheck } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
   description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
+  alternates: {
+    canonical: "https://www.babystepsclinic.in/book-appointment",
+  },
+  openGraph: {
+    title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
+    description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
+    url: "https://www.babystepsclinic.in/book-appointment",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function BookAppointmentPage() {

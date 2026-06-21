@@ -12,6 +12,8 @@ import {
   getInitial, 
   viewportOnce 
 } from "@/lib/motion";
+import { servicesData } from "@/lib/services-data";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 
 
 // Generates slug from service name
@@ -73,7 +75,14 @@ export default function ServicesGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="relative overflow-hidden pt-28 pb-32 bg-gradient-to-tr from-[#F4F8FF] to-[#EAFBF7]">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -112,7 +121,7 @@ export default function ServicesGrid() {
               <motion.div
                 key={index}
                 variants={fadeRise}
-                whileHover={hoverLift(shouldReduceMotion, -5, { boxShadow: `0 12px 25px ${theme.glowColor}` })}
+                whileHover={hoverLift(shouldReduceMotion, -5, { boxShadow: `0 20px 40px ${theme.glowColor}` })}
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="w-full h-full"
               >
@@ -120,18 +129,25 @@ export default function ServicesGrid() {
                   href={`/services/${slug}`}
                   className={`group p-6 rounded-2xl border transition-all duration-300 flex flex-col justify-between h-full min-h-[210px] cursor-pointer ${
                     isEmergency
-                      ? "bg-red-50/20 border-red-100"
+                      ? "bg-[#FFF6F5]/30 border-red-100"
                       : "bg-white border-gray-150"
                   } ${theme.hoverBorder} ${theme.hoverBg}`}
                 >
                   <div>
-                    {/* Unified Pediatric Icon Tile */}
-                    <ServiceIconTile
-                      serviceSlug={slug}
-                      index={index}
-                      size={20}
-                      className="mb-4 shadow-sm"
-                    />
+                    <div className="flex items-start justify-between">
+                      {/* Unified Pediatric Icon Tile */}
+                      <ServiceIconTile
+                        serviceSlug={slug}
+                        index={index}
+                        size={20}
+                        className="mb-4 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-all duration-300"
+                      />
+                      {isEmergency && (
+                        <span className="text-[9px] font-bold text-emergency bg-[#FFF6F5] border border-red-100/50 py-1 px-2.5 rounded-full uppercase tracking-wider animate-pulse select-none font-sans">
+                          🚨 24/7 Support
+                        </span>
+                      )}
+                    </div>
 
                     {/* Content */}
                     <h3
@@ -140,7 +156,7 @@ export default function ServicesGrid() {
                       {service}
                     </h3>
                     <p className="text-xs text-muted-text font-sans mt-2 leading-relaxed">
-                      Factual guidance, assessment, and treatment pathways aligned with standard clinical protocols.
+                      {servicesData[slug]?.description || "Expert clinical guidance and support tailored for your child's developmental and health needs."}
                     </p>
                   </div>
 
@@ -164,6 +180,14 @@ export default function ServicesGrid() {
         </motion.div>
 
       </div>
+
+      {/* Bottom Curve/Wave Divider to transition to surface-tint VaccineTeaser */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-surface-tint"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

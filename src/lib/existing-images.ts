@@ -25,4 +25,8 @@ export const existingImages: Record<string, boolean> = {
   "/images/illustrations/doctor-baby.webp": true,
   "/images/illustrations/family-child.webp": true,
   "/images/illustrations/growth-journey.webp": true,
+  "/images/illustrations/mascot.webp": true,
+  "/images/illustrations/parent-guidance-premium.webp": true,
+  "/images/illustrations/growth-journey-premium.webp": true,
+  "/images/illustrations/empty-state.webp": true,
 };

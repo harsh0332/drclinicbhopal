@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import ClinicImage from "@/components/ui/clinic-image";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import { Image as ImageIcon, Calendar } from "lucide-react";
@@ -6,9 +7,19 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Clinic Gallery | Baby Steps Clinic",
-  description: "Factual photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
+  description: "Real photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
+  alternates: {
+    canonical: "https://www.babystepsclinic.in/gallery",
+  },
+  openGraph: {
+    title: "Clinic Gallery | Baby Steps Clinic",
+    description: "Real photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
+    url: "https://www.babystepsclinic.in/gallery",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function GalleryPage() {
@@ -60,7 +71,7 @@ export default function GalleryPage() {
               Our Clinic Gallery
             </h1>
             <p className="text-sm sm:text-base text-muted-text font-sans max-w-2xl leading-relaxed">
-              Factual, unmodified photographs of our facilities, consultation suites, and child-safe environments in Neelbad, Bhopal.
+              Take a look inside our clinic — explore our warm facilities, consulting rooms, and child-safe environments in Neelbad, Bhopal.
             </p>
           </div>
         </div>

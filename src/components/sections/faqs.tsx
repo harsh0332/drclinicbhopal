@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { Plus, Minus, HelpCircle } from "lucide-react";
-import { siteConfig } from "@/lib/site-config";
+
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import ClinicImage from "@/components/ui/clinic-image";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
   staggerContainer, 
@@ -49,7 +50,14 @@ export default function FAQs() {
 
 
   return (
-    <section id="faqs" className="py-24 bg-white relative overflow-hidden">
+    <section id="faqs" className="relative overflow-hidden pt-28 pb-32 bg-gradient-to-tr from-[#F4F8FF] to-[#EAFBF7]">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}
@@ -60,14 +68,24 @@ export default function FAQs() {
           variants={fadeRise}
           className="text-center max-w-3xl mx-auto mb-16 flex flex-col gap-4"
         >
-          <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-surface-tint px-4 py-1.5 rounded-full inline-block mx-auto">
+          <span className="text-xs font-semibold text-primary uppercase tracking-widest bg-white/80 border border-primary/10 shadow-soft px-4 py-1.5 rounded-full inline-block mx-auto">
             FAQ
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary-dark font-heading">
-            Frequently asked questions
-          </h2>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-primary-dark font-heading">
+              Frequently asked questions
+            </h2>
+            <div className="relative w-12 h-12 shrink-0 animate-bounce" style={{ animationDuration: "3s" }}>
+              <ClinicImage
+                src="/images/illustrations/mascot.webp"
+                alt="Clinic mascot bear"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
           <p className="text-sm sm:text-base text-muted-text font-sans leading-relaxed">
-            Factual information regarding appointments, vaccine protocols, and pediatric consultations.
+            Clear, pediatrician-approved answers to help you navigate your child&apos;s visits and care.
           </p>
         </motion.div>
 
@@ -154,6 +172,14 @@ export default function FAQs() {
         </motion.div>
 
       </div>
+
+      {/* Bottom Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-surface-tint"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

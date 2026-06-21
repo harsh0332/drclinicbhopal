@@ -1,14 +1,25 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
-import { MessageSquare, Star, Play, FileCheck, Calendar, ShieldCheck } from "lucide-react";
+import { MessageSquare, Star, FileCheck, Calendar } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Parent Testimonials | Baby Steps Clinic",
-  description: "Factual feedback and clinical experiences shared by families consulting our pediatric specialists in Neelbad, Bhopal.",
+  description: "Heartwarming feedback and real experiences shared by families who consult our pediatricians in Neelbad, Bhopal.",
+  alternates: {
+    canonical: "https://www.babystepsclinic.in/testimonials",
+  },
+  openGraph: {
+    title: "Parent Testimonials | Baby Steps Clinic",
+    description: "Heartwarming feedback and real experiences shared by families who consult our pediatricians in Neelbad, Bhopal.",
+    url: "https://www.babystepsclinic.in/testimonials",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function TestimonialsPage() {
@@ -76,7 +87,7 @@ export default function TestimonialsPage() {
               Parent Testimonials &amp; Reviews
             </h1>
             <p className="text-sm sm:text-base text-muted-text font-sans max-w-2xl leading-relaxed">
-              Factual, compliance-approved clinical feedback shared by families who consult our pediatricians in Neelbad, Bhopal.
+              Real stories and experiences shared by families who trust our pediatricians in Neelbad, Bhopal.
             </p>
           </div>
         </div>
@@ -86,52 +97,62 @@ export default function TestimonialsPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Top segment: Google Reviews Widget + Video Testimonial placeholder */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-5xl mx-auto mb-16 items-stretch">
-            
-            {/* Google Reviews stats */}
-            <div className="lg:col-span-5 bg-surface-tint border border-primary/5 rounded-3xl p-8 flex flex-col justify-between text-left">
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent-sunshine fill-accent-sunshine" />
-                  ))}
-                </div>
-                <h2 className="text-xl font-bold font-heading text-primary-dark">
-                  Verified Google Rating
-                </h2>
-                <p className="text-xs text-muted-text font-sans leading-relaxed">
-                  Based on reviews from local families in Bhopal. We encourage objective feedback regarding outpatient care, timing, and facility cleanliness.
-                </p>
-              </div>
+          {/* Top segment: Google Reviews Widget / Write Review callout */}
+          <div className="max-w-5xl mx-auto mb-16">
+            {siteConfig.showGoogleRating ? (
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                <div className="lg:col-span-12 bg-surface-tint border border-primary/5 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                  <div className="flex flex-col gap-3">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-accent-sunshine fill-accent-sunshine" />
+                      ))}
+                    </div>
+                    <h2 className="text-xl font-bold font-heading text-primary-dark">
+                      Verified Google Rating
+                    </h2>
+                    <p className="text-xs text-muted-text font-sans leading-relaxed">
+                      Based on reviews from local families in Bhopal. We encourage objective feedback regarding outpatient care, timing, and facility cleanliness.
+                    </p>
+                  </div>
 
-              <div className="mt-8 flex flex-col gap-3">
-                <a
-                  href={siteConfig.googleMapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white text-xs font-semibold py-3 px-5 rounded-xl hover:bg-primary-dark shadow-sm transition-all"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Write Google Review</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Video Testimonials placeholder */}
-            <div className="lg:col-span-7 bg-gray-50 border border-gray-150 rounded-3xl p-8 flex flex-col justify-center items-center relative overflow-hidden min-h-[220px]">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-55" />
-              <div className="relative z-10 flex flex-col items-center gap-3 text-center">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 shadow-sm">
-                  <Play className="w-5 h-5 fill-primary" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold font-heading text-primary-dark">Video Feedback Placeholder</h3>
-                  <p className="text-xs text-muted-text font-sans mt-0.5">Parent consent approved for educational screening</p>
+                  <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+                    <a
+                      href={siteConfig.googleMapsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white text-xs font-semibold py-3 px-5 rounded-xl hover:bg-primary-dark shadow-sm transition-all"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      <span>Write Google Review</span>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div className="bg-surface-tint border border-primary/5 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
+                <div className="flex flex-col gap-2 max-w-xl">
+                  <h2 className="text-xl font-bold font-heading text-primary-dark">
+                    Share Your Honest Experience
+                  </h2>
+                  <p className="text-sm text-muted-text font-sans leading-relaxed">
+                    Help local parents in Neelbad &amp; South Bhopal find expert pediatric care. If you have visited our clinic, please consider sharing your feedback on Google Maps. We publish reviews only with parent consent.
+                  </p>
+                </div>
 
+                <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+                  <a
+                    href={siteConfig.googleMapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white text-xs font-semibold py-3 px-5 rounded-xl hover:bg-primary-dark shadow-sm transition-all"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    <span>Write Google Review</span>
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Written Reviews Grid */}

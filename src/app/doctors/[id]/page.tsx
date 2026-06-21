@@ -44,7 +44,7 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
     notFound();
   }
 
-  // Factual detailed credentials and scope of practice based on doctor ID
+  // Detailed credentials and scope of practice based on doctor ID
   const isSudarshan = id === "dr-sudarshan-dev-arya";
   
   const doctorDetails = isSudarshan
@@ -136,7 +136,7 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
                 </div>
               </div>
 
-              {/* Factual Affiliation Box */}
+              {/* Clinical Affiliation Box */}
               <div className="bg-surface-tint border border-primary/5 rounded-2xl p-6 text-left flex flex-col gap-4">
                 <h3 className="text-sm font-bold font-heading text-primary-dark flex items-center gap-2">
                   <Building className="w-4.5 h-4.5 text-primary" />
@@ -172,10 +172,10 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
               </div>
             </div>
 
-            {/* Right Column: Factual Credentials & Details */}
+            {/* Right Column: Credentials & Details */}
             <div className="lg:col-span-7 flex flex-col gap-8 text-left">
               
-              {/* Introduction & Factual Experience */}
+              {/* Introduction & Experience */}
               <div className="flex flex-col gap-3">
                 <h2 className="text-2xl font-bold font-heading text-primary-dark">
                   Clinical Profile

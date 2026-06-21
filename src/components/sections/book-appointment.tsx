@@ -33,7 +33,7 @@ export default function BookAppointment() {
             <div className="lg:col-span-5 flex flex-col justify-between gap-8 text-left border-b lg:border-b-0 lg:border-r border-gray-100 pb-8 lg:pb-0 lg:pr-10">
               <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-xs font-bold text-secondary uppercase tracking-wider block">
+                  <span className="text-xs font-bold text-secondary-dark uppercase tracking-wider block">
                     Caring for every little step
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-primary-dark font-heading leading-tight">

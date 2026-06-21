@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return {
     title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
-    description: `Factual clinical details about ${service.title}. Why it matters and what to expect during your child's visit at Baby Steps Clinic in Neelbad, Bhopal.`,
+    description: `Learn more about our ${service.title} services. Why it matters and what to expect during your child's visit at Baby Steps Clinic in Neelbad, Bhopal.`,
     alternates: {
       canonical: `https://www.babystepsclinic.in/services/${slug}`,
     },

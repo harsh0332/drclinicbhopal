@@ -9,8 +9,6 @@ import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 import { 
   Calendar, 
   Printer, 
-  ChevronRight, 
-  FileText, 
   ShieldAlert, 
   ArrowLeft,
   Info
@@ -330,15 +328,15 @@ export default function VaccinationSchedulePage() {
                           <span className="text-xs font-semibold text-gray-900 leading-relaxed">
                             {item.vaccines}
                           </span>
-                          <span className="text-[10px] text-muted-text font-mono">
+                          <span className="text-[10px] text-gray-700 font-mono">
                             Route: {item.type}
                           </span>
                         </div>
                       </td>
-                      <td className="py-4.5 px-6 align-top text-xs text-muted-text font-sans leading-relaxed">
+                      <td className="py-4.5 px-6 align-top text-xs text-gray-700 font-sans leading-relaxed">
                         {item.diseases}
                       </td>
-                      <td className="py-4.5 px-6 align-top text-[11px] text-muted-text font-sans leading-relaxed">
+                      <td className="py-4.5 px-6 align-top text-[11px] text-gray-700 font-sans leading-relaxed">
                         {item.notes}
                       </td>
                     </tr>
@@ -377,7 +375,7 @@ export default function VaccinationSchedulePage() {
               Schedule Your Child&apos;s Next Dose
             </h3>
             <p className="text-xs sm:text-sm text-muted-text font-sans leading-relaxed max-w-xl">
-              We maintain continuous WHO-compliant cold-chain logs to guarantee vaccine quality. Request a vaccination slot online.
+              We maintain continuous WHO-compliant cold-chain logs to ensure vaccine quality. Request a vaccination slot online.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-3 mt-2 w-full sm:w-auto">
               <Link

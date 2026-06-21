@@ -3,6 +3,7 @@
 import { siteConfig } from "@/lib/site-config";
 import { MapPin, Phone, Mail, Clock, ShieldAlert } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
   cardRise, 
@@ -16,7 +17,14 @@ export default function MapContact() {
 
 
   return (
-    <section id="contact" className="py-24 bg-surface-tint relative overflow-hidden">
+    <section id="contact" className="relative overflow-hidden pt-28 pb-32 bg-surface-tint">
+      {/* Top Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}
@@ -50,19 +58,32 @@ export default function MapContact() {
           {/* Left Block: Map Embed */}
           <motion.div 
             variants={cardRise}
-            className="lg:col-span-7 bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft aspect-[4/3] lg:aspect-auto min-h-[350px]"
+            className="lg:col-span-7 bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col min-h-[380px]"
           >
-            <iframe
-              src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic%20Neelbad%20Bhopal&t=&z=16&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Baby Steps Clinic Google Map Location"
-              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-350"
-            />
+            <div className="relative w-full flex-grow min-h-[300px]">
+              <iframe
+                src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic,%20Pooja%20Colony,%20Neelbad,%20Bhopal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Baby Steps Clinic Google Map Location"
+                className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-350"
+              />
+            </div>
+            <div className="p-4 bg-white border-t border-gray-100 flex items-center justify-between text-xs font-sans">
+              <span className="text-muted-text">Having trouble viewing the map?</span>
+              <a
+                href={siteConfig.googleMapsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-semibold text-primary hover:underline min-h-[44px] flex items-center"
+              >
+                Open in Google Maps &rarr;
+              </a>
+            </div>
           </motion.div>
 
           {/* Right Block: Details & Hours */}
@@ -137,6 +158,14 @@ export default function MapContact() {
         </motion.div>
 
       </div>
+
+      {/* Bottom Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-white"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

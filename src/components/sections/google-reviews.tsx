@@ -66,16 +66,11 @@ export default function GoogleReviews() {
             <>
               {/* Coming Soon / Honest Feedback Request */}
               <div className="flex flex-col gap-2 max-w-xl">
-                <div className="flex items-center justify-center md:justify-start gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent-sunshine/40 fill-transparent stroke-[1.8]" />
-                  ))}
-                </div>
                 <h3 className="text-lg font-bold font-heading text-primary-dark">
-                  Feedback helps other families
+                  Share your honest experience
                 </h3>
                 <p className="text-xs sm:text-sm text-muted-text font-sans leading-relaxed">
-                  Help local parents in Neelbad & South Bhopal find expert pediatric care. If you have visited our clinic, please consider sharing your honest experience.
+                  Help local parents in Neelbad &amp; South Bhopal find expert pediatric care. If you have visited our clinic, please consider sharing your feedback on Google Maps.
                 </p>
               </div>
 

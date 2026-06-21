@@ -116,7 +116,7 @@ function getPercentileBand(zScore: number): { band: string; description: string;
   if (zScore <= -2) {
     return { 
       band: "Below the 3rd Percentile", 
-      description: "Significantly below the median. This indicates a potential concern that should be reviewed factually with our pediatrician.",
+      description: "Significantly below the median. This indicates a potential concern that should be discussed gently with our pediatrician.",
       color: "text-red-600 bg-red-50 border-red-100" 
     };
   } else if (zScore > -2 && zScore <= -1.04) {
@@ -263,7 +263,7 @@ export default function GrowthCalculatorPage() {
             </h1>
             
             <p className="text-sm sm:text-base text-muted-text font-sans max-w-2xl leading-relaxed">
-              Factual weight, height, and BMI screening utility referencing WHO growth curves for infants and children up to 10 years of age.
+              A supportive weight, height, and BMI screening tool based on WHO growth curves for infants and children up to 10 years of age.
             </p>
           </div>
         </div>

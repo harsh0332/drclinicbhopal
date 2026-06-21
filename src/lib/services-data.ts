@@ -11,7 +11,8 @@ import {
   Activity,
   ShieldAlert,
   GraduationCap,
-  Milestone
+  Milestone,
+  LucideIcon
 } from "lucide-react";
 
 export interface ServiceFAQ {
@@ -34,15 +35,15 @@ export const servicesData: Record<string, ServiceItem> = {
   "vaccination-clinic": {
     title: "Vaccination Clinic",
     slug: "vaccination-clinic",
-    description: "IAP-aligned immunization schedules and WHO cold-chain standards to protect your child.",
+    description: "On-schedule, as-painless-as-possible immunisation with a properly maintained cold chain, so your child stays protected at every age.",
     whatItIs: "A dedicated immunizations service covering routine, catch-up, and seasonal vaccines from birth through adolescence. We follow recommendations set by the Indian Academy of Pediatrics (IAP) and WHO.",
     whyItMatters: "Immunization is the most effective clinical method to build immunity against life-threatening childhood conditions including polio, tuberculosis, measles, and hepatitis. Proper cold-chain storage preserves vaccine potency.",
     whatToExpect: [
-      "Factual screening of the child's current health and temperature check.",
+      "A gentle pre-vaccine health check and temperature screening.",
       "Review of immunization history card to verify the current schedule.",
       "Gentle vaccine administration by credentialed pediatricians.",
       "Recording of batch numbers and expiry details on the child's physical and digital health card.",
-      "Factual post-vaccination counseling regarding potential mild reactions (like low-grade fever or localized redness)."
+      "Clear, reassuring guidance on what to expect post-vaccination, including tips for managing mild fever or localized redness."
     ],
     faqs: [
       {
@@ -66,7 +67,7 @@ export const servicesData: Record<string, ServiceItem> = {
   "newborn-care": {
     title: "Newborn Care",
     slug: "newborn-care",
-    description: "Complete wellness monitoring, neonatal screening, and development support for infants.",
+    description: "Gentle first-days care for your baby — feeding, weight and jaundice checks, plus reassurance for new parents.",
     whatItIs: "Specialized pediatric monitoring and wellness examinations during the critical first 28 days of life (the neonatal period). We track initial reflexes, growth curves, and metabolic indicators.",
     whyItMatters: "The neonatal phase involves rapid physiological adaptations. Early clinical monitoring identifies feeding problems, neonatal jaundice, and metabolic conditions early to prevent complications.",
     whatToExpect: [
@@ -93,12 +94,12 @@ export const servicesData: Record<string, ServiceItem> = {
   "nicu-follow-up": {
     title: "NICU Follow-up",
     slug: "nicu-follow-up",
-    description: "Advanced developmental tracking and critical medical care post-NICU discharge.",
+    description: "Close, specialised follow-up for babies who needed intensive care, tracking growth and development after discharge.",
     whatItIs: "Specialized clinical surveillance for premature infants, low birth weight babies, or newborns discharged from neonatal intensive care units (NICUs).",
     whyItMatters: "NICU graduates have higher risks for developmental delays, feeding difficulties, and respiratory complications. Regular clinical follow-ups facilitate early physical and cognitive support.",
     whatToExpect: [
       "Detailed review of the NICU discharge summary and ongoing medications.",
-      "Factual assessment of growth using corrected gestational age charts.",
+      "Growth assessment adjusted for your baby's corrected age to ensure accurate tracking.",
       "Detailed neurological and developmental milestone screening.",
       "Support for transition to oral feeds and coordinate follow-up with pediatric subspecialists if required."
     ],
@@ -120,7 +121,7 @@ export const servicesData: Record<string, ServiceItem> = {
   "growth-monitoring": {
     title: "Growth Monitoring",
     slug: "growth-monitoring",
-    description: "Plotting height, weight, and head circumference against WHO reference percentiles.",
+    description: "Regular height, weight and head-circumference tracking against WHO charts to ensure your child is growing just right.",
     whatItIs: "Routine physical growth screening at scheduled intervals to plot weight-for-age, height-for-age, and head circumference against World Health Organization (WHO) growth charts.",
     whyItMatters: "Consistent plotting detects growth faltering, childhood obesity, and metabolic conditions early. Deviations from percentile curves are key clinical indicators of health shifts.",
     whatToExpect: [
@@ -147,14 +148,14 @@ export const servicesData: Record<string, ServiceItem> = {
   "child-nutrition": {
     title: "Child Nutrition",
     slug: "child-nutrition",
-    description: "Guidance on complementary feeding, balanced diet planning, and managing deficiencies.",
-    whatItIs: "Factual dietary counseling covering complementary feeding starts at 6 months, weaning practices, picky eating management, and correction of micronutrient deficiencies.",
+    description: "Practical, age-wise feeding and diet guidance — from starting solids to help with fussy eaters.",
+    whatItIs: "Expert dietary guidance covering healthy feeding habits starting at 6 months, weaning practices, picky eating, and managing micronutrient needs.",
     whyItMatters: "Adequate macro- and micronutrient intake is required for brain development, bone density, and immune function. Balanced nutrition counseling prevents stunting and wasting.",
     whatToExpect: [
       "Assessment of current dietary intake and milk feeding volumes.",
       "Clinical evaluation for signs of iron, calcium, or vitamin deficiencies.",
       "Custom, age-appropriate dietary guides detailing portion sizes and food groups.",
-      "Factual counseling for weaning transitions and food introduction protocols."
+      "Step-by-step guidance for weaning transitions and introducing new foods safely."
     ],
     faqs: [
       {
@@ -163,7 +164,7 @@ export const servicesData: Record<string, ServiceItem> = {
       },
       {
         q: "How do I handle picky eating habits in toddlers?",
-        a: "We offer factual behavioral guidelines, advising structured family mealtimes, avoidance of force-feeding, and gradual introduction of new foods without sugar/salt additives."
+        a: "We offer practical behavioral strategies, advising structured family mealtimes, avoidance of force-feeding, and gradual introduction of new foods without added sugar or salt."
       }
     ],
     related: [
@@ -174,7 +175,7 @@ export const servicesData: Record<string, ServiceItem> = {
   "development-assessment": {
     title: "Development Assessment",
     slug: "development-assessment",
-    description: "Screening of motor, cognitive, and social developmental skills.",
+    description: "Milestone and developmental checks to spot and support any delays early, with warmth and patience.",
     whatItIs: "Clinical screening of developmental milestones across gross motor, fine motor, speech/language, and personal-social domains.",
     whyItMatters: "Early identification of motor delays, language delays, or developmental delays allows for early intervention when brain plasticity is highest.",
     whatToExpect: [
@@ -201,19 +202,19 @@ export const servicesData: Record<string, ServiceItem> = {
   "breastfeeding-counseling": {
     title: "Breastfeeding Counseling",
     slug: "breastfeeding-counseling",
-    description: "Lactation techniques, latch correction, and supportive care for mothers.",
+    description: "Hands-on latch, supply and feeding support so breastfeeding feels easier for you and your baby.",
     whatItIs: "Clinical support for breastfeeding mothers covering latch techniques, positions, maternal nutrition, and managing lactation challenges.",
     whyItMatters: "Exclusive breastfeeding is recommended for the first 6 months. Lactation support resolves maternal discomfort (like sore nipples or breast engorgement) and ensures the infant receives adequate nutrition.",
     whatToExpect: [
       "Direct evaluation of the baby's latch and maternal breastfeeding positioning.",
       "Assessment of infant swallowing coordination during a feed.",
-      "Factual guidelines for managing breast engorgement or low supply.",
+      "Practical tips for managing breast engorgement or improving low supply.",
       "Instruction on safe expression and storage of breast milk for working mothers."
     ],
     faqs: [
       {
         q: "How do I know if my baby is getting enough breast milk?",
-        a: "Factual indicators include the baby passing urine at least 6-8 times in 24 hours, appearing satisfied after feeds, and showing steady weight-for-age chart gains."
+        a: "Reassuring signs include the baby passing urine at least 6-8 times in 24 hours, appearing settled after feeds, and showing steady growth on their chart."
       },
       {
         q: "What should I do for painful latching?",
@@ -228,13 +229,13 @@ export const servicesData: Record<string, ServiceItem> = {
   "fever-management": {
     title: "Fever Management",
     slug: "fever-management",
-    description: "Diagnosis and evidence-based protocols for pediatric fever care.",
+    description: "Clear guidance on managing your child's fever safely at home — and knowing exactly when to come in.",
     whatItIs: "Clinical evaluation, monitoring, and fever management guidelines for pediatric patients presenting with elevated temperatures.",
     whyItMatters: "Fever is an immune response, not a disease. Clinical evaluation identifies underlying viral or bacterial infections, ensuring safe management and avoiding self-medication risks.",
     whatToExpect: [
       "Measurement of temperature and clinical vitals monitoring.",
       "Examination of throat, ears, chest, and skin for infection foci.",
-      "Factual dosage guidelines for pediatric antipyretics based on weight (not age).",
+      "Precise dosage guidelines for pediatric fever-reducing medicines based on weight (not age).",
       "Counseling on warning signs and home hydration care protocols."
     ],
     faqs: [
@@ -255,7 +256,7 @@ export const servicesData: Record<string, ServiceItem> = {
   "allergy-asthma-care": {
     title: "Allergy & Asthma Care",
     slug: "allergy-asthma-care",
-    description: "Pediatric asthma monitoring, inhaler guidance, and allergy screening.",
+    description: "Diagnosis and ongoing care for allergies, wheezing and asthma, so your child breathes easy.",
     whatItIs: "Long-term monitoring and treatment guidelines for pediatric asthma, recurrent wheezing, allergic rhinitis, and skin allergies.",
     whyItMatters: "Uncontrolled asthma affects school attendance and lung development. Proper inhaler techniques and allergen management reduce acute exacerbations.",
     whatToExpect: [
@@ -282,7 +283,7 @@ export const servicesData: Record<string, ServiceItem> = {
   "adolescent-health": {
     title: "Adolescent Health",
     slug: "adolescent-health",
-    description: "Support for growth changes, pubertal development, and emotional wellness.",
+    description: "Confidential, caring support for teens — growth, puberty, nutrition and overall wellbeing.",
     whatItIs: "Clinical counseling and health checkups for adolescents (ages 10-18) covering growth spurts, pubertal changes, and lifestyle health.",
     whyItMatters: "Adolescence involves rapid physical and emotional transitions. Safe clinical guidance helps monitor thyroid changes, nutritional requirements, and emotional wellbeing.",
     whatToExpect: [
@@ -309,7 +310,7 @@ export const servicesData: Record<string, ServiceItem> = {
   "emergency-child-care": {
     title: "Emergency Child Care",
     slug: "emergency-child-care",
-    description: "Triage guidance and immediate clinic-hour support for acute illnesses.",
+    description: "Prompt attention for urgent childhood concerns, with clear advice on when a hospital visit is needed.",
     whatItIs: "Immediate clinical assessment, stabilization, and triage guidelines for acutely ill children presenting during clinic hours.",
     whyItMatters: "Accidents, severe breathing difficulty, or dehydration require rapid clinical response. Prompt triage helps stabilize children before safe referral to tertiary emergency rooms.",
     whatToExpect: [
@@ -336,11 +337,11 @@ export const servicesData: Record<string, ServiceItem> = {
   "parent-education": {
     title: "Parent Education",
     slug: "parent-education",
-    description: "Workshops and sessions on baby safety, nutrition, and screen time.",
-    whatItIs: "Factual guidance programs and counseling covering home baby-proofing, choke prevention, screen-time guidelines, and positive parenting practices.",
-    whyItMatters: "Empowered parents make safer homes. Factual pediatric counseling helps prevent accidental injuries and supports healthy cognitive development in early childhood.",
+    description: "Simple, trustworthy answers to everyday parenting questions, so you feel confident at home.",
+    whatItIs: "Practical guidance programs and counseling covering home baby-proofing, choke prevention, screen-time guidelines, and positive parenting practices.",
+    whyItMatters: "Empowered parents make safer homes. Reassuring pediatric counseling helps prevent accidental injuries and supports healthy cognitive development in early childhood.",
     whatToExpect: [
-      "Factual checklists for home safety and baby-proofing.",
+      "Easy-to-use checklists for home safety and baby-proofing.",
       "Instruction on basic child first-aid (choking rescue).",
       "WHO screen-time guidelines and sleep-hygiene recommendations.",
       "Q&A session discussing behavioral parenting strategies."
@@ -363,13 +364,13 @@ export const servicesData: Record<string, ServiceItem> = {
   "milestone-tracking": {
     title: "Milestone Tracking",
     slug: "milestone-tracking",
-    description: "Guidance on age-based motor, language, and social development.",
+    description: "Easy month-by-month tracking of your child's motor, speech and social milestones.",
     whatItIs: "Structured tracking of gross motor, fine motor, speech, and social skills at key checkup intervals (2, 4, 6, 9, 12, 18, and 24 months).",
     whyItMatters: "Milestone parameters are clinically validated ranges for child development. Documenting them ensures early developmental delays are addressed promptly.",
     whatToExpect: [
       "Evaluating age-specific tasks (such as rolling, picking objects, responding to sounds).",
       "Recording milestone achievements in the child's developmental file.",
-      "Factual advice on home exercises to encourage motor and cognitive skills.",
+      "Practical advice on home exercises to encourage motor and cognitive skills.",
       "Clinical screening for motor or speech delays."
     ],
     faqs: [
@@ -379,7 +380,7 @@ export const servicesData: Record<string, ServiceItem> = {
       },
       {
         q: "How can we encourage speech development at home?",
-        a: "Factual recommendations include talking and reading to your baby daily, responding to their vocalizations, and minimizing exposure to background screen noise."
+        a: "Simple recommendations include talking and reading to your baby daily, responding to their vocalizations, and minimizing exposure to background screen noise."
       }
     ],
     related: [
@@ -389,7 +390,7 @@ export const servicesData: Record<string, ServiceItem> = {
   }
 };
 
-export const serviceIconMap: Record<string, any> = {
+export const serviceIconMap: Record<string, LucideIcon> = {
   "vaccination-clinic": Syringe,
   "newborn-care": Baby,
   "nicu-follow-up": HeartPulse,

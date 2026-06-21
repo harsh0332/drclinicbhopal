@@ -1,274 +1,261 @@
 "use client";
 
-import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
+import { Calendar, Phone, MessageSquare } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
-import Star from "@/components/ui/decor/Star";
-import Sparkle from "@/components/ui/decor/Sparkle";
-import Balloon from "@/components/ui/decor/Balloon";
-import SoftBlob from "@/components/ui/decor/SoftBlob";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
-import { 
-  fadeRise, 
-  softScaleIn, 
-  staggerContainer, 
-  getInitial 
-} from "@/lib/motion";
-import { 
-  Calendar, 
-  Phone, 
-  MessageSquare, 
-  Star as StarIcon, 
-  ShieldAlert, 
-  GraduationCap, 
-  Award, 
-  Stethoscope, 
-  Clock, 
-  CheckCircle2 
-} from "lucide-react";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const [expYears, setExpYears] = useState(0);
 
-  // Parallax float configurations
-  const floatTransition = (duration: number) =>
-    shouldReduceMotion
-      ? {}
-      : {
-          y: [0, -10, 0],
-          transition: {
-            duration,
-            repeat: Infinity,
-            repeatType: "mirror" as const,
-            ease: "easeInOut" as const,
-          },
-        };
+  useEffect(() => {
+    const target = 15;
+    if (shouldReduceMotion) {
+      requestAnimationFrame(() => setExpYears(target));
+      return;
+    }
+    const duration = 1200;
+    const startTime = performance.now();
 
+    const animate = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+      setExpYears(Math.round(eased * target));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
+  }, [shouldReduceMotion]);
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F4F8FF] via-white to-[#E8F1FF] py-20 lg:py-28 select-none">
-      
-      {/* Background Graphic Accents (SVG Decor Kit Layer) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
-        
-        {/* Soft Organic Blob (Center background) */}
-        <div className="absolute top-[20%] left-[10%] opacity-40">
-          <SoftBlob width={350} height={350} colorClass="fill-[#F4F8FF]" />
+    <section
+      id="top"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24 select-none bg-[radial-gradient(1100px_620px_at_80%_-10%,rgba(52,199,164,0.12),transparent_60%),radial-gradient(1200px_720px_at_8%_-4%,rgba(46,108,246,0.12),transparent_58%),linear-gradient(180deg,#FFFFFF_0%,#F4F8FF_100%)]"
+    >
+      {/* Animated gradient mesh & background decor */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-[-12%] z-0 pointer-events-none bg-[radial-gradient(440px_340px_at_22%_30%,rgba(46,108,246,0.1),transparent_60%),radial-gradient(480px_360px_at_78%_22%,rgba(52,199,164,0.1),transparent_62%),radial-gradient(440px_380px_at_58%_82%,rgba(255,197,61,0.09),transparent_60%)] animate-[bsMesh_20s_ease-in-out_infinite] will-change-transform"
+      />
+
+      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
+        {/* Slow drifting clouds */}
+        <div className="absolute top-[12%] left-[8%] opacity-90 hidden md:block">
+          <Cloud className="w-20 h-8 fill-white/90 drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)] animate-[bsCloud_18s_ease-in-out_infinite]" />
+        </div>
+        <div className="absolute top-[60%] left-[44%] opacity-75 hidden md:block">
+          <Cloud className="w-16 h-7 fill-white/75 animate-[bsCloud_22s_ease-in-out_2s_infinite]" />
         </div>
 
-        {/* Slow drifting cloud left */}
-        <motion.div 
-          className="absolute top-12 left-[8%] opacity-35 hidden md:block"
-          animate={shouldReduceMotion ? {} : { x: [0, 20, 0] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <Cloud width={120} height={70} colorClass="fill-primary-dark/5" />
-        </motion.div>
+        {/* Twinkling stars */}
+        <div className="absolute top-[18%] right-[40%] text-[#FFC53D] text-xl animate-[bsTwinkle_4.5s_ease-in-out_infinite]">✦</div>
+        <div className="absolute top-[48%] left-[16%] text-[#34C7A4] text-sm animate-[bsTwinkle_5.5s_ease-in-out_0.8s_infinite]">✦</div>
+        <div className="absolute bottom-[18%] right-[10%] text-[#2E6CF6] text-base animate-[bsTwinkle_6s_ease-in-out_0.4s_infinite]">✦</div>
 
-        {/* Slow drifting cloud right */}
-        <motion.div 
-          className="absolute top-24 right-[12%] opacity-30 hidden md:block"
-          animate={shouldReduceMotion ? {} : { x: [0, -25, 0] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <Cloud width={160} height={90} colorClass="fill-secondary/10" />
-        </motion.div>
-
-        {/* Floating balloon left */}
-        <motion.div 
-          className="absolute bottom-16 left-[4%] opacity-45 hidden lg:block"
-          animate={floatTransition(6)}
-        >
-          <Balloon width={40} height={60} colorClass="fill-accent-coral" />
-        </motion.div>
-
-        {/* Pulsing stars and sparkles */}
-        <motion.div 
-          className="absolute top-[40%] left-[6%] opacity-60"
-          animate={shouldReduceMotion ? {} : { scale: [1, 1.15, 1], opacity: [0.5, 0.9, 0.5] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <Star width={20} height={20} colorClass="fill-accent-sunshine" />
-        </motion.div>
-
-        <motion.div 
-          className="absolute top-16 right-[45%] opacity-50"
-          animate={shouldReduceMotion ? {} : { scale: [1, 1.12, 1], opacity: [0.4, 0.8, 0.4] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        >
-          <Sparkle width={18} height={18} colorClass="fill-accent-sunshine" />
-        </motion.div>
-
-        {/* Brand Signature Motif - Faint Baby Footprints Trail */}
-        <div className="absolute top-[18%] left-[45%] opacity-15 rotate-[18deg] hidden xl:block">
-          <BabyFootprints width={75} height={55} colorClass="fill-primary" />
+        {/* Brand footprints trail */}
+        <div className="absolute top-[5%] left-[31%] opacity-[0.1] hidden lg:block">
+          <BabyFootprints className="w-32 h-16 fill-[#2E6CF6]" />
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Text & CTAs */}
-          <motion.div 
-            className="lg:col-span-7 flex flex-col gap-6 text-center lg:text-left"
-            variants={staggerContainer}
-            initial={getInitial(shouldReduceMotion)}
-            animate="visible"
-          >
-            
-            {/* Trust Badges Bar (Lucide + Token Colored Chips) */}
-            <motion.div 
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5"
-              variants={fadeRise}
-            >
-              <span className="bg-blue-50 border border-blue-100/50 text-primary-dark font-sans text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-2 shadow-sm">
-                <GraduationCap className="w-4 h-4 text-primary shrink-0" />
-                <span>DNB New Delhi</span>
-              </span>
-              <span className="bg-amber-50 border border-amber-100/50 text-amber-900 font-sans text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-2 shadow-sm">
-                <Award className="w-4 h-4 text-amber-600 shrink-0" />
-                <span>PGPN Boston (USA)</span>
-              </span>
-              <span className="bg-[#EAFBF7] border border-[#34C7A4]/20 text-[#163C7A] font-sans text-xs font-semibold px-3.5 py-2 rounded-full flex items-center gap-2 shadow-sm">
-                <Stethoscope className="w-4 h-4 text-[#34C7A4] shrink-0" />
-                <span>Rainbow &amp; Apollo SAGE Consultants</span>
-              </span>
-            </motion.div>
+          {/* Left Column: Headline, Sub-headline, CTAs, Stats */}
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 bg-[#2E6CF6]/80 border border-[#2E6CF6]/15 text-[#163C7A] font-semibold text-xs py-1.5 px-4 rounded-full mb-6 bg-white/75 backdrop-blur-xs">
+              <span className="w-2 h-2 rounded-full bg-[#34C7A4] shadow-[0_0_0_4px_rgba(52,199,164,0.18)]" />
+              <span>Newborn &amp; Child Specialists · Neelbad, Bhopal</span>
+            </div>
 
             {/* Headline */}
-            <motion.h1 
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primary-dark leading-[1.12] font-heading"
-              variants={fadeRise}
-            >
-              Gentle, expert care for your newborn &amp; child — <span className="text-primary">in Neelbad</span>
-            </motion.h1>
+            <h1 className="font-heading font-bold text-[#163C7A] text-4xl sm:text-5xl lg:text-6xl leading-[1.07] tracking-tight mb-5 text-balance">
+              Gentle, expert care for your little one.
+            </h1>
 
-            {/* Sub-headline / Factual Credentials */}
-            <motion.p 
-              className="text-base sm:text-lg text-muted-text max-w-2xl mx-auto lg:mx-0 leading-relaxed font-sans"
-              variants={fadeRise}
-            >
-              Led by husband-wife specialist duo: <strong className="text-gray-900 font-semibold">Dr. Sudarshan Dev Arya</strong> (MBBS, DCH, DNB New Delhi, PGPN Boston) &amp; <strong className="text-gray-900 font-semibold">Dr. Manisha Bangarwa Arya</strong> (MBBS, DNB, PGPN Boston, Neonatology Fellowship).
-            </motion.p>
+            {/* Sub-headline */}
+            <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-[#5A6B85] mb-6 max-w-2xl text-pretty font-sans">
+              A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — DNB (New Delhi), PGPN (Boston, USA) trained pediatricians, consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital, now caring for families in Neelbad.
+            </p>
 
-            {/* CTAs Actions */}
-            <motion.div 
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-2"
-              variants={fadeRise}
-            >
-              {/* Primary Book CTA */}
-              <Link
+            {/* Credential Tags */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
+              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
+                DNB · New Delhi
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#34C7A4]" />
+                PGPN · Boston, USA
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
+                Rainbow &amp; Apollo SAGE Consultants
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#34C7A4]" />
+                Neonatology Fellowship
+              </span>
+            </div>
+
+            {/* Action CTAs */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto">
+              <a
                 href="#appointment"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white text-base font-semibold py-4 px-8 rounded-2xl shadow-md hover:bg-primary-dark hover:shadow-lg active:scale-[0.98] transition-all motion-reduce:hover:scale-100 motion-reduce:active:scale-100 min-h-[48px] cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2E6CF6] text-white font-bold text-base py-3.5 px-6 rounded-full shadow-[0_10px_26px_rgba(46,108,246,0.34)] hover:shadow-lg transition-all active:scale-[0.98] min-h-[48px]"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book Appointment</span>
-              </Link>
-
-              {/* Call CTA */}
+              </a>
               <a
                 href={siteConfig.phoneLink}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white border border-gray-200 text-primary-dark text-base font-semibold py-4 px-8 rounded-2xl shadow-soft hover:bg-gray-50 active:scale-[0.98] transition-all motion-reduce:hover:scale-100 motion-reduce:active:scale-100 min-h-[48px] cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-[#163C7A] font-bold text-base py-3.5 px-6 rounded-full border border-[#163C7A]/16 shadow-[0_4px_16px_rgba(22,60,122,0.07)] hover:bg-[#F4F8FF] transition-all min-h-[48px]"
               >
-                <Phone className="w-4 h-4 text-primary" />
-                <span>Call Clinic</span>
+                <Phone className="w-5 h-5 text-[#2E6CF6]" />
+                <span>Call {siteConfig.phone}</span>
               </a>
-
-              {/* WhatsApp CTA */}
               <a
                 href={siteConfig.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-green-50 border border-green-200 text-green-700 text-base font-semibold py-4 px-8 rounded-2xl hover:bg-green-100 active:scale-[0.98] transition-all motion-reduce:hover:scale-100 motion-reduce:active:scale-100 min-h-[48px] cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2FB86B]/10 text-[#1c8b50] font-bold text-base py-3.5 px-5 rounded-full border border-[#2FB86B]/28 hover:bg-[#2FB86B]/15 transition-all min-h-[48px]"
               >
-                <MessageSquare className="w-4 h-4 text-green-500 fill-green-500" />
+                <MessageSquare className="w-5 h-5 fill-[#2FB86B] stroke-none" />
                 <span>WhatsApp</span>
               </a>
-            </motion.div>
+            </div>
 
-            {/* Honest Trust Block / Reviews Toggle */}
-            <motion.div 
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2.5 mt-2 text-sm"
-              variants={fadeRise}
-            >
-              {siteConfig.showGoogleRating ? (
-                <a
-                  href={siteConfig.googleMapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 text-muted-text hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 rounded-lg px-2 py-0.5"
-                >
-                  <StarIcon className="w-4 h-4 text-accent-sunshine fill-accent-sunshine" />
-                  <span className="font-semibold text-gray-900">5.0</span> Rating on Google Reviews
-                </a>
-              ) : (
-                <div className="flex items-center gap-1.5 text-muted-text bg-white/70 border border-primary/5 py-1.5 px-3.5 rounded-full text-xs font-semibold shadow-sm">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-secondary shrink-0" />
-                  <span>Trusted by families in Neelbad &amp; South Bhopal</span>
-                </div>
-              )}
+            {/* Stats list */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-4 mt-8 pt-6 border-t border-[#163C7A]/10 w-full">
+              <div className="flex flex-col text-left">
+                <span className="font-heading font-extrabold text-[#163C7A] text-lg">{expYears}+ yrs</span>
+                <span className="text-[11.5px] text-[#5A6B85] font-sans">Combined experience</span>
+              </div>
+              <div className="hidden sm:block w-[1px] h-9 bg-[#163C7A]/10" />
+              <div className="flex flex-col text-left">
+                <span className="font-heading font-bold text-[#163C7A] text-sm">Rainbow &amp; Apollo SAGE</span>
+                <span className="text-[11.5px] text-[#5A6B85] font-sans">Hospital consultants</span>
+              </div>
+              <div className="hidden sm:block w-[1px] h-9 bg-[#163C7A]/10" />
+              <div className="flex flex-col text-left">
+                <span className="font-heading font-bold text-[#163C7A] text-sm">South Bhopal</span>
+                <span className="text-[11.5px] text-[#5A6B85] font-sans">Neelbad · Kolar · Bawadia</span>
+              </div>
+            </div>
+          </div>
 
-              <Link
-                href="#contact"
-                className="flex items-center gap-1.5 text-emergency font-semibold hover:underline"
-              >
-                <ShieldAlert className="w-4 h-4" />
-                Emergency Child Care Info
-              </Link>
-            </motion.div>
-
-          </motion.div>
-
-          {/* Right Column: Hero Image with Glassmorphism Cards */}
-          <motion.div 
-            className="lg:col-span-5 relative flex items-center justify-center"
-            variants={softScaleIn}
-            initial={getInitial(shouldReduceMotion)}
-            animate="visible"
-          >
-            
-            {/* Background Circle */}
-            <div className="absolute w-[85%] h-[85%] bg-primary/5 rounded-full blur-3xl z-0" />
+          {/* Right Column: Hero Visual Stack */}
+          <div className="lg:col-span-5 relative flex flex-col items-center justify-center w-full min-h-[480px]">
+            {/* Rainbow Arc Backdrop */}
+            <div className="absolute top-[-18px] left-1/2 -translate-x-1/2 w-[340px] h-[180px] opacity-45 z-0 pointer-events-none">
+              <svg width="340" height="180" viewBox="0 0 340 180" fill="none" strokeLinecap="round">
+                <path d="M30 170 A140 140 0 0 1 310 170" stroke="#FF8A7A" strokeWidth="10" />
+                <path d="M50 170 A120 120 0 0 1 290 170" stroke="#FFC53D" strokeWidth="10" />
+                <path d="M70 170 A100 100 0 0 1 270 170" stroke="#34C7A4" strokeWidth="10" />
+                <path d="M90 170 A80 80 0 0 1 250 170" stroke="#2E6CF6" strokeWidth="10" />
+              </svg>
+            </div>
 
             {/* Core Image Container */}
-            <div className="relative z-10 w-full max-w-md lg:max-w-none bg-white/30 backdrop-blur-md p-4 rounded-3xl border border-white/50 shadow-soft">
-              <div className="overflow-hidden rounded-2xl aspect-[4/3] relative">
-                <ClinicImage
-                  src="/images/hero/hero-1.jpg"
-                  alt="Dr. Manisha checking baby with stethoscope at Baby Steps Clinic"
-                  width={600}
-                  height={450}
-                  className="w-full h-full object-cover select-none"
-                  priority
-                />
-              </div>
+            <div className="relative z-10 w-[300px] aspect-[4/5] rounded-[26px] overflow-hidden border-6 border-white shadow-[0_26px_60px_rgba(22,60,122,0.18)] bg-gradient-to-tr from-[#EAF1FF] to-[#F4FBF8]">
+              <ClinicImage
+                src="/images/hero/hero-1.jpg"
+                alt="Gentle check-up at Baby Steps Clinic Bhopal"
+                fill
+                sizes="300px"
+                className="object-cover"
+                priority
+              />
+            </div>
 
-              {/* Floating Badge (Glassmorphism overlay - Bottom Left) */}
-              <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-md border border-primary/10 py-3.5 px-4 rounded-2xl shadow-soft flex items-center gap-3 z-20">
-                <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary font-bold text-lg select-none">
-                  👶
+            {/* Overlapping doctor portraits */}
+            <div className="absolute z-20 left-[-6px] bottom-[30px] flex gap-2.5">
+              {/* Dr. Sudarshan */}
+              <div className="w-[118px] aspect-[3/4] rounded-2xl overflow-hidden border-4 border-white shadow-[0_16px_36px_rgba(22,60,122,0.18)] relative bg-gradient-to-br from-[#EAF1FF] to-white flex flex-col justify-end p-2 text-center">
+                <div className="absolute inset-0 z-0">
+                  <ClinicImage
+                    src="/images/doctors/dr-sudarshan-dev-arya.jpg"
+                    alt="Dr. Sudarshan Dev Arya"
+                    fill
+                    sizes="110px"
+                    className="object-cover"
+                  />
                 </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-[9px] text-muted-text font-sans font-bold uppercase tracking-wider">Newborn Specialty</span>
-                  <span className="text-sm font-semibold text-primary-dark font-heading leading-tight">Neonatology Fellowship</span>
+                <div className="relative z-10 bg-white/95 backdrop-blur-xs py-1 px-1.5 rounded-lg border border-gray-100">
+                  <span className="font-mono text-[9px] font-bold text-[#2E6CF6] tracking-tight leading-none block">DR. SUDARSHAN</span>
                 </div>
               </div>
-
-              {/* Floating Hours Badge (Glassmorphism overlay - Top Right) */}
-              <div className="absolute -top-4 -right-4 bg-white/95 backdrop-blur-md border border-primary/10 py-2.5 px-3.5 rounded-2xl shadow-soft flex items-center gap-2.5 z-20">
-                <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0 select-none">
-                  <Clock className="w-4 h-4" />
+              {/* Dr. Manisha */}
+              <div className="w-[118px] aspect-[3/4] rounded-2xl overflow-hidden border-4 border-white shadow-[0_16px_36px_rgba(22,60,122,0.18)] relative bg-gradient-to-br from-[#EAFBF6] to-white flex flex-col justify-end p-2 text-center">
+                <div className="absolute inset-0 z-0">
+                  <ClinicImage
+                    src="/images/doctors/dr-manisha-bangarwa-arya.jpg"
+                    alt="Dr. Manisha Bangarwa Arya"
+                    fill
+                    sizes="110px"
+                    className="object-cover"
+                  />
                 </div>
-                <div className="flex flex-col text-left">
-                  <span className="text-[8px] text-muted-text font-sans font-bold uppercase tracking-wider">Operational Hours</span>
-                  <span className="text-xs font-bold text-primary-dark font-heading leading-none mt-0.5">Open Mon – Sat</span>
+                <div className="relative z-10 bg-white/95 backdrop-blur-xs py-1 px-1.5 rounded-lg border border-gray-100">
+                  <span className="font-mono text-[9px] font-bold text-[#1FA98A] tracking-tight leading-none block">DR. MANISHA</span>
                 </div>
               </div>
             </div>
 
-          </motion.div>
+            {/* Floating Glass Cards */}
+            {/* Card 1: Hours */}
+            <div className="absolute z-30 top-[50px] left-[-14px] bg-white/75 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-3 flex items-center gap-2.5 animate-[bsFloatA_5.6s_ease-in-out_infinite] pointer-events-none">
+              <div className="w-8 h-8 rounded-lg bg-[#34C7A4]/15 flex items-center justify-center">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA98A" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 2" />
+                </svg>
+              </div>
+              <div className="leading-tight text-left">
+                <div className="text-[12.5px] font-bold text-[#163C7A]">Open Mon–Sat</div>
+                <div className="text-[10.5px] text-[#5A6B85]">10–1 &amp; 5–8 · by appt</div>
+              </div>
+            </div>
+
+            {/* Card 2: Vaccination */}
+            <div className="absolute z-30 top-[188px] right-[-16px] bg-white/75 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-3 flex items-center gap-2.5 animate-[bsFloatB_6.4s_ease-in-out_0.6s_infinite] pointer-events-none">
+              <div className="w-8 h-8 rounded-lg bg-[#2E6CF6]/12 flex items-center justify-center">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E6CF6" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+              </div>
+              <div className="leading-tight text-left">
+                <div className="text-[12.5px] font-bold text-[#163C7A]">Vaccination</div>
+                <div className="text-[10.5px] text-[#5A6B85]">Proper cold-chain</div>
+              </div>
+            </div>
+
+            {/* Card 3: Duo Credentials */}
+            <div className="absolute z-30 bottom-[-10px] right-[-8px] bg-white/80 backdrop-blur-md border border-white/70 shadow-[0_16px_36px_rgba(22,60,122,0.18)] rounded-2xl p-3 max-w-[210px] flex flex-col gap-2 animate-[bsFloatA_7s_ease-in-out_1.1s_infinite] pointer-events-none">
+              <div className="flex items-center gap-1.5 text-left">
+                <div className="flex -space-x-2.5">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2E6CF6] to-[#5b8cff] flex items-center justify-center text-white font-heading font-bold text-xs border-2 border-white select-none">SA</div>
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#34C7A4] to-[#7ee0c7] flex items-center justify-center text-white font-heading font-bold text-xs border-2 border-white select-none">MA</div>
+                </div>
+                <span className="font-heading font-bold text-[11px] text-[#163C7A] leading-tight block">
+                  Two specialists,<br />one clinic
+                </span>
+              </div>
+              <div className="text-[10.5px] text-[#5A6B85] leading-normal text-left">
+                DNB New Delhi · PGPN Boston · Neonatology fellowship
+              </div>
+            </div>
+
+          </div>
 
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { use } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -103,7 +102,7 @@ export default async function LocalityPage({ params }: LocalityPageProps) {
                 </p>
               </div>
 
-              {/* Factual Why Choose Section */}
+              {/* Why Choose Section */}
               <div className="flex flex-col gap-4 border-t border-gray-100 pt-6">
                 <h3 className="text-lg font-bold font-heading text-primary-dark">
                   Why Parents in {area.name} Choose Baby Steps
@@ -157,17 +156,30 @@ export default async function LocalityPage({ params }: LocalityPageProps) {
             <div className="lg:col-span-5 flex flex-col gap-6">
               
               {/* Map Embed */}
-              <div className="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft aspect-[4/3] min-h-[250px]">
-                <iframe
-                  src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic%20Neelbad%20Bhopal&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  title="Google Map location for Baby Steps Clinic"
-                  className="w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
-                />
+              <div className="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col min-h-[300px]">
+                <div className="relative w-full flex-grow min-h-[220px]">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic,%20Pooja%20Colony,%20Neelbad,%20Bhopal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    title="Google Map location for Baby Steps Clinic"
+                    className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+                <div className="p-3 bg-white border-t border-gray-100 flex items-center justify-between text-xs font-sans">
+                  <span className="text-muted-text">Can&apos;t see the map?</span>
+                  <a
+                    href={siteConfig.googleMapsLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-semibold text-primary hover:underline min-h-[44px] flex items-center"
+                  >
+                    Open in Google Maps &rarr;
+                  </a>
+                </div>
               </div>
 
               {/* Consultation Booking Box */}

@@ -1,15 +1,26 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
 import { siteConfig } from "@/lib/site-config";
-import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schemas";
-import { Calendar, Clock, BookOpen, ArrowRight, ShieldCheck } from "lucide-react";
+import { getBreadcrumbSchema } from "@/lib/schemas";
+import { Calendar, Clock, ArrowRight, ShieldCheck } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Pediatric Education Blog | Baby Steps Clinic",
-  description: "Factual, evidence-based health guidance and parenting articles authored by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
+  description: "Trustworthy health guidance and parenting articles written by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
+  alternates: {
+    canonical: "https://www.babystepsclinic.in/blog",
+  },
+  openGraph: {
+    title: "Pediatric Education Blog | Baby Steps Clinic",
+    description: "Trustworthy health guidance and parenting articles written by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
+    url: "https://www.babystepsclinic.in/blog",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
 };
 
 export default function BlogHubPage() {
@@ -52,7 +63,7 @@ export default function BlogHubPage() {
               Pediatric &amp; Newborn Education Blog
             </h1>
             <p className="text-sm sm:text-base text-muted-text font-sans max-w-2xl leading-relaxed">
-              Factual, evidence-based articles written and reviewed by our pediatric specialists. We focus on child development, immunizations, and newborn care.
+              Trustworthy guidance and helpful parenting tips written and reviewed by our pediatric specialists. We focus on child development, immunizations, and newborn care.
             </p>
           </div>
         </div>

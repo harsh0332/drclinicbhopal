@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 import { 
-  Compass, 
   ArrowLeft, 
   ShieldAlert, 
   Calendar,

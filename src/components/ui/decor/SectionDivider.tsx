@@ -15,7 +15,7 @@ export default function SectionDivider({
 }: SectionDividerProps) {
   // SVG paths based on type and position
   let dPath = "";
-  let viewBox = "0 0 1440 100";
+  const viewBox = "0 0 1440 100";
 
   if (type === "wave") {
     if (position === "bottom") {
