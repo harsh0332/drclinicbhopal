@@ -5,8 +5,7 @@ import { useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Calendar, Phone, MessageSquare } from "lucide-react";
-import Cloud from "@/components/ui/decor/Cloud";
-import BabyFootprints from "@/components/ui/decor/BabyFootprints";
+import HeroBackground from "./hero-background";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -38,33 +37,16 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24 select-none bg-[radial-gradient(1100px_620px_at_80%_-10%,rgba(52,199,164,0.06),transparent_60%),radial-gradient(1200px_720px_at_8%_-4%,rgba(46,108,246,0.05),transparent_58%)]"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24 select-none bg-transparent"
     >
-      {/* Animated gradient mesh & background decor */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-[-12%] z-0 pointer-events-none bg-[radial-gradient(440px_340px_at_22%_30%,rgba(46,108,246,0.1),transparent_60%),radial-gradient(480px_360px_at_78%_22%,rgba(52,199,164,0.1),transparent_62%),radial-gradient(440px_380px_at_58%_82%,rgba(255,197,61,0.09),transparent_60%)] animate-[bsMesh_20s_ease-in-out_infinite] will-change-transform"
+      {/* Animated Canvas Background */}
+      <HeroBackground />
+
+      {/* Readability gradient overlay between background animation and content */}
+      <div 
+        aria-hidden="true" 
+        className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(244,248,255,0.95)_0%,rgba(244,248,255,0.85)_50%,rgba(244,248,255,0.4)_75%,transparent_100%)] md:bg-[linear-gradient(90deg,#F4F8FF_0%,rgba(244,248,255,0.92)_40%,rgba(244,248,255,0.4)_65%,transparent_100%)] pointer-events-none"
       />
-
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none z-0">
-        {/* Slow drifting clouds */}
-        <div className="absolute top-[12%] left-[8%] opacity-90 hidden md:block">
-          <Cloud className="w-20 h-8 fill-white/90 drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)] animate-[bsCloud_18s_ease-in-out_infinite]" />
-        </div>
-        <div className="absolute top-[60%] left-[44%] opacity-75 hidden md:block">
-          <Cloud className="w-16 h-7 fill-white/75 animate-[bsCloud_22s_ease-in-out_2s_infinite]" />
-        </div>
-
-        {/* Twinkling stars */}
-        <div className="absolute top-[18%] right-[40%] text-[#FFC53D] text-xl animate-[bsTwinkle_4.5s_ease-in-out_infinite]">✦</div>
-        <div className="absolute top-[48%] left-[16%] text-[#34C7A4] text-sm animate-[bsTwinkle_5.5s_ease-in-out_0.8s_infinite]">✦</div>
-        <div className="absolute bottom-[18%] right-[10%] text-[#2E6CF6] text-base animate-[bsTwinkle_6s_ease-in-out_0.4s_infinite]">✦</div>
-
-        {/* Brand footprints trail */}
-        <div className="absolute top-[5%] left-[31%] opacity-[0.1] hidden lg:block">
-          <BabyFootprints className="w-32 h-16 fill-[#2E6CF6]" />
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
