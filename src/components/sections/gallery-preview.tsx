@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
   softScaleIn, 
@@ -94,7 +95,14 @@ export default function GalleryPreview() {
   }, [selectedIdx]);
 
   return (
-    <section id="gallery" className="py-24 bg-white relative overflow-hidden select-none">
+    <section id="gallery" className="relative overflow-hidden pt-28 pb-32 bg-[#2E6CF6]/[0.03] select-none">
+      {/* Top Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}
@@ -235,6 +243,13 @@ export default function GalleryPreview() {
           </motion.div>
         )}
       </AnimatePresence>
+      {/* Bottom Wave Divider */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-white"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

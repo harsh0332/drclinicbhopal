@@ -5,6 +5,8 @@ import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Award, Building, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
+import SoftBlob from "@/components/ui/decor/SoftBlob";
 import { 
   fadeRise, 
   cardRise, 
@@ -19,7 +21,19 @@ export default function MeetDoctors() {
 
 
   return (
-    <section id="doctors" className="relative overflow-hidden py-24 bg-white">
+    <section id="doctors" className="relative overflow-hidden pt-28 pb-32 bg-[#34C7A4]/[0.03]">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
+
+      {/* Decorative SoftBlob behind the grid */}
+      <div className="absolute left-[3%] top-[25%] opacity-[0.03] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <SoftBlob className="w-[450px] h-[450px] fill-[#34C7A4]" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BookOpen, Calendar, Clock, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
+import SoftBlob from "@/components/ui/decor/SoftBlob";
 import { 
   fadeRise, 
   cardRise, 
@@ -18,9 +19,9 @@ export default function LatestArticles() {
 
   const articles = [
     {
-      title: "Essential Immunization Guide: Protecting Your Newborn",
-      excerpt: "An educational overview of the primary vaccination schedule recommended by the IAP during the first six months.",
-      date: "Jun 15, 2026",
+      title: "Essential Baby Vaccination Guide for Indian Parents",
+      excerpt: "A complete overview of mandated immunizations, IAP guidelines, timeline charts, and side-effect management for newborns.",
+      date: "Jun 12, 2026",
       readTime: "5 min read",
       category: "Vaccination",
       author: "Dr. Sudarshan Dev Arya",
@@ -44,7 +45,20 @@ export default function LatestArticles() {
   ];
 
   return (
-    <section id="blog" className="relative overflow-hidden pt-20 pb-32 bg-surface-tint">
+    <section id="blog" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
+
+      {/* Decorative SoftBlob behind the grid */}
+      <div className="absolute left-[3%] bottom-[10%] opacity-[0.03] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <SoftBlob className="w-[400px] h-[400px] fill-[#2E6CF6]" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         {/* Section Heading */}

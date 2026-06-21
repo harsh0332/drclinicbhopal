@@ -38,7 +38,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24 select-none bg-[radial-gradient(1100px_620px_at_80%_-10%,rgba(52,199,164,0.12),transparent_60%),radial-gradient(1200px_720px_at_8%_-4%,rgba(46,108,246,0.12),transparent_58%),linear-gradient(180deg,#FFFFFF_0%,#F4F8FF_100%)]"
+      className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-16 lg:py-24 select-none bg-[radial-gradient(1100px_620px_at_80%_-10%,rgba(52,199,164,0.06),transparent_60%),radial-gradient(1200px_720px_at_8%_-4%,rgba(46,108,246,0.05),transparent_58%)]"
     >
       {/* Animated gradient mesh & background decor */}
       <div

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ShieldCheck, Calendar, ThermometerSnowflake } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
+import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 import { 
   fadeRise, 
   staggerContainer, 
@@ -24,7 +25,12 @@ export default function VaccineTeaser() {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-20 pb-32 bg-surface-tint">
+    <section className="relative overflow-hidden pt-20 pb-32 bg-transparent">
+      {/* Decorative BabyFootprints trail bridging Services and Vaccine Teaser */}
+      <div className="absolute left-[8%] top-[5%] opacity-[0.05] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(15deg)" }}>
+        <BabyFootprints className="w-24 h-12 fill-primary" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <motion.div 
           variants={staggerContainer}

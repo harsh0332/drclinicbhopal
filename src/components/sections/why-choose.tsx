@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Users, ShieldCheck, HeartHandshake, Clock, ThermometerSnowflake, BookOpen } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import Star from "@/components/ui/decor/Star";
+import Sparkle from "@/components/ui/decor/Sparkle";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
@@ -70,7 +71,7 @@ export default function WhyChoose() {
 
 
   return (
-    <section id="about" className="relative overflow-hidden pt-28 pb-32 bg-surface-tint">
+    <section id="about" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
       {/* Top Wave Divider */}
       <SectionDivider
         type="wave"
@@ -86,6 +87,11 @@ export default function WhyChoose() {
       {/* Decorative Star */}
       <div className="absolute right-[5%] bottom-[12%] opacity-[0.06] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Star className="w-14 h-14 fill-accent-sunshine animate-pulse motion-reduce:animate-none" style={{ animationDuration: "4s" }} />
+      </div>
+
+      {/* Decorative Sparkle */}
+      <div className="absolute left-[5%] bottom-[18%] opacity-[0.05] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <Sparkle className="w-10 h-10 fill-secondary" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

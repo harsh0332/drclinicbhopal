@@ -5,6 +5,7 @@ import { Compass, CheckCircle2 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
 import Star from "@/components/ui/decor/Star";
+import RainbowArc from "@/components/ui/decor/RainbowArc";
 import { 
   fadeRise, 
   cardRise, 
@@ -42,7 +43,11 @@ export default function MilestoneTeaser() {
 
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-36 bg-surface-tint">
+    <section className="relative overflow-hidden pt-28 pb-36 bg-transparent">
+      {/* Decorative RainbowArc accent */}
+      <div className="absolute right-[4%] top-[14%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(-10deg)" }}>
+        <RainbowArc className="w-32 h-20" />
+      </div>
       {/* Top Wave Divider */}
       <SectionDivider
         type="wave"

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { TrendingUp, Scale, Ruler, Compass } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import ClinicImage from "@/components/ui/clinic-image";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
+import Cloud from "@/components/ui/decor/Cloud";
 import { 
   fadeRise, 
   staggerContainer, 
@@ -16,8 +18,21 @@ export default function GrowthTeaser() {
 
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FFC53D]/[0.03]">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
+
+      {/* Decorative Cloud accent */}
+      <div className="absolute right-[4%] top-[10%] opacity-[0.03] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <Cloud className="w-56 h-36 fill-primary" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <motion.div 
           variants={staggerContainer}
           initial={getInitial(shouldReduceMotion)}

@@ -14,7 +14,7 @@ export default function GoogleReviews() {
   const showGoogleRating = siteConfig.showGoogleRating;
 
   return (
-    <section className="py-16 bg-white border-y border-gray-100 relative overflow-hidden">
+    <section className="py-16 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         <motion.div
@@ -22,7 +22,7 @@ export default function GoogleReviews() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={fadeRise}
-          className="max-w-4xl mx-auto bg-surface-tint border border-primary/5 rounded-3xl p-8 sm:p-10 shadow-soft flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
+          className="max-w-4xl mx-auto bg-white border border-gray-150 rounded-3xl p-8 sm:p-10 shadow-soft flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
         >
           {showGoogleRating ? (
             <>

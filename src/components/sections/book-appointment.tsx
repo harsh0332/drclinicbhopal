@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import AppointmentForm from "@/components/ui/appointment-form";
 import { CheckCircle2, ShieldCheck, Phone } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 
   fadeRise, 
   getInitial, 
@@ -14,7 +15,14 @@ export default function BookAppointment() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="appointment" className="py-24 bg-white relative overflow-hidden">
+    <section id="appointment" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         
         <motion.div
@@ -108,6 +116,13 @@ export default function BookAppointment() {
         </motion.div>
 
       </div>
+      {/* Bottom Wave Divider to transition to footer */}
+      <SectionDivider
+        type="wave"
+        position="bottom"
+        colorClass="fill-[#163C7A]"
+        className="absolute bottom-0 left-0 right-0 z-10"
+      />
     </section>
   );
 }

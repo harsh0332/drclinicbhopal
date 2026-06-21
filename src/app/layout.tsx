@@ -5,6 +5,7 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import MobileStickyBar from "@/components/layout/mobile-sticky-bar";
 import WhatsAppFloating from "@/components/layout/whatsapp-floating";
+import AmbientBackground from "@/components/layout/ambient-background";
 import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
@@ -46,7 +47,8 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${baloo2.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-white text-gray-900 pb-20 lg:pb-0">
+      <body className="min-h-full flex flex-col font-sans bg-transparent text-gray-900 pb-20 lg:pb-0">
+        <AmbientBackground />
         {/* Skip to content link for keyboard & screen-reader users */}
         <a
           href="#main-content"

@@ -14,6 +14,7 @@ import {
 } from "@/lib/motion";
 import { servicesData } from "@/lib/services-data";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
+import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 
 // Generates slug from service name
@@ -75,7 +76,7 @@ export default function ServicesGrid() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="services" className="relative overflow-hidden pt-28 pb-32 bg-gradient-to-tr from-[#F4F8FF] to-[#EAFBF7]">
+    <section id="services" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -83,6 +84,11 @@ export default function ServicesGrid() {
         colorClass="fill-white"
         className="absolute top-0 left-0 right-0 z-10"
       />
+
+      {/* Decorative BabyFootprints trail bridging Services and Vaccine Teaser */}
+      <div className="absolute right-[8%] bottom-[4%] opacity-[0.05] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <BabyFootprints className="w-24 h-12 fill-primary" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -181,11 +187,11 @@ export default function ServicesGrid() {
 
       </div>
 
-      {/* Bottom Curve/Wave Divider to transition to surface-tint VaccineTeaser */}
+      {/* Bottom Curve/Wave Divider to transition to transparent VaccineTeaser */}
       <SectionDivider
         type="wave"
         position="bottom"
-        colorClass="fill-surface-tint"
+        colorClass="fill-white"
         className="absolute bottom-0 left-0 right-0 z-10"
       />
     </section>

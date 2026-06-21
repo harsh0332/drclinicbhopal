@@ -50,7 +50,7 @@ export default function FAQs() {
 
 
   return (
-    <section id="faqs" className="relative overflow-hidden pt-28 pb-32 bg-gradient-to-tr from-[#F4F8FF] to-[#EAFBF7]">
+    <section id="faqs" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -177,7 +177,7 @@ export default function FAQs() {
       <SectionDivider
         type="wave"
         position="bottom"
-        colorClass="fill-surface-tint"
+        colorClass="fill-white"
         className="absolute bottom-0 left-0 right-0 z-10"
       />
     </section>

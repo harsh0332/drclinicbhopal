@@ -4,6 +4,8 @@ import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import ClinicImage from "@/components/ui/clinic-image";
+import SectionDivider from "@/components/ui/decor/SectionDivider";
+import Balloon from "@/components/ui/decor/Balloon";
 import { 
   fadeRise, 
   staggerContainer, 
@@ -39,8 +41,21 @@ export default function ParentGuidance() {
 
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FF8A7A]/[0.03]">
+      {/* Top Clouds Divider */}
+      <SectionDivider
+        type="clouds"
+        position="top"
+        colorClass="fill-white"
+        className="absolute top-0 left-0 right-0 z-10"
+      />
+
+      {/* Decorative floating Balloon accent */}
+      <div className="absolute right-[6%] top-[12%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <Balloon className="w-16 h-28 fill-[#FF8A7A]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <motion.div 
           variants={staggerContainer}
           initial={getInitial(shouldReduceMotion)}

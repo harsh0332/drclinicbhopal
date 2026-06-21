@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Quote, ChevronLeft, ChevronRight, FileCheck } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
+import Sparkle from "@/components/ui/decor/Sparkle";
 import { 
   fadeRise, 
   staggerContainer, 
@@ -61,7 +62,11 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-32 bg-surface-tint">
+    <section className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+      {/* Decorative Sparkle accent */}
+      <div className="absolute left-[8%] bottom-[20%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+        <Sparkle className="w-12 h-12 fill-secondary" />
+      </div>
       {/* Top Wave Divider */}
       <SectionDivider
         type="wave"
