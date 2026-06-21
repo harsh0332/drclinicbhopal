@@ -86,7 +86,7 @@ export default function ServicesGrid() {
       />
 
       {/* Decorative BabyFootprints trail bridging Services and Vaccine Teaser */}
-      <div className="absolute right-[8%] bottom-[4%] opacity-[0.05] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute right-[8%] bottom-[4%] opacity-[0.10] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <BabyFootprints className="w-24 h-12 fill-primary" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

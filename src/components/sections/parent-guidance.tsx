@@ -41,7 +41,7 @@ export default function ParentGuidance() {
 
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FF8A7A]/[0.03]">
+    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FF8A7A]/[0.08]">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -51,7 +51,7 @@ export default function ParentGuidance() {
       />
 
       {/* Decorative floating Balloon accent */}
-      <div className="absolute right-[6%] top-[12%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute right-[6%] top-[12%] opacity-[0.15] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Balloon className="w-16 h-28 fill-[#FF8A7A]" />
       </div>
 

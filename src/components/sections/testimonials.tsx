@@ -64,7 +64,7 @@ export default function Testimonials() {
   return (
     <section className="relative overflow-hidden pt-28 pb-32 bg-transparent">
       {/* Decorative Sparkle accent */}
-      <div className="absolute left-[8%] bottom-[20%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute left-[8%] bottom-[20%] opacity-[0.15] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Sparkle className="w-12 h-12 fill-secondary" />
       </div>
       {/* Top Wave Divider */}

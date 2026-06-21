@@ -5,7 +5,7 @@ import React from "react";
 export default function AmbientBackground() {
   return (
     <div 
-      className="fixed inset-0 w-full h-full -z-50 pointer-events-none select-none overflow-hidden bg-[#FBFCFF]"
+      className="fixed inset-0 w-full h-full -z-50 pointer-events-none select-none overflow-hidden bg-[linear-gradient(180deg,#FBFCFF_0%,#F4F8FF_30%,#EAFBF7_60%,#FBFCFF_100%)]"
       aria-hidden="true"
     >
       {/* CSS Keyframes for slow floating blobs, only enabled on desktop (md:) and when prefers-reduced-motion is not set */}
@@ -23,16 +23,19 @@ export default function AmbientBackground() {
         }
 
         .ambient-blob-1 {
-          background: radial-gradient(circle, rgba(46, 108, 246, 0.09) 0%, rgba(46, 108, 246, 0) 70%);
+          background: radial-gradient(circle, rgba(46, 108, 246, 0.24) 0%, rgba(46, 108, 246, 0) 88%);
         }
         .ambient-blob-2 {
-          background: radial-gradient(circle, rgba(52, 199, 164, 0.07) 0%, rgba(52, 199, 164, 0) 70%);
+          background: radial-gradient(circle, rgba(52, 199, 164, 0.20) 0%, rgba(52, 199, 164, 0) 88%);
         }
         .ambient-blob-3 {
-          background: radial-gradient(circle, rgba(255, 197, 61, 0.06) 0%, rgba(255, 197, 61, 0) 70%);
+          background: radial-gradient(circle, rgba(255, 197, 61, 0.18) 0%, rgba(255, 197, 61, 0) 88%);
         }
         .ambient-blob-4 {
-          background: radial-gradient(circle, rgba(255, 138, 122, 0.06) 0%, rgba(255, 138, 122, 0) 70%);
+          background: radial-gradient(circle, rgba(255, 138, 122, 0.16) 0%, rgba(255, 138, 122, 0) 88%);
+        }
+        .ambient-blob-5 {
+          background: radial-gradient(circle, rgba(52, 199, 164, 0.14) 0%, rgba(52, 199, 164, 0) 88%);
         }
 
         /* Responsive float animation only for desktop/tablet and non-reduced-motion users */
@@ -48,24 +51,29 @@ export default function AmbientBackground() {
         }
       `}</style>
 
-      {/* Blob 1: Primary Blue (Top-Left) */}
+      {/* Blob 1: Primary Blue (Top-Left / Center-Left on Mobile) */}
       <div 
-        className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] min-w-[450px] min-h-[450px] rounded-full blur-[80px] sm:blur-[100px] ambient-blob-1 animate-blob-1 will-change-transform"
+        className="absolute left-[-20%] top-[-5%] w-[80vw] h-[80vw] rounded-full blur-[70px] md:left-[-10%] md:top-[-10%] md:w-[50vw] md:h-[50vw] ambient-blob-1 animate-blob-1 will-change-transform"
       />
 
-      {/* Blob 2: Mint Green (Top-Right) */}
+      {/* Blob 2: Mint Green (Top-Right / Center-Right on Mobile) */}
       <div 
-        className="absolute top-[10%] right-[-15%] w-[55vw] h-[55vw] min-w-[500px] min-h-[500px] rounded-full blur-[90px] sm:blur-[120px] ambient-blob-2 animate-blob-2 will-change-transform"
+        className="absolute right-[-25%] top-[15%] w-[90vw] h-[90vw] rounded-full blur-[80px] md:right-[-15%] md:top-[10%] md:w-[55vw] md:h-[55vw] ambient-blob-2 animate-blob-2 will-change-transform"
       />
 
-      {/* Blob 3: Sunshine Yellow (Bottom-Left) */}
+      {/* Blob 3: Sunshine Yellow (Bottom-Left / Mid-Left on Mobile) */}
       <div 
-        className="absolute bottom-[-15%] left-[-10%] w-[50vw] h-[50vw] min-w-[480px] min-h-[480px] rounded-full blur-[80px] sm:blur-[100px] ambient-blob-3 will-change-transform"
+        className="absolute left-[-25%] bottom-[10%] w-[85vw] h-[85vw] rounded-full blur-[70px] md:left-[-10%] md:bottom-[-15%] md:w-[50vw] md:h-[50vw] ambient-blob-3 will-change-transform"
       />
 
-      {/* Blob 4: Coral Red (Bottom-Right) */}
+      {/* Blob 4: Coral Red (Bottom-Right / Mid-Right on Mobile) */}
       <div 
-        className="absolute bottom-[10%] right-[-10%] w-[45vw] h-[45vw] min-w-[420px] min-h-[420px] rounded-full blur-[80px] sm:blur-[100px] ambient-blob-4 will-change-transform"
+        className="absolute right-[-20%] bottom-[5%] w-[80vw] h-[80vw] rounded-full blur-[70px] md:right-[-10%] md:bottom-[10%] md:w-[45vw] md:h-[45vw] ambient-blob-4 will-change-transform"
+      />
+
+      {/* Blob 5: Middle Mint/Blue Blob for central coverage */}
+      <div 
+        className="absolute left-[10%] top-[45%] w-[80vw] h-[80vw] rounded-full blur-[80px] md:left-[30%] md:top-[45%] md:w-[35vw] md:h-[35vw] ambient-blob-5 will-change-transform"
       />
 
       {/* SVG Grain Noise Overlay (2% opacity) */}

@@ -27,7 +27,7 @@ export default function VaccineTeaser() {
   return (
     <section className="relative overflow-hidden pt-20 pb-32 bg-transparent">
       {/* Decorative BabyFootprints trail bridging Services and Vaccine Teaser */}
-      <div className="absolute left-[8%] top-[5%] opacity-[0.05] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(15deg)" }}>
+      <div className="absolute left-[8%] top-[5%] opacity-[0.10] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(15deg)" }}>
         <BabyFootprints className="w-24 h-12 fill-primary" />
       </div>
 

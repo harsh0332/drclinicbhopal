@@ -18,7 +18,7 @@ export default function GrowthTeaser() {
 
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FFC53D]/[0.03]">
+    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FFC53D]/[0.08]">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -28,7 +28,7 @@ export default function GrowthTeaser() {
       />
 
       {/* Decorative Cloud accent */}
-      <div className="absolute right-[4%] top-[10%] opacity-[0.03] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute right-[4%] top-[10%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Cloud className="w-56 h-36 fill-primary" />
       </div>
 

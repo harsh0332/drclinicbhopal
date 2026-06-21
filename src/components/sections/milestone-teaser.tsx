@@ -45,7 +45,7 @@ export default function MilestoneTeaser() {
   return (
     <section className="relative overflow-hidden pt-28 pb-36 bg-transparent">
       {/* Decorative RainbowArc accent */}
-      <div className="absolute right-[4%] top-[14%] opacity-[0.08] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(-10deg)" }}>
+      <div className="absolute right-[4%] top-[14%] opacity-[0.15] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(-10deg)" }}>
         <RainbowArc className="w-32 h-20" />
       </div>
       {/* Top Wave Divider */}
@@ -56,7 +56,7 @@ export default function MilestoneTeaser() {
         className="absolute top-0 left-0 right-0 z-10"
       />
       {/* Decorative pulsing star */}
-      <div className="absolute left-[8%] top-[12%] opacity-[0.06] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute left-[8%] top-[12%] opacity-[0.12] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Star className="w-12 h-12 fill-accent-sunshine animate-pulse motion-reduce:animate-none" style={{ animationDuration: "3.5s" }} />
       </div>
 

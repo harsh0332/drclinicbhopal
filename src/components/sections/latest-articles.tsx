@@ -55,7 +55,7 @@ export default function LatestArticles() {
       />
 
       {/* Decorative SoftBlob behind the grid */}
-      <div className="absolute left-[3%] bottom-[10%] opacity-[0.03] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute left-[3%] bottom-[10%] opacity-[0.07] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <SoftBlob className="w-[400px] h-[400px] fill-[#2E6CF6]" />
       </div>
 

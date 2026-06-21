@@ -85,12 +85,12 @@ export default function WhyChoose() {
       </div>
 
       {/* Decorative Star */}
-      <div className="absolute right-[5%] bottom-[12%] opacity-[0.06] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute right-[5%] bottom-[12%] opacity-[0.12] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Star className="w-14 h-14 fill-accent-sunshine animate-pulse motion-reduce:animate-none" style={{ animationDuration: "4s" }} />
       </div>
 
       {/* Decorative Sparkle */}
-      <div className="absolute left-[5%] bottom-[18%] opacity-[0.05] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute left-[5%] bottom-[18%] opacity-[0.10] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Sparkle className="w-10 h-10 fill-secondary" />
       </div>
 

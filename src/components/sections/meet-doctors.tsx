@@ -21,7 +21,7 @@ export default function MeetDoctors() {
 
 
   return (
-    <section id="doctors" className="relative overflow-hidden pt-28 pb-32 bg-[#34C7A4]/[0.03]">
+    <section id="doctors" className="relative overflow-hidden pt-28 pb-32 bg-[#34C7A4]/[0.08]">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -31,7 +31,7 @@ export default function MeetDoctors() {
       />
 
       {/* Decorative SoftBlob behind the grid */}
-      <div className="absolute left-[3%] top-[25%] opacity-[0.03] pointer-events-none hidden lg:block select-none" aria-hidden="true">
+      <div className="absolute left-[3%] top-[25%] opacity-[0.07] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <SoftBlob className="w-[450px] h-[450px] fill-[#34C7A4]" />
       </div>
 
