@@ -43,7 +43,7 @@ export default function MilestoneTeaser() {
 
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-36 bg-transparent">
+    <section className="relative overflow-hidden pt-16 pb-24 md:pt-28 md:pb-36 bg-transparent">
       {/* Decorative RainbowArc accent */}
       <div className="absolute right-[4%] top-[14%] opacity-[0.15] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(-10deg)" }}>
         <RainbowArc className="w-32 h-20" />

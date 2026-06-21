@@ -15,7 +15,7 @@ export default function BookAppointment() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section id="appointment" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+    <section id="appointment" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"

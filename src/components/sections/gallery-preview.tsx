@@ -95,7 +95,7 @@ export default function GalleryPreview() {
   }, [selectedIdx]);
 
   return (
-    <section id="gallery" className="relative overflow-hidden pt-28 pb-32 bg-[#2E6CF6]/[0.08] select-none">
+    <section id="gallery" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-[#2E6CF6]/[0.08] select-none">
       {/* Top Wave Divider */}
       <SectionDivider
         type="wave"

@@ -17,7 +17,7 @@ export default function MapContact() {
 
 
   return (
-    <section id="contact" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+    <section id="contact" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
       {/* Top Wave Divider */}
       <SectionDivider
         type="wave"

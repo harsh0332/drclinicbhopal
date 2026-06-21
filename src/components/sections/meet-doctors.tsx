@@ -21,7 +21,7 @@ export default function MeetDoctors() {
 
 
   return (
-    <section id="doctors" className="relative overflow-hidden pt-28 pb-32 bg-[#34C7A4]/[0.08]">
+    <section id="doctors" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-[#34C7A4]/[0.08]">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -62,7 +62,7 @@ export default function MeetDoctors() {
           initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-5xl mx-auto"
         >
           {siteConfig.doctors.map((doctor) => {
             const degrees = doctor.degree.split(",").map(d => d.trim());

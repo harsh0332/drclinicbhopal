@@ -33,13 +33,13 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
               onClick={() => toggleFAQ(index)}
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${index}`}
-              className="w-full flex items-center justify-between p-5 text-left gap-4 hover:bg-surface-tint/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-xl"
+              className="w-full flex items-start justify-between p-5 text-left gap-4 hover:bg-surface-tint/20 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-xl"
             >
-              <span className="text-sm sm:text-base font-bold font-heading text-primary-dark flex items-center gap-2">
-                <HelpCircle className="w-4.5 h-4.5 text-primary shrink-0" />
+              <span className="text-sm sm:text-base font-bold font-heading text-primary-dark flex items-start gap-2 pt-0.5">
+                <HelpCircle className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
                 <span>{faq.q}</span>
               </span>
-              <ChevronDown className={`w-4 h-4 text-muted-text transition-transform ${isOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`w-4 h-4 text-muted-text transition-transform mt-1 ${isOpen ? "rotate-180" : ""}`} />
             </button>
             {isOpen && (
               <div

@@ -62,7 +62,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+    <section className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
       {/* Decorative Sparkle accent */}
       <div className="absolute left-[8%] bottom-[20%] opacity-[0.15] pointer-events-none hidden lg:block select-none" aria-hidden="true">
         <Sparkle className="w-12 h-12 fill-secondary" />
@@ -150,11 +150,13 @@ export default function Testimonials() {
                   <button
                     key={idx}
                     onClick={() => setActiveIndex(idx)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      activeIndex === idx ? "bg-primary w-6" : "bg-gray-300 hover:bg-gray-400"
-                    }`}
+                    className="p-2 -m-2 cursor-pointer focus:outline-none"
                     aria-label={`Go to testimonial ${idx + 1}`}
-                  />
+                  >
+                    <div className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      activeIndex === idx ? "bg-primary w-6" : "bg-gray-300 hover:bg-gray-400"
+                    }`} />
+                  </button>
                 ))}
               </div>
 
@@ -162,14 +164,14 @@ export default function Testimonials() {
               <div className="flex items-center gap-3">
                 <button
                   onClick={prevTestimonial}
-                  className="p-2.5 border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-xl transition-all cursor-pointer hover:bg-surface-tint active:scale-95"
+                  className="w-11 h-11 flex items-center justify-center border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-xl transition-all cursor-pointer hover:bg-surface-tint active:scale-95 focus:outline-none"
                   aria-label="Previous Testimonial"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={nextTestimonial}
-                  className="p-2.5 border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-xl transition-all cursor-pointer hover:bg-surface-tint active:scale-95"
+                  className="w-11 h-11 flex items-center justify-center border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-xl transition-all cursor-pointer hover:bg-surface-tint active:scale-95 focus:outline-none"
                   aria-label="Next Testimonial"
                 >
                   <ChevronRight className="w-5 h-5" />

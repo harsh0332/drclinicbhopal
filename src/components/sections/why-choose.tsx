@@ -71,7 +71,7 @@ export default function WhyChoose() {
 
 
   return (
-    <section id="about" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+    <section id="about" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
       {/* Top Wave Divider */}
       <SectionDivider
         type="wave"
@@ -121,7 +121,7 @@ export default function WhyChoose() {
           initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;

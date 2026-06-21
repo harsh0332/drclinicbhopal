@@ -18,7 +18,7 @@ export default function GrowthTeaser() {
 
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-32 bg-[#FFC53D]/[0.08]">
+    <section className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-[#FFC53D]/[0.08]">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"

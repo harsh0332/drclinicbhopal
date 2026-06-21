@@ -50,7 +50,7 @@ export default function FAQs() {
 
 
   return (
-    <section id="faqs" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+    <section id="faqs" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -115,17 +115,17 @@ export default function FAQs() {
                     onClick={() => toggleFAQ(index)}
                     aria-expanded={isOpen}
                     aria-controls={`home-faq-answer-${index}`}
-                    className={`w-full flex items-center justify-between p-6 text-left gap-4 transition-colors duration-250 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl ${
+                    className={`w-full flex items-start justify-between p-6 text-left gap-4 transition-colors duration-250 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-2xl ${
                       isOpen ? "bg-surface-tint/20" : "hover:bg-surface-tint/25"
                     }`}
                   >
-                    <div className="flex items-center gap-3">
-                      <HelpCircle className="w-5 h-5 text-primary shrink-0" />
+                    <div className="flex items-start gap-3 pt-0.5">
+                      <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                       <span className="text-sm sm:text-base font-bold font-heading text-primary-dark transition-colors duration-300">
                         {faq.q}
                       </span>
                     </div>
-                    <div className="p-1 rounded-lg border border-gray-100 bg-white shrink-0 text-muted-text">
+                    <div className="p-1 rounded-lg border border-gray-100 bg-white shrink-0 text-muted-text mt-0.5">
                       {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                     </div>
                   </button>

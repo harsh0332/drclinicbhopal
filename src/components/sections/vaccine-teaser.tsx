@@ -25,7 +25,7 @@ export default function VaccineTeaser() {
   ];
 
   return (
-    <section className="relative overflow-hidden pt-20 pb-32 bg-transparent">
+    <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32 bg-transparent">
       {/* Decorative BabyFootprints trail bridging Services and Vaccine Teaser */}
       <div className="absolute left-[8%] top-[5%] opacity-[0.10] pointer-events-none hidden lg:block select-none" aria-hidden="true" style={{ transform: "rotate(15deg)" }}>
         <BabyFootprints className="w-24 h-12 fill-primary" />
@@ -113,7 +113,7 @@ export default function VaccineTeaser() {
                       </span>
                     </div>
                   </div>
-                  <div className="text-xs font-mono bg-primary/5 border border-primary/10 text-primary-dark py-1.5 px-3 rounded-lg max-w-full sm:max-w-[60%] truncate font-semibold group-hover/row:bg-primary group-hover/row:text-white group-hover/row:border-primary transition-colors duration-200">
+                  <div className="text-xs font-mono bg-primary/5 border border-primary/10 text-primary-dark py-1.5 px-3 rounded-lg max-w-full sm:max-w-[60%] whitespace-normal break-words font-semibold group-hover/row:bg-primary group-hover/row:text-white group-hover/row:border-primary transition-colors duration-200">
                     {item.vaccines}
                   </div>
                 </Link>

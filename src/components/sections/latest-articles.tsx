@@ -45,7 +45,7 @@ export default function LatestArticles() {
   ];
 
   return (
-    <section id="blog" className="relative overflow-hidden pt-28 pb-32 bg-transparent">
+    <section id="blog" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
       {/* Top Clouds Divider */}
       <SectionDivider
         type="clouds"
@@ -103,7 +103,7 @@ export default function LatestArticles() {
           initial={getInitial(shouldReduceMotion)}
           whileInView="visible"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto"
         >
           {articles.map((article, index) => (
             <motion.article
@@ -150,7 +150,7 @@ export default function LatestArticles() {
                   </span>
                   <Link
                     href="/blog"
-                    className="p-1.5 border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-lg transition-all duration-300 group-hover:translate-x-0.5"
+                    className="w-11 h-11 flex items-center justify-center border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-xl transition-all duration-300 group-hover:translate-x-0.5"
                     aria-label="Read Article"
                   >
                     <ArrowRight className="w-4 h-4" />
