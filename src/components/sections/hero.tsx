@@ -154,9 +154,9 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Hero Visual Stack */}
-          <div className="lg:col-span-5 relative flex flex-col items-center justify-center w-full min-h-[480px]">
+          <div className="lg:col-span-5 relative flex flex-col items-center justify-center w-full min-h-[420px] lg:min-h-[480px]">
             {/* Rainbow Arc Backdrop */}
-            <div className="absolute top-[-18px] left-1/2 -translate-x-1/2 w-[340px] h-[180px] opacity-45 z-0 pointer-events-none">
+            <div className="absolute top-[-18px] left-1/2 -translate-x-1/2 w-[340px] h-[180px] opacity-45 z-0 pointer-events-none scale-90 md:scale-100">
               <svg width="340" height="180" viewBox="0 0 340 180" fill="none" strokeLinecap="round">
                 <path d="M30 170 A140 140 0 0 1 310 170" stroke="#FF8A7A" strokeWidth="10" />
                 <path d="M50 170 A120 120 0 0 1 290 170" stroke="#FFC53D" strokeWidth="10" />
@@ -166,19 +166,19 @@ export default function Hero() {
             </div>
 
             {/* Core Image Container */}
-            <div className="relative z-10 w-[300px] aspect-[4/5] rounded-[26px] overflow-hidden border-6 border-white shadow-[0_26px_60px_rgba(22,60,122,0.18)] bg-gradient-to-tr from-[#EAF1FF] to-[#F4FBF8]">
+            <div className="relative z-10 w-[260px] sm:w-[300px] aspect-[4/5] rounded-[26px] overflow-hidden border-4 sm:border-6 border-white shadow-[0_20px_45px_rgba(22,60,122,0.15)] md:shadow-[0_26px_60px_rgba(22,60,122,0.18)] bg-gradient-to-tr from-[#EAF1FF] to-[#F4FBF8]">
               <ClinicImage
                 src="/images/hero/hero-1.jpg"
                 alt="Gentle check-up at Baby Steps Clinic Bhopal"
                 fill
-                sizes="300px"
+                sizes="(max-w-768px) 260px, 300px"
                 className="object-cover"
                 priority
               />
             </div>
 
-            {/* Overlapping doctor portraits */}
-            <div className="absolute z-20 left-[-6px] bottom-[30px] flex gap-2.5">
+            {/* Overlapping doctor portraits (hidden on mobile for cleanliness, shown on desktop) */}
+            <div className="hidden md:flex absolute z-20 left-[-6px] bottom-[30px] gap-2.5">
               {/* Dr. Sudarshan */}
               <div className="w-[118px] aspect-[3/4] rounded-2xl overflow-hidden border-4 border-white shadow-[0_16px_36px_rgba(22,60,122,0.18)] relative bg-gradient-to-br from-[#EAF1FF] to-white flex flex-col justify-end p-2 text-center">
                 <div className="absolute inset-0 z-0">
@@ -213,7 +213,7 @@ export default function Hero() {
 
             {/* Floating Glass Cards */}
             {/* Card 1: Hours */}
-            <div className="absolute z-30 top-[50px] left-[-14px] bg-white/75 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-3 flex items-center gap-2.5 animate-[bsFloatA_5.6s_ease-in-out_infinite] pointer-events-none">
+            <div className="absolute z-30 top-[20px] left-[-6px] md:top-[50px] md:left-[-14px] origin-left scale-90 md:scale-100 bg-white/80 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-2.5 md:p-3 flex items-center gap-2 md:gap-2.5 animate-[bsFloatA_5.6s_ease-in-out_infinite] pointer-events-none">
               <div className="w-8 h-8 rounded-lg bg-[#34C7A4]/15 flex items-center justify-center">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1FA98A" strokeWidth={2}>
                   <circle cx="12" cy="12" r="9" />
@@ -221,26 +221,26 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="leading-tight text-left">
-                <div className="text-[12.5px] font-bold text-[#163C7A]">Open Mon–Sat</div>
-                <div className="text-[10.5px] text-[#5A6B85]">10–1 &amp; 5–8 · by appt</div>
+                <div className="text-[12px] md:text-[12.5px] font-bold text-[#163C7A]">Open Mon–Sat</div>
+                <div className="text-[10px] md:text-[10.5px] text-[#5A6B85]">10–1 &amp; 5–8 · by appt</div>
               </div>
             </div>
 
             {/* Card 2: Vaccination */}
-            <div className="absolute z-30 top-[188px] right-[-16px] bg-white/75 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-3 flex items-center gap-2.5 animate-[bsFloatB_6.4s_ease-in-out_0.6s_infinite] pointer-events-none">
+            <div className="absolute z-30 top-[160px] right-[-6px] md:top-[188px] md:right-[-16px] origin-right scale-90 md:scale-100 bg-white/80 backdrop-blur-md border border-white/70 shadow-[0_12px_30px_rgba(22,60,122,0.14)] rounded-[15px] p-2.5 md:p-3 flex items-center gap-2 md:gap-2.5 animate-[bsFloatB_6.4s_ease-in-out_0.6s_infinite] pointer-events-none">
               <div className="w-8 h-8 rounded-lg bg-[#2E6CF6]/12 flex items-center justify-center">
                 <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E6CF6" strokeWidth={2}>
                   <path d="M20 6 9 17l-5-5" />
                 </svg>
               </div>
               <div className="leading-tight text-left">
-                <div className="text-[12.5px] font-bold text-[#163C7A]">Vaccination</div>
-                <div className="text-[10.5px] text-[#5A6B85]">Proper cold-chain</div>
+                <div className="text-[12px] md:text-[12.5px] font-bold text-[#163C7A]">Vaccination</div>
+                <div className="text-[10px] md:text-[10.5px] text-[#5A6B85]">Proper cold-chain</div>
               </div>
             </div>
 
             {/* Card 3: Duo Credentials */}
-            <div className="absolute z-30 bottom-[-10px] right-[-8px] bg-white/80 backdrop-blur-md border border-white/70 shadow-[0_16px_36px_rgba(22,60,122,0.18)] rounded-2xl p-3 max-w-[210px] flex flex-col gap-2 animate-[bsFloatA_7s_ease-in-out_1.1s_infinite] pointer-events-none">
+            <div className="absolute z-30 bottom-[-20px] left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:bottom-[-10px] md:right-[-8px] scale-90 md:scale-100 bg-white/85 backdrop-blur-md border border-white/70 shadow-[0_16px_36px_rgba(22,60,122,0.18)] rounded-2xl p-2.5 md:p-3 w-[220px] md:max-w-[210px] flex flex-col gap-1.5 md:gap-2 animate-[bsFloatA_7s_ease-in-out_1.1s_infinite] pointer-events-none">
               <div className="flex items-center gap-1.5 text-left">
                 <div className="flex -space-x-2.5">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#2E6CF6] to-[#5b8cff] flex items-center justify-center text-white font-heading font-bold text-xs border-2 border-white select-none">SA</div>
