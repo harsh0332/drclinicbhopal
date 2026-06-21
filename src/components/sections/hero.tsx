@@ -5,7 +5,8 @@ import { useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Calendar, Phone, MessageSquare } from "lucide-react";
-import HeroBackground from "./hero-background";
+import dynamic from "next/dynamic";
+const HeroBackground = dynamic(() => import("./hero-background"), { ssr: false });
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
