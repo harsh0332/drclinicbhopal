@@ -41,6 +41,11 @@
     0%, 100% { opacity: 0.35; transform: scale(0.9); }
     50% { opacity: 1; transform: scale(1.1); }
   }
+  @keyframes bsFadeRise {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  --animate-fade-rise: bsFadeRise 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 body {

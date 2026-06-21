@@ -11,6 +11,7 @@ const HeroBackground = dynamic(() => import("./hero-background"), { ssr: false }
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
   const [expYears, setExpYears] = useState(0);
+  const animClass = shouldReduceMotion ? "" : "animate-fade-rise opacity-0";
 
   useEffect(() => {
     const target = 15;
@@ -55,43 +56,55 @@ export default function Hero() {
           {/* Left Column: Headline, Sub-headline, CTAs, Stats */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 bg-[#2E6CF6]/80 border border-[#2E6CF6]/15 text-[#163C7A] font-semibold text-xs py-1.5 px-4 rounded-full mb-6 bg-white/75 backdrop-blur-xs">
+            <div 
+              className={`inline-flex items-center gap-2 bg-[#2E6CF6]/80 border border-[#2E6CF6]/15 text-[#163C7A] font-semibold text-xs py-1.5 px-4 rounded-full mb-6 bg-white/75 backdrop-blur-xs ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "0ms", animationFillMode: "both" }}
+            >
               <span className="w-2 h-2 rounded-full bg-[#34C7A4] shadow-[0_0_0_4px_rgba(52,199,164,0.18)]" />
               <span>Newborn &amp; Child Specialists · Neelbad, Bhopal</span>
             </div>
 
             {/* Headline */}
-            <h1 className="font-heading font-bold text-[#163C7A] text-4xl sm:text-5xl lg:text-6xl leading-[1.07] tracking-tight mb-5 text-balance">
-              Gentle, expert care for your little one.
+            {/* Headline options (variants for easy swapping):
+              - "Gentle, expert care for your little one."
+              - "Your baby deserves the gentlest care."
+              - "Caring for your child like our own."
+              - "Where your child feels safe — and you feel sure."
+            */}
+            <h1 
+              className={`font-heading font-bold text-[#163C7A] text-4xl sm:text-5xl lg:text-6xl leading-[1.07] tracking-tight mb-5 text-balance ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "150ms", animationFillMode: "both" }}
+            >
+              Big-hospital expertise, with a gentle touch.
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-base lg:text-lg leading-relaxed text-[#5A6B85] mb-6 max-w-2xl text-pretty font-sans">
-              A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — DNB (New Delhi), PGPN (Boston, USA) trained pediatricians, consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital, now caring for families in Neelbad.
+            {/* Sub-headline options:
+              - "Two senior pediatricians, consultants at Rainbow Children's & Apollo SAGE — now in your neighbourhood."
+              - "Newborn-to-teen care from a husband-&-wife specialist team you can trust."
+            */}
+            <p 
+              className={`text-sm sm:text-base lg:text-lg leading-relaxed text-[#2A3A52] mb-3 max-w-2xl text-pretty font-sans ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "300ms", animationFillMode: "both" }}
+            >
+              A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — trained in New Delhi &amp; Boston, now caring for families in Neelbad.
             </p>
 
-            {/* Credential Tags */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-8">
-              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
-                DNB · New Delhi
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#34C7A4]" />
-                PGPN · Boston, USA
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
-                Rainbow &amp; Apollo SAGE Consultants
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#34C7A4]" />
-                Neonatology Fellowship
-              </span>
+            {/* Micro Trust Line */}
+            <div 
+              className={`text-xs font-semibold text-[#163C7A]/80 mb-6 flex items-center gap-1.5 font-sans ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "450ms", animationFillMode: "both" }}
+            >
+              <span className="w-1 h-1 rounded-full bg-[#2E6CF6]" />
+              <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Open Mon–Sat</span>
             </div>
 
             {/* Action CTAs */}
-            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto">
+            {/* CTA Label Variant: "Book Your Visit" */}
+            <div 
+              className={`flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto mb-6 ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "600ms", animationFillMode: "both" }}
+            >
               <a
                 href="#appointment"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2E6CF6] text-white font-bold text-base py-3.5 px-6 rounded-full shadow-[0_10px_26px_rgba(46,108,246,0.34)] hover:shadow-lg transition-all active:scale-[0.98] min-h-[48px]"
@@ -117,8 +130,34 @@ export default function Hero() {
               </a>
             </div>
 
+            {/* Credential Tags */}
+            <div 
+              className={`flex flex-wrap justify-center lg:justify-start gap-2 mb-8 ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "750ms", animationFillMode: "both" }}
+            >
+              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
+                DNB · New Delhi
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#34C7A4]" />
+                PGPN · Boston, USA
+              </span>
+              <span className="hidden md:inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
+                Rainbow &amp; Apollo SAGE Consultants
+              </span>
+              <span className="hidden md:inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#34C7A4]" />
+                Neonatology Fellowship
+              </span>
+            </div>
+
             {/* Stats list */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-4 mt-8 pt-6 border-t border-[#163C7A]/10 w-full">
+            <div 
+              className={`flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-4 mt-2 pt-6 border-t border-[#163C7A]/10 w-full ${animClass}`}
+              style={shouldReduceMotion ? {} : { animationDelay: "900ms", animationFillMode: "both" }}
+            >
               <div className="flex flex-col text-left">
                 <span className="font-heading font-extrabold text-[#163C7A] text-lg">{expYears}+ yrs</span>
                 <span className="text-[11.5px] text-[#5A6B85] font-sans">Combined experience</span>
