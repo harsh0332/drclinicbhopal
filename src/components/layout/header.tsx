@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
 import { Phone, Menu, X, Calendar } from "lucide-react";
+import ClinicImage from "@/components/ui/clinic-image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,20 +35,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0 focus-visible:outline-3 focus-visible:outline-[#163C7A] focus-visible:outline-offset-3 rounded-xl">
-            <div className="w-[42px] h-[42px] rounded-[13px] bg-gradient-to-br from-[#2E6CF6] to-[#34C7A4] flex items-center justify-center shadow-[0_5px_16px_rgba(46,108,246,0.3)]">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true">
-                <ellipse cx="9" cy="13" rx="4.4" ry="5.6" />
-                <circle cx="6.4" cy="5.8" r="1.7" />
-                <circle cx="9.6" cy="4.2" r="1.7" />
-                <circle cx="12.8" cy="5.4" r="1.6" />
-                <circle cx="14.6" cy="8.2" r="1.4" />
-              </svg>
-            </div>
-            <div className="flex flex-col leading-[1.05]">
-              <span className="font-heading font-bold text-lg text-[#163C7A]">Baby Steps</span>
-              <span className="text-[10.5px] font-medium tracking-[0.05em] text-[#5A6B85]">NEWBORN &amp; CHILD CLINIC</span>
-            </div>
+          <Link href="/" className="flex items-center shrink-0 focus-visible:outline-3 focus-visible:outline-[#163C7A] focus-visible:outline-offset-3 rounded-xl">
+            <ClinicImage
+              src="/images/logo/logo.svg"
+              alt="Baby Steps Newborn & Child Clinic Logo"
+              width={160}
+              height={38}
+              className="h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

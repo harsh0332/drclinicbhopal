@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="inline-block">
               <ClinicImage
-                src="/images/logo/logo-white.png"
+                src="/images/logo/logo-white.svg"
                 alt={siteConfig.name}
                 width={180}
                 height={42}
