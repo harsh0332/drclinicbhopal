@@ -62,25 +62,33 @@ function Sparkle({ size, color }: SparkleProps) {
   );
 }
 
+const BALLOON_TINTS = {
+  coral: { id: "balg-c", hi: "#FFB7AB", mid: "#FF8A7A", lo: "#F4715F", line: "rgba(244,113,95,0.45)" },
+  sun:   { id: "balg-s", hi: "#FFE3A1", mid: "#FFC53D", lo: "#F0AC1E", line: "rgba(240,172,30,0.45)" },
+  mint:  { id: "balg-m", hi: "#9FE8D4", mid: "#34C7A4", lo: "#1FA486", line: "rgba(31,164,134,0.45)" },
+};
+
 interface BalloonShapeProps {
   w: number;
+  tint?: "coral" | "sun" | "mint";
 }
 
-function BalloonShape({ w }: BalloonShapeProps) {
+function BalloonShape({ w, tint = "coral" }: BalloonShapeProps) {
   const h = w * 1.42;
+  const t = BALLOON_TINTS[tint] || BALLOON_TINTS.coral;
   return (
     <svg width={w} height={h} viewBox="0 0 120 170" style={{ display: "block", overflow: "visible" }}>
       <defs>
-        <radialGradient id="balg" cx="0.38" cy="0.34" r="0.75">
-          <stop offset="0" stopColor="#FFB7AB" />
-          <stop offset="0.55" stopColor="#FF8A7A" />
-          <stop offset="1" stopColor="#F4715F" />
+        <radialGradient id={t.id} cx="0.38" cy="0.34" r="0.75">
+          <stop offset="0" stopColor={t.hi} />
+          <stop offset="0.55" stopColor={t.mid} />
+          <stop offset="1" stopColor={t.lo} />
         </radialGradient>
       </defs>
       <path d="M60 118 C60 134 52 146 60 168" fill="none"
-        stroke="rgba(244,113,95,0.45)" strokeWidth="1.6" strokeLinecap="round" />
-      <ellipse cx="60" cy="58" rx="48" ry="56" fill="url(#balg)" />
-      <path d="M54 112 L66 112 L60 124 Z" fill="#F4715F" />
+        stroke={t.line} strokeWidth="1.6" strokeLinecap="round" />
+      <ellipse cx="60" cy="58" rx="48" ry="56" fill={`url(#${t.id})`} />
+      <path d="M54 112 L66 112 L60 124 Z" fill={t.lo} />
       <ellipse cx="44" cy="40" rx="13" ry="20" fill="rgba(255,255,255,0.45)"
         transform="rotate(-22 44 40)" />
     </svg>
@@ -134,6 +142,20 @@ interface BalloonCfg {
   sway: number;
   swayPhase: number;
   offset: number;
+  tint?: "coral" | "sun" | "mint";
+  op?: number;
+  blur?: number;
+}
+
+interface MoteDef {
+  x: number;
+  k: number;
+  start: number;
+  size: number;
+  drift: number;
+  phase: number;
+  op: number;
+  color: string;
 }
 
 interface FootprintPt {
@@ -159,16 +181,21 @@ interface LayoutDef {
   clouds: CloudDef[];
   stars: StarDef[];
   balloon: BalloonCfg;
+  balloon2: BalloonCfg;
+  motes: MoteDef[];
   footpath: FootprintPt[];
   rainbow: RainbowCfg;
 }
 
 interface SkyProps {
+  W: number;
   sunGlowRef: React.RefObject<HTMLDivElement | null>;
   coolLightRef: React.RefObject<HTMLDivElement | null>;
+  iridescentWashRef: React.RefObject<HTMLDivElement | null>;
+  sunDiscRef: React.RefObject<HTMLDivElement | null>;
 }
 
-function Sky({ sunGlowRef, coolLightRef }: SkyProps) {
+function Sky({ W, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef }: SkyProps) {
   return (
     <div style={{ position: "absolute", inset: 0 }}>
       {/* base sky gradient */}
@@ -182,7 +209,31 @@ function Sky({ sunGlowRef, coolLightRef }: SkyProps) {
         background: `radial-gradient(46% 50% at 86% 8%, rgba(255,197,61,0.34) 0%, rgba(255,197,61,0) 62%)`,
         willChange: "opacity",
       }} />
-      {/* faint cool light, upper-left, gives depth but stays clear */}
+      {/* soft sun disc + slowly turning rays */}
+      <div ref={sunDiscRef} style={{
+        position: "absolute", left: "86%", top: "8%",
+        transformOrigin: "center",
+        willChange: "transform, opacity",
+      }}>
+        <svg width={W * 0.30} height={W * 0.30} viewBox="0 0 200 200" style={{ display: "block", filter: "blur(1px)" }}>
+          <g stroke="rgba(255,197,61,0.20)" strokeWidth="7" strokeLinecap="round">
+            {[0,1,2,3,4,5,6,7,8,9,10,11].map((k) => {
+              const a = (k / 12) * TAU;
+              const r0 = 58 + (k % 2) * 9, r1 = r0 + 16 + (k % 3) * 6;
+              return <line key={k} x1={100 + r0 * Math.cos(a)} y1={100 + r0 * Math.sin(a)} x2={100 + r1 * Math.cos(a)} y2={100 + r1 * Math.sin(a)} />;
+            })}
+          </g>
+          <circle cx="100" cy="100" r="34" fill="rgba(255,215,120,0.55)" />
+          <circle cx="100" cy="100" r="24" fill="rgba(255,230,160,0.85)" />
+        </svg>
+      </div>
+      {/* slow iridescent wash drifting across the top */}
+      <div ref={iridescentWashRef} style={{
+        position: "absolute", inset: 0,
+        background: `radial-gradient(60% 46% at 38% -6%, rgba(52,199,164,0.10) 0%, rgba(52,199,164,0) 60%)`,
+        willChange: "background",
+      }} />
+      {/* faint cool light, upper-left */}
       <div ref={coolLightRef} style={{
         position: "absolute", inset: 0,
         background: `radial-gradient(55% 60% at 16% 2%, rgba(46,108,246,1) 0%, rgba(46,108,246,0) 55%)`,
@@ -284,6 +335,32 @@ function Stars({ W, H, defs, starRefs }: StarsProps) {
   );
 }
 
+interface MotesProps {
+  defs: MoteDef[];
+  moteRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
+}
+
+function Motes({ defs, moteRefs }: MotesProps) {
+  return (
+    <div style={{ position: "absolute", inset: 0 }}>
+      {defs.map((m, i) => {
+        return (
+          <div key={i}
+            ref={(el) => { moteRefs.current[i] = el; }}
+            style={{
+              position: "absolute", left: 0, top: 0,
+              width: m.size, height: m.size, borderRadius: "50%",
+              background: `radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95), ${m.color} 70%)`,
+              opacity: 0,
+              filter: "blur(0.4px)",
+              willChange: "transform, opacity",
+            }} />
+        );
+      })}
+    </div>
+  );
+}
+
 interface BalloonProps {
   W: number;
   cfg: BalloonCfg;
@@ -292,13 +369,16 @@ interface BalloonProps {
 
 function Balloon({ W, cfg, balloonRef }: BalloonProps) {
   const bw = cfg.w * W;
+  const blurVal = cfg.blur ?? 0;
   return (
     <div ref={balloonRef} style={{
       position: "absolute", left: 0, top: 0,
       transformOrigin: "50% 0%",
       willChange: "transform",
+      opacity: cfg.op ?? 1,
+      filter: blurVal > 0 ? `blur(${blurVal}px)` : "none",
     }}>
-      <BalloonShape w={bw} />
+      <BalloonShape w={bw} tint={cfg.tint} />
     </div>
   );
 }
@@ -324,7 +404,7 @@ function Footprints({ W, H, path, footprintRefs }: FootprintsProps) {
               top: `${pt.y * H}px`,
               transform: `translate(-50%,-50%) rotate(${pt.rot}deg) scale(${pt.mirror ? -1 : 1}, 1)`,
               opacity: 0,
-              willChange: "opacity",
+              willChange: "transform, opacity",
             }}>
             <FootShape w={fw} color={C.foot} />
           </div>
@@ -366,7 +446,15 @@ function layoutFor(wide: boolean): LayoutDef {
         { x: 0.86, y: 0.55, size: 11, op: 0.55, n: 2, phase: 0.65, color: C.sun },
         { x: 0.73, y: 0.42, size: 8,  op: 0.5, n: 3, phase: 0.9,  color: "#ffffff" },
       ],
-      balloon: { w: 0.072, x: 0.73, sway: 0.012, swayPhase: 0.0, offset: 0.18 },
+      balloon: { w: 0.072, x: 0.73, sway: 0.012, swayPhase: 0.0, offset: 0.18, tint: "coral" },
+      balloon2: { w: 0.042, x: 0.885, sway: 0.009, swayPhase: 0.45, offset: 0.62, tint: "sun", op: 0.75, blur: 1.2 },
+      motes: [
+        { x: 0.70, k: 1, start: 0.10, size: 7, drift: 0.006, phase: 0.1, op: 0.5, color: "rgba(180,205,250,0.7)" },
+        { x: 0.80, k: 1, start: 0.55, size: 5, drift: 0.008, phase: 0.5, op: 0.45, color: "rgba(255,214,140,0.7)" },
+        { x: 0.90, k: 1, start: 0.30, size: 6, drift: 0.005, phase: 0.8, op: 0.4, color: "rgba(160,225,205,0.7)" },
+        { x: 0.63, k: 1, start: 0.80, size: 4, drift: 0.007, phase: 0.3, op: 0.35, color: "rgba(180,205,250,0.7)" },
+        { x: 0.96, k: 1, start: 0.72, size: 5, drift: 0.006, phase: 0.65, op: 0.4, color: "rgba(255,214,140,0.7)" },
+      ],
       footpath: [
         { x: 0.45, y: 0.83, w: 0.026, rot: 14,  mirror: false, op: 0.95 },
         { x: 0.52, y: 0.85, w: 0.026, rot: 16,  mirror: true,  op: 0.95 },
@@ -379,8 +467,9 @@ function layoutFor(wide: boolean): LayoutDef {
       rainbow: { cx: 0.79, cy: 0.60, r: 0.24, op: 0.26, phase: 0.5, a0: 28, a1: 152 },
     };
   }
+  
   // vertical (9:16) — keep upper area lively, mid clear for headline.
-  // Sliced to 3 clouds and 5 stars for mobile lightening.
+  // Mobile Lightening Applied: Reduced counts and disabled secondary balloon completely.
   return {
     clouds: [
       { w: 0.42, y: 0.06, start: 0.05, op: 0.95, bob: 12, phase: 0.0 },
@@ -388,13 +477,19 @@ function layoutFor(wide: boolean): LayoutDef {
       { w: 0.36, y: 0.15, start: 0.70, op: 0.9,  bob: 14, phase: 0.6 },
     ],
     stars: [
-      { x: 0.32, y: 0.08, size: 14, op: 0.9, n: 2, phase: 0.0,  color: C.sun },
-      { x: 0.68, y: 0.12, size: 12, op: 0.8, n: 3, phase: 0.4,  color: "#ffffff" },
-      { x: 0.45, y: 0.05, size: 15, op: 0.85, n: 2, phase: 0.7, color: C.sun },
-      { x: 0.58, y: 0.15, size: 11, op: 0.7, n: 3, phase: 0.2,  color: "#ffffff" },
-      { x: 0.28, y: 0.22, size: 13, op: 0.75, n: 2, phase: 0.55, color: C.sun },
+      { x: 0.70, y: 0.08, size: 18, op: 0.9, n: 2, phase: 0.0,  color: C.sun },
+      { x: 0.82, y: 0.16, size: 13, op: 0.8, n: 3, phase: 0.4,  color: "#ffffff" },
+      { x: 0.88, y: 0.10, size: 15, op: 0.85, n: 2, phase: 0.7, color: C.sun },
+      { x: 0.84, y: 0.25, size: 12, op: 0.7, n: 3, phase: 0.2,  color: "#ffffff" },
+      { x: 0.20, y: 0.12, size: 13, op: 0.7, n: 2, phase: 0.55, color: C.sun },
+      { x: 0.30, y: 0.06, size: 12, op: 0.65, n: 2, phase: 0.33, color: C.sun },
     ],
-    balloon: { w: 0.16, x: 0.62, sway: 0.02, swayPhase: 0.0, offset: 0.2 },
+    balloon: { w: 0.16, x: 0.62, sway: 0.02, swayPhase: 0.0, offset: 0.2, tint: "coral" },
+    balloon2: { w: 0, x: 0.85, sway: 0, swayPhase: 0, offset: 0, tint: "sun", op: 0, blur: 0 }, // Disabled
+    motes: [
+      { x: 0.20, k: 1, start: 0.10, size: 8, drift: 0.010, phase: 0.1, op: 0.5, color: "rgba(180,205,250,0.7)" },
+      { x: 0.78, k: 1, start: 0.55, size: 6, drift: 0.012, phase: 0.5, op: 0.45, color: "rgba(255,214,140,0.7)" },
+    ],
     footpath: [
       { x: 0.30, y: 0.80, w: 0.05, rot: 12,  mirror: false, op: 0.95 },
       { x: 0.38, y: 0.815, w: 0.05, rot: 14, mirror: true,  op: 0.95 },
@@ -412,12 +507,17 @@ interface HeroCanvasProps {
   W: number;
   H: number;
   wide: boolean;
+  breatheContainerRef: React.RefObject<HTMLDivElement | null>;
   sunGlowRef: React.RefObject<HTMLDivElement | null>;
   coolLightRef: React.RefObject<HTMLDivElement | null>;
+  iridescentWashRef: React.RefObject<HTMLDivElement | null>;
+  sunDiscRef: React.RefObject<HTMLDivElement | null>;
   rainbowRef: React.RefObject<SVGGElement | null>;
   cloudRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
   starRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
-  balloonRef: React.RefObject<HTMLDivElement | null>;
+  balloon1Ref: React.RefObject<HTMLDivElement | null>;
+  balloon2Ref: React.RefObject<HTMLDivElement | null>;
+  moteRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
   footprintRefs: React.MutableRefObject<(HTMLDivElement | null)[]>;
 }
 
@@ -425,23 +525,47 @@ function HeroCanvas({
   W,
   H,
   wide,
+  breatheContainerRef,
   sunGlowRef,
   coolLightRef,
+  iridescentWashRef,
+  sunDiscRef,
   rainbowRef,
   cloudRefs,
   starRefs,
-  balloonRef,
+  balloon1Ref,
+  balloon2Ref,
+  moteRefs,
   footprintRefs,
 }: HeroCanvasProps) {
   const L = useMemo(() => layoutFor(wide), [wide]);
+
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
-      <Sky sunGlowRef={sunGlowRef} coolLightRef={coolLightRef} />
-      <Rainbow W={W} H={H} cfg={L.rainbow} wide={wide} rainbowRef={rainbowRef} />
-      <Clouds W={W} defs={L.clouds} wide={wide} cloudRefs={cloudRefs} />
-      <Stars W={W} H={H} defs={L.stars} starRefs={starRefs} />
-      <Balloon W={W} cfg={L.balloon} balloonRef={balloonRef} />
-      <Footprints W={W} H={H} path={L.footpath} footprintRefs={footprintRefs} />
+      <div
+        ref={breatheContainerRef}
+        style={{
+          position: "absolute",
+          inset: 0,
+          transformOrigin: "50% 60%",
+          willChange: "transform",
+        }}
+      >
+        <Sky
+          W={W}
+          sunGlowRef={sunGlowRef}
+          coolLightRef={coolLightRef}
+          iridescentWashRef={iridescentWashRef}
+          sunDiscRef={sunDiscRef}
+        />
+        <Rainbow W={W} H={H} cfg={L.rainbow} wide={wide} rainbowRef={rainbowRef} />
+        {wide && <Balloon W={W} cfg={L.balloon2} balloonRef={balloon2Ref} />}
+        <Clouds W={W} defs={L.clouds} wide={wide} cloudRefs={cloudRefs} />
+        <Stars W={W} H={H} defs={L.stars} starRefs={starRefs} />
+        <Motes defs={L.motes} moteRefs={moteRefs} />
+        <Balloon W={W} cfg={L.balloon} balloonRef={balloon1Ref} />
+        <Footprints W={W} H={H} path={L.footpath} footprintRefs={footprintRefs} />
+      </div>
       {wide && <Grain />}
     </div>
   );
@@ -463,12 +587,17 @@ export default function HeroBackground() {
   const timeRef = useRef(dur * 0.35); // Start at calm visual frame (~0.35 p-value)
 
   // Imperative Refs for animating elements
+  const breatheContainerRef = useRef<HTMLDivElement>(null);
   const sunGlowRef = useRef<HTMLDivElement>(null);
   const coolLightRef = useRef<HTMLDivElement>(null);
+  const iridescentWashRef = useRef<HTMLDivElement>(null);
+  const sunDiscRef = useRef<HTMLDivElement>(null);
   const rainbowRef = useRef<SVGGElement>(null);
   const cloudRefs = useRef<(HTMLDivElement | null)[]>([]);
   const starRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const balloonRef = useRef<HTMLDivElement>(null);
+  const balloon1Ref = useRef<HTMLDivElement>(null);
+  const balloon2Ref = useRef<HTMLDivElement>(null);
+  const moteRefs = useRef<(HTMLDivElement | null)[]>([]);
   const footprintRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const W = wide ? 1600 : 900;
@@ -539,7 +668,13 @@ export default function HeroBackground() {
     const currentW = isWide ? 1600 : 900;
     const currentH = isWide ? 900 : 1600;
 
-    // 1. Sky Glower
+    // 0. Breathe scale container
+    const breatheScale = 1 + 0.006 * Math.sin(TAU * p);
+    if (breatheContainerRef.current) {
+      breatheContainerRef.current.style.transform = `scale(${breatheScale.toFixed(5)})`;
+    }
+
+    // 1. Sky Glower & Rotator
     const dawn = 0.5 + 0.5 * Math.sin(TAU * p);
     const sunBreath = 0.55 + 0.45 * breathe(p, 0.0);
     if (sunGlowRef.current) {
@@ -547,6 +682,14 @@ export default function HeroBackground() {
     }
     if (coolLightRef.current) {
       coolLightRef.current.style.opacity = (0.05 + 0.04 * dawn).toString();
+    }
+    if (sunDiscRef.current) {
+      sunDiscRef.current.style.transform = `translate(-50%,-50%) rotate(${(p * 360).toFixed(2)}deg)`;
+      sunDiscRef.current.style.opacity = (0.5 + 0.3 * sunBreath).toString();
+    }
+    if (iridescentWashRef.current) {
+      const offset = 38 + 10 * Math.sin(TAU * p);
+      iridescentWashRef.current.style.background = `radial-gradient(60% 46% at ${offset.toFixed(2)}% -6%, rgba(52,199,164,0.10) 0%, rgba(52,199,164,0) 60%)`;
     }
 
     // 2. Rainbow opacity
@@ -563,7 +706,7 @@ export default function HeroBackground() {
         const span = currentW + cw;
         const x = frac(c.start + p) * span - cw;
         const y = c.y * currentH + Math.sin(TAU * (p + c.phase)) * c.bob;
-        cloudDiv.style.transform = `translate(${x}px, ${y}px)`;
+        cloudDiv.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
       }
     });
 
@@ -574,13 +717,27 @@ export default function HeroBackground() {
         const tw = 0.5 + 0.5 * Math.sin(TAU * (s.n * p + s.phase));
         const op = s.op * (0.18 + 0.82 * tw);
         const sc = 0.7 + 0.45 * tw;
-        starDiv.style.transform = `translate(-50%,-50%) scale(${sc})`;
+        starDiv.style.transform = `translate(-50%,-50%) scale(${sc.toFixed(3)})`;
         starDiv.style.opacity = op.toString();
       }
     });
 
-    // 5. Balloon rise & sway
-    if (balloonRef.current) {
+    // 5. Motes Drift
+    L.motes.forEach((m, i) => {
+      const moteDiv = moteRefs.current[i];
+      if (moteDiv) {
+        const pp = frac(p * m.k + m.start);
+        const y = (1.06 - pp * 1.12) * currentH;
+        const x = m.x * currentW + Math.sin(TAU * (p * 2 + m.phase)) * (m.drift * currentW);
+        const fade = smooth(clamp(pp / 0.12, 0, 1)) * (1 - smooth(clamp((pp - 0.85) / 0.15, 0, 1)));
+        const op = m.op * fade;
+        moteDiv.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+        moteDiv.style.opacity = op.toString();
+      }
+    });
+
+    // 6. Balloon 1 & 2 rise & sway
+    if (balloon1Ref.current) {
       const bw = L.balloon.w * currentW;
       const bh = bw * 1.42;
       const travel = currentH + bh * 2.2;
@@ -588,10 +745,21 @@ export default function HeroBackground() {
       const y = (currentH + bh) - pp * travel;
       const x = L.balloon.x * currentW + Math.sin(TAU * (p + L.balloon.swayPhase)) * (L.balloon.sway * currentW);
       const rot = Math.sin(TAU * (p + L.balloon.swayPhase)) * 4;
-      balloonRef.current.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+      balloon1Ref.current.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg)`;
     }
 
-    // 6. Footprints Reveal
+    if (isWide && balloon2Ref.current && L.balloon2) {
+      const bw = L.balloon2.w * currentW;
+      const bh = bw * 1.42;
+      const travel = currentH + bh * 2.2;
+      const pp = frac(p + L.balloon2.offset);
+      const y = (currentH + bh) - pp * travel;
+      const x = L.balloon2.x * currentW + Math.sin(TAU * (p + L.balloon2.swayPhase)) * (L.balloon2.sway * currentW);
+      const rot = Math.sin(TAU * (p + L.balloon2.swayPhase)) * 4;
+      balloon2Ref.current.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${rot.toFixed(2)}deg)`;
+    }
+
+    // 7. Footprints Reveal
     const revealStart = 0.10, revealEnd = 0.64;
     const fadeStart = 0.80, fadeEnd = 0.97;
     const trailFade = 1 - smooth(clamp((p - fadeStart) / (fadeEnd - fadeStart), 0, 1));
@@ -604,6 +772,8 @@ export default function HeroBackground() {
         const appear = smooth(clamp((p - t0) / 0.06, 0, 1));
         const op = pt.op * appear * trailFade;
         footprintDiv.style.opacity = op.toString();
+        const sc = 0.72 + 0.28 * appear;
+        footprintDiv.style.transform = `translate(-50%,-50%) rotate(${pt.rot}deg) scale(${(pt.mirror ? -1 : 1) * sc}, ${sc})`;
       }
     });
   };
@@ -686,12 +856,17 @@ export default function HeroBackground() {
           W={W}
           H={H}
           wide={wide}
+          breatheContainerRef={breatheContainerRef}
           sunGlowRef={sunGlowRef}
           coolLightRef={coolLightRef}
+          iridescentWashRef={iridescentWashRef}
+          sunDiscRef={sunDiscRef}
           rainbowRef={rainbowRef}
           cloudRefs={cloudRefs}
           starRefs={starRefs}
-          balloonRef={balloonRef}
+          balloon1Ref={balloon1Ref}
+          balloon2Ref={balloon2Ref}
+          moteRefs={moteRefs}
           footprintRefs={footprintRefs}
         />
       </div>
