@@ -27,11 +27,11 @@ export default function Testimonials() {
       gradient: "from-primary to-mint"
     },
     {
-      text: "The clinic's appointment scheduling is extremely efficient. We rarely have to wait more than 10 minutes, and the vaccination cold-chain transparency gives us absolute peace of mind. Highly recommend their care.",
-      author: "Rajesh Verma",
+      text: "Both doctors are very polite and explain everything in detail. Dr. Sudarshan took the time to check my baby and guided us about the vaccine schedule and side effects. The clinic is very neat and clean. Best child specialist in Neelbad.",
+      author: "Rahul Dwivedi",
       relation: "Father",
-      childName: "Aarav (1.5y)",
-      locality: "Kolar Road, Bhopal",
+      childName: "Anvi (10m)",
+      locality: "Neelbad, Bhopal",
       initial: "R",
       gradient: "from-sunshine to-coral"
     },
@@ -43,6 +43,33 @@ export default function Testimonials() {
       locality: "Pooja Colony, Bhopal",
       initial: "A",
       gradient: "from-mint to-primary"
+    },
+    {
+      text: "Had a great experience with Dr. Manisha. Her counseling on newborn care and lactation was extremely helpful. The staff is also very supportive. Excellent pediatric care!",
+      author: "Sneha Patel",
+      relation: "Mother",
+      childName: "Reyansh (5m)",
+      locality: "South Bhopal",
+      initial: "S",
+      gradient: "from-coral to-sunshine"
+    },
+    {
+      text: "Very professional husband-wife duo. As a doctor myself, I am very satisfied with their diagnostic approach and clean vaccination cold-chain. No unnecessary medicines prescribed.",
+      author: "Dr. Ashish Sharma",
+      relation: "Parent",
+      childName: "Vihaan (2y)",
+      locality: "Bhopal",
+      initial: "A",
+      gradient: "from-primary to-coral"
+    },
+    {
+      text: "The clinic's appointment scheduling is extremely efficient. We rarely have to wait more than 10 minutes, and the vaccination cold-chain transparency gives us absolute peace of mind. Highly recommend their care.",
+      author: "Rajesh Verma",
+      relation: "Father",
+      childName: "Aarav (1.5y)",
+      locality: "Kolar Road, Bhopal",
+      initial: "R",
+      gradient: "from-mint to-secondary"
     }
   ];
 

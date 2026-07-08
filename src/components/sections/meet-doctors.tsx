@@ -72,10 +72,10 @@ export default function MeetDoctors() {
                 variants={cardRise}
                 whileHover={hoverLift(shouldReduceMotion, -6, { boxShadow: "0 20px 40px rgba(22, 60, 122, 0.12)" })}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group bg-white border border-gray-150 hover:border-primary/20 rounded-3xl shadow-soft transition-all duration-300 overflow-hidden flex flex-col h-full cursor-default"
+                className="group bg-white border border-gray-150 hover:border-primary/20 rounded-3xl shadow-soft transition-all duration-300 overflow-hidden flex flex-col h-full cursor-default relative"
               >
                 {/* Top Gradient Hover Outline */}
-                <div className="h-1.5 w-full bg-transparent group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all duration-300 shrink-0" />
+                <div className="absolute top-0 left-0 right-0 h-1.5 bg-transparent group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-secondary transition-all duration-300 z-10" />
 
                 {/* Image Container */}
                 <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden shrink-0">

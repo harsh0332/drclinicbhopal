@@ -477,18 +477,18 @@ function layoutFor(wide: boolean): LayoutDef {
       { w: 0.36, y: 0.15, start: 0.70, op: 0.9,  bob: 14, phase: 0.6 },
     ],
     stars: [
-      { x: 0.70, y: 0.08, size: 18, op: 0.9, n: 2, phase: 0.0,  color: C.sun },
-      { x: 0.82, y: 0.16, size: 13, op: 0.8, n: 3, phase: 0.4,  color: "#ffffff" },
-      { x: 0.88, y: 0.10, size: 15, op: 0.85, n: 2, phase: 0.7, color: C.sun },
-      { x: 0.84, y: 0.25, size: 12, op: 0.7, n: 3, phase: 0.2,  color: "#ffffff" },
-      { x: 0.20, y: 0.12, size: 13, op: 0.7, n: 2, phase: 0.55, color: C.sun },
-      { x: 0.30, y: 0.06, size: 12, op: 0.65, n: 2, phase: 0.33, color: C.sun },
+      { x: 0.15, y: 0.08, size: 18, op: 0.9, n: 2, phase: 0.0,  color: C.sun },
+      { x: 0.35, y: 0.16, size: 13, op: 0.8, n: 3, phase: 0.4,  color: "#ffffff" },
+      { x: 0.50, y: 0.06, size: 15, op: 0.85, n: 2, phase: 0.7, color: C.sun },
+      { x: 0.65, y: 0.12, size: 12, op: 0.7, n: 3, phase: 0.2,  color: "#ffffff" },
+      { x: 0.80, y: 0.20, size: 13, op: 0.7, n: 2, phase: 0.55, color: C.sun },
+      { x: 0.25, y: 0.24, size: 12, op: 0.65, n: 2, phase: 0.33, color: C.sun },
     ],
-    balloon: { w: 0.16, x: 0.62, sway: 0.02, swayPhase: 0.0, offset: 0.2, tint: "coral" },
+    balloon: { w: 0.16, x: 0.45, sway: 0.02, swayPhase: 0.0, offset: 0.2, tint: "coral" },
     balloon2: { w: 0, x: 0.85, sway: 0, swayPhase: 0, offset: 0, tint: "sun", op: 0, blur: 0 }, // Disabled
     motes: [
-      { x: 0.20, k: 1, start: 0.10, size: 8, drift: 0.010, phase: 0.1, op: 0.5, color: "rgba(180,205,250,0.7)" },
-      { x: 0.78, k: 1, start: 0.55, size: 6, drift: 0.012, phase: 0.5, op: 0.45, color: "rgba(255,214,140,0.7)" },
+      { x: 0.30, k: 1, start: 0.10, size: 8, drift: 0.010, phase: 0.1, op: 0.5, color: "rgba(180,205,250,0.7)" },
+      { x: 0.70, k: 1, start: 0.55, size: 6, drift: 0.012, phase: 0.5, op: 0.45, color: "rgba(255,214,140,0.7)" },
     ],
     footpath: [
       { x: 0.30, y: 0.80, w: 0.05, rot: 12,  mirror: false, op: 0.95 },
@@ -499,7 +499,7 @@ function layoutFor(wide: boolean): LayoutDef {
       { x: 0.71, y: 0.875, w: 0.046, rot: 18, mirror: true,  op: 0.75 },
       { x: 0.79, y: 0.885, w: 0.044, rot: 19, mirror: false, op: 0.65 },
     ],
-    rainbow: { cx: 0.80, cy: 0.50, r: 0.34, op: 0.24, phase: 0.5, a0: 28, a1: 152 },
+    rainbow: { cx: 0.50, cy: 0.55, r: 0.40, op: 0.24, phase: 0.5, a0: 28, a1: 152 },
   };
 }
 
