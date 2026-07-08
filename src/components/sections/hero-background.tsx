@@ -189,34 +189,41 @@ interface LayoutDef {
 
 interface SkyProps {
   W: number;
+  wide: boolean;
   sunGlowRef: React.RefObject<HTMLDivElement | null>;
   coolLightRef: React.RefObject<HTMLDivElement | null>;
   iridescentWashRef: React.RefObject<HTMLDivElement | null>;
   sunDiscRef: React.RefObject<HTMLDivElement | null>;
 }
 
-function Sky({ W, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef }: SkyProps) {
+function Sky({ W, wide, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef }: SkyProps) {
   return (
     <div style={{ position: "absolute", inset: 0 }}>
       {/* base sky gradient */}
       <div style={{
         position: "absolute", inset: 0,
-        background: `linear-gradient(180deg, ${C.skyTop} 0%, ${C.skyMid} 46%, ${C.skyLow} 78%, #F1FBF7 100%)`,
+        background: wide
+          ? `linear-gradient(180deg, ${C.skyTop} 0%, ${C.skyMid} 46%, ${C.skyLow} 78%, #F1FBF7 100%)`
+          : `linear-gradient(180deg, #A8C7FF 0%, ${C.skyTop} 35%, ${C.skyMid} 70%, ${C.skyLow} 100%)`,
       }} />
-      {/* warm sun-glow, upper-right corner — breathes */}
+      {/* warm sun-glow, upper-right corner (desktop) or centered (mobile) — breathes */}
       <div ref={sunGlowRef} style={{
         position: "absolute", inset: 0,
-        background: `radial-gradient(46% 50% at 86% 8%, rgba(255,197,61,0.34) 0%, rgba(255,197,61,0) 62%)`,
+        background: wide
+          ? `radial-gradient(46% 50% at 86% 8%, rgba(255,197,61,0.34) 0%, rgba(255,197,61,0) 62%)`
+          : `radial-gradient(55% 45% at 50% 12%, rgba(255,197,61,0.48) 0%, rgba(255,197,61,0) 65%)`,
         willChange: "opacity",
       }} />
       {/* soft sun disc + slowly turning rays */}
       <div ref={sunDiscRef} style={{
-        position: "absolute", left: "86%", top: "8%",
+        position: "absolute",
+        left: wide ? "86%" : "50%",
+        top: wide ? "8%" : "12%",
         transformOrigin: "center",
         willChange: "transform, opacity",
       }}>
         <svg width={W * 0.30} height={W * 0.30} viewBox="0 0 200 200" style={{ display: "block", filter: "blur(1px)" }}>
-          <g stroke="rgba(255,197,61,0.20)" strokeWidth="7" strokeLinecap="round">
+          <g stroke="rgba(255,197,61,0.22)" strokeWidth="7" strokeLinecap="round">
             {[0,1,2,3,4,5,6,7,8,9,10,11].map((k) => {
               const a = (k / 12) * TAU;
               const r0 = 58 + (k % 2) * 9, r1 = r0 + 16 + (k % 3) * 6;
@@ -236,7 +243,9 @@ function Sky({ W, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef }: Sky
       {/* faint cool light, upper-left */}
       <div ref={coolLightRef} style={{
         position: "absolute", inset: 0,
-        background: `radial-gradient(55% 60% at 16% 2%, rgba(46,108,246,1) 0%, rgba(46,108,246,0) 55%)`,
+        background: wide
+          ? `radial-gradient(55% 60% at 16% 2%, rgba(46,108,246,1) 0%, rgba(46,108,246,0) 55%)`
+          : `radial-gradient(55% 45% at 50% 12%, rgba(46,108,246,0.3) 0%, rgba(46,108,246,0) 50%)`,
         willChange: "opacity",
       }} />
       {/* soft mint floor glow */}
@@ -499,7 +508,7 @@ function layoutFor(wide: boolean): LayoutDef {
       { x: 0.71, y: 0.875, w: 0.046, rot: 18, mirror: true,  op: 0.75 },
       { x: 0.79, y: 0.885, w: 0.044, rot: 19, mirror: false, op: 0.65 },
     ],
-    rainbow: { cx: 0.50, cy: 0.55, r: 0.40, op: 0.24, phase: 0.5, a0: 28, a1: 152 },
+    rainbow: { cx: 0.50, cy: 0.55, r: 0.40, op: 0.38, phase: 0.5, a0: 28, a1: 152 },
   };
 }
 
@@ -553,6 +562,7 @@ function HeroCanvas({
       >
         <Sky
           W={W}
+          wide={wide}
           sunGlowRef={sunGlowRef}
           coolLightRef={coolLightRef}
           iridescentWashRef={iridescentWashRef}
