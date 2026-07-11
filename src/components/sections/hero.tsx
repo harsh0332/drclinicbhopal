@@ -47,7 +47,7 @@ export default function Hero() {
       {/* Readability gradient overlay between background animation and content */}
       <div 
         aria-hidden="true" 
-        className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(244,248,255,0.18)_0%,rgba(244,248,255,0.06)_60%,transparent_100%)] md:bg-[linear-gradient(90deg,#F4F8FF_0%,rgba(244,248,255,0.92)_40%,rgba(244,248,255,0.4)_65%,transparent_100%)] pointer-events-none"
+        className="absolute inset-0 z-0 bg-[linear-gradient(180deg,rgba(244,248,255,0.30)_0%,rgba(244,248,255,0.10)_60%,transparent_100%)] md:bg-[linear-gradient(90deg,#F4F8FF_0%,rgba(244,248,255,0.92)_40%,rgba(244,248,255,0.4)_65%,transparent_100%)] pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto relative z-10 w-full">

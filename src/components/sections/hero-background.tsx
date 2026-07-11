@@ -204,14 +204,14 @@ function Sky({ W, wide, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef 
         position: "absolute", inset: 0,
         background: wide
           ? `linear-gradient(180deg, ${C.skyTop} 0%, ${C.skyMid} 46%, ${C.skyLow} 78%, #F1FBF7 100%)`
-          : `linear-gradient(180deg, #A8C7FF 0%, ${C.skyTop} 35%, ${C.skyMid} 70%, ${C.skyLow} 100%)`,
+          : `linear-gradient(180deg, #C2D8FF 0%, ${C.skyTop} 40%, ${C.skyMid} 75%, ${C.skyLow} 100%)`,
       }} />
       {/* warm sun-glow, upper-right corner (desktop) or centered (mobile) — breathes */}
       <div ref={sunGlowRef} style={{
         position: "absolute", inset: 0,
         background: wide
           ? `radial-gradient(46% 50% at 86% 8%, rgba(255,197,61,0.34) 0%, rgba(255,197,61,0) 62%)`
-          : `radial-gradient(55% 45% at 50% 12%, rgba(255,197,61,0.48) 0%, rgba(255,197,61,0) 65%)`,
+          : `radial-gradient(55% 45% at 50% 12%, rgba(255,197,61,0.38) 0%, rgba(255,197,61,0) 65%)`,
         willChange: "opacity",
       }} />
       {/* soft sun disc + slowly turning rays */}
@@ -222,16 +222,18 @@ function Sky({ W, wide, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef 
         transformOrigin: "center",
         willChange: "transform, opacity",
       }}>
-        <svg width={W * 0.30} height={W * 0.30} viewBox="0 0 200 200" style={{ display: "block", filter: "blur(1px)" }}>
-          <g stroke="rgba(255,197,61,0.22)" strokeWidth="7" strokeLinecap="round">
-            {[0,1,2,3,4,5,6,7,8,9,10,11].map((k) => {
-              const a = (k / 12) * TAU;
-              const r0 = 58 + (k % 2) * 9, r1 = r0 + 16 + (k % 3) * 6;
-              return <line key={k} x1={100 + r0 * Math.cos(a)} y1={100 + r0 * Math.sin(a)} x2={100 + r1 * Math.cos(a)} y2={100 + r1 * Math.sin(a)} />;
-            })}
-          </g>
-          <circle cx="100" cy="100" r="34" fill="rgba(255,215,120,0.55)" />
-          <circle cx="100" cy="100" r="24" fill="rgba(255,230,160,0.85)" />
+        <svg width={wide ? W * 0.30 : W * 0.22} height={wide ? W * 0.30 : W * 0.22} viewBox="0 0 200 200" style={{ display: "block", filter: "blur(1px)" }}>
+          {wide && (
+            <g stroke="rgba(255,197,61,0.22)" strokeWidth="7" strokeLinecap="round">
+              {[0,1,2,3,4,5,6,7,8,9,10,11].map((k) => {
+                const a = (k / 12) * TAU;
+                const r0 = 58 + (k % 2) * 9, r1 = r0 + 16 + (k % 3) * 6;
+                return <line key={k} x1={100 + r0 * Math.cos(a)} y1={100 + r0 * Math.sin(a)} x2={100 + r1 * Math.cos(a)} y2={100 + r1 * Math.sin(a)} />;
+              })}
+            </g>
+          )}
+          <circle cx="100" cy="100" r="34" fill="rgba(255,215,120,0.30)" />
+          <circle cx="100" cy="100" r="24" fill="rgba(255,230,160,0.60)" />
         </svg>
       </div>
       {/* slow iridescent wash drifting across the top */}
@@ -481,23 +483,23 @@ function layoutFor(wide: boolean): LayoutDef {
   // Mobile Lightening Applied: Reduced counts and disabled secondary balloon completely.
   return {
     clouds: [
-      { w: 0.42, y: 0.06, start: 0.05, op: 0.95, bob: 12, phase: 0.0 },
-      { w: 0.30, y: 0.02, start: 0.45, op: 0.7,  bob: 9,  phase: 0.3 },
-      { w: 0.36, y: 0.15, start: 0.70, op: 0.9,  bob: 14, phase: 0.6 },
+      { w: 0.42, y: 0.06, start: 0.05, op: 0.70, bob: 12, phase: 0.0 },
+      { w: 0.30, y: 0.02, start: 0.45, op: 0.55, bob: 9,  phase: 0.3 },
+      { w: 0.36, y: 0.15, start: 0.70, op: 0.65, bob: 14, phase: 0.6 },
     ],
     stars: [
-      { x: 0.15, y: 0.08, size: 18, op: 0.9, n: 2, phase: 0.0,  color: C.sun },
-      { x: 0.35, y: 0.16, size: 13, op: 0.8, n: 3, phase: 0.4,  color: "#ffffff" },
-      { x: 0.50, y: 0.06, size: 15, op: 0.85, n: 2, phase: 0.7, color: C.sun },
-      { x: 0.65, y: 0.12, size: 12, op: 0.7, n: 3, phase: 0.2,  color: "#ffffff" },
-      { x: 0.80, y: 0.20, size: 13, op: 0.7, n: 2, phase: 0.55, color: C.sun },
-      { x: 0.25, y: 0.24, size: 12, op: 0.65, n: 2, phase: 0.33, color: C.sun },
+      { x: 0.15, y: 0.08, size: 10, op: 0.5, n: 2, phase: 0.0,  color: C.sun },
+      { x: 0.35, y: 0.16, size: 7,  op: 0.4, n: 3, phase: 0.4,  color: "#ffffff" },
+      { x: 0.50, y: 0.06, size: 8,  op: 0.45, n: 2, phase: 0.7, color: C.sun },
+      { x: 0.65, y: 0.12, size: 6,  op: 0.35, n: 3, phase: 0.2,  color: "#ffffff" },
+      { x: 0.80, y: 0.20, size: 7,  op: 0.35, n: 2, phase: 0.55, color: C.sun },
+      { x: 0.25, y: 0.24, size: 6,  op: 0.3,  n: 2, phase: 0.33, color: C.sun },
     ],
-    balloon: { w: 0.16, x: 0.45, sway: 0.02, swayPhase: 0.0, offset: 0.2, tint: "coral" },
+    balloon: { w: 0.11, x: 0.45, sway: 0.02, swayPhase: 0.0, offset: 0.2, tint: "coral", op: 0.65 },
     balloon2: { w: 0, x: 0.85, sway: 0, swayPhase: 0, offset: 0, tint: "sun", op: 0, blur: 0 }, // Disabled
     motes: [
-      { x: 0.30, k: 1, start: 0.10, size: 8, drift: 0.010, phase: 0.1, op: 0.5, color: "rgba(180,205,250,0.7)" },
-      { x: 0.70, k: 1, start: 0.55, size: 6, drift: 0.012, phase: 0.5, op: 0.45, color: "rgba(255,214,140,0.7)" },
+      { x: 0.30, k: 1, start: 0.10, size: 8, drift: 0.010, phase: 0.1, op: 0.25, color: "rgba(180,205,250,0.7)" },
+      { x: 0.70, k: 1, start: 0.55, size: 6, drift: 0.012, phase: 0.5, op: 0.20, color: "rgba(255,214,140,0.7)" },
     ],
     footpath: [
       { x: 0.30, y: 0.80, w: 0.05, rot: 12,  mirror: false, op: 0.95 },
@@ -508,7 +510,7 @@ function layoutFor(wide: boolean): LayoutDef {
       { x: 0.71, y: 0.875, w: 0.046, rot: 18, mirror: true,  op: 0.75 },
       { x: 0.79, y: 0.885, w: 0.044, rot: 19, mirror: false, op: 0.65 },
     ],
-    rainbow: { cx: 0.50, cy: 0.55, r: 0.40, op: 0.38, phase: 0.5, a0: 28, a1: 152 },
+    rainbow: { cx: 0.50, cy: 0.55, r: 0.40, op: 0.14, phase: 0.5, a0: 28, a1: 152 },
   };
 }
 
