@@ -37,9 +37,7 @@ const GalleryPreview = dynamic(() => import("@/components/sections/gallery-previ
 const MapContact = dynamic(() => import("@/components/sections/map-contact"), {
   loading: () => <div className="w-full h-[500px] bg-surface-tint" />
 });
-const BookAppointment = dynamic(() => import("@/components/sections/book-appointment"), {
-  loading: () => <div className="w-full h-[600px] bg-white" />
-});
+import BookAppointment from "@/components/sections/book-appointment";
 
 export const metadata: Metadata = {
   title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
