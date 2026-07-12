@@ -59,3 +59,36 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
+
+/* ── Mobile Performance ── */
+html {
+  /* Enables momentum scrolling on iOS and smooth scroll on Android */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Prevent overscroll bounce from triggering repaints */
+body {
+  overscroll-behavior-y: none;
+}
+
+/* Defer rendering of off-screen sections — huge paint savings on mobile */
+section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* GPU-layer hint for CSS-animated floating cards in hero */
+[style*="bsFloat"] {
+  will-change: transform;
+}
+
+/* Reduce motion: skip all animations for accessibility + battery */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

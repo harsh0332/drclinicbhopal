@@ -30,7 +30,7 @@ function CloudShape({ w, opacity }: CloudShapeProps) {
   const h = w * 0.6;
   return (
     <svg width={w} height={h} viewBox="0 0 200 120"
-      style={{ display: "block", filter: "blur(1.2px)", overflow: "visible" }}>
+      style={{ display: "block", overflow: "visible" }}>
       <defs>
         <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#ffffff" stopOpacity="1" />
@@ -240,7 +240,6 @@ function Sky({ W, wide, sunGlowRef, coolLightRef, iridescentWashRef, sunDiscRef 
       <div ref={iridescentWashRef} style={{
         position: "absolute", inset: 0,
         background: `radial-gradient(60% 46% at 38% -6%, rgba(52,199,164,0.10) 0%, rgba(52,199,164,0) 60%)`,
-        willChange: "background",
       }} />
       {/* faint cool light, upper-left */}
       <div ref={coolLightRef} style={{
@@ -309,6 +308,7 @@ function Clouds({ W, defs, wide, cloudRefs }: CloudsProps) {
               position: "absolute", left: 0, top: 0,
               filter: wide ? "drop-shadow(0 16px 26px rgba(96,134,205,0.28))" : "none",
               willChange: "transform",
+              contain: "layout style",
             }}>
             <CloudShape w={cw} opacity={c.op} />
           </div>
@@ -673,10 +673,14 @@ export default function HeroBackground() {
     return () => observer.disconnect();
   }, []);
 
+  // Cache the layout so layoutFor() is NOT called every animation frame
+  const layoutCache = useRef<LayoutDef>(layoutFor(wide));
+  useEffect(() => { layoutCache.current = layoutFor(wide); }, [wide]);
+
   // Purely Imperative Animation Updater
   const updateAnimation = (p: number) => {
     const isWide = wideRef.current;
-    const L = layoutFor(isWide);
+    const L = layoutCache.current;
     const currentW = isWide ? 1600 : 900;
     const currentH = isWide ? 900 : 1600;
 
@@ -799,12 +803,22 @@ export default function HeroBackground() {
     }
 
     let delayTimeout: NodeJS.Timeout | null = null;
+    // On mobile throttle to ~30fps to halve CPU usage with no perceptible quality loss
+    const TARGET_MS = wideRef.current ? 1000 / 60 : 1000 / 30;
+    let lastStepTime = 0;
 
     const step = (ts: number) => {
+      // Throttle: skip frame if not enough time has passed
+      if (ts - lastStepTime < TARGET_MS - 2) {
+        rafRef.current = requestAnimationFrame(step);
+        return;
+      }
+      lastStepTime = ts;
+
       if (lastTime.current == null) {
         lastTime.current = ts;
       }
-      const dt = (ts - lastTime.current) / 1000;
+      const dt = Math.min((ts - lastTime.current) / 1000, 0.1); // cap dt to avoid large jumps after tab switch
       lastTime.current = ts;
 
       let nextTime = timeRef.current + dt;
