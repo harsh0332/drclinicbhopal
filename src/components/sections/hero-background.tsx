@@ -699,10 +699,7 @@ export default function HeroBackground() {
       sunDiscRef.current.style.transform = `translate(-50%,-50%) rotate(${(p * 360).toFixed(2)}deg)`;
       sunDiscRef.current.style.opacity = (0.5 + 0.3 * sunBreath).toString();
     }
-    if (iridescentWashRef.current) {
-      const offset = 38 + 10 * Math.sin(TAU * p);
-      iridescentWashRef.current.style.background = `radial-gradient(60% 46% at ${offset.toFixed(2)}% -6%, rgba(52,199,164,0.10) 0%, rgba(52,199,164,0) 60%)`;
-    }
+    // Removed iridescentWash background animation to prevent expensive GPU repaints on mobile
 
     // 2. Rainbow opacity
     if (rainbowRef.current) {
@@ -801,6 +798,8 @@ export default function HeroBackground() {
       return;
     }
 
+    let delayTimeout: NodeJS.Timeout | null = null;
+
     const step = (ts: number) => {
       if (lastTime.current == null) {
         lastTime.current = ts;
@@ -818,8 +817,15 @@ export default function HeroBackground() {
       rafRef.current = requestAnimationFrame(step);
     };
 
-    rafRef.current = requestAnimationFrame(step);
+    // Defer the start of the animation loop by 350ms to allow smooth page mount and hydration
+    delayTimeout = setTimeout(() => {
+      rafRef.current = requestAnimationFrame(step);
+    }, 350);
+
     return () => {
+      if (delayTimeout) {
+        clearTimeout(delayTimeout);
+      }
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
