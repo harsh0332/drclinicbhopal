@@ -14,10 +14,10 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <Link href="/" className="inline-block">
               <ClinicImage
-                src="/images/logo/logo-white.svg"
+                src="/images/logo/logo-navy.png"
                 alt={siteConfig.name}
-                width={180}
-                height={42}
+                width={191}
+                height={70}
                 className="h-10 w-auto object-contain"
               />
             </Link>
@@ -86,11 +86,16 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 shrink-0 text-secondary mt-0.5" />
                 <span>{siteConfig.address}</span>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 shrink-0 text-secondary" />
-                <a href={siteConfig.phoneLink} className="hover:text-white transition-colors font-semibold">
-                  +91 {siteConfig.phone}
-                </a>
+              <li className="flex items-start gap-2">
+                <Phone className="w-4 h-4 shrink-0 text-secondary mt-1" />
+                <div className="flex flex-col gap-1">
+                  <a href={siteConfig.phoneLink} className="hover:text-white transition-colors font-semibold block">
+                    +91 {siteConfig.phone} (Mobile)
+                  </a>
+                  <a href={siteConfig.landlineLink} className="hover:text-white transition-colors font-semibold block">
+                    0755-{siteConfig.landline.split("-")[1]} (Landline)
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-secondary" />

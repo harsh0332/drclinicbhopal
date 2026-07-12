@@ -94,11 +94,16 @@ export default function ContactPage() {
                     <span className="font-semibold text-gray-900 shrink-0 w-20">Address:</span>
                     <span>{siteConfig.address}</span>
                   </li>
-                  <li className="flex items-center gap-3">
-                    <span className="font-semibold text-gray-900 shrink-0 w-20">Phone:</span>
-                    <a href={siteConfig.phoneLink} className="hover:text-primary transition-colors font-semibold text-gray-950">
-                      +91 {siteConfig.phone}
-                    </a>
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-gray-900 shrink-0 w-20 mt-1">Phone:</span>
+                    <div className="flex flex-col gap-1">
+                      <a href={siteConfig.phoneLink} className="hover:text-primary transition-colors font-semibold text-gray-950 block">
+                        +91 {siteConfig.phone} (Mobile)
+                      </a>
+                      <a href={siteConfig.landlineLink} className="hover:text-primary transition-colors font-semibold text-gray-950 block">
+                        0755-{siteConfig.landline.split("-")[1]} (Landline)
+                      </a>
+                    </div>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="font-semibold text-gray-900 shrink-0 w-20">Email:</span>

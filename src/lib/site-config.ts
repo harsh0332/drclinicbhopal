@@ -6,12 +6,14 @@ export const siteConfig = {
   showGoogleRating: false, // Set to true once verified reviews are live
   phone: "62625 60101",
   phoneLink: "tel:+916262560101",
+  landline: "0755-4565588",
+  landlineLink: "tel:+917554565588",
   whatsapp: "62625 60101",
   whatsappLink: "https://wa.me/916262560101?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20for%20my%20child%20at%20Baby%20Steps.",
   email: "contact@babystepsclinic.in",
   hours: [
-    { days: "Monday – Saturday", time: "10:00 AM – 1:00 PM, 5:00 PM – 8:00 PM" },
-    { days: "Sunday", time: "Closed (Available for Emergencies)" }
+    { days: "Monday – Saturday", time: "10:00 AM – 9:00 PM" },
+    { days: "Sunday", time: "10:00 AM – 1:00 PM" }
   ],
   doctors: [
     {

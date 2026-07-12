@@ -8,10 +8,22 @@ export function getMedicalClinicSchema() {
     "name": siteConfig.name,
     "alternateName": siteConfig.shortName,
     "url": "https://www.babystepsclinic.in",
-    "logo": "https://www.babystepsclinic.in/images/logo/logo.png",
+    "logo": "https://www.babystepsclinic.in/images/logo/logo-horizontal.png",
     "image": "https://www.babystepsclinic.in/images/clinic/exterior.jpg",
     "telephone": "+916262560101",
     "email": siteConfig.email,
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+916262560101",
+        "contactType": "customer service"
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+917554565588",
+        "contactType": "customer service"
+      }
+    ],
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -31,13 +43,13 @@ export function getMedicalClinicSchema() {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "opens": "10:00",
-        "closes": "13:00"
+        "closes": "21:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "17:00",
-        "closes": "20:00"
+        "dayOfWeek": ["Sunday"],
+        "opens": "10:00",
+        "closes": "13:00"
       }
     ],
     "sameAs": [
@@ -58,7 +70,7 @@ export function getPhysicianSchema(doctor: { name: string; degree: string; title
     "description": `${doctor.title} with credentials ${doctor.degree}. ${doctor.hospital}.`,
     "telephone": "+916262560101",
     "url": `https://www.babystepsclinic.in/doctors/${doctor.id}`,
-    "logo": "https://www.babystepsclinic.in/images/logo/logo.png",
+    "logo": "https://www.babystepsclinic.in/images/logo/logo-horizontal.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
@@ -135,7 +147,7 @@ export function getBlogPostingSchema(post: { title: string; excerpt: string; slu
       "name": siteConfig.name,
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.babystepsclinic.in/images/logo/logo.png"
+        "url": "https://www.babystepsclinic.in/images/logo/logo-horizontal.png"
       }
     },
     "url": `https://www.babystepsclinic.in/blog/${post.slug}`,

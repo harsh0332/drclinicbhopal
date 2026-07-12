@@ -49,14 +49,28 @@ export default function Header() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center shrink-0 focus-visible:outline-3 focus-visible:outline-[#163C7A] focus-visible:outline-offset-3 rounded-xl">
-              <ClinicImage
-                src="/images/logo/logo.svg"
-                alt="Baby Steps Newborn & Child Clinic Logo"
-                width={160}
-                height={38}
-                className="h-10 w-auto object-contain"
-                priority
-              />
+              {/* Stacked logo for mobile viewports */}
+              <div className="block sm:hidden">
+                <ClinicImage
+                  src="/images/logo/logo-stacked.png"
+                  alt="Baby Steps Newborn & Child Clinic Logo"
+                  width={90}
+                  height={70}
+                  className="h-10 w-auto object-contain"
+                  priority
+                />
+              </div>
+              {/* Horizontal logo for desktop viewports */}
+              <div className="hidden sm:block">
+                <ClinicImage
+                  src="/images/logo/logo-horizontal.png"
+                  alt="Baby Steps Newborn & Child Clinic Logo"
+                  width={182}
+                  height={80}
+                  className="h-10 w-auto object-contain"
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Desktop Navigation */}

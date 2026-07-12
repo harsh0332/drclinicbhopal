@@ -87,7 +87,7 @@ export default function Hero() {
               className={`text-sm sm:text-base lg:text-lg leading-relaxed text-[#2A3A52] mb-3 max-w-2xl text-pretty font-sans ${animClass}`}
               style={shouldReduceMotion ? {} : { animationDelay: "300ms", animationFillMode: "both" }}
             >
-              A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — trained in New Delhi &amp; Boston, now caring for families in Neelbad.
+              A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — trained in New Delhi, now caring for families in Neelbad.
             </p>
 
             {/* Micro Trust Line */}

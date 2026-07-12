@@ -2,6 +2,10 @@
 // This ensures client-side components can verify file existence without calling Node's fs module.
 
 export const existingImages: Record<string, boolean> = {
+  "/images/logo/logo-horizontal.png": true,
+  "/images/logo/logo-stacked.png": true,
+  "/images/logo/logo-navy.png": true,
+  "/images/logo/logo-icon.png": true,
   "/images/logo/logo.svg": true,
   "/images/logo/logo.png": true,
   "/images/logo/logo-white.svg": true,
