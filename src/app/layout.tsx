@@ -8,6 +8,7 @@ import WhatsAppFloating from "@/components/layout/whatsapp-floating";
 import AmbientBackground from "@/components/layout/ambient-background";
 import SiteChrome from "@/components/layout/site-chrome";
 import { siteConfig } from "@/lib/site-config";
+import { getMedicalClinicSchema } from "@/lib/schemas";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -68,24 +69,7 @@ export default function RootLayout({
             <script
               type="application/ld+json"
               dangerouslySetInnerHTML={{
-                __html: JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "MedicalClinic",
-                  name: siteConfig.name,
-                  url: "https://www.babystepsclinic.in",
-                  telephone: "+916262560101",
-                  email: siteConfig.email,
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
-                    addressLocality: "Bhopal",
-                    addressRegion: "Madhya Pradesh",
-                    postalCode: "462044",
-                    addressCountry: "IN",
-                  },
-                  medicalSpecialty: "Pediatrics",
-                  openingHours: "Mo-Sa 10:00-13:00,17:00-20:00",
-                }),
+                __html: JSON.stringify(getMedicalClinicSchema()),
               }}
             />
           }

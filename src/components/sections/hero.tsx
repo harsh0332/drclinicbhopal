@@ -96,7 +96,7 @@ export default function Hero() {
               style={shouldReduceMotion ? {} : { animationDelay: "450ms", animationFillMode: "both" }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6] mt-[5px] shrink-0" />
-              <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Open Mon–Sat</span>
+              <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Open Daily</span>
             </div>
 
             {/* Action CTAs */}
@@ -234,8 +234,8 @@ export default function Hero() {
                 </svg>
               </div>
               <div className="leading-tight text-left">
-                <div className="text-[12px] md:text-[12.5px] font-bold text-[#163C7A]">Open Mon–Sat</div>
-                <div className="text-[10px] md:text-[10.5px] text-[#5A6B85]">10–1 &amp; 5–8 · by appt</div>
+                <div className="text-[12px] md:text-[12.5px] font-bold text-[#163C7A]">Open Daily</div>
+                <div className="text-[10px] md:text-[10.5px] text-[#5A6B85]">Mon–Sat 10–9 · Sun 10–1</div>
               </div>
             </div>
 
