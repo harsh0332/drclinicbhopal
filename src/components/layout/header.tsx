@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
 import { Phone, Menu, X, Calendar } from "lucide-react";
 import ClinicImage from "@/components/ui/clinic-image";
+import WhatsAppCaptureLink from "@/components/ui/whatsapp-capture-link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -155,14 +156,13 @@ export default function Header() {
                 <Phone className="w-5 h-5" />
                 <span>Call: {siteConfig.phone}</span>
               </a>
-              <Link
-                href={siteConfig.whatsappLink}
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center gap-2 bg-primary text-white text-base font-semibold py-4 rounded-2xl shadow-md"
+              <WhatsAppCaptureLink
+                onTrigger={() => setIsOpen(false)}
+                className="flex items-center justify-center gap-2 bg-primary text-white text-base font-semibold py-4 rounded-2xl shadow-md w-full"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book Appointment</span>
-              </Link>
+              </WhatsAppCaptureLink>
             </div>
           </nav>
         </div>

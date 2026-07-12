@@ -9,9 +9,9 @@ import { LayoutDashboard, CalendarClock, Footprints, Syringe, LogOut } from "luc
 // route exists it renders as a disabled item so builds stay honest.
 const NAV_ITEMS = [
   { name: "Dashboard", href: "/admin", icon: LayoutDashboard, ready: true },
-  { name: "Appointments", href: "/admin/appointments", icon: CalendarClock, ready: false },
-  { name: "Walk-ins", href: "/admin/walk-ins", icon: Footprints, ready: false },
-  { name: "Vaccinations", href: "/admin/vaccinations", icon: Syringe, ready: false },
+  { name: "Appointments", href: "/admin/appointments", icon: CalendarClock, ready: true },
+  { name: "Walk-ins", href: "/admin/walkins", icon: Footprints, ready: true },
+  { name: "Vaccinations", href: "/admin/vaccinations", icon: Syringe, ready: true },
 ];
 
 export default async function AdminPanelLayout({ children }: { children: React.ReactNode }) {

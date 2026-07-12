@@ -57,19 +57,21 @@ var TABS = {
     "phone",
     "child_age",
     "preferred_time",
-    "status",
+    "message",
+    "source", // "form" (website form) or "whatsapp" (WhatsApp button capture)
+    "status", // New / Contacted / Confirmed / Completed / Cancelled
     "notes"
   ],
   WalkIns: [
     "id",
-    "created_at",
-    "name",
+    "created_at", // when the row was entered
+    "patient_name", // parent/guardian name
     "phone",
+    "child_name",
     "child_age",
-    "reason",
-    "doctor",
-    "status",
-    "notes"
+    "gender",
+    "reason", // reason for visit / notes
+    "visit_date" // the visit date staff record (defaults to today)
   ],
   Children: [
     "id",
@@ -84,19 +86,22 @@ var TABS = {
   Vaccinations: [
     "id",
     "created_at",
-    "child_id",
-    "child_name",
+    "child_id", // Children.id this dose belongs to
+    "child_name", // denormalized for fast lists
     "vaccine",
-    "due_date",
-    "given_date",
-    "status",
+    "dose", // e.g. "Dose 1", "Booster"
+    "due_date", // YYYY-MM-DD, computed from DOB + IAP offset
+    "given_date", // blank until administered
+    "status", // stored snapshot; UI recomputes from dates
     "notes"
   ]
 };
 
 /**
  * One-off setup: creates the 4 tabs with correct headers if they don't exist.
- * Safe to re-run — never deletes data, only adds missing tabs/headers.
+ * Safe to re-run — never deletes data. If a tab already exists but is missing
+ * newer columns (e.g. "message"/"source" added later), the missing headers
+ * are appended to the RIGHT of the existing ones so old rows stay intact.
  * Run manually from the Apps Script editor (select "setup" → Run).
  */
 function setup() {
@@ -110,14 +115,23 @@ function setup() {
       sheet = ss.insertSheet(tabName);
     }
 
-    // Write headers into row 1 if the first cell is empty (new/blank tab).
     var firstCell = sheet.getRange(1, 1).getValue();
     if (firstCell === "" || firstCell === null) {
+      // New/blank tab: write the full header row.
       sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+    } else {
+      // Existing tab: append any headers it doesn't have yet.
+      var existing = getHeaders(sheet);
+      var missing = headers.filter(function (h) {
+        return existing.indexOf(h) === -1;
+      });
+      if (missing.length > 0) {
+        sheet.getRange(1, existing.length + 1, 1, missing.length).setValues([missing]);
+      }
     }
 
     // Cosmetics: bold + frozen header row.
-    sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold");
+    sheet.getRange(1, 1, 1, sheet.getLastColumn()).setFontWeight("bold");
     sheet.setFrozenRows(1);
   });
 
@@ -176,6 +190,9 @@ function handleRequest(e, body) {
     if (action === "append") {
       return jsonResponse(appendRow(params.tab, params.row));
     }
+    if (action === "appendMany") {
+      return jsonResponse(appendManyRows(params.tab, params.rows));
+    }
     if (action === "update") {
       return jsonResponse(updateRow(params.tab, params.id, params.patch));
     }
@@ -197,10 +214,29 @@ function getSheetOrThrow(tabName) {
   return sheet;
 }
 
+/**
+ * Read the tab's ACTUAL header row. All row<->object mapping is driven by
+ * this (not by the TABS constant), so column order in the sheet can never
+ * corrupt data — even after new columns are appended by a later setup().
+ */
+function getHeaders(sheet) {
+  var lastCol = sheet.getLastColumn();
+  if (lastCol < 1) return [];
+  return sheet
+    .getRange(1, 1, 1, lastCol)
+    .getValues()[0]
+    .map(function (h) {
+      return String(h).trim();
+    })
+    .filter(function (h) {
+      return h !== "";
+    });
+}
+
 /** action=list — read all data rows of a tab as objects keyed by header. */
 function listRows(tabName) {
   var sheet = getSheetOrThrow(tabName);
-  var headers = TABS[tabName];
+  var headers = getHeaders(sheet);
   var lastRow = sheet.getLastRow();
 
   if (lastRow < 2) {
@@ -230,7 +266,7 @@ function appendRow(tabName, row) {
     throw new Error("Missing 'row' object");
   }
   var sheet = getSheetOrThrow(tabName);
-  var headers = TABS[tabName];
+  var headers = getHeaders(sheet);
 
   var id = Utilities.getUuid();
   var createdAt = new Date().toISOString();
@@ -246,6 +282,37 @@ function appendRow(tabName, row) {
 }
 
 /**
+ * action=appendMany — add many rows in ONE call (used when a child is added
+ * and their whole IAP vaccination schedule is generated, ~35 rows). A single
+ * setValues() write instead of one HTTP round-trip per row.
+ */
+function appendManyRows(tabName, rows) {
+  if (!Array.isArray(rows) || rows.length === 0) {
+    throw new Error("Missing 'rows' array");
+  }
+  if (rows.length > 200) {
+    throw new Error("Too many rows in one call (max 200)");
+  }
+  var sheet = getSheetOrThrow(tabName);
+  var headers = getHeaders(sheet);
+  var createdAt = new Date().toISOString();
+  var ids = [];
+
+  var values = rows.map(function (row) {
+    var id = Utilities.getUuid();
+    ids.push(id);
+    return headers.map(function (header) {
+      if (header === "id") return id;
+      if (header === "created_at") return row.created_at || createdAt;
+      return row.hasOwnProperty(header) ? row[header] : "";
+    });
+  });
+
+  sheet.getRange(sheet.getLastRow() + 1, 1, values.length, headers.length).setValues(values);
+  return { ok: true, ids: ids };
+}
+
+/**
  * action=update — patch an existing row found by its `id`.
  * `patch` is an object with the columns to change (id/created_at immutable).
  */
@@ -254,7 +321,7 @@ function updateRow(tabName, id, patch) {
   if (!patch || typeof patch !== "object") throw new Error("Missing 'patch' object");
 
   var sheet = getSheetOrThrow(tabName);
-  var headers = TABS[tabName];
+  var headers = getHeaders(sheet);
   var lastRow = sheet.getLastRow();
   if (lastRow < 2) throw new Error("Row not found: " + id);
 

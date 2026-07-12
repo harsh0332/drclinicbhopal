@@ -106,7 +106,7 @@ export default function PrivacyPage() {
                 4. Data Storage and Security
               </h2>
               <p>
-                All online appointment submissions are encrypted during transit (using SSL/HTTPS protocols) and stored securely within our private database systems (Supabase). Access to patient databases is strictly restricted to authorized clinic staff.
+                All online appointment submissions are encrypted during transit (using SSL/HTTPS protocols) and stored securely within our private, access-controlled record systems (Google Workspace). Access to patient records is strictly restricted to authorized clinic staff.
               </p>
             </div>
 

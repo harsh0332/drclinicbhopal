@@ -11,6 +11,7 @@ export default function AppointmentForm() {
   const [phone, setPhone] = useState("");
   const [childAge, setChildAge] = useState("");
   const [preferredTime, setPreferredTime] = useState("");
+  const [message, setMessage] = useState("");
 
   // UI States
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "fallback-success" | "error">("idle");
@@ -34,6 +35,7 @@ export default function AppointmentForm() {
     formData.append("phone", phone);
     formData.append("childAge", childAge);
     formData.append("preferredTime", preferredTime);
+    formData.append("message", message);
 
     try {
       const res = await bookAppointmentAction(formData);
@@ -44,6 +46,12 @@ export default function AppointmentForm() {
         } else {
           setStatus("success");
         }
+        // Lead is captured server-side (Appointments sheet) — now hand the
+        // parent over to WhatsApp with their details prefilled. Popup
+        // blockers may stop this (no direct user gesture after await); the
+        // success screen's "Confirm on WhatsApp" button stays as the manual
+        // path, so the flow never dead-ends.
+        window.open(getWhatsAppFallbackLink(), "_blank", "noopener,noreferrer");
       } else {
         setErrorMessage(res.error || "Submission failed. Please check inputs.");
         setStatus("error");
@@ -54,10 +62,11 @@ export default function AppointmentForm() {
     }
   };
 
-  // Prefilled WhatsApp message for fallback
+  // Prefilled WhatsApp message with the submitted details
   const getWhatsAppFallbackLink = () => {
     const timeFormatted = preferredTime ? preferredTime.replace("T", " ") : "";
-    const text = `Hi Baby Steps Clinic, I'd like to book an appointment.\n\nParent Name: ${name}\nPhone: ${phone}\nChild's Age: ${childAge}\nPreferred Time: ${timeFormatted}`;
+    const messageLine = message.trim() ? `\nMessage: ${message.trim()}` : "";
+    const text = `Hi Baby Steps Clinic, I'd like to book an appointment.\n\nParent Name: ${name}\nPhone: ${phone}\nChild's Age: ${childAge}\nPreferred Time: ${timeFormatted}${messageLine}`;
     return `https://wa.me/916262560101?text=${encodeURIComponent(text)}`;
   };
 
@@ -105,6 +114,7 @@ export default function AppointmentForm() {
               setPhone("");
               setChildAge("");
               setPreferredTime("");
+              setMessage("");
               setStatus("idle");
             }}
             className="mt-4 text-xs font-semibold text-primary hover:underline min-h-[44px] flex items-center justify-center px-4"
@@ -190,6 +200,23 @@ export default function AppointmentForm() {
                 value={preferredTime}
                 onChange={(e) => setPreferredTime(e.target.value)}
                 className="border border-gray-250 rounded-2xl py-3 px-4 text-xs sm:text-sm font-sans focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary disabled:bg-gray-50"
+              />
+            </div>
+
+            {/* Field 5: Optional message */}
+            <div className="flex flex-col gap-1.5 sm:col-span-2">
+              <label htmlFor="form-message" className="text-[10px] font-bold text-primary-dark uppercase tracking-wider">
+                Message <span className="text-muted-text normal-case font-medium tracking-normal">(optional)</span>
+              </label>
+              <textarea
+                id="form-message"
+                rows={2}
+                maxLength={500}
+                disabled={status === "loading"}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                placeholder="Anything you'd like the doctor to know (symptoms, concerns, etc.)"
+                className="border border-gray-250 rounded-2xl py-3 px-4 text-xs sm:text-sm font-sans focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary disabled:bg-gray-50 resize-none"
               />
             </div>
           </div>

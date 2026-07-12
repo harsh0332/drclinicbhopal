@@ -12,42 +12,25 @@ export interface BaseRow {
   created_at: string;
 }
 
-export interface AppointmentRow extends BaseRow {
-  name: string;
-  phone: string;
-  child_age: string;
-  preferred_time: string;
-  status: string;
-  notes: string;
-}
+// Appointment types/constants live in appointment-types.ts so client
+// components can import them WITHOUT touching this server-only module.
+import type { AppointmentRow } from "@/lib/appointment-types";
 
-export interface WalkInRow extends BaseRow {
-  name: string;
-  phone: string;
-  child_age: string;
-  reason: string;
-  doctor: string;
-  status: string;
-  notes: string;
-}
+export type { AppointmentRow, AppointmentStatus, AppointmentSource } from "@/lib/appointment-types";
+export { APPOINTMENT_STATUSES } from "@/lib/appointment-types";
 
-export interface ChildRow extends BaseRow {
-  child_name: string;
-  dob: string;
-  gender: string;
-  parent_name: string;
-  phone: string;
-  notes: string;
-}
+// Walk-in types live in walkin-types.ts (client-safe, same pattern as
+// appointment-types.ts).
+import type { WalkInRow } from "@/lib/walkin-types";
 
-export interface VaccinationRow extends BaseRow {
-  child_id: string;
-  child_name: string;
-  vaccine: string;
-  due_date: string;
-  given_date: string;
-  status: string;
-}
+export type { WalkInRow, WalkInGender, WalkInFields } from "@/lib/walkin-types";
+export { WALKIN_GENDERS } from "@/lib/walkin-types";
+
+// Child/vaccination types live in vaccination-types.ts (client-safe).
+import type { ChildRow, VaccinationRow } from "@/lib/vaccination-types";
+
+export type { ChildRow, ChildFields, VaccinationRow } from "@/lib/vaccination-types";
+export { CHILD_GENDERS } from "@/lib/vaccination-types";
 
 interface TabRowMap {
   Appointments: AppointmentRow;
@@ -67,6 +50,7 @@ interface SheetsResponse {
   error?: string;
   rows?: unknown[];
   id?: string;
+  ids?: string[];
   pong?: boolean;
 }
 
@@ -117,6 +101,16 @@ export async function appendRow<T extends TabName>(tab: T, row: NewRow<T>): Prom
   const data = await callSheets({ action: "append", tab, row });
   if (!data.id) throw new Error("Sheets backend did not return an id for the appended row.");
   return data.id;
+}
+
+/**
+ * Append many rows in ONE backend call (e.g. a child's full IAP schedule).
+ * Returns the generated row ids, in the same order as the input.
+ */
+export async function appendRows<T extends TabName>(tab: T, rows: NewRow<T>[]): Promise<string[]> {
+  const data = await callSheets({ action: "appendMany", tab, rows });
+  if (!data.ids) throw new Error("Sheets backend did not return ids for the appended rows.");
+  return data.ids;
 }
 
 /** Update columns of an existing row identified by id. */

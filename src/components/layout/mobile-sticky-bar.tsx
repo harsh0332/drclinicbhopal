@@ -1,6 +1,6 @@
 import { siteConfig } from "@/lib/site-config";
 import { Phone, MessageSquare, Calendar } from "lucide-react";
-import Link from "next/link";
+import WhatsAppCaptureLink from "@/components/ui/whatsapp-capture-link";
 
 export default function MobileStickyBar() {
   return (
@@ -15,24 +15,20 @@ export default function MobileStickyBar() {
         <span>Call</span>
       </a>
 
-      {/* WhatsApp Button */}
-      <a
-        href={siteConfig.whatsappLink}
+      {/* WhatsApp Button — captures name+phone as a lead before opening chat */}
+      <WhatsAppCaptureLink
         className="flex-1 flex items-center justify-center gap-2 border border-gray-200 text-green-600 font-semibold rounded-xl py-3 text-sm min-h-[44px] hover:bg-gray-50 active:scale-[0.98] transition-all"
-        aria-label="Chat on WhatsApp"
+        ariaLabel="Chat on WhatsApp"
       >
         <MessageSquare className="w-4 h-4 text-green-500 fill-green-500" />
         <span>WhatsApp</span>
-      </a>
+      </WhatsAppCaptureLink>
 
-      {/* Book Appointment CTA */}
-      <Link
-        href={siteConfig.whatsappLink}
-        className="flex-[1.5] flex items-center justify-center gap-2 bg-primary text-white font-semibold rounded-xl py-3 text-sm min-h-[44px] shadow-sm hover:bg-primary-dark active:scale-[0.98] transition-all"
-      >
+      {/* Book Appointment CTA — same capture flow (books happen on WhatsApp) */}
+      <WhatsAppCaptureLink className="flex-[1.5] flex items-center justify-center gap-2 bg-primary text-white font-semibold rounded-xl py-3 text-sm min-h-[44px] shadow-sm hover:bg-primary-dark active:scale-[0.98] transition-all">
         <Calendar className="w-4 h-4" />
         <span>Book</span>
-      </Link>
+      </WhatsAppCaptureLink>
     </div>
   );
 }
