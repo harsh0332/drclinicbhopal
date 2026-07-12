@@ -181,8 +181,8 @@ export default function Hero() {
             {/* Core Image Container */}
             <div className="relative z-10 w-[260px] sm:w-[300px] aspect-[4/5] rounded-[26px] overflow-hidden border-4 sm:border-6 border-white shadow-[0_20px_45px_rgba(22,60,122,0.15)] md:shadow-[0_26px_60px_rgba(22,60,122,0.18)] bg-gradient-to-tr from-[#EAF1FF] to-[#F4FBF8]">
               <ClinicImage
-                src="/images/hero/hero-1.jpg"
-                alt="Gentle check-up at Baby Steps Clinic Bhopal"
+                src="/images/hero/doctor-baby-both.png"
+                alt="Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya examining a baby at Baby Steps Clinic Bhopal"
                 fill
                 sizes="(max-w-768px) 260px, 300px"
                 className="object-cover"
