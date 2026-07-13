@@ -290,78 +290,97 @@ export default function WalkInsView({ initialRows }: { initialRows: WalkInRow[] 
           <p className="text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">{addError}</p>
         )}
 
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Patient details</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          <input
-            type="text"
-            required
-            disabled={adding}
-            value={form.patient_name}
-            onChange={(e) => setField({ patient_name: e.target.value })}
-            placeholder="Patient / parent name *"
-            aria-label="Patient or parent name"
-            className={inputClass}
-          />
-          <input
-            type="tel"
-            required
-            disabled={adding}
-            value={form.phone}
-            onChange={(e) => setField({ phone: e.target.value })}
-            placeholder="10-digit mobile *"
-            aria-label="Mobile number"
-            className={inputClass}
-          />
-          <input
-            type="date"
-            required
-            disabled={adding}
-            value={form.visit_date}
-            onChange={(e) => setField({ visit_date: e.target.value })}
-            aria-label="Visit date"
-            className={inputClass}
-          />
-          <input
-            type="text"
-            disabled={adding}
-            value={form.child_name}
-            onChange={(e) => setField({ child_name: e.target.value })}
-            placeholder="Child's name"
-            aria-label="Child's name"
-            className={inputClass}
-          />
-          <input
-            type="text"
-            disabled={adding}
-            value={form.child_age}
-            onChange={(e) => setField({ child_age: e.target.value })}
-            placeholder="Child's age (e.g. 8 months)"
-            aria-label="Child's age"
-            className={inputClass}
-          />
-          <select
-            disabled={adding}
-            value={form.gender}
-            onChange={(e) => setField({ gender: e.target.value })}
-            aria-label="Gender"
-            className={inputClass}
-          >
-            <option value="">Gender…</option>
-            {WALKIN_GENDERS.map((g) => (
-              <option key={g} value={g}>
-                {g}
-              </option>
-            ))}
-          </select>
-          <textarea
-            disabled={adding}
-            value={form.reason}
-            onChange={(e) => setField({ reason: e.target.value })}
-            placeholder="Reason for visit / notes"
-            aria-label="Reason for visit"
-            rows={2}
-            maxLength={500}
-            className={`${inputClass} sm:col-span-2 lg:col-span-3 resize-none`}
-          />
+          <label className="flex flex-col gap-1">
+            <span className="text-xs font-medium text-slate-600">Patient / parent name *</span>
+            <input
+              type="text"
+              required
+              disabled={adding}
+              value={form.patient_name}
+              onChange={(e) => setField({ patient_name: e.target.value })}
+              placeholder="e.g. Priya Sharma"
+              className={inputClass}
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            <span className="text-xs font-medium text-slate-600">Mobile number *</span>
+            <input
+              type="tel"
+              required
+              disabled={adding}
+              value={form.phone}
+              onChange={(e) => setField({ phone: e.target.value })}
+              placeholder="10-digit mobile"
+              className={inputClass}
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            <span className="text-xs font-medium text-slate-600">Child&apos;s name</span>
+            <input
+              type="text"
+              disabled={adding}
+              value={form.child_name}
+              onChange={(e) => setField({ child_name: e.target.value })}
+              placeholder="Optional"
+              className={inputClass}
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            <span className="text-xs font-medium text-slate-600">Child&apos;s age</span>
+            <input
+              type="text"
+              disabled={adding}
+              value={form.child_age}
+              onChange={(e) => setField({ child_age: e.target.value })}
+              placeholder="e.g. 8 months"
+              className={inputClass}
+            />
+          </label>
+          <label className="flex flex-col gap-1">
+            <span className="text-xs font-medium text-slate-600">Gender</span>
+            <select
+              disabled={adding}
+              value={form.gender}
+              onChange={(e) => setField({ gender: e.target.value })}
+              className={inputClass}
+            >
+              <option value="">Select…</option>
+              {WALKIN_GENDERS.map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mt-1">Visit details</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          <label className="flex flex-col gap-1">
+            <span className="text-xs font-medium text-slate-600">Visit date *</span>
+            <input
+              type="date"
+              required
+              disabled={adding}
+              value={form.visit_date}
+              onChange={(e) => setField({ visit_date: e.target.value })}
+              className={inputClass}
+            />
+          </label>
+          <label className="flex flex-col gap-1 sm:col-span-1 lg:col-span-2">
+            <span className="text-xs font-medium text-slate-600">Reason for visit / notes</span>
+            <textarea
+              disabled={adding}
+              value={form.reason}
+              onChange={(e) => setField({ reason: e.target.value })}
+              placeholder="e.g. Fever since last night"
+              rows={2}
+              maxLength={500}
+              className={`${inputClass} resize-none`}
+            />
+          </label>
         </div>
 
         <button
@@ -448,11 +467,11 @@ export default function WalkInsView({ initialRows }: { initialRows: WalkInRow[] 
         </div>
       ) : (
         <>
-          {/* Desktop table */}
-          <div className="hidden md:block bg-white border border-slate-200 rounded-xl overflow-x-auto">
+          {/* Desktop table — sticky header, zebra rows */}
+          <div className="hidden md:block bg-white border border-slate-200 rounded-xl overflow-auto max-h-[70vh]">
             <table className="w-full text-sm">
-              <thead>
-                <tr className="text-left text-xs text-slate-500 border-b border-slate-200">
+              <thead className="sticky top-0 z-10 bg-white shadow-[0_1px_0_#e2e8f0]">
+                <tr className="text-left text-xs text-slate-500">
                   <th className="px-4 py-3 font-medium">Patient / parent</th>
                   <th className="px-4 py-3 font-medium">Phone</th>
                   <th className="px-4 py-3 font-medium">Child</th>
@@ -465,7 +484,7 @@ export default function WalkInsView({ initialRows }: { initialRows: WalkInRow[] 
               <tbody>
                 {pageRows.map((row) => (
                   <Fragment key={row.id}>
-                    <tr className="border-b border-slate-100 last:border-0 hover:bg-slate-50/60">
+                    <tr className="border-b border-slate-100 last:border-0 odd:bg-white even:bg-slate-50/50 hover:bg-[#F4F8FF]">
                       <td className="px-4 py-3 font-medium text-slate-900">{row.patient_name}</td>
                       <td className="px-4 py-3 text-slate-600">{contactLinks(row)}</td>
                       <td className="px-4 py-3 text-slate-600">

@@ -1,7 +1,7 @@
 import { siteConfig } from "@/lib/site-config";
 import { Phone, MessageSquare, Calendar } from "lucide-react";
 import WhatsAppCaptureLink from "@/components/ui/whatsapp-capture-link";
-import Link from "next/link";
+import BookLink from "@/components/ui/book-link";
 
 export default function MobileStickyBar() {
   return (
@@ -25,14 +25,11 @@ export default function MobileStickyBar() {
         <span>WhatsApp</span>
       </WhatsAppCaptureLink>
 
-      {/* Book Appointment CTA — redirects/scrolls to /#appointment */}
-      <Link
-        href="/#appointment"
-        className="flex-[1.5] flex items-center justify-center gap-2 bg-primary text-white font-semibold rounded-xl py-3 text-sm min-h-[44px] shadow-sm hover:bg-primary-dark active:scale-[0.98] transition-all"
-      >
+      {/* Book Appointment CTA — settle-aware smooth scroll to /#appointment */}
+      <BookLink className="flex-[1.5] flex items-center justify-center gap-2 bg-primary text-white font-semibold rounded-xl py-3 text-sm min-h-[44px] shadow-sm hover:bg-primary-dark active:scale-[0.98] transition-all">
         <Calendar className="w-4 h-4" />
         <span>Book</span>
-      </Link>
+      </BookLink>
     </div>
   );
 }

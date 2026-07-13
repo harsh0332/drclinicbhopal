@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
 import { Phone, Menu, X, Calendar } from "lucide-react";
 import ClinicImage from "@/components/ui/clinic-image";
+import BookLink from "@/components/ui/book-link";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,13 +90,10 @@ export default function Header() {
                 <span>{siteConfig.phone}</span>
               </a>
               {/* Book Appointment Button */}
-              <Link
-                href="/#appointment"
-                className="inline-flex items-center justify-center gap-2 bg-[#2E6CF6] text-white text-sm font-bold py-3 px-5 rounded-full hover:shadow-lg transition-all active:scale-[0.98] min-h-[44px]"
-              >
+              <BookLink className="inline-flex items-center justify-center gap-2 bg-[#2E6CF6] text-white text-sm font-bold py-3 px-5 rounded-full hover:shadow-lg transition-all active:scale-[0.98] min-h-[44px]">
                 <Calendar className="w-4 h-4" />
                 <span>Book Appointment</span>
-              </Link>
+              </BookLink>
             </div>
 
             {/* Mobile Actions (Hamburger & Call) */}
@@ -155,14 +153,13 @@ export default function Header() {
                 <Phone className="w-5 h-5" />
                 <span>Call: {siteConfig.phone}</span>
               </a>
-              <Link
-                href="/#appointment"
-                onClick={() => setIsOpen(false)}
+              <BookLink
+                onNavigate={() => setIsOpen(false)}
                 className="flex items-center justify-center gap-2 bg-primary text-white text-base font-semibold py-4 rounded-2xl shadow-md w-full"
               >
                 <Calendar className="w-5 h-5" />
                 <span>Book Appointment</span>
-              </Link>
+              </BookLink>
             </div>
           </nav>
         </div>

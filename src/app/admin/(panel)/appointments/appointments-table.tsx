@@ -260,11 +260,11 @@ export default function AppointmentsTable({ initialRows }: { initialRows: Appoin
         </div>
       ) : (
         <>
-          {/* Desktop table */}
-          <div className="hidden md:block bg-white border border-slate-200 rounded-xl overflow-x-auto">
+          {/* Desktop table — sticky header, zebra rows */}
+          <div className="hidden md:block bg-white border border-slate-200 rounded-xl overflow-auto max-h-[70vh]">
             <table className="w-full text-sm">
-              <thead>
-                <tr className="text-left text-xs text-slate-500 border-b border-slate-200">
+              <thead className="sticky top-0 z-10 bg-white shadow-[0_1px_0_#e2e8f0]">
+                <tr className="text-left text-xs text-slate-500">
                   <th className="px-4 py-3 font-medium">Name</th>
                   <th className="px-4 py-3 font-medium">Phone</th>
                   <th className="px-4 py-3 font-medium">Child age</th>
@@ -278,7 +278,7 @@ export default function AppointmentsTable({ initialRows }: { initialRows: Appoin
               <tbody>
                 {filtered.map((row) => (
                   <Fragment key={row.id}>
-                    <tr className="border-b border-slate-100 last:border-0 hover:bg-slate-50/60">
+                    <tr className="border-b border-slate-100 last:border-0 odd:bg-white even:bg-slate-50/50 hover:bg-[#F4F8FF]">
                       <td className="px-4 py-3 font-medium text-slate-900">{row.name}</td>
                       <td className="px-4 py-3 text-slate-600">{contactLinks(row)}</td>
                       <td className="px-4 py-3 text-slate-600">{row.child_age || "—"}</td>

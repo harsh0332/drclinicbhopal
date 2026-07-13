@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { scrollToAppointment } from "@/lib/scroll-to-appointment";
 
 interface SiteChromeProps {
   ambient: React.ReactNode;
@@ -26,6 +28,17 @@ export default function SiteChrome({
   children,
 }: SiteChromeProps) {
   const pathname = usePathname();
+
+  // Cross-page "Book Appointment" landing: arriving on the homepage with
+  // #appointment (from any other page's Book button, or a direct URL), run
+  // the settle-aware smooth scroll. Next.js's own instant hash scroll fires
+  // before lazy sections load and lands off-target; this corrects it.
+  useEffect(() => {
+    if (pathname === "/" && window.location.hash === "#appointment") {
+      const t = window.setTimeout(() => scrollToAppointment(), 120);
+      return () => window.clearTimeout(t);
+    }
+  }, [pathname]);
 
   if (pathname.startsWith("/admin")) {
     return <>{children}</>;

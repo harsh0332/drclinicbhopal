@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
+import BookLink from "@/components/ui/book-link";
 import { Award, Building, ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
@@ -136,12 +137,9 @@ export default function MeetDoctors() {
 
                   {/* Dual CTA */}
                   <div className="mt-auto pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-center gap-3">
-                    <Link
-                      href="/#book-appointment"
-                      className="w-full sm:w-auto text-center px-5 py-2.5 bg-primary text-white font-semibold text-sm rounded-xl hover:bg-primary-dark shadow-soft hover:shadow-md transition-all duration-300"
-                    >
+                    <BookLink className="w-full sm:w-auto text-center px-5 py-2.5 bg-primary text-white font-semibold text-sm rounded-xl hover:bg-primary-dark shadow-soft hover:shadow-md transition-all duration-300">
                       Book Appointment
-                    </Link>
+                    </BookLink>
                     <Link
                       href={`/doctors#${doctor.id}`}
                       className="w-full sm:w-auto text-center px-4 py-2.5 border border-gray-250 text-muted-text hover:text-primary hover:border-primary/30 font-semibold text-sm rounded-xl transition-all duration-300 group flex items-center justify-center gap-1.5"

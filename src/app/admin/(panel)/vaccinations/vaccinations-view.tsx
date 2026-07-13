@@ -315,18 +315,20 @@ export default function VaccinationsView({
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              <input
-                type="text"
-                required
-                disabled={adding}
-                value={form.child_name}
-                onChange={(e) => setForm((f) => ({ ...f, child_name: e.target.value }))}
-                placeholder="Child's name *"
-                aria-label="Child's name"
-                className={inputClass}
-              />
-              <label className="flex items-center gap-2 text-xs text-slate-500">
-                <span className="shrink-0">DOB *</span>
+              <label className="flex flex-col gap-1">
+                <span className="text-xs font-medium text-slate-600">Child&apos;s name *</span>
+                <input
+                  type="text"
+                  required
+                  disabled={adding}
+                  value={form.child_name}
+                  onChange={(e) => setForm((f) => ({ ...f, child_name: e.target.value }))}
+                  placeholder="e.g. Aarav"
+                  className={inputClass}
+                />
+              </label>
+              <label className="flex flex-col gap-1">
+                <span className="text-xs font-medium text-slate-600">Date of birth *</span>
                 <input
                   type="date"
                   required
@@ -334,53 +336,60 @@ export default function VaccinationsView({
                   max={today}
                   value={form.dob}
                   onChange={(e) => setForm((f) => ({ ...f, dob: e.target.value }))}
-                  aria-label="Date of birth"
                   className={inputClass}
                 />
               </label>
-              <select
-                disabled={adding}
-                value={form.gender}
-                onChange={(e) => setForm((f) => ({ ...f, gender: e.target.value }))}
-                aria-label="Gender"
-                className={inputClass}
-              >
-                <option value="">Gender…</option>
-                {CHILD_GENDERS.map((g) => (
-                  <option key={g} value={g}>
-                    {g}
-                  </option>
-                ))}
-              </select>
-              <input
-                type="text"
-                required
-                disabled={adding}
-                value={form.parent_name}
-                onChange={(e) => setForm((f) => ({ ...f, parent_name: e.target.value }))}
-                placeholder="Parent's name *"
-                aria-label="Parent's name"
-                className={inputClass}
-              />
-              <input
-                type="tel"
-                required
-                disabled={adding}
-                value={form.phone}
-                onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-                placeholder="10-digit mobile *"
-                aria-label="Mobile number"
-                className={inputClass}
-              />
-              <input
-                type="text"
-                disabled={adding}
-                value={form.notes}
-                onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
-                placeholder="Notes (allergies, brand preferences…)"
-                aria-label="Notes"
-                className={inputClass}
-              />
+              <label className="flex flex-col gap-1">
+                <span className="text-xs font-medium text-slate-600">Gender</span>
+                <select
+                  disabled={adding}
+                  value={form.gender}
+                  onChange={(e) => setForm((f) => ({ ...f, gender: e.target.value }))}
+                  className={inputClass}
+                >
+                  <option value="">Select…</option>
+                  {CHILD_GENDERS.map((g) => (
+                    <option key={g} value={g}>
+                      {g}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="flex flex-col gap-1">
+                <span className="text-xs font-medium text-slate-600">Parent&apos;s name *</span>
+                <input
+                  type="text"
+                  required
+                  disabled={adding}
+                  value={form.parent_name}
+                  onChange={(e) => setForm((f) => ({ ...f, parent_name: e.target.value }))}
+                  placeholder="e.g. Priya Sharma"
+                  className={inputClass}
+                />
+              </label>
+              <label className="flex flex-col gap-1">
+                <span className="text-xs font-medium text-slate-600">Mobile number *</span>
+                <input
+                  type="tel"
+                  required
+                  disabled={adding}
+                  value={form.phone}
+                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                  placeholder="10-digit mobile"
+                  className={inputClass}
+                />
+              </label>
+              <label className="flex flex-col gap-1">
+                <span className="text-xs font-medium text-slate-600">Notes</span>
+                <input
+                  type="text"
+                  disabled={adding}
+                  value={form.notes}
+                  onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
+                  placeholder="Allergies, brand preferences…"
+                  className={inputClass}
+                />
+              </label>
             </div>
 
             <button

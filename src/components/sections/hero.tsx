@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useReducedMotion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
+import BookLink from "@/components/ui/book-link";
 import { Calendar, Phone } from "lucide-react";
 import dynamic from "next/dynamic";
 const HeroBackground = dynamic(() => import("./hero-background"), { ssr: false });
@@ -105,13 +106,10 @@ export default function Hero() {
               className={`flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto mb-6 ${animClass}`}
               style={shouldReduceMotion ? {} : { animationDelay: "600ms", animationFillMode: "both" }}
             >
-              <a
-                href="#appointment"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2E6CF6] text-white font-bold text-base py-3.5 px-6 rounded-full shadow-[0_10px_26px_rgba(46,108,246,0.34)] hover:shadow-lg transition-all active:scale-[0.98] min-h-[48px]"
-              >
+              <BookLink className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2E6CF6] text-white font-bold text-base py-3.5 px-6 rounded-full shadow-[0_10px_26px_rgba(46,108,246,0.34)] hover:shadow-lg transition-all active:scale-[0.98] min-h-[48px]">
                 <Calendar className="w-5 h-5" />
                 <span>Book Appointment</span>
-              </a>
+              </BookLink>
               <a
                 href={siteConfig.phoneLink}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-[#163C7A] font-bold text-base py-3.5 px-6 rounded-full border border-[#163C7A]/16 shadow-[0_4px_16px_rgba(22,60,122,0.07)] hover:bg-[#F4F8FF] transition-all min-h-[48px]"
