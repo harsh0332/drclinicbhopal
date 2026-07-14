@@ -58,7 +58,7 @@ export const siteConfig = {
   ],
   socials: {
     facebook: "https://facebook.com/babystepsbhopal",
-    instagram: "https://instagram.com/babystepsbhopal",
+    instagram: "https://www.instagram.com/babysteps.bhopal",
     youtube: "https://youtube.com/babystepsbhopal"
   },
   compliance: {
