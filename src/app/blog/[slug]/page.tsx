@@ -24,7 +24,14 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: `${post.title} | Pediatric Health Blog`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://www.babystepsclinic.in/blog/${slug}`,
+      canonical: `https://babystepsnewbornclinic.com/blog/${slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | Pediatric Health Blog`,
+      description: post.excerpt,
+      url: `https://babystepsnewbornclinic.com/blog/${slug}`,
+      siteName: "Baby Steps – Newborn & Child Clinic",
+      type: "article",
     },
   };
 }
