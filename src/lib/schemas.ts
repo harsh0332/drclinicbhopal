@@ -37,8 +37,8 @@ export function getMedicalClinicSchema() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 23.1934, // CHECK: exact clinic pin coordinates
-      "longitude": 77.3431
+      "latitude": 23.1967373,
+      "longitude": 77.3504045
     },
     "openingHoursSpecification": [
       {
