@@ -10,17 +10,31 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Contact & Location | Baby Steps Clinic Bhopal",
+  title: "Contact Us & Location Map | Baby Steps Clinic Bhopal",
   description: "Visit Baby Steps Clinic in Neelbad, Bhopal. Find NAP contact details, opening hours, interactive maps, and our verified booking form.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/contact",
   },
   openGraph: {
-    title: "Contact & Location | Baby Steps Clinic Bhopal",
+    title: "Contact Us & Location Map | Baby Steps Clinic Bhopal",
     description: "Visit Baby Steps Clinic in Neelbad, Bhopal. Find NAP contact details, opening hours, interactive maps, and our verified booking form.",
     url: "https://babystepsnewbornclinic.com/contact",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us & Location Map | Baby Steps Clinic Bhopal",
+    description: "Visit Baby Steps Clinic in Neelbad, Bhopal. Find NAP contact details, opening hours, interactive maps, and our verified booking form.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
