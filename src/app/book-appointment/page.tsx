@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
   description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/book-appointment",
+    canonical: "https://babystepsnewbornclinic.com/book-appointment",
   },
   openGraph: {
     title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
     description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
-    url: "https://www.babystepsclinic.in/book-appointment",
+    url: "https://babystepsnewbornclinic.com/book-appointment",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
