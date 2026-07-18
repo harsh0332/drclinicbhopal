@@ -19,6 +19,7 @@ export const existingImages: Record<string, boolean> = {
   "/images/clinic/consultation-room.jpg": true,
   "/images/hero/hero-1.jpg": true,
   "/images/hero/doctor-baby-both.png": true,
+  "/images/hero/doctor-baby-both.webp": true,
   "/images/gallery/gallery-1.jpg": true,
   "/images/gallery/gallery-2.jpg": true,
   "/images/gallery/gallery-3.jpg": true,
