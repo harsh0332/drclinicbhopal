@@ -11,7 +11,21 @@ export const metadata: Metadata = {
     description: "View complete age-wise childhood vaccination schedule based on latest IAP & WHO guidelines. Plan immunization visits online in Bhopal.",
     url: "https://babystepsnewbornclinic.com/tools/vaccination-schedule",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Child Vaccination Schedule & Immunization Chart | Baby Steps Clinic",
+    description: "View complete age-wise childhood vaccination schedule based on latest IAP & WHO guidelines. Plan immunization visits online in Bhopal.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
