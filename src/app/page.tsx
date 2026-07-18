@@ -104,6 +104,24 @@ export default function Home() {
       {/* 5. Services Grid Section */}
       <ServicesGrid />
 
+      {/* 5b. Areas We Serve Section */}
+      <section className="bg-surface-tint/30 border-t border-b border-gray-100 py-8 text-center font-sans">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <span className="text-xs font-bold text-primary uppercase tracking-wider">Areas We Serve:</span>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-sm text-primary-dark font-medium">
+            <span>Neelbad</span>
+            <span className="text-gray-300 sm:inline">•</span>
+            <span>Kolar</span>
+            <span className="text-gray-300 sm:inline">•</span>
+            <span>Bawadia Kalan</span>
+            <span className="text-gray-300 sm:inline">•</span>
+            <span>Ratibad</span>
+            <span className="text-gray-300 sm:inline">•</span>
+            <span>South Bhopal</span>
+          </div>
+        </div>
+      </section>
+
       {/* 6. Vaccination Schedule Teaser Section */}
       <VaccineTeaser />
 
