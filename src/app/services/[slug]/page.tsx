@@ -5,6 +5,8 @@ import { servicesData } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site-config";
 import { Calendar, Phone, CheckCircle2, Activity } from "lucide-react";
 import FAQAccordion from "@/components/ui/faq-accordion";
+import JsonLd from "@/components/ui/json-ld";
+import { getServiceSchema, getFAQSchema, getBreadcrumbSchema } from "@/lib/schemas";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
@@ -43,7 +45,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ServiceDetailPage({ params }: ServicePageProps) {
+export default async function ServicePage({ params }: ServicePageProps) {
   const { slug } = await params;
   const service = servicesData[slug];
 
@@ -51,8 +53,20 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     notFound();
   }
 
+  const serviceSchema = getServiceSchema({ ...service, slug });
+  const faqSchema = getFAQSchema(service.faqs);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/services" },
+    { name: service.title, item: `/services/${slug}` }
+  ]);
+
   return (
     <main className="flex-1 bg-white">
+      {/* Schema Injection */}
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Breadcrumbs / Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
         {/* Background SVGs */}
