@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions | Baby Steps Clinic",
   description: "Helpful, medically verified answers regarding pediatric consultations, vaccine safety standards, and appointment bookings in Neelbad, Bhopal.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/faqs",
+    canonical: "https://babystepsnewbornclinic.com/faqs",
   },
   openGraph: {
     title: "Frequently Asked Questions | Baby Steps Clinic",
     description: "Helpful, medically verified answers regarding pediatric consultations, vaccine safety standards, and appointment bookings in Neelbad, Bhopal.",
-    url: "https://www.babystepsclinic.in/faqs",
+    url: "https://babystepsnewbornclinic.com/faqs",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
