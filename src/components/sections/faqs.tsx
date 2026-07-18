@@ -20,7 +20,7 @@ export default function FAQs() {
   const faqs = [
     {
       q: "What are the clinic timings and consultation hours?",
-      a: `Our standard consultation hours are Monday to Saturday: 10:00 AM – 1:00 PM and 5:00 PM – 8:00 PM. On Sundays, the clinic is closed for routine visits but remains available for emergency pediatric consultations. Appointments are recommended to minimize waiting area crowding.`
+      a: `Our standard consultation hours are Monday to Saturday: 10:00 AM – 9:00 PM, and Sundays: 10:00 AM – 1:00 PM. Appointments are recommended to minimize waiting area crowding.`
     },
     {
       q: "Do I need to book a prior appointment for childhood vaccinations?",
