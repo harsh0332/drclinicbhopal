@@ -116,13 +116,13 @@ export default function TestimonialsPage() {
 
                   <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
                     <a
-                      href={siteConfig.googleMapsLink}
+                      href={siteConfig.googleReviewLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white text-xs font-semibold py-3 px-5 rounded-xl hover:bg-primary-dark shadow-sm transition-all"
                     >
                       <MessageSquare className="w-4 h-4" />
-                      <span>Write Google Review</span>
+                      <span>★ Review us on Google</span>
                     </a>
                   </div>
                 </div>
@@ -140,13 +140,13 @@ export default function TestimonialsPage() {
 
                 <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
                   <a
-                    href={siteConfig.googleMapsLink}
+                    href={siteConfig.googleReviewLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary text-white text-xs font-semibold py-3 px-5 rounded-xl hover:bg-primary-dark shadow-sm transition-all"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    <span>Write Google Review</span>
+                    <span>★ Review us on Google</span>
                   </a>
                 </div>
               </div>
