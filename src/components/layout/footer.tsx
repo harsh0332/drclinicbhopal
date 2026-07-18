@@ -61,13 +61,19 @@ export default function Footer() {
               Our Services
             </h3>
             <ul className="grid grid-cols-1 gap-2 text-sm text-blue-200">
-              {siteConfig.services.slice(0, 6).map((service, index) => (
-                <li key={index}>
-                  <Link href="/services" className="hover:text-white transition-colors">
-                    • {service}
-                  </Link>
-                </li>
-              ))}
+              {siteConfig.services.slice(0, 6).map((service, index) => {
+                const slug = service
+                  .toLowerCase()
+                  .replace(/[^a-z0-9\s-]/g, "")
+                  .replace(/\s+/g, "-");
+                return (
+                  <li key={index}>
+                    <Link href={`/services/${slug}`} className="hover:text-white transition-colors">
+                      • {service}
+                    </Link>
+                  </li>
+                );
+              })}
               <li>
                 <Link href="/services" className="text-accent-sunshine hover:underline font-semibold block mt-1">
                   View All Services &rarr;
