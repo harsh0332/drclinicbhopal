@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/ui/json-ld";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 import { 
@@ -227,10 +228,7 @@ export default function GrowthCalculatorPage() {
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
