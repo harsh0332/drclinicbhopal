@@ -23,7 +23,14 @@ export async function generateMetadata({ params }: LocalityPageProps): Promise<M
     title: `Pediatrician & Child Clinic Near ${area.name}, Bhopal | Baby Steps Clinic`,
     description: `Looking for a trusted pediatrician near ${area.name}? Baby Steps Clinic in Neelbad offers premium newborn care, vaccination, and child health consultations.`,
     alternates: {
-      canonical: `https://www.babystepsclinic.in/areas/${slug}`,
+      canonical: `https://babystepsnewbornclinic.com/areas/${slug}`,
+    },
+    openGraph: {
+      title: `Pediatrician & Child Clinic Near ${area.name}, Bhopal | Baby Steps Clinic`,
+      description: `Looking for a trusted pediatrician near ${area.name}? Baby Steps Clinic in Neelbad offers premium newborn care, vaccination, and child health consultations.`,
+      url: `https://babystepsnewbornclinic.com/areas/${slug}`,
+      siteName: "Baby Steps – Newborn & Child Clinic",
+      type: "website",
     },
   };
 }
