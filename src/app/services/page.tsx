@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
+import JsonLd from "@/components/ui/json-ld";
+import { getBreadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
@@ -57,9 +59,15 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function ServicesPage() {
   const servicesList = Object.values(servicesData);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Services", item: "/services" }
+  ]);
 
   return (
     <main className="flex-1 bg-white">
+      {/* Schema Injection */}
+      <JsonLd data={breadcrumbSchema} />
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
         {/* Background SVGs */}
