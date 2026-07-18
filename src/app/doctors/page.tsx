@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Our Pediatric Specialists | Baby Steps Clinic Neelbad",
   description: "Expert medical consultation for newborns, infants, and children by our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/doctors",
+    canonical: "https://babystepsnewbornclinic.com/doctors",
   },
   openGraph: {
     title: "Our Pediatric Specialists | Baby Steps Clinic Neelbad",
     description: "Expert medical consultation for newborns, infants, and children by our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
-    url: "https://www.babystepsclinic.in/doctors",
+    url: "https://babystepsnewbornclinic.com/doctors",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
