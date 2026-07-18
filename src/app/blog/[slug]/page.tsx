@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
 import { getBlogPostingSchema, getFAQSchema, getBreadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/ui/json-ld";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import { Calendar, Clock, GraduationCap, Building, ShieldCheck, ArrowLeft, CalendarDays } from "lucide-react";
 
@@ -63,18 +64,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <main className="flex-1 bg-white">
       {/* Dynamic JSON-LD Schemas Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd data={articleSchema} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
