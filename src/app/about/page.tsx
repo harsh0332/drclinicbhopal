@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
   description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/about",
+    canonical: "https://babystepsnewbornclinic.com/about",
   },
   openGraph: {
     title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
     description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
-    url: "https://www.babystepsclinic.in/about",
+    url: "https://babystepsnewbornclinic.com/about",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
