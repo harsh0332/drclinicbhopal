@@ -103,7 +103,18 @@ export default function Footer() {
                   {siteConfig.email}
                 </a>
               </li>
+              <li className="text-[11px] text-blue-300 font-sans border-t border-blue-900/50 pt-3.5 mt-1.5 leading-relaxed">
+                {siteConfig.napString}
+              </li>
             </ul>
+            <a
+              href={siteConfig.googleReviewLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 w-full inline-flex items-center justify-center gap-1.5 bg-accent-sunshine hover:bg-yellow-400 text-primary-dark text-xs font-bold py-2.5 px-4 rounded-xl transition-all active:scale-[0.98] cursor-pointer"
+            >
+              <span>★ Review us on Google</span>
+            </a>
           </div>
         </div>
 
