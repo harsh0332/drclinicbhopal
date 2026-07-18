@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Contact & Location | Baby Steps Clinic Bhopal",
   description: "Visit Baby Steps Clinic in Neelbad, Bhopal. Find NAP contact details, opening hours, interactive maps, and our verified booking form.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/contact",
+    canonical: "https://babystepsnewbornclinic.com/contact",
   },
   openGraph: {
     title: "Contact & Location | Baby Steps Clinic Bhopal",
     description: "Visit Baby Steps Clinic in Neelbad, Bhopal. Find NAP contact details, opening hours, interactive maps, and our verified booking form.",
-    url: "https://www.babystepsclinic.in/contact",
+    url: "https://babystepsnewbornclinic.com/contact",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
