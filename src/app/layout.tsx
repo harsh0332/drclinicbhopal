@@ -24,6 +24,7 @@ const baloo2 = Baloo_2({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://babystepsnewbornclinic.com"),
   title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
   description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
   keywords: ["pediatrician Bhopal", "child clinic Neelbad", "baby vaccination Bhopal", "newborn specialist Bhopal", "Dr. Sudarshan Dev Arya", "Dr. Manisha Bangarwa Arya"],
@@ -33,17 +34,23 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
     description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
-    url: "https://www.babystepsclinic.in",
+    url: "https://babystepsnewbornclinic.com",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "/images/logo/logo-horizontal.png",
-        width: 637,
-        height: 280,
+        url: "/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
       }
     ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
+    description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
+    images: ["/images/og/og-default.jpg"],
   },
 };
 
@@ -54,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${inter.variable} ${baloo2.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans bg-transparent text-gray-900 pb-20 lg:pb-0">
