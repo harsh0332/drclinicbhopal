@@ -37,7 +37,21 @@ export const metadata: Metadata = {
     description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
     url: "https://babystepsnewbornclinic.com/services",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
+    description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
