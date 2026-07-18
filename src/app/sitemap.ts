@@ -5,7 +5,7 @@ import { localitiesData } from "@/lib/localities-data";
 import { blogData } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.babystepsclinic.in";
+  const baseUrl = "https://babystepsnewbornclinic.com";
   
   // 1. Core Static Pages
   const staticPages = [
@@ -22,6 +22,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/vaccination-schedule",
     "/tools/growth-calculator",
     "/tools/milestone-tracker",
+    "/privacy",
+    "/terms",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
