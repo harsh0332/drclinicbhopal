@@ -10,7 +10,7 @@ export const siteConfig = {
   landlineLink: "tel:+917554565588",
   whatsapp: "62625 60101",
   whatsappLink: "https://wa.me/916262560101?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20for%20my%20child%20at%20Baby%20Steps.",
-  email: "contact@babystepsclinic.in",
+  email: "contact@babystepsnewbornclinic.com",
   hours: [
     { days: "Monday – Saturday", time: "10:00 AM – 9:00 PM" },
     { days: "Sunday", time: "10:00 AM – 1:00 PM" }
