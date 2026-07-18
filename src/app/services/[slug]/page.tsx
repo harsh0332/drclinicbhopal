@@ -34,7 +34,21 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
       description: `Learn more about our ${service.title} services. Why it matters and what to expect during your child's visit at Baby Steps Clinic in Neelbad, Bhopal.`,
       url: `https://babystepsnewbornclinic.com/services/${slug}`,
       siteName: "Baby Steps – Newborn & Child Clinic",
+      images: [
+        {
+          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Baby Steps – Newborn & Child Clinic",
+        }
+      ],
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
+      description: `Learn more about our ${service.title} services. Why it matters and what to expect during your child's visit at Baby Steps Clinic in Neelbad, Bhopal.`,
+      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
     },
   };
 }
