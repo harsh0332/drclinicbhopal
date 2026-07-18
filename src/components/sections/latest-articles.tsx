@@ -19,15 +19,17 @@ export default function LatestArticles() {
 
   const articles = [
     {
-      title: "Essential Baby Vaccination Guide for Indian Parents",
+      title: "Complete Baby Vaccination Guide for Indian Parents",
+      slug: "child-vaccination-guide-india",
       excerpt: "A complete overview of mandated immunizations, IAP guidelines, timeline charts, and side-effect management for newborns.",
-      date: "Jun 12, 2026",
-      readTime: "5 min read",
+      date: "Jul 18, 2026",
+      readTime: "7 min read",
       category: "Vaccination",
       author: "Dr. Sudarshan Dev Arya",
     },
     {
       title: "Breastfeeding Techniques: Clinical Tips for New Mothers",
+      slug: "breastfeeding-tips-new-mothers",
       excerpt: "Understanding proper latch, positioning, feed frequency, and growth monitoring criteria for breastfed infants.",
       date: "Jun 08, 2026",
       readTime: "6 min read",
@@ -36,6 +38,7 @@ export default function LatestArticles() {
     },
     {
       title: "Recognizing Normal Physiological Milestones at 6 Months",
+      slug: "six-month-development-milestones",
       excerpt: "Milestone indicators of physical, language, and motor skills development in infants and when to consult a specialist.",
       date: "May 28, 2026",
       readTime: "4 min read",
@@ -123,7 +126,7 @@ export default function LatestArticles() {
               {/* Card Content */}
               <div className="px-6 flex-grow flex flex-col gap-3">
                 <h3 className="text-lg font-bold font-heading text-primary-dark leading-snug line-clamp-2 group-hover:text-primary transition-colors duration-300">
-                  <Link href="/blog">{article.title}</Link>
+                  <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                 </h3>
                 <p className="text-xs text-muted-text font-sans leading-relaxed line-clamp-3">
                   {article.excerpt}
@@ -149,7 +152,7 @@ export default function LatestArticles() {
                     By {article.author}
                   </span>
                   <Link
-                    href="/blog"
+                    href={`/blog/${article.slug}`}
                     className="w-11 h-11 flex items-center justify-center border border-gray-200 hover:border-primary/20 text-muted-text hover:text-primary rounded-xl transition-all duration-300 group-hover:translate-x-0.5"
                     aria-label="Read Article"
                   >
