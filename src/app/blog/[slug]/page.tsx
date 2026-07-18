@@ -32,7 +32,21 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description: post.excerpt,
       url: `https://babystepsnewbornclinic.com/blog/${slug}`,
       siteName: "Baby Steps – Newborn & Child Clinic",
+      images: [
+        {
+          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Baby Steps – Newborn & Child Clinic",
+        }
+      ],
       type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Pediatric Health Blog`,
+      description: post.excerpt,
+      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
     },
   };
 }
