@@ -40,6 +40,7 @@ export function getMedicalClinicSchema() {
       "latitude": 23.1967373,
       "longitude": 77.3504045
     },
+    "hasMap": siteConfig.googleMapsLink,
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -101,6 +102,7 @@ export function getPhysicianSchema(doctor: { name: string; degree: string; title
     "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
     "image": `https://babystepsnewbornclinic.com${doctor.image}`,
     "priceRange": "$$",
+    "qualification": doctor.degree,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
@@ -118,7 +120,11 @@ export function getPhysicianSchema(doctor: { name: string; degree: string; title
     "memberOf": {
       "@type": "Hospital",
       "name": doctor.hospital.includes("Rainbow") ? "Rainbow Children's Hospital, Bhopal" : "Apollo SAGE Hospital, Bhopal"
-    }
+    },
+    // TODO: paste doctor directory profile URLs (Practo/Justdial) here once created
+    "sameAs": [
+      // TODO: paste doctor directory profile URLs (Practo/Justdial) here once created
+    ]
   };
 }
 
@@ -155,15 +161,39 @@ export function getFAQSchema(faqs: { q: string; a: string }[]) {
   };
 }
 
-// Schema helper for BlogPosting
-export function getBlogPostingSchema(post: { title: string; excerpt: string; slug: string; date: string; author: string }) {
+// Schema helper for BlogPosting / MedicalWebPage
+export function getBlogPostingSchema(post: {
+  title: string;
+  excerpt: string;
+  slug: string;
+  date: string;
+  dateModified?: string;
+  author: string;
+  authorTitle?: string;
+  authorAffiliation?: string;
+}) {
+  const publishedIso = new Date(post.date).toISOString().split('T')[0];
+  const modifiedIso = post.dateModified
+    ? new Date(post.dateModified).toISOString().split('T')[0]
+    : publishedIso;
+
   return {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": ["BlogPosting", "MedicalWebPage"],
     "headline": post.title,
     "description": post.excerpt,
-    "datePublished": new Date(post.date).toISOString().split('T')[0],
+    "datePublished": publishedIso,
+    "dateModified": modifiedIso,
     "author": {
+      "@type": "Person",
+      "name": post.author,
+      "jobTitle": post.authorTitle || "Pediatric Specialist",
+      "worksFor": {
+        "@type": "MedicalClinic",
+        "name": "Baby Steps – Newborn & Child Clinic"
+      }
+    },
+    "reviewedBy": {
       "@type": "Person",
       "name": post.author
     },
