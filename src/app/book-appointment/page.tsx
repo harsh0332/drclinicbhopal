@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/ui/json-ld";
 import AppointmentForm from "@/components/ui/appointment-form";
 import { Calendar, Phone, MessageSquare, ShieldCheck } from "lucide-react";
 
@@ -33,10 +34,7 @@ export default function BookAppointmentPage() {
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
