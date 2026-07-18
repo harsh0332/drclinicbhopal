@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import { GraduationCap, Building, Award, ArrowRight, Calendar, Phone } from "lucide-react";
+import JsonLd from "@/components/ui/json-ld";
+import { getBreadcrumbSchema } from "@/lib/schemas";
+
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
@@ -22,8 +25,15 @@ export const metadata: Metadata = {
 };
 
 export default function DoctorsPage() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Doctors", item: "/doctors" }
+  ]);
+
   return (
     <main className="flex-1 bg-white">
+      {/* Schema Injection */}
+      <JsonLd data={breadcrumbSchema} />
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
         {/* Background SVGs */}
