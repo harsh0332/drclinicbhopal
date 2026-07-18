@@ -16,7 +16,21 @@ export const metadata: Metadata = {
     description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
     url: "https://babystepsnewbornclinic.com/privacy",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Baby Steps Newborn & Child Clinic Bhopal",
+    description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
