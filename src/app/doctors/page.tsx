@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import { GraduationCap, Building, Award, ArrowRight, Calendar, Phone } from "lucide-react";
 import JsonLd from "@/components/ui/json-ld";
-import { getBreadcrumbSchema } from "@/lib/schemas";
+import { getBreadcrumbSchema, getPhysicianSchema } from "@/lib/schemas";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
@@ -48,6 +48,9 @@ export default function DoctorsPage() {
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
       <JsonLd data={breadcrumbSchema} />
+      {siteConfig.doctors.map((doc) => (
+        <JsonLd key={doc.id} data={getPhysicianSchema(doc)} />
+      ))}
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
         {/* Background SVGs */}
