@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import ClinicImage from "@/components/ui/clinic-image";
 import { getBreadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/ui/json-ld";
 import { Image as ImageIcon, Calendar } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
@@ -43,10 +44,7 @@ export default function GalleryPage() {
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
