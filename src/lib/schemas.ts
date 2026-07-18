@@ -2,16 +2,18 @@ import { siteConfig } from "./site-config";
 
 // Schema helper for MedicalClinic (LocalBusiness)
 export function getMedicalClinicSchema() {
+  const clinicId = "https://babystepsnewbornclinic.com/#clinic";
   return {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    "name": siteConfig.name,
+    "@id": clinicId,
+    "name": "Baby Steps – Newborn & Child Clinic",
     "alternateName": siteConfig.shortName,
-    "url": "https://www.babystepsclinic.in",
-    "logo": "https://www.babystepsclinic.in/images/logo/logo-horizontal.png",
-    "image": "https://www.babystepsclinic.in/images/clinic/exterior.jpg",
+    "url": "https://babystepsnewbornclinic.com",
+    "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
+    "image": "https://babystepsnewbornclinic.com/images/clinic/exterior.jpg",
     "telephone": "+916262560101",
-    "email": siteConfig.email,
+    "email": "contact@babystepsnewbornclinic.in", // CHECK: verify correctness of this email vs .com
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -35,8 +37,8 @@ export function getMedicalClinicSchema() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 23.2031, // Approximate latitude for Neelbad
-      "longitude": 77.3489 // Approximate longitude for Neelbad
+      "latitude": 23.1934, // CHECK: exact clinic pin coordinates
+      "longitude": 77.3431
     },
     "openingHoursSpecification": [
       {
@@ -52,25 +54,40 @@ export function getMedicalClinicSchema() {
         "closes": "13:00"
       }
     ],
+    "medicalSpecialty": "Pediatric",
+    "areaServed": ["Neelbad", "Kolar", "Bawadia Kalan", "Ratibad", "South Bhopal"],
+    "availableService": siteConfig.services.map((s) => ({
+      "@type": "MedicalTherapy",
+      "name": s
+    })),
     "sameAs": [
       siteConfig.socials.facebook,
       siteConfig.socials.instagram,
-      siteConfig.socials.youtube
-    ]
+      siteConfig.socials.youtube,
+      "https://g.page/r/CeKFI-QMCRejEBM/review"
+    ],
+    "employee": siteConfig.doctors.map((d) => ({
+      "@type": "Physician",
+      "@id": `https://babystepsnewbornclinic.com/doctors/${d.id}/#doctor`,
+      "name": d.name
+    }))
   };
 }
 
 // Schema helper for Physician (Doctor Profile)
 export function getPhysicianSchema(doctor: { name: string; degree: string; title: string; hospital: string; id: string }) {
+  const clinicId = "https://babystepsnewbornclinic.com/#clinic";
+  const doctorId = `https://babystepsnewbornclinic.com/doctors/${doctor.id}/#doctor`;
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": doctorId,
     "name": doctor.name,
     "medicalSpecialty": "Pediatric",
     "description": `${doctor.title} with credentials ${doctor.degree}. ${doctor.hospital}.`,
     "telephone": "+916262560101",
-    "url": `https://www.babystepsclinic.in/doctors/${doctor.id}`,
-    "logo": "https://www.babystepsclinic.in/images/logo/logo-horizontal.png",
+    "url": `https://babystepsnewbornclinic.com/doctors/${doctor.id}`,
+    "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
@@ -81,19 +98,13 @@ export function getPhysicianSchema(doctor: { name: string; degree: string; title
     },
     "worksFor": {
       "@type": "MedicalClinic",
-      "name": siteConfig.name,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
-        "addressLocality": "Bhopal",
-        "addressRegion": "Madhya Pradesh",
-        "postalCode": "462044",
-        "addressCountry": "IN"
-      }
+      "@id": clinicId,
+      "name": "Baby Steps – Newborn & Child Clinic",
+      "url": "https://babystepsnewbornclinic.com"
     },
-    "hospitalAffiliation": {
+    "memberOf": {
       "@type": "Hospital",
-      "name": doctor.hospital.replace("Consultant, ", "")
+      "name": doctor.hospital.includes("Rainbow") ? "Rainbow Children's Hospital, Bhopal" : "Apollo SAGE Hospital, Bhopal"
     }
   };
 }
@@ -107,10 +118,11 @@ export function getServiceSchema(service: { title: string; description: string; 
     "description": service.description,
     "provider": {
       "@type": "MedicalClinic",
-      "name": siteConfig.name,
-      "url": "https://www.babystepsclinic.in"
+      "@id": "https://babystepsnewbornclinic.com/#clinic",
+      "name": "Baby Steps – Newborn & Child Clinic",
+      "url": "https://babystepsnewbornclinic.com"
     },
-    "url": `https://www.babystepsclinic.in/services/${service.slug}`
+    "url": `https://babystepsnewbornclinic.com/services/${service.slug}`
   };
 }
 
@@ -144,16 +156,16 @@ export function getBlogPostingSchema(post: { title: string; excerpt: string; slu
     },
     "publisher": {
       "@type": "Organization",
-      "name": siteConfig.name,
+      "name": "Baby Steps – Newborn & Child Clinic",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.babystepsclinic.in/images/logo/logo-horizontal.png"
+        "url": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png"
       }
     },
-    "url": `https://www.babystepsclinic.in/blog/${post.slug}`,
+    "url": `https://babystepsnewbornclinic.com/blog/${post.slug}`,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.babystepsclinic.in/blog/${post.slug}`
+      "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}`
     }
   };
 }
@@ -167,7 +179,7 @@ export function getBreadcrumbSchema(items: { name: string; item: string }[]) {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.item.startsWith("http") ? item.item : `https://www.babystepsclinic.in${item.item}`
+      "item": item.item.startsWith("http") ? item.item : `https://babystepsnewbornclinic.com${item.item}`
     }))
   };
 }
