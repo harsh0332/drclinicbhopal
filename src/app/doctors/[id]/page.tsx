@@ -23,7 +23,14 @@ export async function generateMetadata({ params }: DoctorPageProps): Promise<Met
     title: `${doctor.name} - ${doctor.degree} | Pediatrician Bhopal`,
     description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
     alternates: {
-      canonical: `https://www.babystepsclinic.in/doctors/${id}`,
+      canonical: `https://babystepsnewbornclinic.com/doctors/${id}`,
+    },
+    openGraph: {
+      title: `${doctor.name} - ${doctor.degree} | Pediatrician Bhopal`,
+      description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
+      url: `https://babystepsnewbornclinic.com/doctors/${id}`,
+      siteName: "Baby Steps – Newborn & Child Clinic",
+      type: "website",
     },
   };
 }
