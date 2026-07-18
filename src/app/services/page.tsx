@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
   description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/services",
+    canonical: "https://babystepsnewbornclinic.com/services",
   },
   openGraph: {
     title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
     description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
-    url: "https://www.babystepsclinic.in/services",
+    url: "https://babystepsnewbornclinic.com/services",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
