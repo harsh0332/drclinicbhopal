@@ -10,17 +10,31 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Our Pediatric Specialists | Baby Steps Clinic Neelbad",
-  description: "Expert medical consultation for newborns, infants, and children by our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
+  title: "Meet Our Pediatric Specialists | Baby Steps Bhopal",
+  description: "Consult our husband-and-wife pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn and child specialist consultants.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/doctors",
   },
   openGraph: {
-    title: "Our Pediatric Specialists | Baby Steps Clinic Neelbad",
-    description: "Expert medical consultation for newborns, infants, and children by our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
+    title: "Meet Our Pediatric Specialists | Baby Steps Bhopal",
+    description: "Consult our husband-and-wife pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn and child specialist consultants.",
     url: "https://babystepsnewbornclinic.com/doctors",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meet Our Pediatric Specialists | Baby Steps Bhopal",
+    description: "Consult our husband-and-wife pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn and child specialist consultants.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
