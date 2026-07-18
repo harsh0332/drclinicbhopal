@@ -59,8 +59,15 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
   const doctorDetails = isSudarshan
     ? {
         h1Title: "Dr. Sudarshan Dev Arya – Pediatrician",
-        description: "Dr. Sudarshan Dev Arya is a registered pediatrician dedicated to providing clinical care for infants, children, and adolescents. He holds postgraduate degrees in child health and has completed international training in pediatric nutrition.",
-        experience: "Over 10 years of clinical practice in pediatric care.",
+        description: "Dr. Sudarshan Dev Arya is a highly regarded pediatrician in Bhopal with over a decade of active clinical experience. After completing his MBBS and DCH, he earned his DNB in Pediatrics from prestigious healthcare centers in New Delhi. Driven by a commitment to early childhood growth, he completed the Post Graduate Program in Pediatric Nutrition (PGPN) from Boston University School of Medicine, USA. He has served as a senior consultant at leading institutions including Rainbow Children's Hospital. His practice focuses on providing comprehensive pediatric care, asthma screening, and safe, cold-chain-compliant vaccinations.",
+        experience: "10+ Years of Clinical Practice in Pediatric Care",
+        languages: ["English", "Hindi"],
+        interests: [
+          "Pediatric Pulmonology (Asthma & Allergies)",
+          "Childhood Immunization & Cold-Chain Management",
+          "Pediatric Obesity & Nutritional Counseling",
+          "Infectious Diseases in Children"
+        ],
         qualifications: [
           "MBBS — Bachelor of Medicine & Bachelor of Surgery",
           "DCH — Diploma in Child Health",
@@ -77,8 +84,15 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
       }
     : {
         h1Title: "Dr. Manisha Bangarwa Arya – Pediatrician & Neonatologist",
-        description: "Dr. Manisha Bangarwa Arya is a registered pediatrician and neonatologist specializing in newborn care, critical infant support, and developmental follow-ups. She holds fellowships in newborn care and pediatric nutrition.",
-        experience: "Over 8 years of clinical practice in neonatal and pediatric care.",
+        description: "Dr. Manisha Bangarwa Arya is a dedicated neonatologist and pediatrician serving families in Neelbad and South Bhopal. Following her MBBS, she completed her pediatric residency in New Delhi, obtaining her DNB. She pursued advanced specialization with a Fellowship in Neonatology to provide intensive support for preterm and high-risk infants. In addition, she holds a PGPN in Pediatric Nutrition from Boston University School of Medicine, USA. Dr. Manisha's clinical focus spans well-baby visits, lactation counseling, milestone monitoring, and post-discharge NICU care, ensuring newborn babies transition safely to healthy childhood.",
+        experience: "8+ Years of Specialized Practice in Neonatal & Pediatric Care",
+        languages: ["English", "Hindi"],
+        interests: [
+          "Preterm Infant Follow-up & NICU Care Transition",
+          "Lactation, Latching & Breastfeeding Counseling",
+          "Neonatal Nutrition & Growth Monitoring",
+          "Early Intervention for Developmental Delays"
+        ],
         qualifications: [
           "MBBS — Bachelor of Medicine & Bachelor of Surgery",
           "DNB (New Delhi) — Diplomate of National Board in Pediatrics",
@@ -216,9 +230,17 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
                 <p className="text-sm sm:text-base text-muted-text leading-relaxed font-sans">
                   {doctorDetails.description}
                 </p>
-                <p className="text-xs sm:text-sm text-primary font-semibold font-sans mt-1">
-                  💡 {doctorDetails.experience}
-                </p>
+                <div className="flex flex-col gap-2 mt-1">
+                  <p className="text-xs sm:text-sm text-primary font-semibold font-sans">
+                    💡 {doctorDetails.experience}
+                  </p>
+                  <p className="text-xs text-muted-text font-sans">
+                    🗣️ <strong className="text-primary-dark">Languages Spoken:</strong> {doctorDetails.languages.join(", ")}
+                  </p>
+                  <p className="text-xs text-muted-text font-sans leading-relaxed">
+                    🎯 <strong className="text-primary-dark">Clinical Focus:</strong> {doctorDetails.interests.join(" · ")}
+                  </p>
+                </div>
               </div>
 
               {/* Qualifications */}
