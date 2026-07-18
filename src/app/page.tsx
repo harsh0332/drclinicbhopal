@@ -38,6 +38,8 @@ const MapContact = dynamic(() => import("@/components/sections/map-contact"), {
   loading: () => <div className="w-full h-[500px] bg-surface-tint" />
 });
 import BookAppointment from "@/components/sections/book-appointment";
+import JsonLd from "@/components/ui/json-ld";
+import { getMedicalClinicSchema, getFAQSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
@@ -55,8 +57,38 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const homeFaqs = [
+    {
+      q: "What are the clinic timings and consultation hours?",
+      a: "Our standard consultation hours are Monday to Saturday: 10:00 AM – 1:00 PM and 5:00 PM – 8:00 PM. On Sundays, the clinic is closed for routine visits but remains available for emergency pediatric consultations. Appointments are recommended to minimize waiting area crowding."
+    },
+    {
+      q: "Do I need to book a prior appointment for childhood vaccinations?",
+      a: "Yes, we schedule vaccination appointments in advance to ensure the vaccine doses are pre-verified, and to maintain proper separation of healthy vaccination visits from child wellness checkups. You can schedule by calling the clinic or messaging via WhatsApp."
+    },
+    {
+      q: "What vaccine storage standards are followed at the clinic?",
+      a: "We maintain strict WHO-compliant vaccine cold-chain protocols. Our vaccines are stored in specialized medical-grade refrigerators with continuous temperature logs. This maintains vaccine safety, quality, and efficacy from arrival to administration."
+    },
+    {
+      q: "With which local hospitals are the clinic's pediatricians associated?",
+      a: "Our senior pediatricians hold consultant positions at premier tertiary care hospitals in Bhopal. Dr. Sudarshan Dev Arya is a Consultant at Rainbow Children's Hospital, and Dr. Manisha Bangarwa Arya is a Consultant at Apollo SAGE Hospital. This ensures smooth referral pathways if advanced tertiary care is required."
+    },
+    {
+      q: "What should I bring for my newborn's first wellness visit?",
+      a: "Please bring the baby's hospital birth certificate, discharge summary papers from the delivery hospital, maternal health reports, and any vaccination card or immunization booklet issued at birth. These documents help our doctors establish an accurate clinical baseline."
+    },
+    {
+      q: "Do the doctors offer emergency pediatric support?",
+      a: "We provide emergency triage guidance and child care during clinic hours. For late-night pediatric emergencies or critical newborn distress, we recommend proceeding directly to the pediatric emergency rooms of associated hospitals (Rainbow Children's Hospital or Apollo SAGE Hospital) where active care is available."
+    }
+  ];
+
   return (
     <div className="flex flex-col w-full animate-fadeIn">
+      {/* Schema Injection */}
+      <JsonLd data={getMedicalClinicSchema()} />
+      <JsonLd data={getFAQSchema(homeFaqs)} />
       {/* 1. Hero Section */}
       <Hero />
 
