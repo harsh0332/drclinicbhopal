@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Clinic Gallery | Baby Steps Clinic",
   description: "Real photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/gallery",
+    canonical: "https://babystepsnewbornclinic.com/gallery",
   },
   openGraph: {
     title: "Clinic Gallery | Baby Steps Clinic",
     description: "Real photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
-    url: "https://www.babystepsclinic.in/gallery",
+    url: "https://babystepsnewbornclinic.com/gallery",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
