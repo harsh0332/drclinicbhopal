@@ -254,8 +254,35 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 </div>
               </div>
 
-              {/* Related Educational Article for Parents */}
-              {relatedArticle && (
+              {/* Related Educational Articles for Parents */}
+              {slug === "vaccination-clinic" ? (
+                <div className="bg-white border border-gray-150 rounded-3xl p-6 sm:p-8 text-left flex flex-col gap-4 shadow-soft">
+                  <h3 className="text-sm font-bold font-heading text-primary-dark flex items-center gap-2">
+                    <Activity className="w-4.5 h-4.5 text-primary" />
+                    <span>Immunization Guides</span>
+                  </h3>
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { title: "Complete Baby Vaccination Guide", slug: "child-vaccination-guide-india", excerpt: "Immunization standards, cold-chain compliance, and schedule planning in India." },
+                      { title: "Latest IAP Vaccination Chart", slug: "iap-vaccination-schedule-chart", excerpt: "Detailed age-wise breakdown of IAP recommendations from birth up to 18 years." },
+                      { title: "Missed Child Vaccine? Rescheduling Tips", slug: "missed-vaccine-what-to-do", excerpt: "Catch-up rules, safety guidelines, and what to do next if you miss a dose." }
+                    ].map((article, idx) => (
+                      <Link
+                        key={idx}
+                        href={`/blog/${article.slug}`}
+                        className="p-3 bg-surface-tint/40 hover:bg-surface-tint/80 border border-primary/5 rounded-xl transition-all flex flex-col gap-1 text-left group"
+                      >
+                        <span className="font-semibold text-xs sm:text-sm text-primary-dark group-hover:text-primary transition-colors leading-snug">
+                          {article.title}
+                        </span>
+                        <span className="text-[10px] text-muted-text leading-normal font-sans">
+                          {article.excerpt}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : relatedArticle ? (
                 <div className="bg-white border border-gray-150 rounded-3xl p-6 sm:p-8 text-left flex flex-col gap-4 shadow-soft">
                   <h3 className="text-sm font-bold font-heading text-primary-dark flex items-center gap-2">
                     <Activity className="w-4.5 h-4.5 text-primary" />
@@ -273,7 +300,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                     </span>
                   </Link>
                 </div>
-              )}
+              ) : null}
 
             </div>
 
