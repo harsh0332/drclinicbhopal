@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: "Pediatric Education Blog | Baby Steps Clinic",
   description: "Trustworthy health guidance and parenting articles written by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/blog",
+    canonical: "https://babystepsnewbornclinic.com/blog",
   },
   openGraph: {
     title: "Pediatric Education Blog | Baby Steps Clinic",
     description: "Trustworthy health guidance and parenting articles written by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
-    url: "https://www.babystepsclinic.in/blog",
+    url: "https://babystepsnewbornclinic.com/blog",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
