@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
+import JsonLd from "@/components/ui/json-ld";
 import { Calendar, Clock, ArrowRight, ShieldCheck } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
@@ -35,10 +36,7 @@ export default function BlogHubPage() {
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <JsonLd data={breadcrumbSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
