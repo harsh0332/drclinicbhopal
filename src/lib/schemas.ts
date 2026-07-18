@@ -115,7 +115,18 @@ export function getPhysicianSchema(doctor: { name: string; degree: string; title
       "@type": "MedicalClinic",
       "@id": clinicId,
       "name": "Baby Steps – Newborn & Child Clinic",
-      "url": "https://babystepsnewbornclinic.com"
+      "url": "https://babystepsnewbornclinic.com",
+      "telephone": "+916262560101",
+      "priceRange": "$$",
+      "image": "https://babystepsnewbornclinic.com/images/clinic/exterior.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "462044",
+        "addressCountry": "IN"
+      }
     },
     "memberOf": {
       "@type": "Hospital",
@@ -172,9 +183,9 @@ export function getBlogPostingSchema(post: {
   authorTitle?: string;
   authorAffiliation?: string;
 }) {
-  const publishedIso = new Date(post.date).toISOString().split('T')[0];
+  const publishedIso = new Date(post.date).toISOString();
   const modifiedIso = post.dateModified
-    ? new Date(post.dateModified).toISOString().split('T')[0]
+    ? new Date(post.dateModified).toISOString()
     : publishedIso;
 
   return {
@@ -182,20 +193,35 @@ export function getBlogPostingSchema(post: {
     "@type": ["BlogPosting", "MedicalWebPage"],
     "headline": post.title,
     "description": post.excerpt,
+    "image": "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
     "datePublished": publishedIso,
     "dateModified": modifiedIso,
     "author": {
       "@type": "Person",
       "name": post.author,
       "jobTitle": post.authorTitle || "Pediatric Specialist",
+      "url": "https://babystepsnewbornclinic.com/doctors",
       "worksFor": {
         "@type": "MedicalClinic",
-        "name": "Baby Steps – Newborn & Child Clinic"
+        "name": "Baby Steps – Newborn & Child Clinic",
+        "url": "https://babystepsnewbornclinic.com",
+        "telephone": "+916262560101",
+        "priceRange": "$$",
+        "image": "https://babystepsnewbornclinic.com/images/clinic/exterior.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
+          "addressLocality": "Bhopal",
+          "addressRegion": "Madhya Pradesh",
+          "postalCode": "462044",
+          "addressCountry": "IN"
+        }
       }
     },
     "reviewedBy": {
       "@type": "Person",
-      "name": post.author
+      "name": post.author,
+      "url": "https://babystepsnewbornclinic.com/doctors"
     },
     "publisher": {
       "@type": "Organization",
