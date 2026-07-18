@@ -69,13 +69,24 @@ export function getMedicalClinicSchema() {
     "employee": siteConfig.doctors.map((d) => ({
       "@type": "Physician",
       "@id": `https://babystepsnewbornclinic.com/doctors/${d.id}/#doctor`,
-      "name": d.name
+      "name": d.name,
+      "telephone": "+916262560101",
+      "priceRange": "$$",
+      "image": `https://babystepsnewbornclinic.com${d.image}`,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
+        "addressLocality": "Bhopal",
+        "addressRegion": "Madhya Pradesh",
+        "postalCode": "462044",
+        "addressCountry": "IN"
+      }
     }))
   };
 }
 
 // Schema helper for Physician (Doctor Profile)
-export function getPhysicianSchema(doctor: { name: string; degree: string; title: string; hospital: string; id: string }) {
+export function getPhysicianSchema(doctor: { name: string; degree: string; title: string; hospital: string; id: string; image: string }) {
   const clinicId = "https://babystepsnewbornclinic.com/#clinic";
   const doctorId = `https://babystepsnewbornclinic.com/doctors/${doctor.id}/#doctor`;
   return {
@@ -88,6 +99,8 @@ export function getPhysicianSchema(doctor: { name: string; degree: string; title
     "telephone": "+916262560101",
     "url": `https://babystepsnewbornclinic.com/doctors/${doctor.id}`,
     "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
+    "image": `https://babystepsnewbornclinic.com${doctor.image}`,
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
