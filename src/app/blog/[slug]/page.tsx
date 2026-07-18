@@ -115,7 +115,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex flex-wrap items-center gap-4 text-xs text-muted-text font-sans mt-2">
               <span className="flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" />
-                {post.date}
+                Published: {post.date}
+              </span>
+              <span className="flex items-center gap-1 font-medium text-primary-dark">
+                <CalendarDays className="w-3.5 h-3.5 text-primary" />
+                Last updated: {post.dateModified || post.date}
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" />
