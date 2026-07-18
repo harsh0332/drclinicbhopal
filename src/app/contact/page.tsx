@@ -107,6 +107,9 @@ export default function ContactPage() {
                     </a>
                   </li>
                 </ul>
+                <div className="text-[11px] text-muted-text font-sans border-t border-gray-100 pt-3.5 mt-2 leading-relaxed">
+                  {siteConfig.napString}
+                </div>
               </div>
 
               {/* Opening Hours Card */}
@@ -130,7 +133,7 @@ export default function ContactPage() {
               <div className="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col min-h-[300px]">
                 <div className="relative w-full flex-grow min-h-[220px]">
                   <iframe
-                    src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic,%20Pooja%20Colony,%20Neelbad,%20Bhopal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.272378278338!2d77.34782957593083!3d23.196742209804935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c5d6345e3a901%3A0xa317090ce42385e2!2sBaby%20Steps%20Newborn%20%26%20Child%20Clinic!5e0!3m2!1sen!2sin!4v1784411102327!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
