@@ -10,17 +10,31 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Pediatric Education Blog | Baby Steps Clinic",
-  description: "Trustworthy health guidance and parenting articles written by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
+  title: "Parent Education Blog & Resources | Baby Steps Clinic",
+  description: "Read child care articles, newborn wellness advice, and pediatric guidelines written by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/blog",
   },
   openGraph: {
-    title: "Pediatric Education Blog | Baby Steps Clinic",
-    description: "Trustworthy health guidance and parenting articles written by senior pediatricians Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
+    title: "Parent Education Blog & Resources | Baby Steps Clinic",
+    description: "Read child care articles, newborn wellness advice, and pediatric guidelines written by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
     url: "https://babystepsnewbornclinic.com/blog",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parent Education Blog & Resources | Baby Steps Clinic",
+    description: "Read child care articles, newborn wellness advice, and pediatric guidelines written by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
