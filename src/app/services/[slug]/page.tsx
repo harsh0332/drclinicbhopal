@@ -3,10 +3,11 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { servicesData } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site-config";
-import { Calendar, Phone, CheckCircle2, Activity } from "lucide-react";
+import { Calendar, Phone, CheckCircle2, Activity, GraduationCap } from "lucide-react";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import JsonLd from "@/components/ui/json-ld";
 import { getServiceSchema, getFAQSchema, getBreadcrumbSchema } from "@/lib/schemas";
+import { blogData } from "@/lib/blog-data";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
@@ -60,6 +61,28 @@ export default async function ServicePage({ params }: ServicePageProps) {
     { name: "Services", item: "/services" },
     { name: service.title, item: `/services/${slug}` }
   ]);
+
+  // Local SEO internal links mapping
+  const drSudarshan = siteConfig.doctors.find(d => d.id === "dr-sudarshan-dev-arya")!;
+  const drManisha = siteConfig.doctors.find(d => d.id === "dr-manisha-bangarwa-arya")!;
+  
+  const manishaFirst = [
+    "nicu-follow-up",
+    "breastfeeding-counseling",
+    "newborn-care",
+    "development-assessment",
+    "milestone-tracking"
+  ].includes(slug);
+  
+  const careTeam = manishaFirst ? [drManisha, drSudarshan] : [drSudarshan, drManisha];
+
+  const blogMapping: Record<string, string> = {
+    "vaccination-clinic": "baby-vaccination-guide",
+    "breastfeeding-counseling": "breastfeeding-tips-new-mothers",
+    "milestone-tracking": "six-month-development-milestones"
+  };
+  const blogSlug = blogMapping[slug];
+  const relatedArticle = blogSlug ? blogData[blogSlug] : null;
 
   return (
     <main className="flex-1 bg-white">
@@ -206,6 +229,51 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   ))}
                 </div>
               </div>
+
+              {/* Consulting Specialists Care Team */}
+              <div className="bg-white border border-gray-150 rounded-3xl p-6 sm:p-8 text-left flex flex-col gap-4 shadow-soft">
+                <h3 className="text-sm font-bold font-heading text-primary-dark flex items-center gap-2">
+                  <GraduationCap className="w-4.5 h-4.5 text-primary" />
+                  <span>Consulting Specialists</span>
+                </h3>
+                <div className="flex flex-col gap-3">
+                  {careTeam.map((doc, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/doctors/${doc.id}`}
+                      className="p-3 bg-surface-tint/50 border border-primary/5 hover:bg-surface-tint rounded-xl transition-all flex flex-col text-left group"
+                    >
+                      <span className="font-semibold text-xs sm:text-sm text-primary-dark group-hover:text-primary transition-colors">
+                        {doc.name}
+                      </span>
+                      <span className="text-[10.5px] text-muted-text mt-0.5 font-sans leading-relaxed">
+                        {doc.title}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* Related Educational Article for Parents */}
+              {relatedArticle && (
+                <div className="bg-white border border-gray-150 rounded-3xl p-6 sm:p-8 text-left flex flex-col gap-4 shadow-soft">
+                  <h3 className="text-sm font-bold font-heading text-primary-dark flex items-center gap-2">
+                    <Activity className="w-4.5 h-4.5 text-primary" />
+                    <span>Parent Resources</span>
+                  </h3>
+                  <Link
+                    href={`/blog/${relatedArticle.slug}`}
+                    className="p-3.5 bg-surface-tint/40 hover:bg-surface-tint/80 border border-primary/5 rounded-xl transition-all flex flex-col gap-1.5 text-left group"
+                  >
+                    <span className="font-semibold text-xs sm:text-sm text-primary-dark group-hover:text-primary transition-colors leading-snug">
+                      {relatedArticle.title}
+                    </span>
+                    <span className="text-[10.5px] text-muted-text leading-relaxed font-sans">
+                      {relatedArticle.excerpt}
+                    </span>
+                  </Link>
+                </div>
+              )}
 
             </div>
 
