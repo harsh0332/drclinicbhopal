@@ -13,7 +13,7 @@ export function getMedicalClinicSchema() {
     "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
     "image": "https://babystepsnewbornclinic.com/images/clinic/exterior.jpg",
     "telephone": "+916262560101",
-    "email": "contact@babystepsnewbornclinic.in", // CHECK: verify correctness of this email vs .com
+    "email": "contact@babystepsnewbornclinic.com",
     "contactPoint": [
       {
         "@type": "ContactPoint",
