@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: "Terms of Use | Baby Steps Newborn & Child Clinic Bhopal",
   description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer and online booking conditions.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/terms",
+    canonical: "https://babystepsnewbornclinic.com/terms",
   },
   openGraph: {
     title: "Terms of Use | Baby Steps Newborn & Child Clinic Bhopal",
     description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer and online booking conditions.",
-    url: "https://www.babystepsclinic.in/terms",
+    url: "https://babystepsnewbornclinic.com/terms",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
