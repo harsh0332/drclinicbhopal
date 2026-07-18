@@ -24,7 +24,14 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
     description: `Learn more about our ${service.title} services. Why it matters and what to expect during your child's visit at Baby Steps Clinic in Neelbad, Bhopal.`,
     alternates: {
-      canonical: `https://www.babystepsclinic.in/services/${slug}`,
+      canonical: `https://babystepsnewbornclinic.com/services/${slug}`,
+    },
+    openGraph: {
+      title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
+      description: `Learn more about our ${service.title} services. Why it matters and what to expect during your child's visit at Baby Steps Clinic in Neelbad, Bhopal.`,
+      url: `https://babystepsnewbornclinic.com/services/${slug}`,
+      siteName: "Baby Steps – Newborn & Child Clinic",
+      type: "website",
     },
   };
 }
