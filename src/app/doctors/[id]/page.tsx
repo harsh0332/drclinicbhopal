@@ -4,6 +4,8 @@ import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import Link from "next/link";
 import { GraduationCap, Building, Award, Heart, CheckCircle2, Calendar, Phone } from "lucide-react";
+import JsonLd from "@/components/ui/json-ld";
+import { getPhysicianSchema, getBreadcrumbSchema } from "@/lib/schemas";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
@@ -92,8 +94,18 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
         ]
       };
 
+  const physicianSchema = getPhysicianSchema(doctor);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Doctors", item: "/doctors" },
+    { name: doctor.name, item: `/doctors/${id}` }
+  ]);
+
   return (
     <main className="flex-1 bg-white">
+      {/* Schema Injection */}
+      <JsonLd data={physicianSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Breadcrumbs / Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
         {/* Background SVGs */}
