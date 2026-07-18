@@ -20,7 +20,21 @@ export const metadata: Metadata = {
     description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
     url: "https://babystepsnewbornclinic.com/book-appointment",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
+    description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
