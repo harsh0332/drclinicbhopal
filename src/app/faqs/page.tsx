@@ -10,17 +10,31 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Baby Steps Clinic",
-  description: "Helpful, medically verified answers regarding pediatric consultations, vaccine safety standards, and appointment bookings in Neelbad, Bhopal.",
+  title: "Frequently Asked Questions | Baby Steps Clinic Bhopal",
+  description: "Get answers to common queries regarding pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/faqs",
   },
   openGraph: {
-    title: "Frequently Asked Questions | Baby Steps Clinic",
-    description: "Helpful, medically verified answers regarding pediatric consultations, vaccine safety standards, and appointment bookings in Neelbad, Bhopal.",
+    title: "Frequently Asked Questions | Baby Steps Clinic Bhopal",
+    description: "Get answers to common queries regarding pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
     url: "https://babystepsnewbornclinic.com/faqs",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frequently Asked Questions | Baby Steps Clinic Bhopal",
+    description: "Get answers to common queries regarding pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
