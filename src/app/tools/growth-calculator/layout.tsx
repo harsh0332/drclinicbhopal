@@ -1,0 +1,20 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Child Growth Calculator & Percentile Tracker | Baby Steps Clinic",
+  description: "Check your child's height, weight, and BMI percentiles using WHO-standard growth benchmarks. Simple and fast online calculator.",
+  alternates: {
+    canonical: "https://babystepsnewbornclinic.com/tools/growth-calculator",
+  },
+  openGraph: {
+    title: "Child Growth Calculator & Percentile Tracker | Baby Steps Clinic",
+    description: "Check your child's height, weight, and BMI percentiles using WHO-standard growth benchmarks. Simple and fast online calculator.",
+    url: "https://babystepsnewbornclinic.com/tools/growth-calculator",
+    siteName: "Baby Steps – Newborn & Child Clinic",
+    type: "website",
+  },
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
