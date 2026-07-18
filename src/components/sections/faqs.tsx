@@ -130,28 +130,17 @@ export default function FAQs() {
                     </div>
                   </button>
 
-                  {/* Accordion Content with AnimatePresence */}
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        key="content"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.25, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div
-                          id={`home-faq-answer-${index}`}
-                          role="region"
-                          aria-labelledby={`home-faq-btn-${index}`}
-                          className="px-6 pb-6 pt-2 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left"
-                        >
-                          {faq.a}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Accordion Content */}
+                  <div
+                    id={`home-faq-answer-${index}`}
+                    role="region"
+                    aria-labelledby={`home-faq-btn-${index}`}
+                    className={`px-6 pb-6 pt-2 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left ${
+                      isOpen ? "block animate-in fade-in duration-200" : "hidden"
+                    }`}
+                  >
+                    {faq.a}
+                  </div>
                 </motion.div>
               );
             })}
