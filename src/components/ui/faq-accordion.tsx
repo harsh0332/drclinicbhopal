@@ -41,16 +41,16 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
               </span>
               <ChevronDown className={`w-4 h-4 text-muted-text transition-transform mt-1 ${isOpen ? "rotate-180" : ""}`} />
             </button>
-            {isOpen && (
-              <div
-                id={`faq-answer-${index}`}
-                role="region"
-                aria-labelledby={`faq-btn-${index}`}
-                className="px-5 pb-5 pt-1 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left animate-in fade-in duration-200"
-              >
-                {faq.a}
-              </div>
-            )}
+            <div
+              id={`faq-answer-${index}`}
+              role="region"
+              aria-labelledby={`faq-btn-${index}`}
+              className={`px-5 pb-5 pt-1 border-t border-gray-50 text-xs sm:text-sm text-muted-text font-sans leading-relaxed text-left ${
+                isOpen ? "block animate-in fade-in duration-200" : "hidden"
+              }`}
+            >
+              {faq.a}
+            </div>
           </div>
         );
       })}
