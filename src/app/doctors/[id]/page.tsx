@@ -32,7 +32,21 @@ export async function generateMetadata({ params }: DoctorPageProps): Promise<Met
       description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
       url: `https://babystepsnewbornclinic.com/doctors/${id}`,
       siteName: "Baby Steps – Newborn & Child Clinic",
+      images: [
+        {
+          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Baby Steps – Newborn & Child Clinic",
+        }
+      ],
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${doctor.name} - ${doctor.degree} | Pediatrician Bhopal`,
+      description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
+      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
     },
   };
 }
