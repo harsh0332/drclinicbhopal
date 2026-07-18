@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Baby Steps Newborn & Child Clinic Bhopal",
   description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/privacy",
+    canonical: "https://babystepsnewbornclinic.com/privacy",
   },
   openGraph: {
     title: "Privacy Policy | Baby Steps Newborn & Child Clinic Bhopal",
     description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
-    url: "https://www.babystepsclinic.in/privacy",
+    url: "https://babystepsnewbornclinic.com/privacy",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
