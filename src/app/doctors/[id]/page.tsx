@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
 import ClinicImage from "@/components/ui/clinic-image";
 import Link from "next/link";
-import { GraduationCap, Building, Award, Heart, CheckCircle2, Calendar, Phone } from "lucide-react";
+import { GraduationCap, Building, Award, Heart, CheckCircle2, Calendar, Phone, ChevronRight } from "lucide-react";
 import JsonLd from "@/components/ui/json-ld";
 import { getPhysicianSchema, getBreadcrumbSchema } from "@/lib/schemas";
 
@@ -100,6 +100,20 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
     { name: "Doctors", item: "/doctors" },
     { name: doctor.name, item: `/doctors/${id}` }
   ]);
+
+  const specializedServices = id === "dr-sudarshan-dev-arya"
+    ? [
+        { title: "Vaccination Clinic", slug: "vaccination-clinic" },
+        { title: "Growth Monitoring", slug: "growth-monitoring" },
+        { title: "Child Nutrition", slug: "child-nutrition" },
+        { title: "Allergy & Asthma Care", slug: "allergy-asthma-care" }
+      ]
+    : [
+        { title: "Newborn Care", slug: "newborn-care" },
+        { title: "NICU Follow-up", slug: "nicu-follow-up" },
+        { title: "Development Assessment", slug: "development-assessment" },
+        { title: "Breastfeeding Counseling", slug: "breastfeeding-counseling" }
+      ];
 
   return (
     <main className="flex-1 bg-white">
@@ -237,6 +251,29 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Specialized Services Links */}
+              <div className="flex flex-col gap-4 border-t border-gray-100 pt-6">
+                <h3 className="text-lg font-bold font-heading text-primary-dark flex items-center gap-2">
+                  <Award className="w-5 h-5 text-primary" />
+                  <span>Specialized Clinical Services</span>
+                </h3>
+                <p className="text-xs text-muted-text font-sans">
+                  Click below to learn more about the specific care pathways managed by {doctor.name}:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-1">
+                  {specializedServices.map((service, idx) => (
+                    <Link
+                      key={idx}
+                      href={`/services/${service.slug}`}
+                      className="p-3.5 bg-surface-tint/50 border border-primary/5 hover:bg-surface-tint rounded-xl transition-all flex items-center justify-between group font-sans text-xs sm:text-sm font-semibold text-primary-dark hover:text-primary"
+                    >
+                      <span>{service.title}</span>
+                      <ChevronRight className="w-4 h-4 text-muted-text group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               {/* Medical Council Registrations */}
