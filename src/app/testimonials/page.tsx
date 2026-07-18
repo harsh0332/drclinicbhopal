@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: "Parent Testimonials | Baby Steps Clinic",
   description: "Heartwarming feedback and real experiences shared by families who consult our pediatricians in Neelbad, Bhopal.",
   alternates: {
-    canonical: "https://www.babystepsclinic.in/testimonials",
+    canonical: "https://babystepsnewbornclinic.com/testimonials",
   },
   openGraph: {
     title: "Parent Testimonials | Baby Steps Clinic",
     description: "Heartwarming feedback and real experiences shared by families who consult our pediatricians in Neelbad, Bhopal.",
-    url: "https://www.babystepsclinic.in/testimonials",
+    url: "https://babystepsnewbornclinic.com/testimonials",
     siteName: "Baby Steps – Newborn & Child Clinic",
     type: "website",
   },
