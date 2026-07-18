@@ -9,17 +9,31 @@ import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 
 export const metadata: Metadata = {
-  title: "Clinic Gallery | Baby Steps Clinic",
-  description: "Real photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
+  title: "Clinic Facility & Gallery | Baby Steps Bhopal",
+  description: "Take a virtual tour of Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our waiting area, consultation room, and vaccine cold-chain refrigeration units.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/gallery",
   },
   openGraph: {
-    title: "Clinic Gallery | Baby Steps Clinic",
-    description: "Real photographs of our child-friendly spaces, pediatric consultation suites, and vaccine storage facilities in Neelbad, Bhopal.",
+    title: "Clinic Facility & Gallery | Baby Steps Bhopal",
+    description: "Take a virtual tour of Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our waiting area, consultation room, and vaccine cold-chain refrigeration units.",
     url: "https://babystepsnewbornclinic.com/gallery",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Clinic Facility & Gallery | Baby Steps Bhopal",
+    description: "Take a virtual tour of Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our waiting area, consultation room, and vaccine cold-chain refrigeration units.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
