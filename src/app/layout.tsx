@@ -8,7 +8,7 @@ import WhatsAppFloating from "@/components/layout/whatsapp-floating";
 import AmbientBackground from "@/components/layout/ambient-background";
 import SiteChrome from "@/components/layout/site-chrome";
 import { siteConfig } from "@/lib/site-config";
-import { getMedicalClinicSchema } from "@/lib/schemas";
+
 
 const inter = Inter({
   variable: "--font-inter",
@@ -71,15 +71,7 @@ export default function RootLayout({
           footer={<Footer />}
           whatsapp={<WhatsAppFloating />}
           stickyBar={<MobileStickyBar />}
-          schema={
-            /* JSON-LD Structured Data for the clinic */
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(getMedicalClinicSchema()),
-              }}
-            />
-          }
+          schema={<></>}
         >
           {children}
         </SiteChrome>
