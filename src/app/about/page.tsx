@@ -17,7 +17,21 @@ export const metadata: Metadata = {
     description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
     url: "https://babystepsnewbornclinic.com/about",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
+    description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 
