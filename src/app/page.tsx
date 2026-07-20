@@ -42,17 +42,31 @@ import JsonLd from "@/components/ui/json-ld";
 import { getMedicalClinicSchema, getFAQSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
-  title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
-  description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
+  title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps Newborn & Child Clinic",
+  description: "Baby Steps is a trusted pediatric & child specialist clinic in Neelbad, Bhopal led by senior consultants. Specialized newborn care, WHO vaccination & growth tracking. Call +91 62625 60101.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com",
   },
   openGraph: {
-    title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
-    description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
+    title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps",
+    description: "Baby Steps is a trusted pediatric & child specialist clinic in Neelbad, Bhopal led by senior consultants. Specialized newborn care, WHO vaccination & growth tracking. Call +91 62625 60101.",
     url: "https://babystepsnewbornclinic.com",
     siteName: "Baby Steps – Newborn & Child Clinic",
+    images: [
+      {
+        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Baby Steps – Newborn & Child Clinic",
+      }
+    ],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps",
+    description: "Baby Steps is a trusted pediatric & child specialist clinic in Neelbad, Bhopal led by senior consultants. Specialized newborn care, WHO vaccination & growth tracking. Call +91 62625 60101.",
+    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
 

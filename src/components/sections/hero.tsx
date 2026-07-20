@@ -72,22 +72,18 @@ export default function Hero() {
               - "Where your child feels safe — and you feel sure."
             */}
             <h1 
-              className={`font-heading font-bold text-[#163C7A] text-4xl sm:text-5xl lg:text-6xl leading-[1.07] tracking-tight mb-5 text-balance ${animClass}`}
+              className={`font-heading font-bold text-[#163C7A] text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-4 text-balance ${animClass}`}
               style={shouldReduceMotion ? {} : { animationDelay: "150ms", animationFillMode: "both" }}
             >
-              Big-hospital expertise, with a gentle touch.
+              Pediatrician &amp; Child Specialist in Neelbad, Bhopal
             </h1>
 
             {/* Sub-headline */}
-            {/* Sub-headline options:
-              - "Two senior pediatricians, consultants at Rainbow Children's & Apollo SAGE — now in your neighbourhood."
-              - "Newborn-to-teen care from a husband-&-wife specialist team you can trust."
-            */}
             <p 
               className={`text-sm sm:text-base lg:text-lg leading-relaxed text-[#2A3A52] mb-3 max-w-2xl text-pretty font-sans ${animClass}`}
               style={shouldReduceMotion ? {} : { animationDelay: "300ms", animationFillMode: "both" }}
             >
-              A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — trained in New Delhi, now caring for families in Neelbad.
+              <strong className="text-[#163C7A] font-semibold block sm:inline">Big-hospital expertise, with a gentle touch.</strong> A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — trained in New Delhi, now caring for families in Neelbad.
             </p>
 
             {/* Micro Trust Line */}
