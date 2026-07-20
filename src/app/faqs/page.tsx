@@ -86,17 +86,21 @@ export default function FAQsPage() {
 
   // Aggregate all FAQs for SEO FAQPage schema
   const allFaqs = [...visitFaqs, ...vaccineFaqs, ...clinicalFaqs];
-  const faqSchema = getFAQSchema(allFaqs);
+  const faqSchema = getFAQSchema(allFaqs, "https://babystepsnewbornclinic.com/faqs");
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "FAQs", item: "/faqs" }
   ]);
 
+  const unifiedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [breadcrumbSchema, faqSchema]
+  };
+
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={faqSchema} />
+      <JsonLd data={unifiedSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">
