@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import { localitiesData } from "@/lib/localities-data";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Phone, Mail, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 
@@ -124,8 +125,26 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Areas We Serve Section */}
+        <div className="mt-12 pt-8 border-t border-blue-900 flex flex-col gap-3">
+          <h4 className="text-xs font-bold font-heading text-accent-sunshine uppercase tracking-wider">
+            Areas We Serve in Bhopal:
+          </h4>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-blue-200 font-sans">
+            {Object.values(localitiesData).map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/areas/${loc.slug}`}
+                className="hover:text-white hover:underline transition-colors"
+              >
+                • Pediatrician in {loc.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* Credentials and Disclaimer */}
-        <div className="mt-12 pt-8 border-t border-blue-900 flex flex-col gap-6">
+        <div className="mt-8 pt-8 border-t border-blue-900/50 flex flex-col gap-6">
           {/* Medical Disclaimer */}
           <div className="p-4 bg-blue-950/60 rounded-2xl border border-blue-900 text-[11px] text-blue-300 leading-relaxed font-sans">
             <div className="flex items-center gap-1.5 font-semibold text-white mb-1.5">
