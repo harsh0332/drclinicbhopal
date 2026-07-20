@@ -7,7 +7,7 @@ export function getMedicalClinicSchema() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "@id": clinicId,
-    "name": "Baby Steps – Newborn & Child Clinic",
+    "name": "Baby Steps Newborn & Child Clinic",
     "alternateName": siteConfig.shortName,
     "url": "https://babystepsnewbornclinic.com",
     "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
@@ -56,7 +56,7 @@ export function getMedicalClinicSchema() {
       }
     ],
     "medicalSpecialty": "Pediatric",
-    "areaServed": ["Neelbad", "Kolar", "Bawadia Kalan", "Ratibad", "South Bhopal"],
+    "areaServed": ["Neelbad", "Kolar Road", "Bawadia Kalan", "Danish Kunj", "Salaiya", "Chuna Bhatti", "Katara Hills", "Bagmugaliya", "South Bhopal"],
     "availableService": siteConfig.services.map((s) => ({
       "@type": "MedicalTherapy",
       "name": s
