@@ -154,12 +154,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               />
 
               {/* FAQs Accordion */}
-              <div className="border-t border-gray-150 pt-8 mt-4 flex flex-col gap-4">
-                <h2 className="text-xl font-bold font-heading text-primary-dark mb-2">
-                  Frequently Asked Questions (Article Q&amp;A)
-                </h2>
-                <FAQAccordion faqs={post.faqs} />
-              </div>
+              {post.faqs && post.faqs.length > 0 && (
+                <div className="border-t border-gray-150 pt-8 mt-4 flex flex-col gap-4">
+                  <h2 className="text-xl font-bold font-heading text-primary-dark mb-2">
+                    Frequently Asked Questions (Article Q&amp;A)
+                  </h2>
+                  <FAQAccordion faqs={post.faqs} />
+                </div>
+              )}
             </div>
 
             {/* Right Column: Reviewer Byline & CTA */}

@@ -9,10 +9,12 @@ interface FAQItem {
 }
 
 interface FAQAccordionProps {
-  faqs: FAQItem[];
+  faqs?: FAQItem[];
 }
 
-export default function FAQAccordion({ faqs }: FAQAccordionProps) {
+export default function FAQAccordion({ faqs = [] }: FAQAccordionProps) {
+  if (!faqs.length) return null;
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
