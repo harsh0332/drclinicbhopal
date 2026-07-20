@@ -157,14 +157,15 @@ export function getServiceSchema(service: { title: string; description: string; 
 }
 
 // Schema helper for FAQPage
-export function getFAQSchema(faqs: { q: string; a: string }[], pageUrl: string = "https://babystepsnewbornclinic.com/faqs") {
+export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string = "https://babystepsnewbornclinic.com/faqs") {
+  const safeFaqs = faqs || [];
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${pageUrl}#faq`,
     "url": pageUrl,
     "mainEntityOfPage": pageUrl,
-    "mainEntity": faqs.map((faq) => ({
+    "mainEntity": safeFaqs.map((faq) => ({
       "@type": "Question",
       "name": faq.q,
       "acceptedAnswer": {
