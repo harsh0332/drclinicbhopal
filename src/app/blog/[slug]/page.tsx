@@ -68,19 +68,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Schema generations
   const articleSchema = getBlogPostingSchema(post);
-  const faqSchema = getFAQSchema(post.faqs);
+  const faqSchema = post.faqs && post.faqs.length > 0 ? getFAQSchema(post.faqs, `https://babystepsnewbornclinic.com/blog/${post.slug}`) : null;
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "Blog", item: "/blog" },
     { name: post.title, item: `/blog/${post.slug}` }
   ]);
 
+  const graphEntities: any[] = [articleSchema, breadcrumbSchema];
+  if (faqSchema) {
+    graphEntities.push(faqSchema);
+  }
+
+  const unifiedSchema = {
+    "@context": "https://schema.org",
+    "@graph": graphEntities
+  };
+
   return (
     <main className="flex-1 bg-white">
       {/* Dynamic JSON-LD Schemas Injection */}
-      <JsonLd data={articleSchema} />
-      <JsonLd data={faqSchema} />
-      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={unifiedSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
