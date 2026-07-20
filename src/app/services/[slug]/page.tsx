@@ -68,13 +68,23 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
+  const pageUrl = `https://babystepsnewbornclinic.com/services/${slug}`;
   const serviceSchema = getServiceSchema({ ...service, slug });
-  const faqSchema = getFAQSchema(service.faqs);
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "Services", item: "/services" },
     { name: service.title, item: `/services/${slug}` }
   ]);
+
+  const graphEntities: any[] = [serviceSchema, breadcrumbSchema];
+  if (service.faqs && service.faqs.length > 0) {
+    graphEntities.push(getFAQSchema(service.faqs, pageUrl));
+  }
+
+  const unifiedSchema = {
+    "@context": "https://schema.org",
+    "@graph": graphEntities
+  };
 
   // Local SEO internal links mapping
   const drSudarshan = siteConfig.doctors.find(d => d.id === "dr-sudarshan-dev-arya")!;
@@ -101,9 +111,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <JsonLd data={serviceSchema} />
-      <JsonLd data={faqSchema} />
-      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={unifiedSchema} />
       {/* Breadcrumbs / Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
         {/* Background SVGs */}
