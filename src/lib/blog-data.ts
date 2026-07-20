@@ -1,260 +1,197 @@
-export interface BlogFAQ {
-  q: string;
-  a: string;
-}
-
-export interface BlogPost {
-  title: string;
-  slug: string;
-  date: string;
-  dateModified?: string;
-  readTime: string;
-  category: string;
-  excerpt: string;
-  author: string;
-  authorTitle: string;
-  authorAffiliation: string;
-  contentHtml: string;
-  faqs: BlogFAQ[];
-}
+import { BlogPost } from "./types";
 
 export const blogData: Record<string, BlogPost> = {
   "baby-vaccination-guide": {
-    title: "Essential Immunization Guide: Protecting Your Newborn",
+    title: "Complete Baby Vaccination Guide for Indian Parents",
     slug: "baby-vaccination-guide",
-    date: "June 15, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "5 min read",
-    category: "Vaccination",
-    excerpt: "An educational overview of the primary vaccination schedule recommended by the IAP during the first six months.",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
+    readTime: "6 min read",
+    category: "Immunization",
+    excerpt: "A comprehensive guide explaining the importance of childhood immunization in India, cold-chain standards, and how to plan vaccine schedules.",
     author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "MBBS, DCH, DNB (New Delhi), PGPN (Boston, USA)",
-    authorAffiliation: "Consultant Pediatrician, Rainbow Children's Hospital, Bhopal",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Why Are Vaccination Timelines Critical for Newborns?</h2>
-      <p>Vaccination timelines ensure that infants build active immunity against life-threatening infections before exposure to wild viral or bacterial pathogens. Guidelines established by the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a> and the <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="text-primary underline">World Health Organization (WHO)</a> dictate specific age intervals for optimal antibody production.</p>
-      
-      <h2>What Is the Recommended Primary Immunization Schedule?</h2>
-      <p>The primary schedule begins at birth with BCG, oral polio vaccine (OPV), and Hepatitis B. By six weeks, infants transition to combination vaccines protecting against Diphtheria, Pertussis, Tetanus, Haemophilus Influenzae Type B, and Pneumococcal Disease under the <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer" class="text-primary underline">Universal Immunisation Programme (UIP, MoHFW)</a> framework.</p>
-      
-      <h2>How Does Vaccine Cold-Chain Storage Protect Efficacy?</h2>
-      <p>Vaccine cold-chain storage maintains biological potency by keeping vaccines strictly between 2°C and 8°C. Continuous digital temperature monitoring prevents cold-chain failure, safeguarding vaccine quality and safety for every child.</p>
+      <h2>Why Is Timely Childhood Vaccination Critical?</h2>
+      <p>Vaccination is one of the most effective medical interventions available to protect children against severe preventable infectious diseases. In India, adhering to an established immunization schedule shields infants from polio, tuberculosis, hepatitis B, diphtheria, pertussis, tetanus, rotavirus, and pneumococcal infections.</p>
 
-      <h2>What Are Common Post-Vaccination Reactions and Care Steps?</h2>
-      <p>Common post-vaccination reactions include low-grade fever, irritability, and minor swelling at the injection site that resolve in 24 to 48 hours. Parents should maintain hydration and consult pediatricians for weight-appropriate care.</p>
-
+      <h2>What Is the Cold Chain and Why Does It Matter?</h2>
+      <p>Vaccines are biological products that lose potency if exposed to inappropriate temperatures. Maintaining a strict cold chain—from the manufacturer to the moment of administration—ensures that every dose retains maximum clinical efficacy.</p>
+      
       <p>In addition to essential primary vaccines, optional immunizations such as Influenza (flu shot) and Varicella (chickenpox vaccine) offer extended protection against widespread childhood infections. Consult your pediatrician to customize an optimal vaccination plan tailored to your baby's age and health background.</p>
     `,
     faqs: [
       {
-        q: "What should I do if my child has a fever after a vaccine?",
-        a: "A mild fever is a normal immune response after vaccination. You should monitor your child's hydration and consult our pediatricians for weight-appropriate paracetamol dosage guidance if they appear uncomfortable."
+        q: "Are vaccines safe for newborns?",
+        a: "Yes. All vaccines recommended by the Indian Academy of Pediatrics (IAP) undergo rigorous clinical safety evaluations and are approved by national health regulatory authorities."
       },
       {
-        q: "Is it safe to give multiple vaccines at the same visit?",
-        a: "Yes, administering multiple vaccines during a single visit is clinically safe and effective. It ensures rapid immune protection while reducing the overall number of clinic trips for your baby."
+        q: "What should I do if my baby gets a fever after vaccination?",
+        a: "Mild fever and slight soreness at the injection site are normal signs that the immune system is responding. Follow your pediatrician's advice regarding paracetamol dosage if needed."
       }
     ]
   },
   "breastfeeding-tips-new-mothers": {
-    title: "Breastfeeding Techniques: Clinical Tips for New Mothers",
+    title: "Essential Breastfeeding Tips for New Mothers",
     slug: "breastfeeding-tips-new-mothers",
-    date: "June 08, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "6 min read",
-    category: "Nutrition",
-    excerpt: "Understanding proper latch, positioning, feed frequency, and growth monitoring criteria for breastfed infants.",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
+    readTime: "5 min read",
+    category: "Newborn Care",
+    excerpt: "Practical advice on latching techniques, feeding frequency, lactation hygiene, and managing common newborn feeding challenges.",
     author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "MBBS, DNB (New Delhi), PGPN (Boston, USA), Fellowship in Neonatology",
-    authorAffiliation: "Consultant Neonatologist & Pediatrician, Apollo SAGE Hospital, Bhopal",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Why Is Exclusive Breastfeeding Recommended for 6 Months?</h2>
-      <p>Exclusive breastfeeding for six months supplies optimal nutrients, vitamins, and protective maternal antibodies for infant development. The <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="text-primary underline">World Health Organization (WHO)</a> confirms that human milk reduces gastrointestinal and respiratory infection risks.</p>
-      
-      <h2>How Do You Establish a Proper Breastfeeding Latch?</h2>
-      <p>A proper latch requires the baby to take in a large portion of the lower areola, ensuring pain-free milk transfer and preventing nipple trauma. Correct infant positioning supports comfortable feeding cycles for new mothers.</p>
-      
-      <h2>What Is the Expected Feeding Frequency for Newborns?</h2>
-      <p>Newborns generally feed on demand, translating to 8 to 12 feeding sessions in a 24-hour cycle. Frequent feeds support maternal milk production and prevent newborn dehydration in warm climates like Bhopal.</p>
+      <h2>Getting the Perfect Latch: Step-by-Step Guidance</h2>
+      <p>Achieving a proper latch is the key to comfortable, successful breastfeeding. Ensure your baby's mouth covers a large portion of the lower areola, not just the nipple. This facilitates efficient milk transfer and prevents maternal soreness.</p>
 
-      <h2>How Can Parents Track Sufficient Feed Volume?</h2>
-      <p>Infants passing clear urine 6 to 8 times daily and showing steady progression on growth charts indicate adequate feed intake. Relaxed sleep between feeds confirms satisfaction.</p>
+      <h2>How Often Should a Newborn Feed?</h2>
+      <p>Newborns generally feed 8 to 12 times in a 24-hour period. Feeding on demand whenever the baby shows early hunger cues (rooting, smacking lips, putting hands to mouth) supports steady weight gain and establishes healthy milk supply.</p>
 
       <p>Proper burping techniques immediately after feedings significantly reduce infant reflux and gas discomfort. Holding your baby upright against your chest and gently patting their back helps release trapped air bubbles before laying them down.</p>
     `,
     faqs: [
       {
-        q: "Is nipple pain normal during breastfeeding?",
-        a: "Nipple pain beyond initial mild sensitivity indicates an improper latch technique. We recommend scheduling a clinical lactation assessment to correct positioning and prevent nipple sore trauma."
+        q: "How do I know if my newborn is getting enough milk?",
+        a: "A well-fed newborn will have 6 or more wet diapers per 24 hours after day 4, appear content after feeds, and demonstrate steady weight gain on WHO growth charts."
       },
       {
-        q: "How long can expressed breast milk be stored safely?",
-        a: "Expressed breast milk remains stable at room temperature for up to 4 hours, and in a household refrigerator at 4°C for 24 to 48 hours in sterile BPA-free containers."
+        q: "What should I do if I experience painful nursing?",
+        a: "Pain is usually a sign of an improper latch. Seek prompt guidance from a pediatrician or lactation consultant to evaluate positioning and prevent cracked nipples."
       }
     ]
   },
   "six-month-development-milestones": {
-    title: "Recognizing Normal Physiological Milestones at 6 Months",
+    title: "6-Month Development Milestones: What Every Parent Should Expect",
     slug: "six-month-development-milestones",
-    date: "May 28, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "4 min read",
-    category: "Milestones",
-    excerpt: "Milestone indicators of physical, language, and motor skills development in infants and when to consult a specialist.",
-    author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "MBBS, DCH, DNB (New Delhi), PGPN (Boston, USA)",
-    authorAffiliation: "Consultant Pediatrician, Rainbow Children's Hospital, Bhopal",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
+    readTime: "7 min read",
+    category: "Development",
+    excerpt: "A guide to motor, cognitive, language, and social milestones your baby typically reaches around 6 months of age.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>What Motor Skills Should a 6-Month-Old Demonstrate?</h2>
-      <p>A 6-month-old infant typically demonstrates rolling in both directions and sitting with hand or cushion support. Motor skill development reflects neurological maturation evaluated against pediatric benchmarks established by the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a>.</p>
-      
-      <h2>What Speech and Cognitive Progress Occurs at 6 Months?</h2>
-      <p>Six-month-old babies vocalize feelings, respond to their names, and begin double-consonant babbling like 'ba-ba'. Cognitive progress shows heightened awareness of auditory and visual stimuli.</p>
-      
-      <h2>When and How Should Solid Foods Be Introduced?</h2>
-      <p>Complementary solid foods should begin at completed six months alongside continued breastfeeding. Single-ingredient smooth purees provide necessary nutrients when milk alone no longer suffices.</p>
+      <h2>Key Motor Skills at 6 Months</h2>
+      <p>By 6 months, most infants begin rolling over in both directions (front to back and back to front), sitting with minimal support, and pushing up on their arms during tummy time. Fine motor skills include reaching for objects with both hands and transferring toys from one hand to the other.</p>
 
-      <h2>When Should Parents Consult a Pediatrician for Milestone Delays?</h2>
-      <p>Consult a pediatrician if your 6-month-old does not roll, shows no response to sounds, or fails to reach for objects. Early developmental evaluation allows timely supportive intervention.</p>
+      <h2>Social and Communication Progress</h2>
+      <p>Your baby will respond to their name, make babbling sounds (vowel combinations like "ah," "eh," "oh"), express joy through squealing, and recognize familiar faces.</p>
 
       <p>Key red-flag milestone delays at 6 months include inability to hold head steady, lack of response to sounds or caregivers' voices, poor eye-tracking, or persistent stiffness in limbs. Early clinical screening allows timely developmental interventions.</p>
     `,
     faqs: [
       {
-        q: "What if my baby isn't sitting independently at 6 months?",
-        a: "Independent sitting without hand support normally develops between 6 to 8 months. Sitting with support is the expected 6-month milestone; pediatric checkups monitor ongoing motor progress."
+        q: "When should I be concerned about my baby's developmental pace?",
+        a: "If your baby shows persistent head lag, does not roll over, doesn't respond to sounds, or avoids eye contact by 6 months, schedule a developmental assessment with your pediatrician."
       },
       {
-        q: "Can I introduce cow's milk at 6 months?",
-        a: "No, whole cow's milk should not be given as a primary drink until 12 months. It lacks suitable iron levels and stresses an infant's immature renal system."
+        q: "Should 6-month-old babies start solid foods?",
+        a: "Yes. World Health Organization guidelines recommend starting complementary feeding at 6 months alongside continued breastfeeding."
       }
     ]
   },
   "child-vaccination-guide-india": {
     title: "Complete Baby Vaccination Guide for Indian Parents",
     slug: "child-vaccination-guide-india",
-    date: "July 18, 2026",
-    dateModified: "July 18, 2026",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
     readTime: "7 min read",
     category: "Vaccination",
     excerpt: "A comprehensive guide explaining the importance of childhood immunization in India, cold-chain standards, and how to plan vaccine schedules.",
     author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "MBBS, DCH, DNB (New Delhi), PGPN (Boston, USA)",
-    authorAffiliation: "Consultant Pediatrician, Rainbow Children's Hospital, Bhopal",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Why Is Immunization Essential for Infants in India?</h2>
-      <p>Immunization protects infants from severe infectious diseases through active antibody generation. In India, guidelines from the <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer" class="text-primary underline">Universal Immunisation Programme (UIP, MoHFW)</a> and the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a> define recommended immunization schedules.</p>
+      <h2>Why Is Timely Childhood Vaccination Critical?</h2>
+      <p>Vaccination is one of the most effective medical interventions available to protect children against severe preventable infectious diseases. In India, adhering to an established immunization schedule shields infants from polio, tuberculosis, hepatitis B, diphtheria, pertussis, tetanus, rotavirus, and pneumococcal infections.</p>
 
-      <h2>What Essential Vaccines Are Given in the First Year?</h2>
-      <p>First-year vaccines include birth doses of BCG, OPV, and Hepatitis B, followed by Hexavalent combination shots (DTaP/wP, IPV, Hib, HepB), Rotavirus, and Pneumococcal Conjugate Vaccines (PCV) at 6, 10, and 14 weeks.</p>
-
-      <h2>Why Is Cold-Chain Compliance Critical for Vaccine Safety?</h2>
-      <p>Cold-chain compliance maintains storage temperatures strictly between 2°C and 8°C as mandated by <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="text-primary underline">WHO guidelines</a>. Specialized medical refrigeration prevents active ingredient breakdown.</p>
+      <h2>What Is the Cold Chain and Why Does It Matter?</h2>
+      <p>Vaccines are biological products that lose potency if exposed to inappropriate temperatures. Maintaining a strict cold chain—from the manufacturer to the moment of administration—ensures that every dose retains maximum clinical efficacy. Learn more about cold-chain management from the <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer">Ministry of Health & Family Welfare (MoHFW)</a>.</p>
 
       <p>Rotavirus vaccines (given orally at 6, 10, and 14 weeks) protect infants against severe dehydrating diarrhea, while Pneumococcal Conjugate Vaccines (PCV) shield against bacterial pneumonia and middle ear infections.</p>
     `,
     faqs: [
       {
-        q: "Why is cold-chain storage so important for vaccines?",
-        a: "Cold-chain storage maintains vaccines at strict WHO-compliant temperatures (2°C to 8°C). Any heat or freezing degrades active components, compromising immune response development in children."
+        q: "Are vaccines safe for newborns?",
+        a: "Yes. All vaccines recommended by the Indian Academy of Pediatrics (IAP) undergo rigorous clinical safety evaluations and are approved by national health regulatory authorities."
       },
       {
-        q: "What is catch-up vaccination?",
-        a: "Catch-up vaccination provides modified timing for missed immunization doses, ensuring children build complete antibody protection even if original schedules were delayed."
+        q: "What should I do if my baby gets a fever after vaccination?",
+        a: "Mild fever and slight soreness at the injection site are normal signs that the immune system is responding. Follow your pediatrician's advice regarding paracetamol dosage if needed."
       }
     ]
   },
   "iap-vaccination-schedule-chart": {
-    title: "Latest IAP Vaccination Schedule & Immunization Chart",
+    title: "IAP Vaccination Schedule Chart 2026: Age-Wise Immunization Guide",
     slug: "iap-vaccination-schedule-chart",
-    date: "July 17, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "6 min read",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
+    readTime: "8 min read",
     category: "Vaccination",
-    excerpt: "Detailed breakdown of the Indian Academy of Pediatrics (IAP) recommended schedule from birth up to 18 years.",
+    excerpt: "Complete Indian Academy of Pediatrics (IAP) immunization schedule from birth to 18 years, including compulsory and recommended vaccines.",
     author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "MBBS, DCH, DNB (New Delhi), PGPN (Boston, USA)",
-    authorAffiliation: "Consultant Pediatrician, Rainbow Children's Hospital, Bhopal",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>What Is the Official IAP Immunization Schedule Baseline?</h2>
-      <p>The baseline <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a> schedule starts at birth with BCG, OPV, and HepB, followed by primary hexavalent series at 6, 10, and 14 weeks. Boosters occur at 15-18 months, 2 years, 5 years, and 10 years.</p>
+      <h2>Understanding the IAP Immunization Schedule</h2>
+      <p>The Indian Academy of Pediatrics (IAP) regularly updates its advisory committee recommendations on vaccines and immunization practices. For official guidelines, visit the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">Indian Academy of Pediatrics (IAP) official portal</a>.</p>
 
-      <h2>What Is the Difference Between Mandatory and Recommended Vaccines?</h2>
-      <p>Government schedules focus on core public health risks, whereas IAP outlines comprehensive protection including Influenza, Varicella, Hepatitis A, and Pneumococcal vaccines aligned with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="text-primary underline">WHO recommendations</a>.</p>
-
-      <h2>How Can Parents Organize Immunization Milestones?</h2>
-      <p>Structured immunization booklets and automated clinic reminders help parents track booster dates and avoid missed doses.</p>
+      <h2>Birth to 6 Months Immunization Breakdown</h2>
+      <p>At birth, every newborn should receive BCG, OPV zero dose, and Hepatitis B (birth dose). Subsequent visits at 6, 10, and 14 weeks cover DTaP/wP, IPV, Hib, Hepatitis B, Rotavirus, and PCV.</p>
 
       <p>Adolescent boosters including Tdap (tetanus, diphtheria, acellular pertussis) at 10–12 years and HPV vaccination for girls and boys provide critical long-term protection against severe infections during teenage and adult years.</p>
     `,
     faqs: [
       {
-        q: "What is the difference between UIP and IAP schedules?",
-        a: "The Universal Immunisation Programme (UIP, MoHFW) covers core mandatory public vaccines. The IAP schedule includes additional protective vaccines such as Pneumococcal Conjugate, Influenza, and Chickenpox vaccines."
+        q: "What is the difference between UIP and IAP vaccination schedules?",
+        a: "The Universal Immunization Programme (UIP) is a government initiative covering essential vaccines for public health. The IAP schedule includes additional vaccines (such as Influenza, Varicella, Hepatitis A, and HPV) for broader individual protection."
       },
       {
-        q: "Are booster doses necessary?",
-        a: "Yes, booster doses reinforce waning immunity from initial primary series, securing long-lasting defense against infectious bacterial and viral pathogens."
+        q: "Why are booster doses necessary?",
+        a: "Booster doses refresh the immune memory, ensuring long-lasting antibody protection as a child grows."
       }
     ]
   },
   "missed-vaccine-what-to-do": {
-    title: "Missed Child Vaccine? Catch-Up Schedules & What to Do Next",
+    title: "Missed a Childhood Vaccine? Catch-Up Immunization Rules Explained",
     slug: "missed-vaccine-what-to-do",
-    date: "July 16, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "5 min read",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
+    readTime: "6 min read",
     category: "Vaccination",
-    excerpt: "Helpful pediatric guidance on catch-up vaccinations, grace periods, and scheduling missed doses safely.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "MBBS, DNB (New Delhi), PGPN (Boston, USA), Fellowship in Neonatology",
-    authorAffiliation: "Consultant Neonatologist & Pediatrician, Apollo SAGE Hospital, Bhopal",
+    excerpt: "What Indian parents need to do when a vaccination dose is delayed or missed, and how catch-up immunization schedules work.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>What Steps Should Parents Take Immediately After a Missed Vaccine?</h2>
-      <p>Parents should consult their pediatrician promptly to map a catch-up calendar. Guidance from the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a> allows safe scheduling of delayed doses without restarting vaccine series.</p>
+      <h2>Don't Panic: Catch-Up Vaccination Principles</h2>
+      <p>Missing a scheduled vaccination date is common due to travel, minor illness, or logistics. According to global health standards by the <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">World Health Organization (WHO)</a>, you almost never need to restart a vaccine series from the beginning regardless of the time elapsed.</p>
 
-      <h2>How Do Catch-Up Immunization Intervals Work?</h2>
-      <p>Catch-up schedules adjust minimum intervals between doses to establish proper antibody levels. Most primary vaccines, including DTaP and MMR, can be safely caught up under medical guidance.</p>
-
-      <h2>Are Delayed Doses Safe for Infants?</h2>
-      <p>Delayed doses do not increase clinical adverse reaction rates. However, prompt catch-up reduces the timeframe during which an infant remains unprotected against wild infections.</p>
+      <h2>How Pediatricians Plan Catch-Up Schedules</h2>
+      <p>Your pediatrician will evaluate which doses were completed and calculate the minimum safe intervals required between remaining doses to restore complete protection quickly.</p>
 
       <p>For children above 5 years with missed immunization milestones, catch-up schedules prioritize primary DTaP/Tdap, MMR, Hepatitis B, and Typhoid vaccines without needing to restart the entire series from birth.</p>
     `,
     faqs: [
       {
-        q: "Is there a limit on how late a vaccine can be given?",
-        a: "Certain vaccines like Rotavirus have strict upper age limits (typically 8 months) due to intestinal safety profiles. Vaccines like MMR or DTaP can be caught up at later ages under pediatric supervision."
+        q: "Can multiple catch-up vaccines be given in a single visit?",
+        a: "Yes. Administering multiple age-appropriate vaccines at different anatomical sites during the same visit is safe and clinically recommended to catch up quickly."
       },
       {
-        q: "Do we need to restart the vaccine series from the beginning if we miss a dose?",
-        a: "No, missing a dose does not require restarting the entire vaccine series. Clinical protocols simply continue from the last administered dose while respecting minimum dose intervals."
+        q: "Should we vaccinate a child with a mild cold or runny nose?",
+        a: "Mild illness without high fever (such as a minor cold or cough) is not a contraindication for vaccination."
       }
     ]
   },
   "vaccine-side-effects-fever-management": {
-    title: "Managing Vaccine Side Effects & Post-Shot Fever in Babies",
+    title: "Post-Vaccination Fever & Side Effects: Parent Care Guide",
     slug: "vaccine-side-effects-fever-management",
-    date: "July 15, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "5 min read",
-    category: "Vaccination",
-    excerpt: "Pediatric advice on handling post-vaccination fever, redness at the injection site, and home care tips.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "MBBS, DNB (New Delhi), PGPN (Boston, USA), Fellowship in Neonatology",
-    authorAffiliation: "Consultant Neonatologist & Pediatrician, Apollo SAGE Hospital, Bhopal",
-    contentHtml: `
-      <h2>What Are Normal Post-Vaccination Physiological Symptoms?</h2>
-      <p>Low-grade fever, mild localized redness, and slight swelling demonstrate active immune response initiation. Guidelines from the <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="text-primary underline">World Health Organization (WHO)</a> confirm these symptoms typically resolve within 24 to 48 hours.</p>
-
-      <h2>How Should Post-Vaccination Fever Be Managed Safely at Home?</h2>
-      <p>Maintain frequent feeds to preserve hydration and apply a cool, damp cloth to injection sites for comfort. Consult pediatricians for weight-appropriate paracetamol dosing; never administer aspirin.</p>
-
-      <h2>When Does Post-Vaccination Fever Warrant Immediate Medical Evaluation?</h2>
-      <p>Contact your pediatrician immediately if fever exceeds 102°F, inconsolable crying lasts over 3 hours, or severe lethargy occurs.</p>
-
-    date: "July 18, 2026",
-    dateModified: "July 18, 2026",
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
     readTime: "5 min read",
     category: "Vaccination",
     excerpt: "How to manage mild fever, localized swelling, and fussiness in babies following routine immunizations.",
@@ -284,36 +221,38 @@ export const blogData: Record<string, BlogPost> = {
   "painless-vaccination-for-babies": {
     title: "Painless vs Painful Vaccine for Babies: Differences, Pros & Cons",
     slug: "painless-vaccination-for-babies",
-      <p>The difference lies in the pertussis component. Painless vaccines (aP) use purified acellular antigens causing significantly fewer side effects, whereas painful vaccines (wP) use whole-cell bacteria as outlined by the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a>.</p>
+    date: "2026-07-18",
+    dateModified: "2026-07-18",
+    readTime: "7 min read",
+    category: "Vaccination",
+    excerpt: "A detailed comparison of acellular (painless) vs whole-cell (painful) combination DTP vaccines for Indian babies.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <h2>Understanding Acellular (Painless) vs Whole-Cell (Painful) DTP Vaccines</h2>
+      <p>The term "painless vaccine" refers to the acellular pertussis (aP) component in combination DTP shots, compared to the whole-cell pertussis (wP) formulation. Both options are licensed and safe.</p>
 
-      <h2>Comparison Table: Painless (aP) vs. Painful (wP) DTP Vaccines</h2>
-      <div class="overflow-x-auto my-4">
-        <table class="min-w-full text-xs text-left border border-gray-200 rounded-lg overflow-hidden">
-          <thead class="bg-gray-100 font-bold text-gray-700">
-            <tr>
-              <th class="p-2.5 border-b">Vaccine Type</th>
-              <th class="p-2.5 border-b">Fever Risk</th>
-              <th class="p-2.5 border-b">Pain & Swelling</th>
-              <th class="p-2.5 border-b">Typical Cost</th>
-              <th class="p-2.5 border-b">Schedule</th>
+      <h2>Comparison Table: Painless (aP) vs Painful (wP) Vaccines</h2>
+      <div className="overflow-x-auto my-6">
+        <table className="w-full text-left text-xs sm:text-sm border-collapse border border-gray-200">
+          <thead>
+            <tr className="bg-surface-tint">
+              <th className="p-2.5 border border-gray-200 font-bold">Feature</th>
+              <th className="p-2.5 border border-gray-200 font-bold">Painless (aP - Acellular)</th>
+              <th className="p-2.5 border border-gray-200 font-bold">Painful (wP - Whole-cell)</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-100">
+          <tbody>
             <tr>
-              <td class="p-2.5 font-semibold">Painless (aP - Acellular)</td>
-              <td class="p-2.5 text-green-700 font-medium">Low / Minimal</td>
-              <td class="p-2.5 text-green-700 font-medium">Low / Minimal</td>
-              <td class="p-2.5 font-medium text-gray-700">Standard IAP Schedule</td>
-              <td class="p-2.5 font-medium text-gray-700">Standard IAP Schedule</td>
-              <td class="p-2.5 font-mono text-gray-500">Higher</td>
-              <td class="p-2.5 font-mono text-gray-500">6, 10, 14 weeks</td>
+              <td className="p-2.5 font-semibold">Post-Shot Fever &amp; Pain</td>
+              <td className="p-2.5 text-green-700 font-medium">Low / Minimal</td>
+              <td className="p-2.5 text-amber-700 font-medium">Moderate to High</td>
             </tr>
             <tr>
-              <td class="p-2.5 font-semibold">Painful (wP - Whole-cell)</td>
-              <td class="p-2.5 text-amber-700 font-medium">Moderate to High</td>
-              <td class="p-2.5 text-amber-700 font-medium">Moderate to High</td>
-              <td class="p-2.5 font-mono text-gray-500">Lower</td>
-              <td class="p-2.5 font-mono text-gray-500">6, 10, 14 weeks</td>
+              <td className="p-2.5 font-semibold">Local Swelling &amp; Soreness</td>
+              <td className="p-2.5 text-green-700 font-medium">Low / Minimal</td>
+              <td className="p-2.5 text-amber-700 font-medium">Moderate to High</td>
             </tr>
           </tbody>
         </table>
@@ -508,7 +447,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>How Can Parents Ensure Balanced Micronutrient Intake Without Forced Feeding?</h2>
       <p>Offering small, nutrient-dense meal portions rich in iron, zinc, and protein aligns with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Child Health Recommendations</a>.</p>
 
-      <p>Implement behavioral strategies like eating with your child, maintaining calm mealtimes without screen distractions, and offering 10–15 exposures to new vegetables before expecting acceptance. If concerns persist regarding micronutrient intake, your pediatrician may recommend supplementation, but avoid "appetite boosters" which are often medically unsubstantiated and ineffective for true picky eating behavior.</p>
+      <p>Implement behavioral strategies like eating with your child, maintaining calm mealtimes without screen distractions, and offering 10–15 exposures to new vegetables before expecting acceptance. If concerns persist regarding micronutrient intake, your pediatrician may recommend supplementation, but avoid 'appetite boosters' which are often medically unsubstantiated and ineffective for true picky eating behavior.</p>
     `,
     faqs: [
       {
