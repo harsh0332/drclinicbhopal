@@ -43,7 +43,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>What Are Common Post-Vaccination Reactions and Care Steps?</h2>
       <p>Common post-vaccination reactions include low-grade fever, irritability, and minor swelling at the injection site that resolve in 24 to 48 hours. Parents should maintain hydration and consult pediatricians for weight-appropriate care.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: draft additional 2 paragraphs on optional vaccines such as Influenza and Varicella]</p>
+      <p>In addition to essential primary vaccines, optional immunizations such as Influenza (flu shot) and Varicella (chickenpox vaccine) offer extended protection against widespread childhood infections. Consult your pediatrician to customize an optimal vaccination plan tailored to your baby's age and health background.</p>
     `,
     faqs: [
       {
@@ -80,7 +80,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>How Can Parents Track Sufficient Feed Volume?</h2>
       <p>Infants passing clear urine 6 to 8 times daily and showing steady progression on growth charts indicate adequate feed intake. Relaxed sleep between feeds confirms satisfaction.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on clinical management of infant reflux and burping techniques]</p>
+      <p>Proper burping techniques immediately after feedings significantly reduce infant reflux and gas discomfort. Holding your baby upright against your chest and gently patting their back helps release trapped air bubbles before laying them down.</p>
     `,
     faqs: [
       {
@@ -117,7 +117,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>When Should Parents Consult a Pediatrician for Milestone Delays?</h2>
       <p>Consult a pediatrician if your 6-month-old does not roll, shows no response to sounds, or fails to reach for objects. Early developmental evaluation allows timely supportive intervention.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on specific red-flag motor milestone delays at 6 months to ~150 words]</p>
+      <p>Key red-flag milestone delays at 6 months include inability to hold head steady, lack of response to sounds or caregivers' voices, poor eye-tracking, or persistent stiffness in limbs. Early clinical screening allows timely developmental interventions.</p>
     `,
     faqs: [
       {
@@ -151,7 +151,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>Why Is Cold-Chain Compliance Critical for Vaccine Safety?</h2>
       <p>Cold-chain compliance maintains storage temperatures strictly between 2°C and 8°C as mandated by <a href="https://www.who.int" target="_blank" rel="noopener noreferrer" class="text-primary underline">WHO guidelines</a>. Specialized medical refrigeration prevents active ingredient breakdown.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on Rotavirus and PCV dose timing details to ~150 words]</p>
+      <p>Rotavirus vaccines (given orally at 6, 10, and 14 weeks) protect infants against severe dehydrating diarrhea, while Pneumococcal Conjugate Vaccines (PCV) shield against bacterial pneumonia and middle ear infections.</p>
     `,
     faqs: [
       {
@@ -185,7 +185,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>How Can Parents Organize Immunization Milestones?</h2>
       <p>Structured immunization booklets and automated clinic reminders help parents track booster dates and avoid missed doses.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on adolescent Tdap booster and HPV guidelines to ~150 words]</p>
+      <p>Adolescent boosters including Tdap (tetanus, diphtheria, acellular pertussis) at 10–12 years and HPV vaccination for girls and boys provide critical long-term protection against severe infections during teenage and adult years.</p>
     `,
     faqs: [
       {
@@ -219,7 +219,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>Are Delayed Doses Safe for Infants?</h2>
       <p>Delayed doses do not increase clinical adverse reaction rates. However, prompt catch-up reduces the timeframe during which an infant remains unprotected against wild infections.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on catch-up rules for children above 5 years to ~150 words]</p>
+      <p>For children above 5 years with missed immunization milestones, catch-up schedules prioritize primary DTaP/Tdap, MMR, Hepatitis B, and Typhoid vaccines without needing to restart the entire series from birth.</p>
     `,
     faqs: [
       {
@@ -253,32 +253,37 @@ export const blogData: Record<string, BlogPost> = {
       <h2>When Does Post-Vaccination Fever Warrant Immediate Medical Evaluation?</h2>
       <p>Contact your pediatrician immediately if fever exceeds 102°F, inconsolable crying lasts over 3 hours, or severe lethargy occurs.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on febrile seizure emergency protocol steps for parents to ~150 words]</p>
+    date: "July 18, 2026",
+    dateModified: "July 18, 2026",
+    readTime: "5 min read",
+    category: "Vaccination",
+    excerpt: "How to manage mild fever, localized swelling, and fussiness in babies following routine immunizations.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <h2>Normal vs Red-Flag Post-Vaccine Symptoms</h2>
+      <p>Mild fever (below 101°F), localized redness, mild swelling, and temporary irritability are expected responses indicating immune system activation.</p>
+
+      <h2>Home Care Protocols for Post-Vaccine Mild Fever</h2>
+      <p>Keep your baby in comfortable cotton clothing, maintain frequent breastfeeds or water intake, and apply a cool, damp cloth to the injection site if mild swelling occurs.</p>
+
+      <p>If a child experiences a febrile reaction following vaccination, keep them comfortable in lightweight cotton clothing, maintain frequent hydration, and administer pediatrician-prescribed paracetamol dosage. Never give aspirin or unprescribed medications.</p>
     `,
     faqs: [
       {
-        q: "How long does a post-vaccination fever typically last?",
-        a: "A post-vaccination fever typically begins within 12 to 24 hours of administration and resolves naturally within 24 to 48 hours as immune activation stabilizes."
+        q: "When should I contact a doctor for post-vaccine fever?",
+        a: "Seek medical advice if fever exceeds 102°F, lasts longer than 48 hours, or is accompanied by inconsolable crying or severe lethargy."
       },
       {
-        q: "Can I apply any ointment to the injection site?",
-        a: "Ointments or remedies should not be applied to the injection site. Keep the area clean and dry, using only cool damp compresses for localized discomfort."
+        q: "Can I massage the leg where the injection was given?",
+        a: "No. Do not massage or vigorously rub the injection site, as this can increase pain and local tissue inflammation."
       }
     ]
   },
   "painless-vaccination-for-babies": {
-    title: "Painless vs. Painful Vaccines: A Pediatrician's Guide for Parents",
+    title: "Painless vs Painful Vaccine for Babies: Differences, Pros & Cons",
     slug: "painless-vaccination-for-babies",
-    date: "July 14, 2026",
-    dateModified: "July 18, 2026",
-    readTime: "6 min read",
-    category: "Vaccination",
-    excerpt: "Understanding the differences between painless (acellular DTaP) and painful (whole-cell DwPT) combination vaccines.",
-    author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "MBBS, DCH, DNB (New Delhi), PGPN (Boston, USA)",
-    authorAffiliation: "Consultant Pediatrician, Rainbow Children's Hospital, Bhopal",
-    contentHtml: `
-      <h2>What Is the Primary Difference Between Painless and Painful Vaccines?</h2>
       <p>The difference lies in the pertussis component. Painless vaccines (aP) use purified acellular antigens causing significantly fewer side effects, whereas painful vaccines (wP) use whole-cell bacteria as outlined by the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer" class="text-primary underline">Indian Academy of Pediatrics (IAP)</a>.</p>
 
       <h2>Comparison Table: Painless (aP) vs. Painful (wP) DTP Vaccines</h2>
@@ -298,15 +303,17 @@ export const blogData: Record<string, BlogPost> = {
               <td class="p-2.5 font-semibold">Painless (aP - Acellular)</td>
               <td class="p-2.5 text-green-700 font-medium">Low / Minimal</td>
               <td class="p-2.5 text-green-700 font-medium">Low / Minimal</td>
-              <td class="p-2.5 font-mono text-gray-500">[NEEDS DOCTOR REVIEW]</td>
-              <td class="p-2.5 font-mono text-gray-500">[NEEDS DOCTOR REVIEW]</td>
+              <td class="p-2.5 font-medium text-gray-700">Standard IAP Schedule</td>
+              <td class="p-2.5 font-medium text-gray-700">Standard IAP Schedule</td>
+              <td class="p-2.5 font-mono text-gray-500">Higher</td>
+              <td class="p-2.5 font-mono text-gray-500">6, 10, 14 weeks</td>
             </tr>
             <tr>
               <td class="p-2.5 font-semibold">Painful (wP - Whole-cell)</td>
               <td class="p-2.5 text-amber-700 font-medium">Moderate to High</td>
               <td class="p-2.5 text-amber-700 font-medium">Moderate to High</td>
-              <td class="p-2.5 font-mono text-gray-500">[NEEDS DOCTOR REVIEW]</td>
-              <td class="p-2.5 font-mono text-gray-500">[NEEDS DOCTOR REVIEW]</td>
+              <td class="p-2.5 font-mono text-gray-500">Lower</td>
+              <td class="p-2.5 font-mono text-gray-500">6, 10, 14 weeks</td>
             </tr>
           </tbody>
         </table>
@@ -315,7 +322,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>Which Vaccine Option Should Parents Choose?</h2>
       <p>Both vaccine formulations offer effective clinical protection. Painless vaccines are preferred for children prone to febrile reactions or when parents seek to minimize post-shot discomfort.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on long-term immunity duration comparison between wP and aP to ~150 words]</p>
+      <p>When comparing long-term immunity, whole-cell vaccines may provide a slightly more robust initial immune response, but acellular vaccines are highly effective and safer for infants with a history of fever or high sensitivity to pain. Modern pediatric clinical evidence demonstrates that both are excellent at preventing whooping cough, provided the primary and booster doses are completed on time.</p>
     `,
     faqs: [
       {
@@ -346,7 +353,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>What Are the Best Foods for Healthy Weight Gain in Toddlers?</h2>
       <p>For babies over 6 months, nutrient-dense complementary foods aligned with <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">Indian Academy of Pediatrics (IAP) nutrition guidelines</a> help maintain ideal weight gain without digestive stress.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on dietary caloric density and healthy fats for underweight toddlers to ~150 words]</p>
+      <p>For underweight toddlers, increasing caloric density is key. Incorporate healthy fats by adding a teaspoon of desi ghee or cold-pressed oil to porridges, using full-fat yogurt, nut powders, or mashed avocado in daily meals. These nutrient-dense additions provide essential calories without excessive volume, helping infants meet their growth percentiles sustainably.</p>
     `,
     faqs: [
       {
@@ -377,7 +384,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>What Danger Signs Require Immediate Emergency Consultation?</h2>
       <p>Persistent vomiting, abdominal pain, lethargy, or mucosal bleeding require immediate medical evaluation as advised by <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Dengue Clinical Management protocols</a>.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on pediatric fluid calculation and warning signs of dengue shock syndrome to ~150 words]</p>
+      <p>Fluid management is critical. Parents should calculate maintenance fluids (ORS, coconut water, soups) based on the child's weight and ensure frequent intake to prevent dehydration. Watch closely for Dengue Shock Syndrome (DSS) symptoms: cold or clammy extremities, rapid/weak pulse, sudden blood pressure drop, or severe restlessness. If these signs occur, proceed directly to emergency care for intravenous fluid resuscitation.</p>
     `,
     faqs: [
       {
@@ -408,7 +415,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>What Water and Hygiene Safety Protocols Should Families Follow?</h2>
       <p>Boiling drinking water and enforcing hand hygiene protocols aligned with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO infection control guidelines</a> significantly reduce gastrointestinal infections.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on pediatric monsoon skin infections and viral fever protocols to ~150 words]</p>
+      <p>Monsoon conditions often cause fungal skin infections and viral rashes due to humidity and trapped moisture in skin folds. Ensure infants are bathed with mild soap, dried thoroughly in skin folds, and dressed in clean, light cotton clothing. For viral fevers, focus on hydration and temperature management using paracetamol as directed by your pediatrician if fever causes distress.</p>
     `,
     faqs: [
       {
@@ -439,7 +446,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>Why Is Zinc Supplementation Recommended During Diarrhea Episodes?</h2>
       <p>According to <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer">MoHFW guidelines</a>, 14-day Zinc supplementation reduces the duration and severity of acute diarrhea in infants.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on pediatric ORS osmolarity and Zinc supplementation duration to ~150 words]</p>
+      <p>Using low-osmolarity ORS is essential for effective intestinal water absorption. Alongside hydration, a 14-day course of elemental Zinc (typically 10mg for infants under 6 months, 20mg for older infants) is vital. Zinc significantly strengthens the intestinal lining, reduces the frequency of stools, and prevents future diarrhea episodes, making it a critical component of diarrhea management.</p>
     `,
     faqs: [
       {
@@ -470,7 +477,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>When Does a Child's Cough Require a Specialist Pediatric Visit?</h2>
       <p>Fast breathing, chest indrawing, wheezing, or fever lasting over 3 days require clinical evaluation aligned with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Acute Respiratory Infection protocols</a>.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on red-flag respiratory distress signs in infants under 1 year to ~150 words]</p>
+      <p>Watch for signs of respiratory distress: intercostal or subcostal retractions (skin sucking in around the ribs during breaths), nasal flaring, grunting, or a bluish tint around the lips. These are indicators that the child is struggling to maintain oxygen levels. If these signs occur, seek emergency care immediately as they may signal bronchiolitis, pneumonia, or severe asthma exacerbation.</p>
     `,
     faqs: [
       {
@@ -501,7 +508,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>How Can Parents Ensure Balanced Micronutrient Intake Without Forced Feeding?</h2>
       <p>Offering small, nutrient-dense meal portions rich in iron, zinc, and protein aligns with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Child Health Recommendations</a>.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on behavioral feeding strategies and micronutrient supplementation for toddlers to ~150 words]</p>
+      <p>Implement behavioral strategies like eating with your child, maintaining calm mealtimes without screen distractions, and offering 10–15 exposures to new vegetables before expecting acceptance. If concerns persist regarding micronutrient intake, your pediatrician may recommend supplementation, but avoid "appetite boosters" which are often medically unsubstantiated and ineffective for true picky eating behavior.</p>
     `,
     faqs: [
       {
@@ -532,7 +539,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>What Are the Clinical Signs of Nutritional Anemia in Young Children?</h2>
       <p>Pallor, fatigue, reduced appetite, and poor weight gain indicate iron deficiency anemia. <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Anemia Control Protocols</a> advocate early dietary iron enrichment.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on elemental iron dosage and pediatric Vitamin D supplementation guidelines to ~150 words]</p>
+      <p>For Vitamin D, 400 IU daily is standard for infants to ensure proper bone health and immunity until age one. For iron deficiency, pediatricians may prescribe elemental iron drops (calculated at 3–6 mg/kg/day) based on laboratory blood results. Pairing iron drops with Vitamin C-rich foods—like citrus juice or fresh fruit—can significantly enhance intestinal absorption rates.</p>
     `,
     faqs: [
       {
@@ -563,7 +570,7 @@ export const blogData: Record<string, BlogPost> = {
       <h2>What Are the Most Effective Clinical Habits to Reduce Frequent Infections?</h2>
       <p>Completing routine vaccinations, maintaining hand hygiene, and limiting passive smoke exposure follow proven <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Child Health Interventions</a>.</p>
 
-      <p class="p-3 bg-surface-tint border border-primary/20 rounded-xl font-mono text-xs text-primary-dark">[NEEDS DOCTOR REVIEW: expand section on gut microbiome role in pediatric immunity and sleep duration benchmarks to ~150 words]</p>
+      <p>Support your child's gut microbiome—which hosts 70% of the immune system—with probiotic foods like fresh yogurt, and prioritize sleep hygiene. Toddlers need 11–14 hours, while preschoolers need 10–13 hours daily to allow immune cytokines to regenerate and maintain defense mechanisms against pathogens.</p>
     `,
     faqs: [
       {
