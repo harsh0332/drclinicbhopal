@@ -112,5 +112,31 @@ export const localitiesData: Record<string, LocalityItem> = {
     ],
     distanceNote: "Approximately 16 km from Bagmugaliya (via Kolar Road / Kerwa Dam Road). Travel time is around 28 minutes.",
     services: ["Adolescent Health", "Child Nutrition", "Vaccination Clinic"]
+  },
+  "lalghati": {
+    name: "Lalghati",
+    slug: "lalghati",
+    title: "Pediatrician near Lalghati, Bhopal",
+    intro: "Parents residing in Lalghati seeking senior pediatric consultation and specialized newborn immunizations can visit Baby Steps Clinic in Neelbad for expert outpatient care.",
+    whyChoose: [
+      "Direct consultation with experienced pediatricians holding DNB and Neonatology credentials.",
+      "Strict WHO cold-chain monitoring for all pediatric and infant vaccinations.",
+      "Personalized growth tracking and developmental milestone evaluations."
+    ],
+    distanceNote: "Approximately 14 km from Lalghati (via VIP Road / Neelbad Road). Travel time is around 25 minutes.",
+    services: ["Vaccination Clinic", "Newborn Care", "Growth Monitoring", "Fever Management"]
+  },
+  "aiims-bhopal": {
+    name: "AIIMS Bhopal Area",
+    slug: "aiims-bhopal",
+    title: "Pediatrician near AIIMS Bhopal",
+    intro: "Families in the AIIMS Bhopal locality seeking dedicated outpatient newborn assessments, lactation counseling, and WHO-compliant immunizations can access consultations at Baby Steps Clinic.",
+    whyChoose: [
+      "Senior pediatric consultants affiliated with Rainbow Children's Hospital and Apollo SAGE Hospital.",
+      "Comprehensive NICU follow-up consultations for preemies and low birth weight infants.",
+      "Digital pediatric health records for continuous growth tracking."
+    ],
+    distanceNote: "Approximately 17 km from AIIMS Bhopal (via Hoshangabad Road / Kolar Bypass). Travel time is around 30 minutes.",
+    services: ["NICU Follow-up", "Child Nutrition", "Breastfeeding Counseling", "Milestone Tracking"]
   }
 };
