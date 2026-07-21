@@ -14,7 +14,20 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [64, 96, 128, 192, 256, 384],
-    minimumCacheTTL: 2592000, // 30 days
+    minimumCacheTTL: 31536000, // 1 year
+  },
+  async headers() {
+    return [
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
   },
 };
 

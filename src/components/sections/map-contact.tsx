@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { siteConfig } from "@/lib/site-config";
 import { MapPin, Phone, Mail, Clock, ShieldAlert } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -14,7 +15,27 @@ import {
 
 export default function MapContact() {
   const shouldReduceMotion = useReducedMotion();
+  const [shouldLoadMap, setShouldLoadMap] = useState(false);
+  const mapRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setShouldLoadMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+
+    if (mapRef.current) {
+      observer.observe(mapRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="contact" className="relative overflow-hidden pt-16 pb-20 md:pt-28 md:pb-32 bg-transparent">
@@ -57,21 +78,28 @@ export default function MapContact() {
           
           {/* Left Block: Map Embed */}
           <motion.div 
+            ref={mapRef}
             variants={cardRise}
             className="lg:col-span-7 bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col min-h-[380px]"
           >
-            <div className="relative w-full flex-grow min-h-[300px]">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.272378278338!2d77.34782957593083!3d23.196742209804935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c5d6345e3a901%3A0xa317090ce42385e2!2sBaby%20Steps%20Newborn%20%26%20Child%20Clinic!5e0!3m2!1sen!2sin!4v1784411102327!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title="Baby Steps Clinic Google Map Location"
-                className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-350"
-              />
+            <div className="relative w-full flex-grow min-h-[300px] bg-surface-tint">
+              {shouldLoadMap ? (
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.272378278338!2d77.34782957593083!3d23.196742209804935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c5d6345e3a901%3A0xa317090ce42385e2!2sBaby%20Steps%20Newborn%20%26%20Child%20Clinic!5e0!3m2!1sen!2sin!4v1784411102327!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Baby Steps Clinic Google Map Location"
+                  className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-350"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-xs text-muted-text font-sans">
+                  Loading interactive clinic map...
+                </div>
+              )}
             </div>
             <div className="p-4 bg-white border-t border-gray-100 flex items-center justify-between text-xs font-sans">
               <span className="text-muted-text">Having trouble viewing the map?</span>

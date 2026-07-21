@@ -11,9 +11,19 @@ const HeroBackground = dynamic(() => import("./hero-background"), { ssr: false }
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
   const [expYears, setExpYears] = useState(15);
+  const [showBackground, setShowBackground] = useState(false);
   const animClass = shouldReduceMotion ? "" : "animate-fade-rise opacity-0";
 
   useEffect(() => {
+    // Defer heavy canvas background animation after LCP paint
+    if (typeof window !== "undefined") {
+      if ("requestIdleCallback" in window) {
+        (window as any).requestIdleCallback(() => setShowBackground(true));
+      } else {
+        setTimeout(() => setShowBackground(true), 200);
+      }
+    }
+
     const target = 15;
     if (shouldReduceMotion) {
       requestAnimationFrame(() => setExpYears(target));
@@ -41,8 +51,8 @@ export default function Hero() {
       id="top"
       className="relative overflow-hidden px-4 sm:px-6 lg:px-8 py-12 lg:py-24 select-none bg-transparent min-h-[80vh] min-h-[88dvh] lg:min-h-0 flex items-center"
     >
-      {/* Animated Canvas Background */}
-      <HeroBackground />
+      {/* Animated Canvas Background - Deferred until after initial main-thread paint */}
+      {showBackground && <HeroBackground />}
 
       {/* Readability gradient overlay between background animation and content */}
       <div 
@@ -55,51 +65,40 @@ export default function Hero() {
           
           {/* Left Column: Headline, Sub-headline, CTAs, Stats */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            {/* Eyebrow */}
+            {/* Eyebrow - Instant render */}
             <div 
-              className={`inline-flex items-center gap-2 bg-[#2E6CF6]/80 border border-[#2E6CF6]/15 text-[#163C7A] font-semibold text-xs py-1.5 px-4 rounded-full mb-6 bg-white/75 backdrop-blur-xs ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "0ms", animationFillMode: "both" }}
+              className="inline-flex items-center gap-2 bg-[#2E6CF6]/80 border border-[#2E6CF6]/15 text-[#163C7A] font-semibold text-xs py-1.5 px-4 rounded-full mb-6 bg-white/75 backdrop-blur-xs"
             >
               <span className="w-2 h-2 rounded-full bg-[#34C7A4] shadow-[0_0_0_4px_rgba(52,199,164,0.18)]" />
               <span>Newborn &amp; Child Specialists · Neelbad, Bhopal</span>
             </div>
 
-            {/* Headline */}
-            {/* Headline options (variants for easy swapping):
-              - "Gentle, expert care for your little one."
-              - "Your baby deserves the gentlest care."
-              - "Caring for your child like our own."
-              - "Where your child feels safe — and you feel sure."
-            */}
+            {/* Headline - Instant render for LCP/FCP fast-path */}
             <h1 
-              className={`font-heading font-bold text-[#163C7A] text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-4 text-balance ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "150ms", animationFillMode: "both" }}
+              className="font-heading font-bold text-[#163C7A] text-3xl sm:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-4 text-balance"
             >
               Pediatrician &amp; Child Specialist in Neelbad, Bhopal
             </h1>
 
-            {/* Sub-headline */}
+            {/* Sub-headline - Instant render */}
             <p 
-              className={`text-sm sm:text-base lg:text-lg leading-relaxed text-[#2A3A52] mb-3 max-w-2xl text-pretty font-sans ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "300ms", animationFillMode: "both" }}
+              className="text-sm sm:text-base lg:text-lg leading-relaxed text-[#2A3A52] mb-3 max-w-2xl text-pretty font-sans"
             >
               <strong className="text-[#163C7A] font-semibold block sm:inline">Big-hospital expertise, with a gentle touch.</strong> A husband-and-wife specialist duo — <strong className="text-[#163C7A] font-bold">Dr. Sudarshan Dev Arya</strong> &amp; <strong className="text-[#163C7A] font-bold">Dr. Manisha Bangarwa Arya</strong> — trained in New Delhi, now caring for families in Neelbad.
             </p>
 
             {/* Micro Trust Line */}
             <div 
-              className={`text-xs font-semibold text-[#163C7A]/80 mb-6 flex items-start gap-1.5 text-left font-sans ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "450ms", animationFillMode: "both" }}
+              className="text-xs font-semibold text-[#163C7A]/80 mb-6 flex items-start gap-1.5 text-left font-sans"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6] mt-[5px] shrink-0" />
               <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Open Daily</span>
             </div>
 
             {/* Action CTAs */}
-            {/* CTA Label Variant: "Book Your Visit" */}
             <div 
               className={`flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3 w-full sm:w-auto mb-6 ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "600ms", animationFillMode: "both" }}
+              style={shouldReduceMotion ? {} : { animationDelay: "200ms", animationFillMode: "both" }}
             >
               <a
                 href="#appointment"
@@ -120,7 +119,7 @@ export default function Hero() {
             {/* Credential Tags */}
             <div 
               className={`flex flex-wrap justify-center lg:justify-start gap-2 mb-8 ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "750ms", animationFillMode: "both" }}
+              style={shouldReduceMotion ? {} : { animationDelay: "350ms", animationFillMode: "both" }}
             >
               <span className="inline-flex items-center gap-1.5 bg-white border border-[#163C7A]/10 shadow-[0_2px_10px_rgba(22,60,122,0.05)] px-3 py-2 rounded-xl text-xs font-semibold text-[#163C7A]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6]" />
@@ -143,7 +142,7 @@ export default function Hero() {
             {/* Stats list */}
             <div 
               className={`flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-4 mt-2 pt-6 border-t border-[#163C7A]/10 w-full ${animClass}`}
-              style={shouldReduceMotion ? {} : { animationDelay: "900ms", animationFillMode: "both" }}
+              style={shouldReduceMotion ? {} : { animationDelay: "500ms", animationFillMode: "both" }}
             >
               <div className="flex flex-col text-left">
                 <span className="font-heading font-extrabold text-[#163C7A] text-lg">{expYears}+ yrs</span>
@@ -174,16 +173,28 @@ export default function Hero() {
               </svg>
             </div>
 
-            {/* Core Image Container */}
+            {/* Core Image Container - Mobile optimized 25kB asset for sm screens, desktop asset for larger */}
             <div className="relative z-10 w-[260px] sm:w-[300px] aspect-[4/5] rounded-[26px] overflow-hidden border-4 sm:border-6 border-white shadow-[0_20px_45px_rgba(22,60,122,0.15)] md:shadow-[0_26px_60px_rgba(22,60,122,0.18)] bg-gradient-to-tr from-[#EAF1FF] to-[#F4FBF8]">
-              <ClinicImage
-                src="/images/hero/doctor-baby-both.webp"
-                alt="Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya examining a baby at Baby Steps Clinic Bhopal"
-                fill
-                sizes="(max-w-768px) 260px, 300px"
-                className="object-cover"
-                priority
-              />
+              <div className="block sm:hidden relative w-full h-full">
+                <ClinicImage
+                  src="/images/hero/doctor-baby-both-mobile.webp"
+                  alt="Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya examining a baby at Baby Steps Clinic Bhopal"
+                  fill
+                  sizes="260px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="hidden sm:block relative w-full h-full">
+                <ClinicImage
+                  src="/images/hero/doctor-baby-both.webp"
+                  alt="Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya examining a baby at Baby Steps Clinic Bhopal"
+                  fill
+                  sizes="300px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Overlapping doctor portraits (hidden on mobile for cleanliness, shown on desktop) */}
