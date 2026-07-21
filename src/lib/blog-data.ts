@@ -521,5 +521,493 @@ export const blogData: Record<string, BlogPost> = {
         a: "Deep sleep releases cytokines required for immune defense. Toddlers need 11–14 hours of daily sleep (including naps) for optimal health."
       }
     ]
+  },
+
+  "baby-vaccination-schedule-chart-india": {
+    title: "Complete Baby Vaccination Schedule (0–18 Years): IAP Chart for Indian Parents",
+    slug: "baby-vaccination-schedule-chart-india",
+    date: "2026-07-21",
+    dateModified: "2026-07-21",
+    readTime: "6 min read",
+    category: "Vaccination",
+    excerpt: "A clear, age-wise vaccination chart from birth to 18 years — what each vaccine protects against and when it's due.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Vaccination is one of the simplest, most effective ways to protect your child from serious illnesses. But the schedule can feel confusing — so many injections, so many ages. This guide lays it out clearly, following the Indian Academy of Pediatrics (IAP) recommendations.</p>
+      
+      <h2>Why Timing Matters for Childhood Vaccination</h2>
+      <p>Vaccines are timed to protect your child exactly when they're most vulnerable to each disease. Giving them on schedule builds immunity before your child is likely to be exposed. Delays leave gaps in protection.</p>
+
+      <h2>Age-Wise Vaccination Chart (IAP-Aligned)</h2>
+      <ul>
+        <li><strong>Birth:</strong> BCG, Oral Polio (OPV-0), Hepatitis B (1st dose)</li>
+        <li><strong>6 weeks:</strong> DTwP/DTaP-1, IPV-1, Hib-1, Hepatitis B-2, Rotavirus-1, PCV-1</li>
+        <li><strong>10 weeks:</strong> DTwP/DTaP-2, IPV-2, Hib-2, Rotavirus-2, PCV-2</li>
+        <li><strong>14 weeks:</strong> DTwP/DTaP-3, IPV-3, Hib-3, Rotavirus-3, PCV-3</li>
+        <li><strong>6 months:</strong> Hepatitis B-3, OPV-1, Influenza-1</li>
+        <li><strong>7 months:</strong> Influenza-2</li>
+        <li><strong>9 months:</strong> MMR-1, OPV-2</li>
+        <li><strong>9–12 months:</strong> Typhoid Conjugate Vaccine (TCV)</li>
+        <li><strong>12 months:</strong> Hepatitis A-1</li>
+        <li><strong>12–15 months:</strong> PCV booster</li>
+        <li><strong>15 months:</strong> MMR-2, Varicella-1 (chickenpox)</li>
+        <li><strong>16–18 months:</strong> DTwP/DTaP booster-1, IPV booster-1, Hib booster</li>
+        <li><strong>18 months:</strong> Hepatitis A-2</li>
+        <li><strong>4–6 years:</strong> DTwP/DTaP booster-2, OPV-3, Varicella-2, MMR-3</li>
+        <li><strong>9–14 years:</strong> HPV (2 doses, girls and boys)</li>
+        <li><strong>10–12 years:</strong> Tdap</li>
+        <li><strong>16 years:</strong> Td</li>
+        <li><strong>Yearly:</strong> Influenza, especially up to 5 years</li>
+      </ul>
+      <p><em>Some brands vary (e.g. Rotavirus 2 vs 3 doses). Your pediatrician confirms the exact plan for your child.</em></p>
+
+      <h2>What to Expect After a Vaccine</h2>
+      <p>Mild fever, a little fussiness, or soreness at the injection site for a day or two is common and usually settles on its own. Serious reactions are rare. If your child seems very unwell, has a high fever that won't settle, or you're worried, call your doctor.</p>
+
+      <h2>Keeping Track of Due Dates</h2>
+      <p>Keep your child's vaccination card safe and bring it to every visit. At Baby Steps, we maintain each child's record and remind you when the next dose is due — so nothing gets missed.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "What if we miss a vaccine date?",
+        a: "Don't worry — vaccinations can usually be caught up. Bring your child in and the doctor will restart the schedule from where you left off; most vaccines don't need to be started over."
+      },
+      {
+        q: "Are these vaccines safe?",
+        a: "Childhood vaccines are extensively tested and used worldwide. Mild, short-lived side effects like low fever are normal; serious reactions are rare."
+      },
+      {
+        q: "Where can I get these vaccines in Bhopal?",
+        a: "We provide IAP-schedule vaccinations with a properly maintained cold chain at Baby Steps, Neelbad. Call 62625 60101 to check your child's due vaccines."
+      }
+    ]
+  },
+  "government-vs-private-vaccination-baby": {
+    title: "Government vs Private Vaccination: Which Should You Choose for Your Baby?",
+    slug: "government-vs-private-vaccination-baby",
+    date: "2026-07-19",
+    dateModified: "2026-07-19",
+    readTime: "5 min read",
+    category: "Vaccination",
+    excerpt: "Confused between free government vaccines and private clinic vaccination? Here's an honest comparison to help you decide.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Every parent wants to protect their child — and one common question is whether to use the free government vaccination programme or a private pediatric clinic. Both are valid. Here's the honest picture.</p>
+
+      <h2>The Government Programme (UIP)</h2>
+      <p>India's Universal Immunization Programme provides several essential vaccines free of cost at government health centres — including BCG, OPV, Hepatitis B, DPT, measles/MR, and more. These protect against the most dangerous childhood diseases and are given by trained staff.</p>
+
+      <h2>Private (Pediatric Clinic) Vaccination</h2>
+      <p>Private clinics follow the fuller IAP schedule, which includes some vaccines not always part of the free programme (such as certain doses of Rotavirus, PCV, Hepatitis A, Typhoid conjugate, Varicella, HPV, and combination injections that mean fewer pricks). You typically also get shorter waits, personalised timing reminders, and a consistent doctor who knows your child.</p>
+
+      <h2>How to Decide What's Best for Your Family</h2>
+      <p>There's no single right answer. Many families use a mix. What matters most is that <strong>your child is vaccinated on time</strong> — whichever route ensures that. If you want the fuller IAP schedule, combination vaccines (fewer injections), and a doctor who tracks your child's record, a pediatric clinic is convenient. If cost is the priority, the government programme covers the essentials well.</p>
+
+      <p>At Baby Steps, we're happy to look at your child's card and simply tell you what's already done and what's due — no pressure.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "Are private vaccines better than government ones?",
+        a: "The core vaccines protect against the same diseases. Private clinics offer some additional vaccines and combination options; the government programme covers the essentials free. Both are effective when given on time."
+      },
+      {
+        q: "Can I mix government and private vaccines?",
+        a: "Yes, many parents do. Bring your child's vaccination card so the doctor can see what's been given and plan the rest."
+      }
+    ]
+  },
+  "newborn-care-at-home-guide": {
+    title: "Newborn Care at Home: A First-Week and First-Month Guide for New Parents",
+    slug: "newborn-care-at-home-guide",
+    date: "2026-07-17",
+    dateModified: "2026-07-17",
+    readTime: "7 min read",
+    category: "Newborn Care",
+    excerpt: "Bringing your baby home is joyful and overwhelming. Here's a calm, practical guide to the first few weeks.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>The first few weeks with a newborn are precious — and a little nerve-wracking. Here's what's normal and what to keep an eye on.</p>
+
+      <h2>Newborn Feeding Basics</h2>
+      <p>Newborns feed often — roughly every 2–3 hours, including at night. Look for signs your baby is feeding well: steady weight gain over the weeks, 6+ wet nappies a day after the first week, and settling after feeds. If breastfeeding feels difficult, that's common and help is available — you don't have to struggle alone.</p>
+
+      <h2>Safe Sleep Guidelines</h2>
+      <p>Newborns sleep a lot (16+ hours a day) but in short stretches. Always place your baby on their back to sleep, on a firm flat surface, without loose bedding. Day-night confusion is normal early on and settles with time.</p>
+
+      <h2>Understanding Newborn Jaundice</h2>
+      <p>Mild yellowing of the skin/eyes is common in the first week and usually harmless. But if the yellow spreads to the arms/legs, your baby is very sleepy or feeding poorly, or it appears in the first 24 hours, get them checked promptly.</p>
+
+      <h2>Umbilical Cord Care</h2>
+      <p>Keep the umbilical stump clean and dry; it usually falls off within 1–2 weeks. You don't need to apply anything unless your doctor advises. Redness spreading around the base, swelling, or a bad smell needs a check.</p>
+
+      <h2>When to Call the Doctor</h2>
+      <p>Contact your pediatrician if your newborn: has a fever or feels cold, is feeding very poorly, is unusually sleepy or floppy, has fast or laboured breathing, or if you're simply worried. Trust your instinct — it's always okay to ask.</p>
+
+      <h2>Looking After Yourself</h2>
+      <p>Rest when you can, accept help, and remember that the early weeks are demanding for parents too. If you feel persistently low or overwhelmed, please talk to someone — it matters.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "How often should a newborn feed?",
+        a: "Roughly every 2–3 hours, including overnight — that's normal and helps establish milk supply."
+      },
+      {
+        q: "Is newborn jaundice dangerous?",
+        a: "Mild jaundice in the first week is usually harmless, but if it spreads, appears very early, or your baby feeds poorly, get it checked the same day."
+      },
+      {
+        q: "When is the first newborn check-up?",
+        a: "Soon after birth and again in the first couple of weeks. We offer newborn and NICU follow-up care at Baby Steps — call 62625 60101."
+      }
+    ]
+  },
+  "baby-fever-when-to-worry": {
+    title: "Baby Fever: When to Worry and When to See a Child Doctor",
+    slug: "baby-fever-when-to-worry",
+    date: "2026-07-15",
+    dateModified: "2026-07-15",
+    readTime: "5 min read",
+    category: "Child Health",
+    excerpt: "Fever in children is common and often harmless — but here's how to know when it needs a doctor.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Few things worry parents more than a hot, unsettled baby. The good news: most fevers are the body's normal response to fighting an infection. Here's how to think about it calmly.</p>
+
+      <h2>What Counts as Fever?</h2>
+      <p>A temperature of 100.4°F (38°C) or above is generally considered fever. How your child looks and behaves matters more than the exact number.</p>
+
+      <h2>Home Care Protocols</h2>
+      <p>Keep your child comfortable and hydrated with regular feeds/fluids. Dress them in light clothing. Your doctor can advise the correct dose of fever medicine for your child's weight if needed — never guess the dose. Avoid cold sponging or home remedies that aren't advised.</p>
+
+      <h2>Red-Flag Symptoms — See a Doctor Promptly</h2>
+      <ul>
+        <li>Your baby is <strong>under 3 months</strong> and has any fever</li>
+        <li>The fever is very high or lasts more than 2–3 days</li>
+        <li>Your child is feeding very poorly, unusually drowsy or floppy</li>
+        <li>There's fast or difficult breathing</li>
+        <li>There's a rash that doesn't fade on pressure, a stiff neck, or a fit/convulsion</li>
+        <li>You're simply worried — always trust that instinct</li>
+      </ul>
+
+      <h2>Why Not Just Google It at 2 AM?</h2>
+      <p>Online searches can't examine your child. A quick call or visit gives you a real answer and peace of mind. That's exactly what we're here for.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "What temperature is a fever in babies?",
+        a: "100.4°F (38°C) or higher. For newborns under 3 months, any fever should be checked the same day."
+      },
+      {
+        q: "Should I give fever medicine immediately?",
+        a: "Focus on comfort and fluids; give fever medicine only at the correct dose for your child's weight — ask your doctor if unsure."
+      },
+      {
+        q: "When should I see a doctor for fever?",
+        a: "For any fever in a baby under 3 months, a high or persistent fever, poor feeding, drowsiness, breathing trouble, or if you're worried. Call 62625 60101."
+      }
+    ]
+  },
+  "is-my-child-growing-normally": {
+    title: "Is My Child Growing Normally? Height, Weight and Milestone Guide",
+    slug: "is-my-child-growing-normally",
+    date: "2026-07-13",
+    dateModified: "2026-07-13",
+    readTime: "6 min read",
+    category: "Growth & Development",
+    excerpt: "Worried whether your child is growing on track? Here's how growth and milestones are actually measured.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>"Is my child growing okay?" is one of the most common questions parents ask — and a very good one. Here's how doctors actually assess it.</p>
+
+      <h2>It's the Trend, Not a Single Number</h2>
+      <p>Doctors plot your child's height, weight and head size on WHO growth charts and watch the <strong>pattern over time</strong>. A child steadily following their own curve is usually growing well — even if they're smaller or larger than other children. A sudden change in the curve is what prompts a closer look.</p>
+
+      <h2>Developmental Milestones Overview</h2>
+      <ul>
+        <li><strong>~2 months:</strong> smiles, follows objects with eyes</li>
+        <li><strong>~6 months:</strong> rolls over, sits with support, babbles</li>
+        <li><strong>~9–12 months:</strong> sits alone, crawls, may pull to stand, says "mama/dada"</li>
+        <li><strong>~18 months:</strong> walks, a few words, points</li>
+        <li><strong>~2 years:</strong> runs, short phrases, follows simple instructions</li>
+      </ul>
+      <p>Every child develops at their own pace — these are averages, not deadlines.</p>
+
+      <h2>When to Check with a Pediatrician</h2>
+      <p>If your child isn't meeting milestones by a wide margin, has lost a skill they had, isn't gaining weight as expected, or you feel something is off — a check-up helps. Picking things up early makes support far easier.</p>
+
+      <h2>Why Regular Growth Monitoring Helps</h2>
+      <p>Routine growth and development checks catch small issues before they become bigger ones — and mostly, they give parents reassurance that all is well.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "My child is smaller than others — should I worry?",
+        a: "Not necessarily. What matters is whether they're following their own growth curve steadily. A pediatrician can confirm with a growth chart."
+      },
+      {
+        q: "When should my child start walking?",
+        a: "Many walk around 12–15 months, but the normal range is wide. If your child isn't walking by 18 months, it's worth a check."
+      },
+      {
+        q: "What is growth monitoring?",
+        a: "Regular height, weight and milestone tracking against WHO charts. We offer this at Baby Steps — call 62625 60101."
+      }
+    ]
+  },
+  "breastfeeding-basics-guide": {
+    title: "Breastfeeding Basics: How Often to Feed and Common Problems Solved",
+    slug: "breastfeeding-basics-guide",
+    date: "2026-07-11",
+    dateModified: "2026-07-11",
+    readTime: "6 min read",
+    category: "Newborn Care",
+    excerpt: "Breastfeeding is natural but not always easy. Here are the basics and fixes for the most common worries.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Breastfeeding is wonderful for your baby — and often trickier than expected in the early days. If it feels hard at first, you're not doing anything wrong. Here's what helps.</p>
+
+      <h2>How Often Should Newborns Feed?</h2>
+      <p>Newborns feed on demand — often 8–12 times in 24 hours. Feeding frequently in the early weeks is normal and builds your milk supply.</p>
+
+      <h2>Is My Baby Getting Enough Milk?</h2>
+      <p>Reassuring signs: 6 or more wet nappies a day (after the first week), regular soft stools early on, steady weight gain over the weeks, and your baby settling after most feeds. You don't need to measure millilitres.</p>
+
+      <h2>Latch Technique Matters</h2>
+      <p>A good latch means less pain for you and better feeding for baby: baby's mouth wide open, taking in a good part of the areola (not just the nipple), chin touching the breast. If feeding is painful throughout, the latch often needs a small adjustment.</p>
+
+      <h2>Common Breastfeeding Challenges</h2>
+      <ul>
+        <li><strong>Sore nipples:</strong> usually a latch issue — worth getting checked.</li>
+        <li><strong>Feeling of low supply:</strong> frequent feeding usually increases supply; true low supply is less common than feared.</li>
+        <li><strong>Engorgement:</strong> feed often; warmth before and a cool compress after can ease it.</li>
+      </ul>
+      <p>If problems persist, hands-on help makes a big difference — that's what breastfeeding counselling is for.</p>
+
+      <h2>It's Okay to Ask for Support</h2>
+      <p>Many mothers benefit from support in the early weeks. There's no prize for struggling alone.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "How do I know my baby is getting enough milk?",
+        a: "Look for 6+ wet nappies a day, steady weight gain, and baby settling after feeds — not the amount you can see."
+      },
+      {
+        q: "Breastfeeding hurts — is that normal?",
+        a: "Some tenderness early on is common, but ongoing pain usually means the latch needs adjusting. A quick check can help."
+      },
+      {
+        q: "Can I get breastfeeding help at your clinic?",
+        a: "Yes, we offer breastfeeding counselling at Baby Steps — call 62625 60101."
+      }
+    ]
+  },
+  "skip-delay-child-vaccination-risks": {
+    title: "Can I Skip or Delay My Child's Vaccination? The Risks Explained",
+    slug: "skip-delay-child-vaccination-risks",
+    date: "2026-07-09",
+    dateModified: "2026-07-09",
+    readTime: "5 min read",
+    category: "Vaccination",
+    excerpt: "Life gets busy and vaccines get delayed — here's why timing matters and what to do if you've fallen behind.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Sometimes a vaccine gets delayed — an illness, travel, or simply a busy month. It happens. But it helps to understand why the schedule is timed the way it is.</p>
+
+      <h2>Why the Vaccine Schedule Is Timed</h2>
+      <p>Each vaccine is scheduled to protect your child <strong>before</strong> they're likely to meet that disease. Delaying leaves a window where your child is unprotected against illnesses that can be serious in the young.</p>
+
+      <h2>What About Skipping Altogether?</h2>
+      <p>Choosing not to vaccinate leaves a child exposed to diseases that vaccines have made rare — some of which can cause lasting harm. These diseases still exist and can return where vaccination drops. This is why doctors strongly encourage completing the schedule.</p>
+
+      <h2>If You've Fallen Behind: Catch-Up Plans</h2>
+      <p>Good news: you can almost always <strong>catch up</strong>. In most cases the schedule continues from where you left off — vaccines rarely need to be restarted. Bring your child's card and the doctor will make a simple catch-up plan.</p>
+
+      <h2>A Calm Conversation Always Helps</h2>
+      <p>If you have concerns or questions about any vaccine, talk to your pediatrician. Good decisions come from clear information, not worry.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "Is it dangerous to delay vaccines?",
+        a: "Delaying leaves a gap where your child isn't protected against diseases that can be serious. It's best to stay on schedule, but catch-up is possible if you've fallen behind."
+      },
+      {
+        q: "Do we have to restart if we missed doses?",
+        a: "Usually not — most schedules continue from where you left off. Bring the vaccination card and the doctor will plan the catch-up."
+      }
+    ]
+  },
+  "baby-cough-cold-home-care": {
+    title: "Baby Cough and Cold: Home Care vs When to See a Doctor",
+    slug: "baby-cough-cold-home-care",
+    date: "2026-07-07",
+    dateModified: "2026-07-07",
+    readTime: "5 min read",
+    category: "Child Health",
+    excerpt: "Coughs and colds are part of childhood. Here's how to care for your child at home and know when it's more.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Young children can catch several coughs and colds a year — it's how their immune system learns. Most settle on their own. Here's how to help, and when to seek care.</p>
+
+      <h2>What Helps at Home</h2>
+      <p>Keep your child comfortable and well-hydrated with regular feeds/fluids. For babies, saline nose drops can ease a blocked nose. Rest helps. Warm, comforting care goes a long way.</p>
+
+      <h2>What to Avoid</h2>
+      <p>Avoid over-the-counter cough and cold medicines for young children unless your doctor advises — they aren't recommended for little ones. Don't give any medicine without knowing the right dose for your child.</p>
+
+      <h2>See a Doctor Promptly If:</h2>
+      <ul>
+        <li>Fast, laboured, or noisy breathing, or chest pulling in</li>
+        <li>A cough that's severe, persistent, or comes with high fever</li>
+        <li>Poor feeding, unusual drowsiness, or looks unwell</li>
+        <li>Is under 3 months with a cold and any fever</li>
+        <li>Wheezing, or a history of asthma/allergy that's flaring</li>
+        <li>Anything that worries you</li>
+      </ul>
+
+      <h2>Managing Recurrent Coughs</h2>
+      <p>If your child coughs or wheezes often, it's worth a check — sometimes there's an allergy or asthma component that's easy to manage once identified.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "Can I give cough syrup to my baby?",
+        a: "Over-the-counter cough and cold medicines aren't recommended for young children. Ask your doctor before giving anything."
+      },
+      {
+        q: "When is a cough serious?",
+        a: "If there's fast or difficult breathing, high fever, poor feeding, or your child looks unwell — see a doctor. For babies under 3 months, check early."
+      },
+      {
+        q: "My child gets frequent coughs — should I be concerned?",
+        a: "Frequent coughs/wheezing can sometimes be allergy or asthma related. A check-up helps — call 62625 60101."
+      }
+    ]
+  },
+  "newborn-skin-eyes-cord-care": {
+    title: "Newborn Skin, Eyes and Umbilical Cord Care: The \"Weird but Normal\" Guide",
+    slug: "newborn-skin-eyes-cord-care",
+    date: "2026-07-05",
+    dateModified: "2026-07-05",
+    readTime: "6 min read",
+    category: "Newborn Care",
+    excerpt: "Peeling skin, tiny spots, a sticky eye? Most newborn quirks are completely normal. Here's the reassuring guide.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Newborns come with all sorts of surprising-but-normal features. Here's what usually needs nothing more than reassurance — and what deserves a check.</p>
+
+      <h2>Newborn Skin Quirks</h2>
+      <p>Peeling skin, tiny white spots (milia), baby acne, and blotchy patches are common in the early weeks and usually pass on their own. Keep baths short and gentle, and moisturise if the skin is dry. A widespread rash with fever, blisters, or a rash that doesn't fade on pressure needs prompt review.</p>
+
+      <h2>Sticky Eyes & Clear Vision</h2>
+      <p>A little stickiness or watering in the first weeks is common (often a blocked tear duct) and usually clears with gentle cleaning using cooled boiled water. But redness of the white of the eye, swelling, lots of discharge, or eyes that seem sensitive to light should be checked.</p>
+
+      <h2>Umbilical Cord Healing</h2>
+      <p>Keep the stump clean and dry; it typically falls off within 1–2 weeks. A little dryness or a spot of blood as it separates is normal. Spreading redness, swelling, pus, or a foul smell needs to be seen.</p>
+
+      <h2>Nappy Area Care</h2>
+      <p>Mild redness is common. Change nappies often, clean gently, and use a barrier cream. A rash that's very red, raw, spreading, or has spots may need treatment.</p>
+
+      <h2>The Golden Rule</h2>
+      <p>When something looks new and you're unsure — a quick check is always reasonable. Newborn worries are exactly what pediatricians are here for.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "Is peeling newborn skin normal?",
+        a: "Yes, peeling and dryness in the first weeks is very common and usually needs only gentle moisturising."
+      },
+      {
+        q: "My newborn has a sticky eye — what should I do?",
+        a: "Often it's a blocked tear duct; clean gently with cooled boiled water. If there's redness, swelling, or lots of discharge, get it checked."
+      },
+      {
+        q: "How do I care for the umbilical cord?",
+        a: "Keep it clean and dry; it usually falls off in 1–2 weeks. Spreading redness, pus, or a bad smell needs a doctor."
+      }
+    ]
+  },
+  "child-vaccination-cost-bhopal-guide": {
+    title: "Child Vaccination Cost in Bhopal: A Simple Parent's Guide",
+    slug: "child-vaccination-cost-bhopal-guide",
+    date: "2026-07-03",
+    dateModified: "2026-07-03",
+    readTime: "5 min read",
+    category: "Vaccination",
+    excerpt: "Wondering what vaccinations cost in Bhopal? Here's a clear, honest guide to planning your child's immunizations.",
+    author: "Dr. Manisha Bangarwa Arya",
+    authorTitle: "Consultant Pediatrician & Neonatologist",
+    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>Vaccination is one of the most valuable things you can do for your child — and it helps to plan ahead. Here's a simple, honest overview for Bhopal parents.</p>
+
+      <h2>What's Available Free</h2>
+      <p>Several essential vaccines are provided free under the government's Universal Immunization Programme at government health centres — covering the most important childhood diseases.</p>
+
+      <h2>What's Typically Paid (Private)</h2>
+      <p>The fuller IAP schedule includes some additional vaccines and combination injections (fewer pricks) that are usually provided at private clinics for a fee. Costs vary by vaccine and brand.</p>
+
+      <h2>How to Plan Your Child's Schedule</h2>
+      <p>The most cost-effective approach is simply <strong>not missing doses</strong> — catching up later or treating a preventable illness costs far more. A few tips:</p>
+      <ul>
+        <li>Keep your child's vaccination card updated and bring it to every visit</li>
+        <li>Ask your clinic which vaccines are due next so there are no surprises</li>
+        <li>Ask about combination vaccines, which can mean fewer injections</li>
+        <li>Set reminders (we track each child's due dates and remind you)</li>
+      </ul>
+
+      <h2>Value Beyond Cost</h2>
+      <p>Beyond the price of any single vaccine, on-time vaccination protects your child from illnesses that can be serious — and gives you peace of mind. That's the real return.</p>
+      <p>For current details on your child's specific vaccines and to plan the schedule, call us — we're happy to look at the card and guide you clearly, with no pressure.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "Are any childhood vaccines free in Bhopal?",
+        a: "Yes — several essential vaccines are provided free under the government programme at government health centres."
+      },
+      {
+        q: "Why do private vaccines cost more?",
+        a: "Private clinics offer the fuller IAP schedule, including some extra vaccines and combination injections. Costs vary by vaccine and brand."
+      },
+      {
+        q: "Can you tell me what my child needs and the plan?",
+        a: "Yes — bring the vaccination card and we'll tell you clearly what's done and what's due. Call 62625 60101."
+      }
+    ]
   }
+
 };
