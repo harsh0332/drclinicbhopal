@@ -39,7 +39,7 @@ const MapContact = dynamic(() => import("@/components/sections/map-contact"), {
 });
 import BookAppointment from "@/components/sections/book-appointment";
 import JsonLd from "@/components/ui/json-ld";
-import { getMedicalClinicSchema, getFAQSchema } from "@/lib/schemas";
+import { getHomepageGraphSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
   title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps Newborn & Child Clinic",
@@ -101,8 +101,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full animate-fadeIn">
       {/* Schema Injection */}
-      <JsonLd data={getMedicalClinicSchema()} />
-      <JsonLd data={getFAQSchema(homeFaqs)} />
+      <JsonLd data={getHomepageGraphSchema(homeFaqs)} />
       {/* 1. Hero Section */}
       <Hero />
 

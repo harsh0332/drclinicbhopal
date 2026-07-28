@@ -39,20 +39,32 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  // Breadcrumbs schema
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Home", item: "/" },
     { name: "Contact", item: "/contact" }
   ]);
 
-  // MedicalClinic schema
-  const clinicSchema = getMedicalClinicSchema();
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://babystepsnewbornclinic.com/contact",
+        "url": "https://babystepsnewbornclinic.com/contact",
+        "name": "Contact Us & Location Map | Baby Steps Clinic Bhopal",
+        "about": {
+          "@type": "MedicalClinic",
+          "@id": "https://babystepsnewbornclinic.com/#clinic"
+        }
+      },
+      breadcrumbSchema
+    ]
+  };
 
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={clinicSchema} />
+      <JsonLd data={contactPageSchema} />
 
       {/* Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-12 relative overflow-hidden">

@@ -49,6 +49,19 @@ export default function TrustStrip() {
             <MapPin className="w-[17px] h-[17px] text-white" />
             <span>Serving South Bhopal</span>
           </div>
+
+          <span className="hidden md:inline text-white/30 select-none font-sans">•</span>
+
+          {/* Signal 5 */}
+          <a
+            href="https://g.page/r/CeKFI-QMCRejEBM/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-[13.5px] font-semibold text-white hover:text-[#FFC53D] transition-colors"
+          >
+            <span className="text-[#FFC53D]">★ 5.0</span>
+            <span>(21 Google reviews)</span>
+          </a>
         </motion.div>
       </section>
 

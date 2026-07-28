@@ -5,7 +5,7 @@ export const siteConfig = {
   googleMapsLink: "https://www.google.com/maps/place/Baby+Steps+Newborn+%26+Child+Clinic/@23.1967373,77.3504045,17z/data=!4m14!1m7!3m6!1s0x397c5d6345e3a901:0xa317090ce42385e2!2sBaby+Steps+Newborn+%26+Child+Clinic!8m2!3d23.1967373!4d77.3504045!16s%2Fg%2F11nb4n771b",
   googleReviewLink: "https://g.page/r/CeKFI-QMCRejEBM/review",
   napString: "Baby Steps – Newborn & Child Clinic, 227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal, Madhya Pradesh 462044 · +91 62625 60101",
-  showGoogleRating: false, // Set to true once verified reviews are live
+  showGoogleRating: true, // Synced with Google Business Profile (21 reviews, 5.0 average)
   phone: "62625 60101",
   phoneLink: "tel:+916262560101",
   landline: "0755-4565588",

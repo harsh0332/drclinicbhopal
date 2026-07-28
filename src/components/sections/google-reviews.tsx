@@ -34,10 +34,10 @@ export default function GoogleReviews() {
                   ))}
                 </div>
                 <h3 className="text-xl font-bold font-heading text-primary-dark">
-                  5.0 Rating on Google Reviews
+                  5.0 Rating · 21 Google reviews
                 </h3>
                 <p className="text-xs text-muted-text font-sans">
-                  Based on recent reviews from families in Neelbad, Bhopal
+                  Based on verified 5-star reviews from families in Neelbad, Bhopal
                 </p>
               </div>
 
