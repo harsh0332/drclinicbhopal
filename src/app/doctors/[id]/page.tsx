@@ -86,7 +86,8 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
           "MBBS — Bachelor of Medicine & Bachelor of Surgery",
           "DCH — Diploma in Child Health",
           "DNB (New Delhi) — Diplomate of National Board in Pediatrics",
-          "PGPN (Boston, USA) — Post Graduate Program in Pediatric Nutrition, Boston University School of Medicine"
+          "PGPN (Boston, USA) — Post Graduate Program in Pediatric Nutrition, Boston University School of Medicine",
+          "Member, Indian Academy of Pediatrics (IAP)"
         ],
         areasOfCare: [
           "Routine childhood vaccinations and immunization scheduling",
@@ -111,7 +112,8 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
           "MBBS — Bachelor of Medicine & Bachelor of Surgery",
           "DNB (New Delhi) — Diplomate of National Board in Pediatrics",
           "PGPN (Boston, USA) — Post Graduate Program in Pediatric Nutrition, Boston University School of Medicine",
-          "Fellowship in Neonatology — Specialized training in critical newborn and neonatal intensive care"
+          "Fellowship in Neonatology — Specialized training in critical newborn and neonatal intensive care",
+          "Member, Indian Academy of Pediatrics (IAP)"
         ],
         areasOfCare: [
           "NICU discharge follow-up and tracking of high-risk newborns",

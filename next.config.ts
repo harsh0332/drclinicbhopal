@@ -16,6 +16,19 @@ const nextConfig: NextConfig = {
     imageSizes: [64, 96, 128, 192, 256, 384],
     minimumCacheTTL: 31536000, // 1 year
   },
+  async redirects() {
+    return [
+      { source: "/areas/kolar-road", destination: "/areas", permanent: true },
+      { source: "/areas/bawadia-kalan", destination: "/areas", permanent: true },
+      { source: "/areas/danish-kunj", destination: "/areas", permanent: true },
+      { source: "/areas/salaiya", destination: "/areas", permanent: true },
+      { source: "/areas/chuna-bhatti", destination: "/areas", permanent: true },
+      { source: "/areas/katara-hills", destination: "/areas", permanent: true },
+      { source: "/areas/bagmugaliya", destination: "/areas", permanent: true },
+      { source: "/areas/lalghati", destination: "/areas", permanent: true },
+      { source: "/areas/aiims-bhopal", destination: "/areas", permanent: true },
+    ];
+  },
   async headers() {
     return [
       {

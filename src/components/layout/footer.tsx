@@ -131,15 +131,18 @@ export default function Footer() {
             Areas We Serve in Bhopal:
           </h4>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-blue-200 font-sans">
-            {Object.values(localitiesData).map((loc) => (
-              <Link
-                key={loc.slug}
-                href={`/areas/${loc.slug}`}
-                className="hover:text-white hover:underline transition-colors"
-              >
-                • Pediatrician in {loc.name}
-              </Link>
-            ))}
+            {Object.values(localitiesData).map((loc) => {
+              const href = loc.slug === "neelbad" ? "/areas/neelbad" : `/areas#${loc.slug}`;
+              return (
+                <Link
+                  key={loc.slug}
+                  href={href}
+                  className="hover:text-white hover:underline transition-colors"
+                >
+                  • Pediatrician in {loc.name}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

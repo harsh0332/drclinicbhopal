@@ -132,6 +132,14 @@ export default function ContactPage() {
                       {siteConfig.email}
                     </a>
                   </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-gray-900 shrink-0 w-20">Parking:</span>
+                    <span>Free street parking available outside the clinic (space for cars &amp; two-wheelers).</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-gray-900 shrink-0 w-20">Payments:</span>
+                    <span>Cash, UPI, debit and credit cards accepted.</span>
+                  </li>
                 </ul>
                 <div className="text-[11px] text-muted-text font-sans border-t border-gray-100 pt-3.5 mt-2 leading-relaxed">
                   {siteConfig.napString}

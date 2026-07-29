@@ -36,7 +36,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Vaccination Clinic",
     slug: "vaccination-clinic",
     description: "On-schedule, as-painless-as-possible immunisation with a properly maintained cold chain, so your child stays protected at every age.",
-    whatItIs: "A dedicated immunizations service covering routine, catch-up, and seasonal vaccines from birth through adolescence. We follow recommendations set by the Indian Academy of Pediatrics (IAP) and WHO.",
+    whatItIs: "A dedicated immunizations service covering routine, catch-up, and seasonal vaccines from birth through adolescence. We stock the complete Indian Academy of Pediatrics (IAP) recommended immunisation schedule, including vaccines that many clinics only supply on order — Meningococcal, Rabies and HPV among them. Both Indian and imported brands are available, and our pediatricians explain the options for your child before administration. All vaccines are stored under WHO-compliant cold-chain conditions in medical-grade refrigeration with continuous temperature logs.",
     whyItMatters: "Immunization is the most effective clinical method to build immunity against life-threatening childhood conditions including polio, tuberculosis, measles, and hepatitis. Proper cold-chain storage preserves vaccine potency.",
     whatToExpect: [
       "A gentle pre-vaccine health check and temperature screening.",

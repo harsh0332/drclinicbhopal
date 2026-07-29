@@ -92,7 +92,7 @@ export default function Hero() {
               className="text-xs font-semibold text-[#163C7A]/80 mb-6 flex items-start gap-1.5 text-left font-sans"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#2E6CF6] mt-[5px] shrink-0" />
-              <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Open Daily</span>
+              <span>Consultants at Rainbow Children&apos;s &amp; Apollo SAGE Hospital · Walk-ins Welcome · Open Daily</span>
             </div>
 
             {/* Action CTAs */}

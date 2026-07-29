@@ -95,6 +95,22 @@ export default function Home() {
     {
       q: "Do the doctors offer emergency pediatric support?",
       a: "We provide emergency triage guidance and child care during clinic hours. For late-night pediatric emergencies or critical newborn distress, we recommend proceeding directly to the pediatric emergency rooms of associated hospitals (Rainbow Children's Hospital or Apollo SAGE Hospital) where active care is available."
+    },
+    {
+      q: "Do I need an appointment, or can I walk in?",
+      a: "Walk-in consultations are welcome during our regular hours — you do not need a prior appointment for a general pediatric consultation. Vaccination visits are the one exception: those are scheduled in advance so that doses can be pre-verified and healthy vaccination visits stay separated from sick-child consultations. If you are travelling from Kolar Road, Bawadia Kalan or elsewhere in South Bhopal, you can call +91 62625 60101 before leaving to check current waiting time."
+    },
+    {
+      q: "What are the consultation charges, and is a follow-up visit charged separately?",
+      a: "Consultation charges are shared when you call or visit the clinic — please contact us at +91 62625 60101 for current fees. A follow-up visit within 15 days of your consultation is covered under the same consultation and is not charged again. Vaccination charges depend on the specific vaccine and are separate from the consultation."
+    },
+    {
+      q: "Is parking available at the clinic?",
+      a: "Yes. The clinic is located on a main road in Neelbad with ample free street parking directly outside, with space for both cars and two-wheelers. Auto-rickshaws and e-rickshaws are readily available in the area. The clinic is easy to locate on Google Maps — search \"Baby Steps Newborn & Child Clinic\"."
+    },
+    {
+      q: "Which vaccines are available at the clinic?",
+      a: "We stock the complete Indian Academy of Pediatrics (IAP) recommended immunisation schedule, including vaccines that many clinics only supply on order — Meningococcal, Rabies and HPV among them. Both Indian and imported brands are available, and we will explain the options for your child before administration. All vaccines are stored under WHO-compliant cold-chain conditions in medical-grade refrigeration with continuous temperature logs."
     }
   ];
 

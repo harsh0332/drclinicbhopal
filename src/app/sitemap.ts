@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/site-config";
 import { servicesData } from "@/lib/services-data";
-import { localitiesData } from "@/lib/localities-data";
 import { blogData } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/doctors",
     "/services",
+    "/areas",
+    "/areas/neelbad",
     "/blog",
     "/gallery",
     "/testimonials",
@@ -28,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/areas" ? 0.8 : 0.7,
   }));
 
   // 2. Doctor Dynamic Pages
@@ -47,15 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // 4. Locality Dynamic Pages
-  const localityPages = Object.keys(localitiesData).map((slug) => ({
-    url: `${baseUrl}/areas/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
-
-  // 5. Blog Dynamic Pages
+  // 4. Blog Dynamic Pages
   const blogPages = Object.keys(blogData).map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
@@ -63,5 +56,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...doctorPages, ...servicePages, ...localityPages, ...blogPages];
+  return [...staticPages, ...doctorPages, ...servicePages, ...blogPages];
 }

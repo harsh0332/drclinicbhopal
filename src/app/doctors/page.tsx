@@ -132,7 +132,7 @@ export default function DoctorsPage() {
                     <div className="flex items-start gap-2.5">
                       <Award className="w-4.5 h-4.5 text-primary shrink-0 mt-0.5" />
                       <span>
-                        Registered under Medical Council of India &amp; Madhya Pradesh Medical Council.
+                        Member, Indian Academy of Pediatrics (IAP) &bull; Registered under Medical Council of India &amp; Madhya Pradesh Medical Council.
                       </span>
                     </div>
                   </div>
