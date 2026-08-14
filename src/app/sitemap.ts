@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/areas",
     "/areas/neelbad",
+    "/areas/kolar-road",
+    "/areas/bawadia-kalan",
     "/blog",
     "/gallery",
     "/testimonials",

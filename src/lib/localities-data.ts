@@ -1,142 +1,185 @@
 export interface LocalityItem {
   name: string;
   slug: string;
-  title: string;
-  intro: string;
-  whyChoose: string[];
+  h1: string;
+  subtitle: string;
+  metaTitle: string;
+  metaDescription: string;
+  introHeading: string;
+  introParagraphs: string[];
+  distanceHeading: string;
   distanceNote: string;
+  landmarkPlaceholder?: string;
+  whyChooseHeading: string;
+  whyChoose: { title: string; desc: string }[];
+  servicesHeading: string;
   services: string[];
+  faqs: { q: string; a: string }[];
+  testimonialPlaceholder: string;
 }
 
 export const localitiesData: Record<string, LocalityItem> = {
-  "neelbad": {
-    name: "Neelbad",
-    slug: "neelbad",
-    title: "Pediatrician in Neelbad, Bhopal",
-    intro: "For parents residing in Neelbad, access to high-standard newborn and child healthcare is available right in the neighborhood. Baby Steps Clinic provides direct outpatient consultations, IAP-aligned immunizations, and specialized neonatal checkups.",
-    whyChoose: [
-      "Located centrally in Neelbad, eliminating long transit stress for sick infants.",
-      "Dual specialist care: consultations managed directly by Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya.",
-      "Strict cold-chain refrigeration monitoring for pediatric vaccinations."
-    ],
-    distanceNote: "Located locally in Pooja Colony, Neelbad. Under 2 minutes travel time from Neelbad Square.",
-    services: ["Vaccination Clinic", "Newborn Care", "Growth Monitoring", "Breastfeeding Counseling"]
-  },
   "kolar-road": {
     name: "Kolar Road",
     slug: "kolar-road",
-    title: "Pediatrician near Kolar Road, Bhopal",
-    intro: "Families living along Kolar Road can access premium pediatric and neonatal services via a short commute to our facility. We offer comprehensive child health monitoring, asthmatic care guidelines, and development screens.",
-    whyChoose: [
-      "Avoids the heavy traffic of central Bhopal hospitals while seeking senior consulting care.",
-      "Dr. Manisha Bangarwa Arya's specialized Neonatology Fellowship provides advanced care for preemies and low birth weight infants.",
-      "On-time appointment slots scheduled to reduce waiting room exposure for healthy babies."
+    h1: "Child Specialist in Kolar Road, Bhopal",
+    subtitle: "Clinical Newborn & Pediatric Care for families in Kolar Road",
+    metaTitle: "Child Specialist in Kolar Road, Bhopal | Baby Steps",
+    metaDescription: "Looking for a trusted child specialist near Kolar Road? Sunday clinic (10 AM–1 PM) & evening care in Neelbad (~20 min). Call +91 62625 60101.",
+    introHeading: "Comprehensive Pediatric Care for Kolar Road Families",
+    introParagraphs: [
+      "Kolar Road represents one of the largest and fastest-growing residential belts in South Bhopal, home to thousands of young families, working parents, and newborns. For parents residing along the Kolar Road corridor, finding dedicated pediatric care that fits around work schedules without long hospital waiting times is essential. Baby Steps – Newborn & Child Clinic provides comprehensive outpatient pediatric and neonatal consultations located approximately 20 minutes from Kolar Road in nearby Neelbad.",
+      "Led by Dr. Sudarshan Dev Arya (Senior Pediatrician) and Dr. Manisha Bangarwa Arya (Senior Neonatologist & Pediatrician), our clinic offers complete clinical care ranging from routine infant immunisation to newborn milestone assessments, infant nutrition mapping, and acute pediatric care. We emphasize calm, unhurried consultations that allow parents to discuss every clinical question thoroughly."
     ],
-    distanceNote: "Approximately 8 km from Kolar Road (via Kerwa Dam Road / Neelbad Road). Travel time is around 12–15 minutes.",
-    services: ["NICU Follow-up", "Allergy & Asthma Care", "Development Assessment"]
+    distanceHeading: "Getting Here from Kolar Road",
+    distanceNote: "Reaching Baby Steps Clinic from Kolar Road takes approximately 20 minutes by car or two-wheeler. The clinic is situated on the main road at 227/1, near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal. Free street parking is available directly outside the clinic for both four-wheelers and two-wheelers. The route provides a straightforward commute away from congested city hospital zones, allowing parents to bring infants for consultations with minimal transit distress.",
+    landmarkPlaceholder: "[VERIFY: nearest landmark in Kolar Road]",
+    whyChooseHeading: "Why Families in Kolar Road Choose Baby Steps",
+    whyChoose: [
+      {
+        title: "Dedicated Sunday Morning Clinic (10:00 AM – 1:00 PM)",
+        desc: "For dual-working parents along Kolar Road, weekday clinic visits can be difficult to manage. Baby Steps Clinic operates a dedicated Sunday morning outpatient clinic from 10:00 AM to 1:00 PM, allowing working parents to attend scheduled vaccinations, growth checkups, and routine consultations without taking time off work."
+      },
+      {
+        title: "Extended Weekday Consultation Hours (10:00 AM – 9:00 PM)",
+        desc: "Our 11-hour weekday schedule (Monday to Saturday, 10:00 AM to 9:00 PM) ensures that working parents commuting back to Kolar Road in the evening have reliable access to experienced pediatric consultations after office hours, minimizing emergency room visits for routine illnesses."
+      },
+      {
+        title: "Complete IAP Immunisation Schedule & WHO Cold-Chain Standards",
+        desc: "We maintain a 100% stocked Indian Academy of Pediatrics (IAP) vaccination schedule, including routine and optional vaccines (such as Meningococcal, Rabies, and HPV). All vaccines are stored in dedicated medical-grade refrigeration units with continuous digital temperature monitoring strictly between 2°C and 8°C."
+      }
+    ],
+    servicesHeading: "Primary Services Sought by Kolar Road Parents",
+    services: [
+      "Vaccination Clinic",
+      "Growth Monitoring",
+      "Child Nutrition",
+      "Allergy & Asthma Care",
+      "Newborn Care"
+    ],
+    faqs: [
+      {
+        q: "Is there a child specialist open on Sunday near Kolar Road?",
+        a: "Yes. Baby Steps Clinic runs an outpatient clinic every Sunday from 10:00 AM to 1:00 PM. This session is designed for working parents from Kolar Road and surrounding South Bhopal areas who require scheduled child immunisation or health checkups over the weekend."
+      },
+      {
+        q: "How long does it take to travel from Kolar Road to Baby Steps Clinic?",
+        a: "The commute from Kolar Road to our clinic in Neelbad takes approximately 20 minutes under normal traffic conditions. The clinic is located at 227/1, near Durga Mata Mandir, Pooja Colony, Neelbad, with convenient free street parking outside."
+      },
+      {
+        q: "Can working parents visit after office hours on weekdays from Kolar Road?",
+        a: "Yes. Our regular weekday consultation hours extend until 9:00 PM from Monday to Saturday (10:00 AM to 9:00 PM). Parents returning from work can comfortably schedule evening visits or walk in for general consultations."
+      }
+    ],
+    testimonialPlaceholder: "[NEEDS CLIENT INPUT: testimonial from a Kolar Road family]"
   },
   "bawadia-kalan": {
     name: "Bawadia Kalan",
     slug: "bawadia-kalan",
-    title: "Pediatrician near Bawadia Kalan, Bhopal",
-    intro: "For residents of Bawadia Kalan, Baby Steps Clinic offers gentle, supportive child consultations and WHO-aligned vaccination services. We support parents with expert milestone assessments and child nutrition advice.",
-    whyChoose: [
-      "Direct consultancies with physicians holding PGPN Boston credentials in child nutrition.",
-      "Clean, modern clinical environment with play-friendly child waiting spaces.",
-      "Detailed pediatric health records maintained digitally for subsequent consultations."
+    h1: "Pediatrician in Bawadia Kalan, Bhopal",
+    subtitle: "Clinical Newborn & Pediatric Care for families in Bawadia Kalan",
+    metaTitle: "Pediatrician in Bawadia Kalan, Bhopal | Baby Steps",
+    metaDescription: "Senior pediatrician & neonatologist near Bawadia Kalan (~25 min drive). Dual specialist care under one roof in Neelbad. Call +91 62625 60101.",
+    introHeading: "Specialist Child & Newborn Care for Bawadia Kalan Families",
+    introParagraphs: [
+      "Bawadia Kalan is a premier residential locality in South Bhopal with a large population of young families and newborns. When infants require medical attention, parents often face a dilemma: visiting a general pediatrician for older children while seeking a separate neonatologist for newborn or preterm follow-ups.",
+      "Baby Steps – Newborn & Child Clinic solves this challenge by providing dual specialist expertise in a single location. Situated approximately 25 minutes from Bawadia Kalan in Neelbad, our clinic houses both a senior general pediatrician and a fellowship-trained neonatologist under one roof, providing coordinated, seamless pediatric care."
     ],
-    distanceNote: "Approximately 14 km from Bawadia Kalan (via Kolar Road / Kerwa Dam Road). Travel time is around 25 minutes.",
-    services: ["Child Nutrition", "Milestone Tracking", "Vaccination Clinic"]
+    distanceHeading: "Getting Here from Bawadia Kalan",
+    distanceNote: "The drive from Bawadia Kalan to Baby Steps Clinic in Neelbad takes approximately 25 minutes. Our clinic is located at 227/1, near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal. Ample free street parking is available directly in front of the clinic for four-wheelers and two-wheelers, ensuring a smooth and hassle-free arrival with young infants.",
+    landmarkPlaceholder: "[VERIFY: nearest landmark in Bawadia Kalan]",
+    whyChooseHeading: "Why Families in Bawadia Kalan Choose Baby Steps",
+    whyChoose: [
+      {
+        title: "Dual Specialist Care: Pediatrician + Neonatologist Under One Roof",
+        desc: "Dr. Sudarshan Dev Arya brings extensive expertise in general pediatrics and childhood illness management, while Dr. Manisha Bangarwa Arya holds a specialized Fellowship in Neonatology alongside pediatric qualifications. This dual-consultant setup means families with both a newborn and an older sibling can have both children evaluated in a single visit without needing separate appointments at different facilities."
+      },
+      {
+        title: "Specialized Post-NICU & Preterm Infant Care",
+        desc: "For families in Bawadia Kalan whose babies were born preterm, with low birth weight, or required NICU hospitalization, specialized developmental follow-up is critical. Our neonatal clinic provides precise kangaroo care guidance, lactation support, growth curve plotting, and infant development monitoring."
+      },
+      {
+        title: "Reliable Cold-Chain Vaccine Safety & 7-Day Availability",
+        desc: "We maintain every dose of the IAP vaccination schedule in temperature-controlled WHO-standard medical refrigeration (2°C to 8°C). The clinic is open Monday to Saturday from 10:00 AM to 9:00 PM, and Sunday morning from 10:00 AM to 1:00 PM."
+      }
+    ],
+    servicesHeading: "Primary Services Sought by Bawadia Kalan Parents",
+    services: [
+      "Newborn Care",
+      "NICU Follow-up",
+      "Breastfeeding Counseling",
+      "Development Assessment",
+      "Child Nutrition",
+      "Vaccination Clinic"
+    ],
+    faqs: [
+      {
+        q: "Is there a child specialist open on Sunday near Bawadia Kalan?",
+        a: "Yes. Baby Steps Clinic provides Sunday morning consultation hours from 10:00 AM to 1:00 PM. Parents travelling from Bawadia Kalan can comfortably visit for scheduled vaccinations or child health reviews over the weekend."
+      },
+      {
+        q: "Why do families from Bawadia Kalan travel 25 minutes to Baby Steps Clinic?",
+        a: "Families from Bawadia Kalan choose our clinic because of the rare availability of dual specialist care in one place: a senior pediatrician and a fellowship-trained neonatologist. This eliminates the need for separate visits when managing newborn care, lactation guidance, and sibling pediatric checkups."
+      },
+      {
+        q: "Can newborn checkups and older sibling consultations be booked together?",
+        a: "Yes. Because both pediatric and neonatal specialists practise together at Baby Steps Clinic, families can bring their newborn and older children for synchronized consultations during the same visit."
+      }
+    ],
+    testimonialPlaceholder: "[NEEDS CLIENT INPUT: testimonial from a Bawadia Kalan family]"
   },
-  "danish-kunj": {
-    name: "Danish Kunj",
-    slug: "danish-kunj",
-    title: "Pediatrician near Danish Kunj, Bhopal",
-    intro: "Located near Danish Kunj, Baby Steps Clinic is a dedicated outpatient clinic for families seeking newborn assessments, lactation guidance, and general pediatric checkups. We follow National Medical Commission guidelines.",
-    whyChoose: [
-      "Convenient cross-town route avoiding commercial center congestions.",
-      "Affiliated consulting access at Apollo SAGE and Rainbow Children's Hospitals for quick admission coordinate.",
-      "Comprehensive parent educational workshops covering home baby-proofing."
+  "neelbad": {
+    name: "Neelbad",
+    slug: "neelbad",
+    h1: "Pediatrician in Neelbad, Bhopal",
+    subtitle: "Clinical Newborn & Pediatric Care for families in Neelbad",
+    metaTitle: "Pediatrician in Neelbad, Bhopal | Baby Steps Clinic",
+    metaDescription: "Local pediatrician in Neelbad, Bhopal. Zero transit stress for sick infants. Walk-ins welcome Mon–Sat 10AM–9PM, Sun 10AM–1PM. Call +91 62625 60101.",
+    introHeading: "Trusted Pediatric & Newborn Care in the Heart of Neelbad",
+    introParagraphs: [
+      "For parents living in Neelbad and surrounding neighborhoods, having direct, immediate access to senior pediatric care right in the locality is invaluable. When an infant has a sudden fever, feeding difficulty, or requires scheduled vaccinations, avoiding long commutes across Bhopal prevents unnecessary stress for both child and parents.",
+      "Baby Steps – Newborn & Child Clinic is physically established in Neelbad at Pooja Colony. We provide prompt outpatient consultations, complete IAP-aligned immunisations, newborn developmental assessments, and dedicated lactation counseling, all backed by hospital-grade clinical precision."
     ],
-    distanceNote: "Approximately 9.5 km from Danish Kunj (via Neelbad Road). Travel time is around 15–18 minutes.",
-    services: ["Newborn Care", "Parent Education", "Fever Management"]
-  },
-  "salaiya": {
-    name: "Salaiya",
-    slug: "salaiya",
-    title: "Pediatrician near Salaiya, Bhopal",
-    intro: "Salaiya residents can access qualified newborn and critical child outpatient care at Baby Steps Clinic. We provide regular growth curve plotting, complementary feeding guidance, and adolescent physical monitoring.",
+    distanceHeading: "Getting Here in Neelbad",
+    distanceNote: "Our clinic is conveniently located at 227/1, near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal, MP 462044. For residents across Neelbad, the clinic is just minutes away by foot, car, or two-wheeler. Free street parking is available right outside the clinic. Because we are locally situated, families in Neelbad can walk in for general consultations without advance appointment barriers during all operating hours.",
+    whyChooseHeading: "Why Families in Neelbad Choose Baby Steps",
     whyChoose: [
-      "Pediatricians registered with national medical bodies providing experienced clinical guidance.",
-      "Specialized consultation setup for preterm babies post-NICU discharge.",
-      "Lactation consult room for private maternal breastfeeding instruction."
+      {
+        title: "Immediate Local Access — Zero Transit Delay for Sick Infants",
+        desc: "Travelling across Bhopal with a sick or irritable child can be distressing. Having senior pediatric consultants located right in Neelbad means prompt medical assessment when your baby needs attention, with no prolonged car or auto rides."
+      },
+      {
+        title: "Dual Consultant Expertise on Your Doorstep",
+        desc: "Neelbad residents benefit from direct access to Dr. Sudarshan Dev Arya (MBBS, DCH, DNB New Delhi, PGPN Boston) and Dr. Manisha Bangarwa Arya (MBBS, DNB New Delhi, PGPN Boston, Fellowship in Neonatology). This level of specialized newborn and child healthcare is available locally without visiting distant multi-specialty hospitals."
+      },
+      {
+        title: "11-Hour Weekday Availability (10 AM–9 PM) & Sunday Morning Clinic (10 AM–1 PM)",
+        desc: "Our doors are open Monday through Saturday from 10:00 AM to 9:00 PM, and Sunday from 10:00 AM to 1:00 PM. Whether you need a morning wellness checkup, an evening after-work visit, or a Sunday vaccination slot, local care is always accessible."
+      }
     ],
-    distanceNote: "Approximately 11 km from Salaiya (via Kolar Bypass / Neelbad Road). Travel time is around 20 minutes.",
-    services: ["Breastfeeding Counseling", "NICU Follow-up", "Adolescent Health"]
-  },
-  "chuna-bhatti": {
-    name: "Chuna Bhatti",
-    slug: "chuna-bhatti",
-    title: "Pediatrician near Chuna Bhatti, Bhopal",
-    intro: "For parents in Chuna Bhatti looking for caring, expert child healthcare, Baby Steps Clinic offers outpatient services managed by senior consultants. Our clinic specializes in developmental screening and fever management.",
-    whyChoose: [
-      "Direct consultation with DNB (Pediatrics) qualified doctors from New Delhi.",
-      "Clear, honest treatment plans without diagnostic inflation.",
-      "Modern vaccine storage systems preserving immunizations efficacy."
+    servicesHeading: "Primary Services Sought by Neelbad Parents",
+    services: [
+      "Vaccination Clinic",
+      "Newborn Care",
+      "Breastfeeding Counseling",
+      "Growth Monitoring",
+      "Child Nutrition",
+      "Development Assessment"
     ],
-    distanceNote: "Approximately 10.5 km from Chuna Bhatti (via Kerwa Dam Road). Travel time is around 18 minutes.",
-    services: ["Development Assessment", "Fever Management", "Vaccination Clinic"]
-  },
-  "katara-hills": {
-    name: "Katara Hills",
-    slug: "katara-hills",
-    title: "Pediatrician near Katara Hills, Bhopal",
-    intro: "Families in Katara Hills can reach Baby Steps Clinic for specialized neonatal care, milestones assessments, and childhood nutritional mapping. We offer comprehensive counseling for growth parameters.",
-    whyChoose: [
-      "Specialized husband-wife pediatrician team providing seamless dual reviews for complex pediatric cases.",
-      "Reliable growth tracking plotted on official WHO percentile charts.",
-      "Comprehensive education resources covering infant choke rescue first-aid."
+    faqs: [
+      {
+        q: "Is there a child specialist open on Sunday near Neelbad?",
+        a: "Yes. Baby Steps Clinic is open every Sunday from 10:00 AM to 1:00 PM for scheduled vaccinations and child health consultations, providing weekend healthcare access for local families."
+      },
+      {
+        q: "Can I walk in without an appointment for urgent child health concerns in Neelbad?",
+        a: "Yes. Walk-in consultations are welcome during our regular hours for general pediatric concerns. Vaccination visits are scheduled in advance to ensure cold-chain dose preparation and maintain separate scheduling for healthy infant visits."
+      },
+      {
+        q: "Where exactly in Neelbad is Baby Steps Clinic located?",
+        a: "The clinic is located at 227/1, near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal. We have free street parking directly outside for cars and two-wheelers."
+      }
     ],
-    distanceNote: "Approximately 18 km from Katara Hills (via Kolar Road). Travel time is around 30 minutes.",
-    services: ["Growth Monitoring", "Milestone Tracking", "Parent Education"]
-  },
-  "bagmugaliya": {
-    name: "Bagmugaliya",
-    slug: "bagmugaliya",
-    title: "Pediatrician near Bagmugaliya, Bhopal",
-    intro: "For parents seeking child wellness checkups and childhood immunizations near Bagmugaliya, Baby Steps Clinic provides consultations led by doctors holding affiliations with major pediatric hospitals.",
-    whyChoose: [
-      "Consultants associated with Apollo SAGE Hospital and Rainbow Children's Hospital.",
-      "Clinical protocols aligned with the Indian Academy of Pediatrics (IAP).",
-      "Confidential physical transitions counseling for adolescent patients."
-    ],
-    distanceNote: "Approximately 16 km from Bagmugaliya (via Kolar Road / Kerwa Dam Road). Travel time is around 28 minutes.",
-    services: ["Adolescent Health", "Child Nutrition", "Vaccination Clinic"]
-  },
-  "lalghati": {
-    name: "Lalghati",
-    slug: "lalghati",
-    title: "Pediatrician near Lalghati, Bhopal",
-    intro: "Parents residing in Lalghati seeking senior pediatric consultation and specialized newborn immunizations can visit Baby Steps Clinic in Neelbad for expert outpatient care.",
-    whyChoose: [
-      "Direct consultation with experienced pediatricians holding DNB and Neonatology credentials.",
-      "Strict WHO cold-chain monitoring for all pediatric and infant vaccinations.",
-      "Personalized growth tracking and developmental milestone evaluations."
-    ],
-    distanceNote: "Approximately 14 km from Lalghati (via VIP Road / Neelbad Road). Travel time is around 25 minutes.",
-    services: ["Vaccination Clinic", "Newborn Care", "Growth Monitoring", "Fever Management"]
-  },
-  "aiims-bhopal": {
-    name: "AIIMS Bhopal Area",
-    slug: "aiims-bhopal",
-    title: "Pediatrician near AIIMS Bhopal",
-    intro: "Families in the AIIMS Bhopal locality seeking dedicated outpatient newborn assessments, lactation counseling, and WHO-compliant immunizations can access consultations at Baby Steps Clinic.",
-    whyChoose: [
-      "Senior pediatric consultants affiliated with Rainbow Children's Hospital and Apollo SAGE Hospital.",
-      "Comprehensive NICU follow-up consultations for preemies and low birth weight infants.",
-      "Digital pediatric health records for continuous growth tracking."
-    ],
-    distanceNote: "Approximately 17 km from AIIMS Bhopal (via Hoshangabad Road / Kolar Bypass). Travel time is around 30 minutes.",
-    services: ["NICU Follow-up", "Child Nutrition", "Breastfeeding Counseling", "Milestone Tracking"]
+    testimonialPlaceholder: "[NEEDS CLIENT INPUT: testimonial from a Neelbad family]"
   }
 };

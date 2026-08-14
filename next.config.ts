@@ -18,8 +18,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/areas/kolar-road", destination: "/areas", permanent: true },
-      { source: "/areas/bawadia-kalan", destination: "/areas", permanent: true },
       { source: "/areas/danish-kunj", destination: "/areas", permanent: true },
       { source: "/areas/salaiya", destination: "/areas", permanent: true },
       { source: "/areas/chuna-bhatti", destination: "/areas", permanent: true },

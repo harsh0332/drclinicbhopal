@@ -156,7 +156,7 @@ export default function AreasHubPage() {
                         )}
                       </div>
                       <p className="text-xs text-muted-text font-sans leading-relaxed">
-                        {loc.intro}
+                        {loc.introParagraphs[0]}
                       </p>
                       <div className="p-3 bg-surface-tint rounded-2xl border border-gray-100 text-xs font-sans text-primary-dark leading-relaxed">
                         <strong>Distance &amp; Travel:</strong> {loc.distanceNote}
@@ -164,12 +164,12 @@ export default function AreasHubPage() {
                     </div>
 
                     <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-                      {isNeelbad ? (
+                      {["neelbad", "kolar-road", "bawadia-kalan"].includes(loc.slug) ? (
                         <Link
-                          href="/areas/neelbad"
+                          href={`/areas/${loc.slug}`}
                           className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark font-semibold text-xs transition-colors"
                         >
-                          <span>Explore Neelbad clinic guide</span>
+                          <span>Explore {loc.name} clinic guide</span>
                           <ChevronRight className="w-3.5 h-3.5" />
                         </Link>
                       ) : (
