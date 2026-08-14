@@ -112,16 +112,6 @@ export function getPhysicianSchema(doctor: {
     "@id": doctorId,
     "name": doctor.name,
     "medicalSpecialty": medicalSpecialty,
-    "alumniOf": [
-      {
-        "@type": "EducationalOrganization",
-        "name": "University of Delhi"
-      },
-      {
-        "@type": "EducationalOrganization",
-        "name": "Boston University School of Medicine"
-      }
-    ],
     "worksFor": {
       "@type": "Hospital",
       "name": hospitalName
@@ -129,7 +119,6 @@ export function getPhysicianSchema(doctor: {
     "url": doctorUrl,
     "image": doctorImage,
     "affiliation": {
-      "@type": "MedicalClinic",
       "@id": "https://babystepsnewbornclinic.com/#clinic"
     }
   };
@@ -138,12 +127,12 @@ export function getPhysicianSchema(doctor: {
 // 3. Service Schema Builder
 export function getServiceSchema(service: { title: string; description?: string; whatItIs?: string; slug: string }) {
   return {
+    "@context": "https://schema.org",
     "@type": "Service",
     "@id": `https://babystepsnewbornclinic.com/services/${service.slug}#service`,
     "name": service.title,
     "description": service.description || service.whatItIs || `${service.title} at Baby Steps Newborn & Child Clinic in Neelbad, Bhopal.`,
     "provider": {
-      "@type": "MedicalClinic",
       "@id": "https://babystepsnewbornclinic.com/#clinic"
     },
     "areaServed": {
@@ -159,12 +148,12 @@ export function getServiceSchema(service: { title: string; description?: string;
 export function getAreaMedicalClinicSchema(areaName: string, slug: string) {
   const pageUrl = `https://babystepsnewbornclinic.com/areas/${slug}`;
   return {
+    "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "@id": `${pageUrl}#clinic`,
     "name": `Baby Steps – Newborn & Child Clinic (${areaName})`,
     "url": pageUrl,
     "branchOf": {
-      "@type": "MedicalClinic",
       "@id": "https://babystepsnewbornclinic.com/#clinic"
     },
     "areaServed": {
@@ -178,6 +167,7 @@ export function getAreaMedicalClinicSchema(areaName: string, slug: string) {
 export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string = "https://babystepsnewbornclinic.com/faqs") {
   const safeFaqs = faqs || [];
   return {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${pageUrl}#faq`,
     "url": pageUrl,
@@ -208,11 +198,11 @@ export function getBlogPostingSchema(post: {
     : publishedIso;
 
   const isManisha = post.author.includes("Manisha");
-  const doctorName = isManisha ? "Dr. Manisha Bangarwa Arya" : "Dr. Sudarshan Dev Arya";
   const doctorSlug = isManisha ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya";
   const doctorId = `https://babystepsnewbornclinic.com/doctors/${doctorSlug}#physician`;
 
   return {
+    "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}#webpage`,
     "headline": post.title,
@@ -223,21 +213,15 @@ export function getBlogPostingSchema(post: {
     "datePublished": publishedIso,
     "dateModified": modifiedIso,
     "author": {
-      "@type": "Physician",
-      "@id": doctorId,
-      "name": doctorName
+      "@id": doctorId
     },
     "reviewedBy": {
-      "@type": "Physician",
-      "@id": doctorId,
-      "name": doctorName
+      "@id": doctorId
     },
     "publisher": {
-      "@type": "MedicalClinic",
       "@id": "https://babystepsnewbornclinic.com/#clinic"
     },
     "mainEntityOfPage": {
-      "@type": "WebPage",
       "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}`
     }
   };
@@ -246,6 +230,7 @@ export function getBlogPostingSchema(post: {
 // 7. BreadcrumbList Schema Builder
 export function getBreadcrumbSchema(items: { name: string; item: string }[]) {
   return {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": items.map((item, index) => ({
       "@type": "ListItem",

@@ -53,7 +53,6 @@ export default function ContactPage() {
         "url": "https://babystepsnewbornclinic.com/contact",
         "name": "Contact Us & Location Map | Baby Steps Clinic Bhopal",
         "about": {
-          "@type": "MedicalClinic",
           "@id": "https://babystepsnewbornclinic.com/#clinic"
         }
       },

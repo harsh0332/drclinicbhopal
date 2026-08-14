@@ -54,7 +54,6 @@ export default function AreasHubPage() {
         "url": "https://babystepsnewbornclinic.com/areas",
         "name": "Pediatric Care Across South Bhopal | Baby Steps Clinic",
         "about": {
-          "@type": "MedicalClinic",
           "@id": "https://babystepsnewbornclinic.com/#clinic"
         }
       },
