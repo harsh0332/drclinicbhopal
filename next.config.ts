@@ -1,14 +1,16 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   // Self-contained server bundle (.next/standalone/server.js) so the app can
   // run with plain `node server.js` on any Node host (Hostinger VPS/Business,
   // etc.). Ignored/handled automatically on Vercel — safe to keep on.
   output: "standalone",
-  // Pin the workspace root — a stray package-lock.json in the home directory
-  // otherwise makes Turbopack infer the wrong root.
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   turbopack: {
-    root: __dirname,
+    root: path.resolve(process.cwd()),
   },
   images: {
     formats: ["image/avif", "image/webp"],
