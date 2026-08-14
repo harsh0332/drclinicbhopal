@@ -21,14 +21,14 @@ export default function GalleryPreview() {
   const triggerRef = useRef<HTMLElement | null>(null);
 
   const galleryItems = [
-    { src: "/images/gallery/gallery-1.jpg", alt: "Baby Steps Clinic Waiting Area", title: "Waiting Area" },
-    { src: "/images/gallery/gallery-2.jpg", alt: "Baby Steps Clinic Building Exterior", title: "Clinic Exterior" },
-    { src: "/images/gallery/gallery-3.jpg", alt: "Dr. Manisha consulting mother and child", title: "Pediatric Consultation" },
-    { src: "/images/gallery/gallery-4.jpg", alt: "Dr. Manisha examining infant", title: "Newborn Assessment" },
-    { src: "/images/gallery/gallery-5.jpg", alt: "Baby Steps Clinic Reception Desk", title: "Reception Desk" },
-    { src: "/images/gallery/gallery-6.jpg", alt: "Baby Steps Clinic street view", title: "Clinic Frontage" },
-    { src: "/images/gallery/gallery-7.jpg", alt: "Empty Pediatric Consultation Room", title: "Consultation Suite" },
-    { src: "/images/gallery/gallery-8.jpg", alt: "Pediatric scale and examination bed", title: "Growth & Vaccination Room" }
+    { src: "/images/gallery/gallery-1.webp", alt: "Baby Steps Clinic Waiting Area", title: "Waiting Area" },
+    { src: "/images/gallery/gallery-2.webp", alt: "Baby Steps Clinic Building Exterior", title: "Clinic Exterior" },
+    { src: "/images/gallery/gallery-3.webp", alt: "Dr. Manisha consulting mother and child", title: "Pediatric Consultation" },
+    { src: "/images/gallery/gallery-4.webp", alt: "Dr. Manisha examining infant", title: "Newborn Assessment" },
+    { src: "/images/gallery/gallery-5.webp", alt: "Baby Steps Clinic Reception Desk", title: "Reception Desk" },
+    { src: "/images/gallery/gallery-6.webp", alt: "Baby Steps Clinic street view", title: "Clinic Frontage" },
+    { src: "/images/gallery/gallery-7.webp", alt: "Empty Pediatric Consultation Room", title: "Consultation Suite" },
+    { src: "/images/gallery/gallery-8.webp", alt: "Pediatric scale and examination bed", title: "Growth & Vaccination Room" }
   ];
 
   // Close Lightbox and restore focus to the triggering thumbnail
@@ -149,6 +149,7 @@ export default function GalleryPreview() {
                 src={item.src}
                 alt={item.alt}
                 fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 280px"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
               
@@ -214,8 +215,8 @@ export default function GalleryPreview() {
                 src={galleryItems[selectedIdx].src}
                 alt={galleryItems[selectedIdx].alt}
                 fill
+                sizes="(max-width: 1024px) 100vw, 1024px"
                 className="object-contain"
-                priority
               />
             </motion.div>
 

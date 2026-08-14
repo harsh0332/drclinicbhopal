@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbNode } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
 import AppointmentForm from "@/components/ui/appointment-form";
+import MapFacade from "@/components/ui/map-facade";
 import { MapPin, Clock, Calendar, ShieldAlert } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
@@ -163,31 +164,7 @@ export default function ContactPage() {
               </div>
 
               {/* Map Embed */}
-              <div className="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col min-h-[300px]">
-                <div className="relative w-full flex-grow min-h-[220px]">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.272378278338!2d77.34782957593083!3d23.196742209804935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c5d6345e3a901%3A0xa317090ce42385e2!2sBaby%20Steps%20Newborn%20%26%20Child%20Clinic!5e0!3m2!1sen!2sin!4v1784411102327!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    title="Google Map location of Baby Steps Clinic"
-                    className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
-                  />
-                </div>
-                <div className="p-3 bg-white border-t border-gray-100 flex items-center justify-between text-xs font-sans">
-                  <span className="text-muted-text">Can&apos;t see the map?</span>
-                  <a
-                    href={siteConfig.googleMapsLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 font-semibold text-primary hover:underline min-h-[44px] flex items-center"
-                  >
-                    Open in Google Maps &rarr;
-                  </a>
-                </div>
-              </div>
+              <MapFacade heightClass="min-h-[300px]" />
 
             </div>
 

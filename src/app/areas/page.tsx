@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbNode } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
 import ClinicImage from "@/components/ui/clinic-image";
+import MapFacade from "@/components/ui/map-facade";
 import { MapPin, Clock, Calendar, Phone, CheckCircle2, ChevronRight, Car, CreditCard } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
@@ -189,29 +190,9 @@ export default function AreasHubPage() {
               })}
             </div>
 
-            {/* Map Embed Section */}
-            <div className="bg-white border border-gray-150 rounded-3xl overflow-hidden shadow-soft flex flex-col mt-8">
-              <div className="p-6 bg-surface-tint border-b border-gray-100 flex flex-col gap-1 text-left">
-                <h3 className="text-lg font-bold font-heading text-primary-dark flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span>Interactive Map &amp; Clinic Directions</span>
-                </h3>
-                <p className="text-xs text-muted-text font-sans">
-                  Baby Steps Newborn &amp; Child Clinic, 227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal, MP 462044
-                </p>
-              </div>
-              <div className="relative w-full h-[360px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.272378278338!2d77.34782957593083!3d23.196742209804935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c5d6345e3a901%3A0xa317090ce42385e2!2sBaby%20Steps%20Newborn%20%26%20Child%20Clinic!5e0!3m2!1sen!2sin!4v1784411102327!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  title="Google Map location of Baby Steps Clinic in Neelbad, Bhopal"
-                  className="w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
+            {/* Map Preview & Directions */}
+            <div className="w-full">
+              <MapFacade heightClass="min-h-[380px]" />
             </div>
 
             {/* Appointment Call-to-Action Block */}

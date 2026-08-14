@@ -39,14 +39,14 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   const galleryItems = [
-    { src: "/images/gallery/gallery-1.jpg", alt: "Baby Steps Clinic Waiting Area", title: "Waiting Area", desc: "Child-friendly seating space with cartoon wall murals designed to put children at ease." },
-    { src: "/images/gallery/gallery-2.jpg", alt: "Baby Steps Clinic Building Exterior", title: "Clinic Exterior", desc: "Front frontage showing the clinic logo, main entry ramp, and clean access signage." },
-    { src: "/images/gallery/gallery-3.jpg", alt: "Dr. Manisha consulting mother and child", title: "Pediatric Consultation", desc: "Consultation in progress with parent and baby under sterile and secure guidelines." },
-    { src: "/images/gallery/gallery-4.jpg", alt: "Dr. Manisha examining infant", title: "Newborn Assessment", desc: "Dr. Manisha checking heart rate and breathing via stethoscope during a newborn checkup." },
-    { src: "/images/gallery/gallery-5.jpg", alt: "Baby Steps Clinic Reception Desk", title: "Reception Desk", desc: "Information desk for appointments, digital health card logging, and patient queries." },
-    { src: "/images/gallery/gallery-6.jpg", alt: "Baby Steps Clinic street view", title: "Clinic Frontage", desc: "Wider street view showing neighbors, parking availability, and road visibility." },
-    { src: "/images/gallery/gallery-7.jpg", alt: "Empty Pediatric Consultation Room", title: "Consultation Suite", desc: "Clean checkroom with consultation desk, examination beds, and sanitizing points." },
-    { src: "/images/gallery/gallery-8.jpg", alt: "Pediatric scale and examination bed", title: "Growth & Vaccination Room", desc: "Dedicated examination space containing infant scales and digital height tools." }
+    { src: "/images/gallery/gallery-1.webp", alt: "Baby Steps Clinic Waiting Area", title: "Waiting Area", desc: "Child-friendly seating space with cartoon wall murals designed to put children at ease." },
+    { src: "/images/gallery/gallery-2.webp", alt: "Baby Steps Clinic Building Exterior", title: "Clinic Exterior", desc: "Front frontage showing the clinic logo, main entry ramp, and clean access signage." },
+    { src: "/images/gallery/gallery-3.webp", alt: "Dr. Manisha consulting mother and child", title: "Pediatric Consultation", desc: "Consultation in progress with parent and baby under sterile and secure guidelines." },
+    { src: "/images/gallery/gallery-4.webp", alt: "Dr. Manisha examining infant", title: "Newborn Assessment", desc: "Dr. Manisha checking heart rate and breathing via stethoscope during a newborn checkup." },
+    { src: "/images/gallery/gallery-5.webp", alt: "Baby Steps Clinic Reception Desk", title: "Reception Desk", desc: "Information desk for appointments, digital health card logging, and patient queries." },
+    { src: "/images/gallery/gallery-6.webp", alt: "Baby Steps Clinic street view", title: "Clinic Frontage", desc: "Wider street view showing neighbors, parking availability, and road visibility." },
+    { src: "/images/gallery/gallery-7.webp", alt: "Empty Pediatric Consultation Room", title: "Consultation Suite", desc: "Clean checkroom with consultation desk, examination beds, and sanitizing points." },
+    { src: "/images/gallery/gallery-8.webp", alt: "Pediatric scale and examination bed", title: "Growth & Vaccination Room", desc: "Dedicated examination space containing infant scales and digital height tools." }
   ];
 
   // Breadcrumbs schema
@@ -105,6 +105,7 @@ export default function GalleryPage() {
                     src={item.src}
                     alt={item.alt}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 300px"
                     className="object-cover"
                   />
                 </div>

@@ -173,28 +173,24 @@ export default function Hero() {
               </svg>
             </div>
 
-            {/* Core Image Container - Mobile optimized 25kB asset for sm screens, desktop asset for larger */}
+            {/* Core Image Container - Responsive picture element so only 1 asset downloads per viewport */}
             <div className="relative z-10 w-[260px] sm:w-[300px] aspect-[4/5] rounded-[26px] overflow-hidden border-4 sm:border-6 border-white shadow-[0_20px_45px_rgba(22,60,122,0.15)] md:shadow-[0_26px_60px_rgba(22,60,122,0.18)] bg-gradient-to-tr from-[#EAF1FF] to-[#F4FBF8]">
-              <div className="block sm:hidden relative w-full h-full">
-                <ClinicImage
-                  src="/images/hero/doctor-baby-both-mobile.webp"
-                  alt="Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya examining a baby at Baby Steps Clinic Bhopal"
-                  fill
-                  sizes="260px"
-                  className="object-cover"
-                  priority
+              <picture className="block w-full h-full">
+                <source
+                  media="(max-width: 639px)"
+                  type="image/webp"
+                  srcSet="/images/hero/doctor-baby-both-mobile.webp"
                 />
-              </div>
-              <div className="hidden sm:block relative w-full h-full">
-                <ClinicImage
+                <img
                   src="/images/hero/doctor-baby-both.webp"
                   alt="Dr. Sudarshan Dev Arya and Dr. Manisha Bangarwa Arya examining a baby at Baby Steps Clinic Bhopal"
-                  fill
-                  sizes="300px"
-                  className="object-cover"
-                  priority
+                  className="w-full h-full object-cover"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={300}
+                  height={375}
                 />
-              </div>
+              </picture>
             </div>
 
             {/* Overlapping doctor portraits (hidden on mobile for cleanliness, shown on desktop) */}

@@ -84,6 +84,7 @@ export default function MeetDoctors() {
                     src={doctor.image}
                     alt={`${doctor.name} - ${doctor.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
                     className="object-cover transition-transform duration-500 group-hover:scale-103"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/10 to-transparent pointer-events-none" />

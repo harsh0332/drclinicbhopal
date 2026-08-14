@@ -79,6 +79,7 @@ export default function ParentGuidance() {
                   src="/images/illustrations/parent-guidance-premium.webp"
                   alt="Caring for your newborn - baby steps clinic"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover"
                 />
               </div>

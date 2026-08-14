@@ -174,6 +174,7 @@ export default function Footer() {
                   src="/images/illustrations/mascot.webp"
                   alt="Baby Steps Mascot"
                   fill
+                  sizes="28px"
                   className="object-contain"
                 />
               </div>

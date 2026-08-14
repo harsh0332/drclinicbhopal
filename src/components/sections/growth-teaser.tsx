@@ -136,6 +136,7 @@ export default function GrowthTeaser() {
                   src="/images/illustrations/growth-journey-premium.webp"
                   alt="Growth journey and percentile monitoring illustration"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
                   className="object-cover"
                 />
               </div>

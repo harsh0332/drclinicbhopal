@@ -96,6 +96,7 @@ export default function DoctorsPage() {
                     src={doctor.image}
                     alt={`${doctor.name} - ${doctor.title}`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
                     className="object-cover"
                   />
                 </div>

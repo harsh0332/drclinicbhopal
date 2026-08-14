@@ -194,6 +194,7 @@ export default async function DoctorPage({ params }: DoctorPageProps) {
                     src={doctor.image}
                     alt={`${doctor.name} - ${doctor.title}`}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 450px"
                     className="object-cover"
                   />
                 </div>
