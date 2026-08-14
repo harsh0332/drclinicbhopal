@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 import { Calendar, Phone, CheckCircle2, Activity, GraduationCap } from "lucide-react";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import JsonLd from "@/components/ui/json-ld";
-import { getServiceSchema, getFAQSchema, getBreadcrumbSchema } from "@/lib/schemas";
+import { getServiceSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
 import { blogData } from "@/lib/blog-data";
 
 import Cloud from "@/components/ui/decor/Cloud";
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
   const pageUrl = `https://babystepsnewbornclinic.com/services/${slug}`;
   const serviceSchema = getServiceSchema({ ...service, slug });
-  const breadcrumbSchema = getBreadcrumbSchema([
+  const breadcrumbSchema = getBreadcrumbNode([
     { name: "Home", item: "/" },
     { name: "Services", item: "/services" },
     { name: service.title, item: `/services/${slug}` }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site-config";
-import { getBreadcrumbSchema, getMedicalClinicSchema } from "@/lib/schemas";
+import { getBreadcrumbNode } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
 import AppointmentForm from "@/components/ui/appointment-form";
 import { MapPin, Clock, Calendar, ShieldAlert } from "lucide-react";
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const breadcrumbSchema = getBreadcrumbSchema([
+  const breadcrumbSchema = getBreadcrumbNode([
     { name: "Home", item: "/" },
     { name: "Contact", item: "/contact" }
   ]);

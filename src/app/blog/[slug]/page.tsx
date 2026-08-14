@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
-import { getBlogPostingSchema, getFAQSchema, getBreadcrumbSchema } from "@/lib/schemas";
+import { getBlogPostingSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import { Calendar, Clock, GraduationCap, Building, ShieldCheck, ArrowLeft, CalendarDays } from "lucide-react";
@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   // Schema generations
   const articleSchema = getBlogPostingSchema(post);
   const faqSchema = post.faqs && post.faqs.length > 0 ? getFAQSchema(post.faqs, `https://babystepsnewbornclinic.com/blog/${post.slug}`) : null;
-  const breadcrumbSchema = getBreadcrumbSchema([
+  const breadcrumbSchema = getBreadcrumbNode([
     { name: "Home", item: "/" },
     { name: "Blog", item: "/blog" },
     { name: post.title, item: `/blog/${post.slug}` }

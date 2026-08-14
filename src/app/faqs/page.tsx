@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import { getBreadcrumbSchema, getFAQSchema } from "@/lib/schemas";
+import { getBreadcrumbNode, getFAQSchema } from "@/lib/schemas";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import { siteConfig } from "@/lib/site-config";
 import { HelpCircle, Calendar, Phone } from "lucide-react";
@@ -87,7 +87,7 @@ export default function FAQsPage() {
   // Aggregate all FAQs for SEO FAQPage schema
   const allFaqs = [...visitFaqs, ...vaccineFaqs, ...clinicalFaqs];
   const faqSchema = getFAQSchema(allFaqs, "https://babystepsnewbornclinic.com/faqs");
-  const breadcrumbSchema = getBreadcrumbSchema([
+  const breadcrumbSchema = getBreadcrumbNode([
     { name: "Home", item: "/" },
     { name: "FAQs", item: "/faqs" }
   ]);

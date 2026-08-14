@@ -1,6 +1,6 @@
 import { siteConfig } from "./site-config";
 
-// 1. Homepage Schema Builder (MedicalClinic + FAQPage)
+// 1. Homepage Schema Builder (MedicalClinic + FAQPage in a unified @graph)
 export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
   const clinicId = "https://babystepsnewbornclinic.com/#clinic";
 
@@ -85,7 +85,7 @@ export function getMedicalClinicSchema() {
   return getHomepageGraphSchema([]);
 }
 
-// 2. Physician Schema Builder for doctor pages
+// 2. Physician Schema Builder (standalone block with @context)
 export function getPhysicianSchema(doctor: {
   id: string;
   name: string;
@@ -124,10 +124,9 @@ export function getPhysicianSchema(doctor: {
   };
 }
 
-// 3. Service Schema Builder
+// 3. Service Node Builder (for @graph arrays)
 export function getServiceSchema(service: { title: string; description?: string; whatItIs?: string; slug: string }) {
   return {
-    "@context": "https://schema.org",
     "@type": "Service",
     "@id": `https://babystepsnewbornclinic.com/services/${service.slug}#service`,
     "name": service.title,
@@ -144,11 +143,10 @@ export function getServiceSchema(service: { title: string; description?: string;
   };
 }
 
-// 4. Area MedicalClinic Schema Builder (Emits branch MedicalClinic with branchOf & areaServed)
+// 4. Area MedicalClinic Node Builder (for @graph arrays)
 export function getAreaMedicalClinicSchema(areaName: string, slug: string) {
   const pageUrl = `https://babystepsnewbornclinic.com/areas/${slug}`;
   return {
-    "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "@id": `${pageUrl}#clinic`,
     "name": `Baby Steps – Newborn & Child Clinic (${areaName})`,
@@ -163,11 +161,10 @@ export function getAreaMedicalClinicSchema(areaName: string, slug: string) {
   };
 }
 
-// 5. Standalone FAQPage Schema Builder
+// 5. FAQPage Node Builder (for @graph arrays)
 export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string = "https://babystepsnewbornclinic.com/faqs") {
   const safeFaqs = faqs || [];
   return {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${pageUrl}#faq`,
     "url": pageUrl,
@@ -183,7 +180,7 @@ export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string 
   };
 }
 
-// 6. MedicalWebPage / BlogPosting Schema Builder
+// 6. MedicalWebPage Node Builder (for @graph arrays)
 export function getBlogPostingSchema(post: {
   title: string;
   excerpt: string;
@@ -202,7 +199,6 @@ export function getBlogPostingSchema(post: {
   const doctorId = `https://babystepsnewbornclinic.com/doctors/${doctorSlug}#physician`;
 
   return {
-    "@context": "https://schema.org",
     "@type": "MedicalWebPage",
     "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}#webpage`,
     "headline": post.title,
@@ -221,16 +217,27 @@ export function getBlogPostingSchema(post: {
     "publisher": {
       "@id": "https://babystepsnewbornclinic.com/#clinic"
     },
-    "mainEntityOfPage": {
-      "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}`
-    }
+    "mainEntityOfPage": `https://babystepsnewbornclinic.com/blog/${post.slug}`
   };
 }
 
-// 7. BreadcrumbList Schema Builder
+// 7. BreadcrumbList Schema Builder (standalone with @context)
 export function getBreadcrumbSchema(items: { name: string; item: string }[]) {
   return {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.item.startsWith("http") ? item.item : `https://babystepsnewbornclinic.com${item.item}`
+    }))
+  };
+}
+
+// 8. BreadcrumbList Node Builder (for @graph arrays - no @context)
+export function getBreadcrumbNode(items: { name: string; item: string }[]) {
+  return {
     "@type": "BreadcrumbList",
     "itemListElement": items.map((item, index) => ({
       "@type": "ListItem",

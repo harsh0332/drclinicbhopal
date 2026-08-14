@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 import { MapPin, Calendar, Phone, CheckCircle2, ChevronRight } from "lucide-react";
 
 import JsonLd from "@/components/ui/json-ld";
-import { getAreaMedicalClinicSchema, getBreadcrumbSchema } from "@/lib/schemas";
+import { getAreaMedicalClinicSchema, getBreadcrumbNode } from "@/lib/schemas";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
@@ -74,7 +74,7 @@ export default async function LocalityPage({ params }: LocalityPageProps) {
   }
 
   const clinicSchema = getAreaMedicalClinicSchema(area.name, slug);
-  const breadcrumbSchema = getBreadcrumbSchema([
+  const breadcrumbSchema = getBreadcrumbNode([
     { name: "Home", item: "/" },
     { name: "Areas We Serve", item: "/areas" },
     { name: area.name, item: `/areas/${slug}` }

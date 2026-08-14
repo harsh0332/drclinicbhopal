@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { localitiesData } from "@/lib/localities-data";
 import { siteConfig } from "@/lib/site-config";
-import { getBreadcrumbSchema } from "@/lib/schemas";
+import { getBreadcrumbNode } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
 import ClinicImage from "@/components/ui/clinic-image";
 import { MapPin, Clock, Calendar, Phone, CheckCircle2, ChevronRight, Car, CreditCard } from "lucide-react";
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 };
 
 export default function AreasHubPage() {
-  const breadcrumbSchema = getBreadcrumbSchema([
+  const breadcrumbSchema = getBreadcrumbNode([
     { name: "Home", item: "/" },
     { name: "Areas We Serve", item: "/areas" }
   ]);
