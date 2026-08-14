@@ -1,4 +1,5 @@
 import { siteConfig } from "./site-config";
+import { DOCTOR_CREDENTIALS, blogAuthorship, servicesAuthorship, ContentAuthorship } from "./authorship-config";
 
 // 1. Homepage Schema Builder (MedicalClinic + FAQPage in a unified @graph)
 export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
@@ -180,25 +181,30 @@ export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string 
   };
 }
 
-// 6. MedicalWebPage Node Builder (for @graph arrays)
+// 6. MedicalWebPage Node Builder for Blog Posts (for @graph arrays)
 export function getBlogPostingSchema(post: {
   title: string;
   excerpt: string;
   slug: string;
   date: string;
   dateModified?: string;
-  author: string;
+  author?: string;
 }) {
-  const publishedIso = new Date(post.date).toISOString();
-  const modifiedIso = post.dateModified
-    ? new Date(post.dateModified).toISOString()
-    : publishedIso;
+  const authorship: ContentAuthorship = blogAuthorship[post.slug] || {
+    authorId: post.author?.includes("Manisha") ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya",
+    reviewerId: post.author?.includes("Manisha") ? "dr-sudarshan-dev-arya" : "dr-manisha-bangarwa-arya",
+    reviewedDate: "2026-07-20",
+    lastUpdated: post.dateModified || post.date,
+    datePublished: post.date
+  };
 
-  const isManisha = post.author.includes("Manisha");
-  const doctorSlug = isManisha ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya";
-  const doctorId = `https://babystepsnewbornclinic.com/doctors/${doctorSlug}#physician`;
+  const authorDoctor = DOCTOR_CREDENTIALS[authorship.authorId] || DOCTOR_CREDENTIALS["dr-sudarshan-dev-arya"];
+  const reviewerDoctor = authorship.reviewerId ? DOCTOR_CREDENTIALS[authorship.reviewerId] : null;
 
-  return {
+  const publishedIso = new Date(authorship.datePublished || post.date).toISOString();
+  const modifiedIso = new Date(authorship.lastUpdated || post.dateModified || post.date).toISOString();
+
+  const node: Record<string, any> = {
     "@type": "MedicalWebPage",
     "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}#webpage`,
     "headline": post.title,
@@ -209,16 +215,65 @@ export function getBlogPostingSchema(post: {
     "datePublished": publishedIso,
     "dateModified": modifiedIso,
     "author": {
-      "@id": doctorId
-    },
-    "reviewedBy": {
-      "@id": doctorId
+      "@id": authorDoctor.schemaId
     },
     "publisher": {
       "@id": "https://babystepsnewbornclinic.com/#clinic"
     },
     "mainEntityOfPage": `https://babystepsnewbornclinic.com/blog/${post.slug}`
   };
+
+  if (reviewerDoctor) {
+    node["reviewedBy"] = {
+      "@id": reviewerDoctor.schemaId
+    };
+  }
+
+  return node;
+}
+
+// 6b. MedicalWebPage Node Builder for Service Pages (for @graph arrays)
+export function getServiceMedicalWebPageSchema(service: {
+  title: string;
+  description?: string;
+  whatItIs?: string;
+  slug: string;
+}) {
+  const authorship = servicesAuthorship[service.slug];
+  if (!authorship) return null;
+
+  const authorDoctor = DOCTOR_CREDENTIALS[authorship.authorId] || DOCTOR_CREDENTIALS["dr-sudarshan-dev-arya"];
+  const reviewerDoctor = authorship.reviewerId ? DOCTOR_CREDENTIALS[authorship.reviewerId] : null;
+
+  const publishedIso = new Date(authorship.datePublished).toISOString();
+  const modifiedIso = new Date(authorship.lastUpdated).toISOString();
+
+  const node: Record<string, any> = {
+    "@type": "MedicalWebPage",
+    "@id": `https://babystepsnewbornclinic.com/services/${service.slug}#webpage`,
+    "headline": `${service.title} in Neelbad, Bhopal`,
+    "description": service.description || service.whatItIs || `${service.title} at Baby Steps Newborn & Child Clinic.`,
+    "url": `https://babystepsnewbornclinic.com/services/${service.slug}`,
+    "image": "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+    "inLanguage": "en-IN",
+    "datePublished": publishedIso,
+    "dateModified": modifiedIso,
+    "author": {
+      "@id": authorDoctor.schemaId
+    },
+    "publisher": {
+      "@id": "https://babystepsnewbornclinic.com/#clinic"
+    },
+    "mainEntityOfPage": `https://babystepsnewbornclinic.com/services/${service.slug}`
+  };
+
+  if (reviewerDoctor) {
+    node["reviewedBy"] = {
+      "@id": reviewerDoctor.schemaId
+    };
+  }
+
+  return node;
 }
 
 // 7. BreadcrumbList Schema Builder (standalone with @context)

@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
 import { getBlogPostingSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
+import { blogAuthorship } from "@/lib/authorship-config";
 import JsonLd from "@/components/ui/json-ld";
 import FAQAccordion from "@/components/ui/faq-accordion";
+import MedicalAuthorship from "@/components/ui/medical-authorship";
 import { Calendar, Clock, GraduationCap, Building, ShieldCheck, ArrowLeft, CalendarDays } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
@@ -66,6 +68,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const authorship = blogAuthorship[slug] || {
+    authorId: post.author?.includes("Manisha") ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya",
+    reviewerId: post.author?.includes("Manisha") ? "dr-sudarshan-dev-arya" : "dr-manisha-bangarwa-arya",
+    reviewedDate: "2026-07-20",
+    lastUpdated: post.dateModified || post.date,
+    datePublished: post.date
+  };
+
   // Schema generations
   const articleSchema = getBlogPostingSchema(post);
   const faqSchema = post.faqs && post.faqs.length > 0 ? getFAQSchema(post.faqs, `https://babystepsnewbornclinic.com/blog/${post.slug}`) : null;
@@ -123,18 +133,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex flex-wrap items-center gap-4 text-xs text-muted-text font-sans mt-2">
               <span className="flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" />
-                Published: {post.date}
+                Published: {authorship.datePublished || post.date}
               </span>
               <span className="flex items-center gap-1 font-medium text-primary-dark">
                 <CalendarDays className="w-3.5 h-3.5 text-primary" />
-                Last updated: {post.dateModified || post.date}
+                Last updated: {authorship.lastUpdated}
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" />
                 {post.readTime}
               </span>
-              <span>&bull;</span>
-              <span>Reviewed by: <strong className="text-gray-900 font-medium">{post.author}</strong></span>
             </div>
           </div>
         </div>
@@ -147,6 +155,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             
             {/* Left Column: Post content */}
             <div className="lg:col-span-8 flex flex-col gap-8 text-left">
+              {/* Medical Authorship & Review Byline */}
+              <MedicalAuthorship authorship={authorship} />
+
               {/* Rich Text Wrapper */}
               <div
                 className="prose prose-blue max-w-none text-sm sm:text-base text-muted-text font-sans leading-relaxed flex flex-col gap-6"

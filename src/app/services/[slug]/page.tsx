@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { servicesData } from "@/lib/services-data";
 import { siteConfig } from "@/lib/site-config";
+import { servicesAuthorship } from "@/lib/authorship-config";
 import { Calendar, Phone, CheckCircle2, Activity, GraduationCap } from "lucide-react";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import JsonLd from "@/components/ui/json-ld";
-import { getServiceSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
+import MedicalAuthorship from "@/components/ui/medical-authorship";
+import { getServiceSchema, getFAQSchema, getBreadcrumbNode, getServiceMedicalWebPageSchema } from "@/lib/schemas";
 import { blogData } from "@/lib/blog-data";
 
 import Cloud from "@/components/ui/decor/Cloud";
@@ -75,8 +77,12 @@ export default async function ServicePage({ params }: ServicePageProps) {
     { name: "Services", item: "/services" },
     { name: service.title, item: `/services/${slug}` }
   ]);
+  const medicalWebPageSchema = getServiceMedicalWebPageSchema({ ...service, slug });
 
   const graphEntities: any[] = [serviceSchema, breadcrumbSchema];
+  if (medicalWebPageSchema) {
+    graphEntities.push(medicalWebPageSchema);
+  }
   if (service.faqs && service.faqs.length > 0) {
     graphEntities.push(getFAQSchema(service.faqs, pageUrl));
   }
@@ -84,6 +90,14 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const unifiedSchema = {
     "@context": "https://schema.org",
     "@graph": graphEntities
+  };
+
+  const authorship = servicesAuthorship[slug] || {
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
+    reviewedDate: "2026-07-20",
+    lastUpdated: "2026-08-14",
+    datePublished: "2026-06-01"
   };
 
   // Local SEO internal links mapping
@@ -149,8 +163,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left Column: What/Why/Expect */}
-            <div className="lg:col-span-8 flex flex-col gap-10 text-left">
-              
+            <div className="lg:col-span-8 flex flex-col gap-8 text-left">
+              {/* Medical Authorship & Review Byline */}
+              <MedicalAuthorship authorship={authorship} />
+
               {/* Section 1: What It Is */}
               <div className="flex flex-col gap-3">
                 <h2 className="text-2xl font-bold font-heading text-primary-dark">
