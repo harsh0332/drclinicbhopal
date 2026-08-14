@@ -1,18 +1,50 @@
 # Baby Steps – Newborn & Child Clinic
-> Pediatric and newborn care clinic in Neelbad, South Bhopal, led by Dr. Sudarshan Dev Arya (DNB, PGPN) and Dr. Manisha Bangarwa Arya (DNB, Neonatology Fellowship). Vaccination, newborn care, growth monitoring, developmental assessment.
 
-## Key pages
-- [Doctors](https://babystepsnewbornclinic.com/doctors): Credentials of both pediatric specialists.
-- [Services](https://babystepsnewbornclinic.com/services): Pediatric services incl. vaccination, NICU follow-up, growth monitoring.
-- [Vaccination schedule tool](https://babystepsnewbornclinic.com/tools/vaccination-schedule): IAP-aligned immunization timeline.
-- [Growth calculator tool](https://babystepsnewbornclinic.com/tools/growth-calculator): WHO-standard height/weight percentile checker.
-- [Milestone tracker tool](https://babystepsnewbornclinic.com/tools/milestone-tracker): Developmental milestone tracking checklist.
-- [Blog](https://babystepsnewbornclinic.com/blog): Pediatrician-authored parent education articles.
-- [Contact](https://babystepsnewbornclinic.com/contact): Neelbad, Bhopal · +91 62625 60101.
+> Pediatric and neonatal care clinic in Neelbad, Bhopal, Madhya Pradesh.
 
-## Key facts
-- Address: 227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal, MP 462044
-- Phone: +91 62625 60101 · Landline: 0755-4565588 · Email: contact@babystepsnewbornclinic.com
-- Hours: Mon–Sat 10:00 AM–9:00 PM, Sun 10:00 AM–1:00 PM
-- Consultants at Rainbow Children's Hospital & Apollo SAGE Hospital, Bhopal
-- Areas Served: Neelbad, Kolar, Bawadia Kalan, Ratibad, South Bhopal
+## Clinical Specialists & Medical Registration
+- Dr. Sudarshan Dev Arya: MBBS, DCH, DNB (Pediatrics, New Delhi), PGPN (Boston, USA). Consultant Pediatrician at Rainbow Children's Hospital, Bhopal. Medical Registration: MP-42113.
+- Dr. Manisha Bangarwa Arya: MBBS, DNB (Pediatrics, New Delhi), PGPN (Boston, USA), Fellowship in Neonatology. Consultant Pediatrician & Neonatologist at Apollo SAGE Hospital, Bhopal. Medical Registration: MP-9230.
+
+## Clinic Contact & Location Information
+- Clinic Name: Baby Steps – Newborn & Child Clinic
+- Address: 227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal, Madhya Pradesh 462044, India
+- Primary Phone: +916262560101
+- Landline: 0755-4565588
+- Email: contact@babystepsnewbornclinic.com
+- Hours: Monday – Saturday: 10:00 AM – 9:00 PM | Sunday: 10:00 AM – 1:00 PM
+
+## Core Pages Index
+- Homepage: https://babystepsnewbornclinic.com/
+- About Us: https://babystepsnewbornclinic.com/about
+- Doctors Directory: https://babystepsnewbornclinic.com/doctors
+  - Dr. Sudarshan Dev Arya: https://babystepsnewbornclinic.com/doctors/dr-sudarshan-dev-arya
+  - Dr. Manisha Bangarwa Arya: https://babystepsnewbornclinic.com/doctors/dr-manisha-bangarwa-arya
+- Services Directory: https://babystepsnewbornclinic.com/services
+  - Vaccination Clinic: https://babystepsnewbornclinic.com/services/vaccination-clinic
+  - Newborn Care: https://babystepsnewbornclinic.com/services/newborn-care
+  - NICU Follow-up: https://babystepsnewbornclinic.com/services/nicu-follow-up
+  - Growth Monitoring: https://babystepsnewbornclinic.com/services/growth-monitoring
+  - Child Nutrition: https://babystepsnewbornclinic.com/services/child-nutrition
+  - Development Assessment: https://babystepsnewbornclinic.com/services/development-assessment
+  - Breastfeeding Counseling: https://babystepsnewbornclinic.com/services/breastfeeding-counseling
+  - Fever Management: https://babystepsnewbornclinic.com/services/fever-management
+  - Allergy & Asthma Care: https://babystepsnewbornclinic.com/services/allergy-asthma-care
+  - Adolescent Health: https://babystepsnewbornclinic.com/services/adolescent-health
+  - Emergency Child Care: https://babystepsnewbornclinic.com/services/emergency-child-care
+  - Parent Education: https://babystepsnewbornclinic.com/services/parent-education
+  - Milestone Tracking: https://babystepsnewbornclinic.com/services/milestone-tracking
+- Locality Hubs (Bhopal):
+  - Neelbad: https://babystepsnewbornclinic.com/areas/neelbad
+  - Kolar Road: https://babystepsnewbornclinic.com/areas/kolar-road
+  - Bawadia Kalan: https://babystepsnewbornclinic.com/areas/bawadia-kalan
+- Clinical Interactive Tools:
+  - Vaccination Schedule: https://babystepsnewbornclinic.com/tools/vaccination-schedule
+  - Growth Calculator: https://babystepsnewbornclinic.com/tools/growth-calculator
+  - Milestone Tracker: https://babystepsnewbornclinic.com/tools/milestone-tracker
+- Health Blog & Parent Guides: https://babystepsnewbornclinic.com/blog
+- Clinic Gallery: https://babystepsnewbornclinic.com/gallery
+- Contact & Directions: https://babystepsnewbornclinic.com/contact
+
+## Authorship & Medical Ethics
+All medical content and clinical guidance on this website is authored and reviewed by registered pediatricians in compliance with National Medical Commission (NMC) regulations.

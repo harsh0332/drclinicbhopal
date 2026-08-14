@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
 import { getBlogPostingSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
 import { blogAuthorship } from "@/lib/authorship-config";
+import { getPageAlternates } from "@/lib/i18n";
 import JsonLd from "@/components/ui/json-ld";
 import FAQAccordion from "@/components/ui/faq-accordion";
 import MedicalAuthorship from "@/components/ui/medical-authorship";
@@ -26,9 +27,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: `${post.title} | Pediatric Health Blog`,
     description: post.excerpt,
-    alternates: {
-      canonical: `https://babystepsnewbornclinic.com/blog/${slug}`,
-    },
+    alternates: getPageAlternates(`/blog/${slug}`),
     openGraph: {
       title: `${post.title} | Pediatric Health Blog`,
       description: post.excerpt,
