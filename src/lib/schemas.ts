@@ -59,7 +59,8 @@ export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
           "https://facebook.com/babystepsbhopal",
           "https://www.instagram.com/babysteps.bhopal",
           "https://youtube.com/babystepsbhopal"
-        ]
+        ],
+        "priceRange": "₹₹"
       },
       {
         "@type": "FAQPage",
