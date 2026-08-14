@@ -24,6 +24,7 @@ export interface ServiceItem {
   title: string;
   slug: string;
   description: string;
+  metaDescription: string;
   whatItIs: string;
   whyItMatters: string;
   whatToExpect: string[];
@@ -36,6 +37,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Vaccination Clinic",
     slug: "vaccination-clinic",
     description: "On-schedule, as-painless-as-possible immunisation with a properly maintained cold chain, so your child stays protected at every age.",
+    metaDescription: "Complete IAP schedule with Indian and imported brands, including Meningococcal, Rabies and HPV. WHO cold chain at 2–8°C, monitored. Call 62625 60101.",
     whatItIs: "A dedicated immunizations service covering routine, catch-up, and seasonal vaccines from birth through adolescence. We stock the complete Indian Academy of Pediatrics (IAP) recommended immunisation schedule, including vaccines that many clinics only supply on order — Meningococcal, Rabies and HPV among them. Both Indian and imported brands are available, and our pediatricians explain the options for your child before administration. All vaccines are stored under WHO-compliant cold-chain conditions in medical-grade refrigeration with continuous temperature logs.",
     whyItMatters: "Immunization is the most effective clinical method to build immunity against life-threatening childhood conditions including polio, tuberculosis, measles, and hepatitis. Proper cold-chain storage preserves vaccine potency.",
     whatToExpect: [
@@ -57,6 +59,18 @@ export const servicesData: Record<string, ServiceItem> = {
       {
         q: "Can a vaccine be given if my child has a mild cold?",
         a: "Yes. Minor illnesses such as a mild cold or low-grade fever are generally not contraindications for routine vaccines. Our pediatricians will perform a brief physical check to verify safety."
+      },
+      {
+        q: "Are painless vaccines available at the clinic?",
+        a: "Yes. Both painless (acellular) and standard (whole-cell) vaccine options are available at the clinic. Before administration, our pediatricians explain the clinical differences, potential side effects such as mild fever, and protection profiles of both formulations so parents can make an informed choice for their child."
+      },
+      {
+        q: "Do you stock imported vaccine brands?",
+        a: "Yes. We maintain a reliable stock of both Indian and imported international vaccine brands across routine and optional IAP immunization schedules. Our pediatricians discuss suitable brand options for your child prior to vaccination."
+      },
+      {
+        q: "What does child vaccination cost at the clinic?",
+        a: "Vaccination charges depend on the specific vaccine, brand formulation (Indian vs. imported, standard vs. acellular), and immunization schedule stage. Please contact our reception desk at +91 62625 60101 for current pricing and dose availability."
       }
     ],
     related: [
@@ -68,6 +82,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Newborn Care",
     slug: "newborn-care",
     description: "Gentle first-days care for your baby — feeding, weight and jaundice checks, plus reassurance for new parents.",
+    metaDescription: "Clinical neonatal exams across the first 28 days: weight plotting, head circumference, jaundice screening, and cord healing checks. Call 62625 60101.",
     whatItIs: "Specialized pediatric monitoring and wellness examinations during the critical first 28 days of life (the neonatal period). We track initial reflexes, growth curves, and metabolic indicators.",
     whyItMatters: "The neonatal phase involves rapid physiological adaptations. Early clinical monitoring identifies feeding problems, neonatal jaundice, and metabolic conditions early to prevent complications.",
     whatToExpect: [
@@ -95,6 +110,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "NICU Follow-up",
     slug: "nicu-follow-up",
     description: "Close, specialised follow-up for babies who needed intensive care, tracking growth and development after discharge.",
+    metaDescription: "Specialized post-discharge surveillance for preterm and low-birth-weight infants with growth tracking adjusted for corrected age. Call 62625 60101.",
     whatItIs: "Specialized clinical surveillance for premature infants, low birth weight babies, or newborns discharged from neonatal intensive care units (NICUs).",
     whyItMatters: "NICU graduates have higher risks for developmental delays, feeding difficulties, and respiratory complications. Regular clinical follow-ups facilitate early physical and cognitive support.",
     whatToExpect: [
@@ -122,6 +138,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Growth Monitoring",
     slug: "growth-monitoring",
     description: "Regular height, weight and head-circumference tracking against WHO charts to ensure your child is growing just right.",
+    metaDescription: "Track child height, weight, and head circumference against official WHO percentile curves to identify growth faltering early. Call 62625 60101.",
     whatItIs: "Routine physical growth screening at scheduled intervals to plot weight-for-age, height-for-age, and head circumference against World Health Organization (WHO) growth charts.",
     whyItMatters: "Consistent plotting detects growth faltering, childhood obesity, and metabolic conditions early. Deviations from percentile curves are key clinical indicators of health shifts.",
     whatToExpect: [
@@ -149,6 +166,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Child Nutrition",
     slug: "child-nutrition",
     description: "Practical, age-wise feeding and diet guidance — from starting solids to help with fussy eaters.",
+    metaDescription: "Evidence-based guidance on starting solids at 6 months, balanced weaning diets, toddler picky eating, and deficiency screening. Call 62625 60101.",
     whatItIs: "Expert dietary guidance covering healthy feeding habits starting at 6 months, weaning practices, picky eating, and managing micronutrient needs.",
     whyItMatters: "Adequate macro- and micronutrient intake is required for brain development, bone density, and immune function. Balanced nutrition counseling prevents stunting and wasting.",
     whatToExpect: [
@@ -176,6 +194,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Development Assessment",
     slug: "development-assessment",
     description: "Milestone and developmental checks to spot and support any delays early, with warmth and patience.",
+    metaDescription: "Clinical screening across gross motor, fine motor, speech, and social domains to detect and address developmental delays early. Call 62625 60101.",
     whatItIs: "Clinical screening of developmental milestones across gross motor, fine motor, speech/language, and personal-social domains.",
     whyItMatters: "Early identification of motor delays, language delays, or developmental delays allows for early intervention when brain plasticity is highest.",
     whatToExpect: [
@@ -203,6 +222,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Breastfeeding Counseling",
     slug: "breastfeeding-counseling",
     description: "Hands-on latch, supply and feeding support so breastfeeding feels easier for you and your baby.",
+    metaDescription: "One-on-one lactation support covering latch technique, infant swallowing coordination, engorgement care, and milk storage guidance. Call 62625 60101.",
     whatItIs: "Clinical support for breastfeeding mothers covering latch techniques, positions, maternal nutrition, and managing lactation challenges.",
     whyItMatters: "Exclusive breastfeeding is recommended for the first 6 months. Lactation support resolves maternal discomfort (like sore nipples or breast engorgement) and ensures the infant receives adequate nutrition.",
     whatToExpect: [
@@ -230,6 +250,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Fever Management",
     slug: "fever-management",
     description: "Clear guidance on managing your child's fever safely at home — and knowing exactly when to come in.",
+    metaDescription: "Clinical evaluation of child fevers, infection source screening, and weight-based medication dosage guidelines for safe home care. Call 62625 60101.",
     whatItIs: "Clinical evaluation, monitoring, and fever management guidelines for pediatric patients presenting with elevated temperatures.",
     whyItMatters: "Fever is an immune response, not a disease. Clinical evaluation identifies underlying viral or bacterial infections, ensuring safe management and avoiding self-medication risks.",
     whatToExpect: [
@@ -257,6 +278,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Allergy & Asthma Care",
     slug: "allergy-asthma-care",
     description: "Diagnosis and ongoing care for allergies, wheezing and asthma, so your child breathes easy.",
+    metaDescription: "Clinical care for childhood asthma, recurrent wheezing, and allergic rhinitis, including spacer training and custom Action Plans. Call 62625 60101.",
     whatItIs: "Long-term monitoring and treatment guidelines for pediatric asthma, recurrent wheezing, allergic rhinitis, and skin allergies.",
     whyItMatters: "Uncontrolled asthma affects school attendance and lung development. Proper inhaler techniques and allergen management reduce acute exacerbations.",
     whatToExpect: [
@@ -284,6 +306,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Adolescent Health",
     slug: "adolescent-health",
     description: "Confidential, caring support for teens — growth, puberty, nutrition and overall wellbeing.",
+    metaDescription: "Confidential healthcare for ages 10 to 18: pubertal growth monitoring, anemia screening, posture advice, and Tdap or HPV vaccines. Call 62625 60101.",
     whatItIs: "Clinical counseling and health checkups for adolescents (ages 10-18) covering growth spurts, pubertal changes, and lifestyle health.",
     whyItMatters: "Adolescence involves rapid physical and emotional transitions. Safe clinical guidance helps monitor thyroid changes, nutritional requirements, and emotional wellbeing.",
     whatToExpect: [
@@ -311,6 +334,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Emergency Child Care",
     slug: "emergency-child-care",
     description: "Prompt attention for urgent childhood concerns, with clear advice on when a hospital visit is needed.",
+    metaDescription: "Daytime pediatric emergency assessment, vital signs triage, febrile seizure stabilization, and coordinated hospital referrals. Call 62625 60101.",
     whatItIs: "Immediate clinical assessment, stabilization, and triage guidelines for acutely ill children presenting during clinic hours.",
     whyItMatters: "Accidents, severe breathing difficulty, or dehydration require rapid clinical response. Prompt triage helps stabilize children before safe referral to tertiary emergency rooms.",
     whatToExpect: [
@@ -338,6 +362,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Parent Education",
     slug: "parent-education",
     description: "Simple, trustworthy answers to everyday parenting questions, so you feel confident at home.",
+    metaDescription: "Practical parenting counseling: home baby-proofing checklists, infant choke prevention advice, and WHO screen-time guidelines. Call 62625 60101.",
     whatItIs: "Practical guidance programs and counseling covering home baby-proofing, choke prevention, screen-time guidelines, and positive parenting practices.",
     whyItMatters: "Empowered parents make safer homes. Reassuring pediatric counseling helps prevent accidental injuries and supports healthy cognitive development in early childhood.",
     whatToExpect: [
@@ -365,6 +390,7 @@ export const servicesData: Record<string, ServiceItem> = {
     title: "Milestone Tracking",
     slug: "milestone-tracking",
     description: "Easy month-by-month tracking of your child's motor, speech and social milestones.",
+    metaDescription: "Structured motor, speech, and social milestone tracking at 2, 4, 6, 9, 12, 18, and 24 months to support steady child development. Call 62625 60101.",
     whatItIs: "Structured tracking of gross motor, fine motor, speech, and social skills at key checkup intervals (2, 4, 6, 9, 12, 18, and 24 months).",
     whyItMatters: "Milestone parameters are clinically validated ranges for child development. Documenting them ensures early developmental delays are addressed promptly.",
     whatToExpect: [
@@ -405,4 +431,3 @@ export const serviceIconMap: Record<string, LucideIcon> = {
   "parent-education": GraduationCap,
   "milestone-tracking": Milestone,
 };
-
