@@ -6,7 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 import { MapPin, Calendar, Phone, CheckCircle2, ChevronRight } from "lucide-react";
 
 import JsonLd from "@/components/ui/json-ld";
-import { getAreaWebPageSchema } from "@/lib/schemas";
+import { getAreaMedicalClinicSchema, getBreadcrumbSchema } from "@/lib/schemas";
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
@@ -69,15 +69,26 @@ function getServiceSlug(service: string) {
 export default async function LocalityPage({ params }: LocalityPageProps) {
   const { slug } = await params;
   const area = localitiesData[slug];
-
   if (!area) {
     notFound();
   }
 
+  const clinicSchema = getAreaMedicalClinicSchema(area.name, slug);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Home", item: "/" },
+    { name: "Areas We Serve", item: "/areas" },
+    { name: area.name, item: `/areas/${slug}` }
+  ]);
+
+  const unifiedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [clinicSchema, breadcrumbSchema]
+  };
+
   return (
     <main className="flex-1 bg-white">
       {/* Schema Injection */}
-      <JsonLd data={getAreaWebPageSchema(area.name, slug)} />
+      <JsonLd data={unifiedSchema} />
       {/* Breadcrumbs / Page Header */}
       <section className="bg-surface-tint border-b border-gray-100 py-10 relative overflow-hidden">
         {/* Background SVGs */}

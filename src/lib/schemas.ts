@@ -1,10 +1,8 @@
 import { siteConfig } from "./site-config";
 
-// T2 & T3 & T5 — Homepage Graph Builder (MedicalClinic + 2 Physicians + FAQPage in a single @graph)
+// 1. Homepage Schema Builder (MedicalClinic + FAQPage)
 export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
   const clinicId = "https://babystepsnewbornclinic.com/#clinic";
-  const drSudarshanId = "https://babystepsnewbornclinic.com/#dr-sudarshan";
-  const drManishaId = "https://babystepsnewbornclinic.com/#dr-manisha";
 
   return {
     "@context": "https://schema.org",
@@ -12,16 +10,15 @@ export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
       {
         "@type": "MedicalClinic",
         "@id": clinicId,
-        "name": "Baby Steps - Newborn & Child Clinic",
-        "medicalSpecialty": "Pediatric",
+        "name": "Baby Steps – Newborn & Child Clinic",
         "url": "https://babystepsnewbornclinic.com",
-        "logo": "https://babystepsnewbornclinic.com/images/logo/logo-horizontal.png",
-        "image": "https://babystepsnewbornclinic.com/images/clinic/exterior.jpg",
         "telephone": "+916262560101",
         "email": "contact@babystepsnewbornclinic.com",
+        "image": "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        "medicalSpecialty": ["Pediatric", "Neonatal"],
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "227/1, Pooja Colony, Neelbad",
+          "streetAddress": "227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad",
           "addressLocality": "Bhopal",
           "addressRegion": "Madhya Pradesh",
           "postalCode": "462044",
@@ -32,7 +29,6 @@ export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
           "latitude": 23.19674,
           "longitude": 77.35040
         },
-        "hasMap": "https://www.google.com/maps/place/Baby+Steps+Newborn+%26+Child+Clinic/@23.1967373,77.3504045,17z",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -56,49 +52,14 @@ export function getHomepageGraphSchema(faqs: { q: string; a: string }[]) {
           { "@type": "Place", "name": "Chuna Bhatti, Bhopal" },
           { "@type": "Place", "name": "Katara Hills, Bhopal" },
           { "@type": "Place", "name": "Bagmugaliya, Bhopal" },
-          { "@type": "Place", "name": "Lalghati, Bhopal" },
-          { "@type": "Place", "name": "Ratibad, Bhopal" }
+          { "@type": "Place", "name": "Ratibad, Bhopal" },
+          { "@type": "Place", "name": "Lalghati, Bhopal" }
         ],
         "sameAs": [
           "https://facebook.com/babystepsbhopal",
           "https://www.instagram.com/babysteps.bhopal",
           "https://youtube.com/babystepsbhopal"
-        ],
-        "employee": [
-          { "@id": drSudarshanId },
-          { "@id": drManishaId }
-        ],
-        // Manually synced with Google Business Profile on 2026-07-28. Update both this value and the visible on-page figure together.
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5.0",
-          "reviewCount": "21",
-          "bestRating": "5"
-        }
-      },
-      {
-        "@type": "Physician",
-        "@id": drSudarshanId,
-        "name": "Dr. Sudarshan Dev Arya",
-        "medicalSpecialty": "Pediatric",
-        "jobTitle": "Senior Pediatrician & Newborn Specialist",
-        "url": "https://babystepsnewbornclinic.com/doctors/dr-sudarshan-dev-arya",
-        "image": "https://babystepsnewbornclinic.com/images/doctors/dr-sudarshan-dev-arya.jpg",
-        "worksFor": { "@id": clinicId },
-        // TODO: add corrected Practo profile URLs once claimed
-        "sameAs": []
-      },
-      {
-        "@type": "Physician",
-        "@id": drManishaId,
-        "name": "Dr. Manisha Bangarwa Arya",
-        "medicalSpecialty": "Neonatal",
-        "jobTitle": "Senior Neonatologist & Pediatrician",
-        "url": "https://babystepsnewbornclinic.com/doctors/dr-manisha-bangarwa-arya",
-        "image": "https://babystepsnewbornclinic.com/images/doctors/dr-manisha-bangarwa-arya.jpg",
-        "worksFor": { "@id": clinicId },
-        // TODO: add corrected Practo profile URLs once claimed
-        "sameAs": []
+        ]
       },
       {
         "@type": "FAQPage",
@@ -123,20 +84,26 @@ export function getMedicalClinicSchema() {
   return getHomepageGraphSchema([]);
 }
 
-// T2 — Physician Schema Builder for doctor pages
-export function getPhysicianSchema(doctor: { name: string; id: string }) {
+// 2. Physician Schema Builder for doctor pages
+export function getPhysicianSchema(doctor: {
+  id: string;
+  name: string;
+  degree?: string;
+  title?: string;
+  hospital?: string;
+  image?: string;
+}) {
   const isManisha = doctor.name.includes("Manisha") || doctor.id.includes("manisha");
-  const doctorId = isManisha
-    ? "https://babystepsnewbornclinic.com/#dr-manisha"
-    : "https://babystepsnewbornclinic.com/#dr-sudarshan";
-  const doctorUrl = isManisha
-    ? "https://babystepsnewbornclinic.com/doctors/dr-manisha-bangarwa-arya"
-    : "https://babystepsnewbornclinic.com/doctors/dr-sudarshan-dev-arya";
+  const doctorSlug = isManisha ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya";
+  const doctorUrl = `https://babystepsnewbornclinic.com/doctors/${doctorSlug}`;
+  const doctorId = `${doctorUrl}#physician`;
   const doctorImage = isManisha
     ? "https://babystepsnewbornclinic.com/images/doctors/dr-manisha-bangarwa-arya.jpg"
     : "https://babystepsnewbornclinic.com/images/doctors/dr-sudarshan-dev-arya.jpg";
   const medicalSpecialty = isManisha ? "Neonatal" : "Pediatric";
-  const jobTitle = isManisha ? "Senior Neonatologist & Pediatrician" : "Senior Pediatrician & Newborn Specialist";
+  const hospitalName = isManisha
+    ? "Apollo SAGE Hospital, Bhopal"
+    : "Rainbow Children's Hospital, Bhopal";
 
   return {
     "@context": "https://schema.org",
@@ -144,22 +111,34 @@ export function getPhysicianSchema(doctor: { name: string; id: string }) {
     "@id": doctorId,
     "name": doctor.name,
     "medicalSpecialty": medicalSpecialty,
-    "jobTitle": jobTitle,
+    "alumniOf": [
+      {
+        "@type": "EducationalOrganization",
+        "name": "University of Delhi"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "Boston University School of Medicine"
+      }
+    ],
+    "worksFor": {
+      "@type": "Hospital",
+      "name": hospitalName
+    },
     "url": doctorUrl,
     "image": doctorImage,
-    "worksFor": {
+    "affiliation": {
+      "@type": "MedicalClinic",
       "@id": "https://babystepsnewbornclinic.com/#clinic"
-    },
-    // TODO: add corrected Practo profile URLs once claimed
-    "sameAs": []
+    }
   };
 }
 
-// T6 — Service Schema Builder
+// 3. Service Schema Builder
 export function getServiceSchema(service: { title: string; description?: string; whatItIs?: string; slug: string }) {
   return {
-    "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `https://babystepsnewbornclinic.com/services/${service.slug}#service`,
     "name": service.title,
     "description": service.description || service.whatItIs || `${service.title} at Baby Steps Newborn & Child Clinic in Neelbad, Bhopal.`,
     "provider": {
@@ -175,36 +154,29 @@ export function getServiceSchema(service: { title: string; description?: string;
   };
 }
 
-// T7 — Area WebPage Schema Builder (No MedicalClinic node!)
-export function getAreaWebPageSchema(areaName: string, slug: string) {
+// 4. Area MedicalClinic Schema Builder (Emits branch MedicalClinic with branchOf & areaServed)
+export function getAreaMedicalClinicSchema(areaName: string, slug: string) {
   const pageUrl = `https://babystepsnewbornclinic.com/areas/${slug}`;
   return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": pageUrl,
-        "url": pageUrl,
-        "name": `Pediatrician & Child Clinic Near ${areaName}, Bhopal`,
-        "about": {
-          "@type": "MedicalClinic",
-          "@id": "https://babystepsnewbornclinic.com/#clinic"
-        }
-      },
-      getBreadcrumbSchema([
-        { name: "Home", item: "/" },
-        { name: "Areas We Serve", item: "/areas" },
-        { name: areaName, item: `/areas/${slug}` }
-      ])
-    ]
+    "@type": "MedicalClinic",
+    "@id": `${pageUrl}#clinic`,
+    "name": `Baby Steps – Newborn & Child Clinic (${areaName})`,
+    "url": pageUrl,
+    "branchOf": {
+      "@type": "MedicalClinic",
+      "@id": "https://babystepsnewbornclinic.com/#clinic"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": `${areaName}, Bhopal`
+    }
   };
 }
 
-// Standalone FAQPage helper
+// 5. Standalone FAQPage Schema Builder
 export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string = "https://babystepsnewbornclinic.com/faqs") {
   const safeFaqs = faqs || [];
   return {
-    "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${pageUrl}#faq`,
     "url": pageUrl,
@@ -220,7 +192,7 @@ export function getFAQSchema(faqs?: { q: string; a: string }[], pageUrl: string 
   };
 }
 
-// T8 — MedicalWebPage / BlogPosting Schema Builder
+// 6. MedicalWebPage / BlogPosting Schema Builder
 export function getBlogPostingSchema(post: {
   title: string;
   excerpt: string;
@@ -234,27 +206,30 @@ export function getBlogPostingSchema(post: {
     ? new Date(post.dateModified).toISOString()
     : publishedIso;
 
-  const physicianId = post.author.includes("Manisha")
-    ? "https://babystepsnewbornclinic.com/#dr-manisha"
-    : "https://babystepsnewbornclinic.com/#dr-sudarshan";
+  const isManisha = post.author.includes("Manisha");
+  const doctorName = isManisha ? "Dr. Manisha Bangarwa Arya" : "Dr. Sudarshan Dev Arya";
+  const doctorSlug = isManisha ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya";
+  const doctorId = `https://babystepsnewbornclinic.com/doctors/${doctorSlug}#physician`;
 
   return {
-    "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}`,
+    "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}#webpage`,
     "headline": post.title,
     "description": post.excerpt,
     "url": `https://babystepsnewbornclinic.com/blog/${post.slug}`,
     "image": "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+    "inLanguage": "en-IN",
     "datePublished": publishedIso,
     "dateModified": modifiedIso,
     "author": {
       "@type": "Physician",
-      "@id": physicianId
+      "@id": doctorId,
+      "name": doctorName
     },
     "reviewedBy": {
       "@type": "Physician",
-      "@id": physicianId
+      "@id": doctorId,
+      "name": doctorName
     },
     "publisher": {
       "@type": "MedicalClinic",
@@ -267,10 +242,9 @@ export function getBlogPostingSchema(post: {
   };
 }
 
-// BreadcrumbList Schema Builder
+// 7. BreadcrumbList Schema Builder
 export function getBreadcrumbSchema(items: { name: string; item: string }[]) {
   return {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": items.map((item, index) => ({
       "@type": "ListItem",
