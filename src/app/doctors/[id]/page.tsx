@@ -21,32 +21,43 @@ export async function generateMetadata({ params }: DoctorPageProps): Promise<Met
   const doctor = siteConfig.doctors.find((d) => d.id === id);
   if (!doctor) return {};
 
+  const isSudarshan = id === "dr-sudarshan-dev-arya";
+  const title = isSudarshan
+    ? "Dr. Sudarshan Dev Arya | Senior Pediatrician Bhopal"
+    : "Dr. Manisha Bangarwa Arya | Neonatologist in Bhopal";
+
+  const description = isSudarshan
+    ? "Consult Dr. Sudarshan Dev Arya (MBBS, DCH, DNB, PGPN Boston). Senior Consultant Pediatrician at Rainbow Children's Hospital and Baby Steps Clinic Bhopal."
+    : "Consult Dr. Manisha Bangarwa Arya (MBBS, DNB, PGPN Boston, Fellowship Neonatology). Senior Neonatologist at Apollo SAGE Hospital and Baby Steps Bhopal.";
+
+  const ogImageUrl = `https://babystepsnewbornclinic.com/api/og?title=${encodeURIComponent(doctor.name)}&category=${encodeURIComponent(doctor.title)}&doctor=${encodeURIComponent(doctor.name)}`;
+
   return {
-    title: `${doctor.name} - ${doctor.degree} | Pediatrician Bhopal`,
-    description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
+    title,
+    description,
     alternates: {
       canonical: `https://babystepsnewbornclinic.com/doctors/${id}`,
     },
     openGraph: {
-      title: `${doctor.name} - ${doctor.degree} | Pediatrician Bhopal`,
-      description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
+      title,
+      description,
       url: `https://babystepsnewbornclinic.com/doctors/${id}`,
       siteName: "Baby Steps – Newborn & Child Clinic",
       images: [
         {
-          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: "Baby Steps – Newborn & Child Clinic",
+          alt: doctor.name,
         }
       ],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${doctor.name} - ${doctor.degree} | Pediatrician Bhopal`,
-      description: `Professional credentials and clinical experience profile of ${doctor.name}, ${doctor.title} at Baby Steps Clinic, Neelbad, Bhopal.`,
-      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+      title,
+      description,
+      images: [ogImageUrl],
     },
   };
 }

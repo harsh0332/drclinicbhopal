@@ -27,14 +27,14 @@ import JsonLd from "@/components/ui/json-ld";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
-  title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
-  description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
+  title: "Pediatric Services & Child Care | Baby Steps Bhopal",
+  description: "Explore comprehensive pediatric services: IAP vaccinations, newborn care, growth monitoring, and pediatric nutrition guidance in Neelbad, Bhopal.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/services",
   },
   openGraph: {
-    title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
-    description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
+    title: "Pediatric Services & Child Care | Baby Steps Bhopal",
+    description: "Explore comprehensive pediatric services: IAP vaccinations, newborn care, growth monitoring, and pediatric nutrition guidance in Neelbad, Bhopal.",
     url: "https://babystepsnewbornclinic.com/services",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pediatric Services & Treatments | Baby Steps Clinic Bhopal",
-    description: "Overview of our pediatric services: WHO-compliant vaccinations, newborn care, developmental milestone tracking, and asthma care in Neelbad, Bhopal.",
+    title: "Pediatric Services & Child Care | Baby Steps Bhopal",
+    description: "Explore comprehensive pediatric services: IAP vaccinations, newborn care, growth monitoring, and pediatric nutrition guidance in Neelbad, Bhopal.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

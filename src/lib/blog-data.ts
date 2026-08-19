@@ -4,6 +4,8 @@ export const blogData: Record<string, BlogPost> = {
   "baby-vaccination-guide": {
     title: "Complete Baby Vaccination Guide for Indian Parents",
     slug: "baby-vaccination-guide",
+    metaTitle: "Baby Vaccination Guide for Indian Parents | Baby Steps",
+    metaDescription: "Essential childhood vaccination guide for Indian parents. Learn IAP immunization timelines, cold-chain safety, and appointment planning in Bhopal.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "6 min read",
@@ -35,6 +37,8 @@ export const blogData: Record<string, BlogPost> = {
   "breastfeeding-tips-new-mothers": {
     title: "Essential Breastfeeding Tips for New Mothers",
     slug: "breastfeeding-tips-new-mothers",
+    metaTitle: "Breastfeeding Tips for New Mothers | Baby Steps Clinic",
+    metaDescription: "Practical breastfeeding advice for new mothers. Pediatrician guidance on latching techniques, feeding schedules, and lactation support in Bhopal.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "5 min read",
@@ -66,6 +70,8 @@ export const blogData: Record<string, BlogPost> = {
   "six-month-development-milestones": {
     title: "6-Month Development Milestones: What Every Parent Should Expect",
     slug: "six-month-development-milestones",
+    metaTitle: "6-Month Baby Development Milestones | Baby Steps Bhopal",
+    metaDescription: "Key 6-month infant developmental milestones. Track physical growth, cognitive cues, motor skills, and weaning guidance by senior pediatricians.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "7 min read",
@@ -97,6 +103,8 @@ export const blogData: Record<string, BlogPost> = {
   "child-vaccination-guide-india": {
     title: "Complete Baby Vaccination Guide for Indian Parents",
     slug: "child-vaccination-guide-india",
+    metaTitle: "Child Vaccination Guide in India | Baby Steps Clinic",
+    metaDescription: "Comprehensive guide to childhood immunization schedules in India. Understand essential vs optional vaccines and cold-chain standards at Baby Steps.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "7 min read",
@@ -128,6 +136,8 @@ export const blogData: Record<string, BlogPost> = {
   "iap-vaccination-schedule-chart": {
     title: "IAP Vaccination Schedule Chart 2026: Age-Wise Immunization Guide",
     slug: "iap-vaccination-schedule-chart",
+    metaTitle: "Latest IAP Vaccination Schedule Chart | Baby Steps",
+    metaDescription: "Official IAP childhood immunization chart for Indian parents. Complete age-wise vaccine schedule from birth to 18 years with pediatric insights.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "8 min read",
@@ -159,6 +169,8 @@ export const blogData: Record<string, BlogPost> = {
   "missed-vaccine-what-to-do": {
     title: "Missed a Childhood Vaccine? Catch-Up Immunization Rules Explained",
     slug: "missed-vaccine-what-to-do",
+    metaTitle: "Missed Baby Vaccine? Catch-Up Guide | Baby Steps Bhopal",
+    metaDescription: "What to do if your baby missed a scheduled vaccination. Pediatric catch-up guidelines, safety rules, and rescheduling advice by Baby Steps Clinic.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "6 min read",
@@ -190,6 +202,8 @@ export const blogData: Record<string, BlogPost> = {
   "vaccine-side-effects-fever-management": {
     title: "Post-Vaccination Fever & Side Effects: Parent Care Guide",
     slug: "vaccine-side-effects-fever-management",
+    metaTitle: "Baby Vaccine Side Effects & Fever Care | Baby Steps",
+    metaDescription: "Managing fever, swelling, and fussiness after childhood vaccination. Safe home remedies and pediatrician-approved care tips by Baby Steps Clinic.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "5 min read",
@@ -221,6 +235,8 @@ export const blogData: Record<string, BlogPost> = {
   "painless-vaccination-for-babies": {
     title: "Painless vs Painful Vaccine for Babies: Differences, Pros & Cons",
     slug: "painless-vaccination-for-babies",
+    metaTitle: "Painless Vaccination for Babies Explained | Baby Steps",
+    metaDescription: "Understand painless (acellular) vs conventional baby vaccines in India. Efficacy, fever comparison, and pediatrician recommendations in Bhopal.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
     readTime: "7 min read",
@@ -277,6 +293,8 @@ export const blogData: Record<string, BlogPost> = {
   "baby-weight-gain-tips": {
     title: "Baby Weight Gain Tips: Healthy Infant Nutrition & WHO Percentile Trajectory",
     slug: "baby-weight-gain-tips",
+    metaTitle: "Healthy Baby Weight Gain Tips for Parents | Baby Steps",
+    metaDescription: "Pediatrician advice on healthy infant weight gain. Learn WHO growth chart percentiles, caloric intake, and complementary feeding strategies.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -308,6 +326,8 @@ export const blogData: Record<string, BlogPost> = {
   "dengue-in-children-prevention-care": {
     title: "Dengue Fever in Children: Symptoms, Warning Signs & Hydration Guidelines",
     slug: "dengue-in-children-prevention-care",
+    metaTitle: "Dengue Fever in Children: Signs & Care | Baby Steps",
+    metaDescription: "Pediatric guide on recognizing early dengue symptoms in children, monitoring warning signs, preventing dehydration, and home recovery protocols.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "6 min read",
@@ -339,6 +359,8 @@ export const blogData: Record<string, BlogPost> = {
   "monsoon-child-care-tips": {
     title: "Monsoon Child Care Guide: Preventing Flu, Infections & Waterborne Illnesses",
     slug: "monsoon-child-care-tips",
+    metaTitle: "Monsoon Child Care & Infection Prevention | Baby Steps",
+    metaDescription: "Essential monsoon health practices for babies and children to prevent seasonal viral fevers, stomach infections, and mosquito-borne illnesses.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -370,6 +392,8 @@ export const blogData: Record<string, BlogPost> = {
   "loose-motion-in-babies-care": {
     title: "Loose Motion in Babies: Dehydration Prevention, ORS & Parent Guidelines",
     slug: "loose-motion-in-babies-care",
+    metaTitle: "Loose Motion in Babies: ORS & Home Care | Baby Steps",
+    metaDescription: "Clinical guidance on managing pediatric diarrhea, calculating WHO-standard ORS fluid intake, and recognizing dehydration warning signs in babies.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -401,6 +425,8 @@ export const blogData: Record<string, BlogPost> = {
   "child-cough-cold-home-care": {
     title: "Child Cough & Cold Care: Safe Home Guidelines & When to Consult",
     slug: "child-cough-cold-home-care",
+    metaTitle: "Child Cough & Cold: Safe Home Care | Baby Steps Bhopal",
+    metaDescription: "Pediatric safe-care advice for managing cold and cough in infants and toddlers without unprescribed OTC medications at Baby Steps Clinic Bhopal.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -432,6 +458,8 @@ export const blogData: Record<string, BlogPost> = {
   "child-not-eating-food-picky-eater": {
     title: "Child Not Eating Food? Pediatric Nutritionist Advice for Picky Eaters",
     slug: "child-not-eating-food-picky-eater",
+    metaTitle: "Child Not Eating Food? Picky Eater Help | Baby Steps",
+    metaDescription: "Clinical strategies for managing toddler picky eating, establishing healthy mealtime routines, and meeting daily nutritional needs for children.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -463,6 +491,8 @@ export const blogData: Record<string, BlogPost> = {
   "vitamin-d-iron-deficiency-kids": {
     title: "Vitamin D & Iron Deficiency in Children: Clinical Signs & Dietary Sources",
     slug: "vitamin-d-iron-deficiency-kids",
+    metaTitle: "Vitamin D & Iron Deficiency in Kids | Baby Steps Bhopal",
+    metaDescription: "Identifying early clinical signs of Vitamin D and Iron deficiency in infants and children, supplementation guidelines, and fortified dietary advice.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -494,6 +524,8 @@ export const blogData: Record<string, BlogPost> = {
   "child-immunity-booster-guide": {
     title: "Child Immunity Booster Guide: Science-Backed Habits for Healthy Kids",
     slug: "child-immunity-booster-guide",
+    metaTitle: "Child Immunity Booster Guide for Parents | Baby Steps",
+    metaDescription: "Evidence-based strategies to build natural childhood immunity through WHO-scheduled vaccinations, balanced nutrition, and healthy sleep hygiene.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
     readTime: "5 min read",
@@ -526,6 +558,8 @@ export const blogData: Record<string, BlogPost> = {
   "baby-vaccination-schedule-chart-india": {
     title: "Complete Baby Vaccination Schedule (0–18 Years): IAP Chart for Indian Parents",
     slug: "baby-vaccination-schedule-chart-india",
+    metaTitle: "Baby Vaccination Schedule India (0-18y) | Baby Steps",
+    metaDescription: "Complete age-wise childhood vaccination chart from birth to 18 years in India. Understand essential vaccines, booster doses, and due dates at Baby Steps.",
     date: "2026-07-21",
     dateModified: "2026-07-21",
     readTime: "6 min read",
@@ -589,6 +623,8 @@ export const blogData: Record<string, BlogPost> = {
   "government-vs-private-vaccination-baby": {
     title: "Government vs Private Vaccination: Which Should You Choose for Your Baby?",
     slug: "government-vs-private-vaccination-baby",
+    metaTitle: "Govt vs Private Baby Vaccination Guide | Baby Steps",
+    metaDescription: "Detailed comparison between government UIP vaccines and private clinic immunization in India. Learn key differences in combinations, pricing, and timing.",
     date: "2026-07-19",
     dateModified: "2026-07-19",
     readTime: "5 min read",
@@ -627,6 +663,8 @@ export const blogData: Record<string, BlogPost> = {
   "newborn-care-at-home-guide": {
     title: "Newborn Care at Home: A First-Week and First-Month Guide for New Parents",
     slug: "newborn-care-at-home-guide",
+    metaTitle: "Newborn Care at Home: First Month Guide | Baby Steps",
+    metaDescription: "Calm, practical newborn care guide for new parents. Essential advice on umbilical cord care, sponge bathing, feeding cues, and sleep safety.",
     date: "2026-07-17",
     dateModified: "2026-07-17",
     readTime: "7 min read",
@@ -676,6 +714,8 @@ export const blogData: Record<string, BlogPost> = {
   "baby-fever-when-to-worry": {
     title: "Baby Fever: When to Worry and When to See a Child Doctor",
     slug: "baby-fever-when-to-worry",
+    metaTitle: "Baby Fever: When to Worry & See a Doctor | Baby Steps",
+    metaDescription: "Pediatrician guide on managing baby fever safely at home. Learn temperature measurement, safe paracetamol use, and danger signs to watch for.",
     date: "2026-07-15",
     dateModified: "2026-07-15",
     readTime: "5 min read",
@@ -726,6 +766,8 @@ export const blogData: Record<string, BlogPost> = {
   "is-my-child-growing-normally": {
     title: "Is My Child Growing Normally? Height, Weight and Milestone Guide",
     slug: "is-my-child-growing-normally",
+    metaTitle: "Is My Child Growing Normally? Growth Guide | Baby Steps",
+    metaDescription: "Understand how pediatricians evaluate height, weight, and developmental milestones using WHO growth charts. Track your child's progress easily.",
     date: "2026-07-13",
     dateModified: "2026-07-13",
     readTime: "6 min read",
@@ -776,6 +818,8 @@ export const blogData: Record<string, BlogPost> = {
   "breastfeeding-basics-guide": {
     title: "Breastfeeding Basics: How Often to Feed and Common Problems Solved",
     slug: "breastfeeding-basics-guide",
+    metaTitle: "Breastfeeding Basics & Latching Guide | Baby Steps",
+    metaDescription: "Essential newborn breastfeeding guide for mothers. Overcome common nursing challenges, sore nipples, engorgement, and low milk supply worries.",
     date: "2026-07-11",
     dateModified: "2026-07-11",
     readTime: "6 min read",
@@ -827,6 +871,8 @@ export const blogData: Record<string, BlogPost> = {
   "skip-delay-child-vaccination-risks": {
     title: "Can I Skip or Delay My Child's Vaccination? The Risks Explained",
     slug: "skip-delay-child-vaccination-risks",
+    metaTitle: "Delaying Child Vaccination: Risks & Tips | Baby Steps",
+    metaDescription: "Understanding the clinical risks of skipping or delaying childhood vaccines. Practical catch-up advice by senior pediatricians at Baby Steps.",
     date: "2026-07-09",
     dateModified: "2026-07-09",
     readTime: "5 min read",
@@ -866,6 +912,8 @@ export const blogData: Record<string, BlogPost> = {
   "baby-cough-cold-home-care": {
     title: "Baby Cough and Cold: Home Care vs When to See a Doctor",
     slug: "baby-cough-cold-home-care",
+    metaTitle: "Baby Cough & Cold: Home Care vs Doctor | Baby Steps",
+    metaDescription: "Pediatric advice on comforting a baby with cough and nasal congestion. Learn effective home remedies and when to seek pediatrician consultation.",
     date: "2026-07-07",
     dateModified: "2026-07-07",
     readTime: "5 min read",
@@ -916,6 +964,8 @@ export const blogData: Record<string, BlogPost> = {
   "newborn-skin-eyes-cord-care": {
     title: "Newborn Skin, Eyes and Umbilical Cord Care: The \"Weird but Normal\" Guide",
     slug: "newborn-skin-eyes-cord-care",
+    metaTitle: "Newborn Skin, Eyes & Cord Care Advice | Baby Steps",
+    metaDescription: "Pediatrician advice for delicate newborn skincare, sticky eye hygiene, and dry umbilical cord healing during your baby's first weeks at home in Bhopal.",
     date: "2026-07-05",
     dateModified: "2026-07-05",
     readTime: "6 min read",
@@ -962,6 +1012,8 @@ export const blogData: Record<string, BlogPost> = {
   "child-vaccination-cost-bhopal-guide": {
     title: "Child Vaccination Cost in Bhopal: A Simple Parent's Guide",
     slug: "child-vaccination-cost-bhopal-guide",
+    metaTitle: "Child Vaccination Cost in Bhopal Guide | Baby Steps",
+    metaDescription: "Transparent guide to childhood immunization costs in Bhopal. Understand vaccine pricing factors, painless combination shots, and schedule planning.",
     date: "2026-07-03",
     dateModified: "2026-07-03",
     readTime: "5 min read",
@@ -1012,6 +1064,8 @@ export const blogData: Record<string, BlogPost> = {
   "child-flu-symptoms-care-vaccine-guide": {
     title: "Flu in Children: Symptoms, Home Care, Red Flags & Vaccine Guide (Pediatrician Advice)",
     slug: "child-flu-symptoms-care-vaccine-guide",
+    metaTitle: "Flu in Children: Symptoms & Vaccine Guide | Baby Steps",
+    metaDescription: "Pediatrician guide on seasonal flu and influenza in children. Learn cold vs flu symptoms, safe home care, fever red flags, and IAP flu vaccine rules.",
     date: "2026-08-19",
     dateModified: "2026-08-19",
     readTime: "7 min read",

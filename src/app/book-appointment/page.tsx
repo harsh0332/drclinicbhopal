@@ -10,14 +10,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
-  description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
+  title: "Book Pediatric Consultation in Bhopal | Baby Steps",
+  description: "Schedule a consultation or vaccination visit at Baby Steps Clinic in Neelbad, Bhopal. Easy direct booking via online form, WhatsApp, or instant phone call.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/book-appointment",
   },
   openGraph: {
-    title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
-    description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
+    title: "Book Pediatric Consultation in Bhopal | Baby Steps",
+    description: "Schedule a consultation or vaccination visit at Baby Steps Clinic in Neelbad, Bhopal. Easy direct booking via online form, WhatsApp, or instant phone call.",
     url: "https://babystepsnewbornclinic.com/book-appointment",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book Pediatric Appointment | Baby Steps Clinic Bhopal",
-    description: "Request a consultation or vaccination slot online at Baby Steps Clinic Neelbad. Safe, direct booking options via form, WhatsApp, or phone.",
+    title: "Book Pediatric Consultation in Bhopal | Baby Steps",
+    description: "Schedule a consultation or vaccination visit at Baby Steps Clinic in Neelbad, Bhopal. Easy direct booking via online form, WhatsApp, or instant phone call.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

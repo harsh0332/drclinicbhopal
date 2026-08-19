@@ -5,14 +5,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | Baby Steps Newborn & Child Clinic Bhopal",
-  description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer and online booking conditions.",
+  title: "Terms of Use & Medical Disclaimer | Baby Steps Bhopal",
+  description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer, booking policies, and user agreements.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/terms",
   },
   openGraph: {
-    title: "Terms of Use | Baby Steps Newborn & Child Clinic Bhopal",
-    description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer and online booking conditions.",
+    title: "Terms of Use & Medical Disclaimer | Baby Steps Bhopal",
+    description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer, booking policies, and user agreements.",
     url: "https://babystepsnewbornclinic.com/terms",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terms of Use | Baby Steps Newborn & Child Clinic Bhopal",
-    description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer and online booking conditions.",
+    title: "Terms of Use & Medical Disclaimer | Baby Steps Bhopal",
+    description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer, booking policies, and user agreements.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

@@ -9,14 +9,14 @@ import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 
 export const metadata: Metadata = {
-  title: "Clinic Facility & Gallery | Baby Steps Bhopal",
-  description: "Take a virtual tour of Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our waiting area, consultation room, and vaccine cold-chain refrigeration units.",
+  title: "Clinic Facility & Tour | Baby Steps Neelbad Bhopal",
+  description: "Explore Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our child-friendly waiting area, consultation suites, and cold-chain vaccine equipment.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/gallery",
   },
   openGraph: {
-    title: "Clinic Facility & Gallery | Baby Steps Bhopal",
-    description: "Take a virtual tour of Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our waiting area, consultation room, and vaccine cold-chain refrigeration units.",
+    title: "Clinic Facility & Tour | Baby Steps Neelbad Bhopal",
+    description: "Explore Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our child-friendly waiting area, consultation suites, and cold-chain vaccine equipment.",
     url: "https://babystepsnewbornclinic.com/gallery",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clinic Facility & Gallery | Baby Steps Bhopal",
-    description: "Take a virtual tour of Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our waiting area, consultation room, and vaccine cold-chain refrigeration units.",
+    title: "Clinic Facility & Tour | Baby Steps Neelbad Bhopal",
+    description: "Explore Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our child-friendly waiting area, consultation suites, and cold-chain vaccine equipment.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

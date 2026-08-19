@@ -6,14 +6,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Baby Steps Newborn & Child Clinic Bhopal",
-  description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
+  title: "Privacy Policy | Baby Steps Child Clinic in Bhopal",
+  description: "Learn how Baby Steps Clinic protects your personal data and clinical booking information in strict compliance with medical confidentiality guidelines.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/privacy",
   },
   openGraph: {
-    title: "Privacy Policy | Baby Steps Newborn & Child Clinic Bhopal",
-    description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
+    title: "Privacy Policy | Baby Steps Child Clinic in Bhopal",
+    description: "Learn how Baby Steps Clinic protects your personal data and clinical booking information in strict compliance with medical confidentiality guidelines.",
     url: "https://babystepsnewbornclinic.com/privacy",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy | Baby Steps Newborn & Child Clinic Bhopal",
-    description: "Learn how Baby Steps Clinic protects your personal information and clinical booking data. We adhere to medical confidentiality guidelines.",
+    title: "Privacy Policy | Baby Steps Child Clinic in Bhopal",
+    description: "Learn how Baby Steps Clinic protects your personal data and clinical booking information in strict compliance with medical confidentiality guidelines.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

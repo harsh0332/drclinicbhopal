@@ -24,8 +24,8 @@ export const localitiesData: Record<string, LocalityItem> = {
     slug: "kolar-road",
     h1: "Child Specialist in Kolar Road, Bhopal",
     subtitle: "Clinical Newborn & Pediatric Care for families in Kolar Road",
-    metaTitle: "Child Specialist in Kolar Road, Bhopal | Baby Steps",
-    metaDescription: "Looking for a trusted child specialist near Kolar Road? Sunday clinic (10 AM–1 PM) & evening care in Neelbad (~20 min). Call +91 62625 60101.",
+    metaTitle: "Pediatrician in Kolar Road, Bhopal | Baby Steps",
+    metaDescription: "Pediatrician care near Kolar Road, Bhopal. Expert newborn checkups, IAP child vaccinations, and growth assessments at Baby Steps Clinic. Call 62625 60101.",
     introHeading: "Comprehensive Pediatric Care for Kolar Road Families",
     introParagraphs: [
       "Kolar Road represents one of the largest and fastest-growing residential belts in South Bhopal, home to thousands of young families, working parents, and newborns. For parents residing along the Kolar Road corridor, finding dedicated pediatric care that fits around work schedules without long hospital waiting times is essential. Baby Steps – Newborn & Child Clinic provides comprehensive outpatient pediatric and neonatal consultations located approximately 20 minutes from Kolar Road in nearby Neelbad.",
@@ -79,7 +79,7 @@ export const localitiesData: Record<string, LocalityItem> = {
     h1: "Pediatrician in Bawadia Kalan, Bhopal",
     subtitle: "Clinical Newborn & Pediatric Care for families in Bawadia Kalan",
     metaTitle: "Pediatrician in Bawadia Kalan, Bhopal | Baby Steps",
-    metaDescription: "Senior pediatrician & neonatologist near Bawadia Kalan (~25 min drive). Dual specialist care under one roof in Neelbad. Call +91 62625 60101.",
+    metaDescription: "Child specialist & pediatric care near Bawadia Kalan, Bhopal. Comprehensive newborn care, IAP vaccines & consultations at Baby Steps Clinic. Call 62625 60101.",
     introHeading: "Specialist Child & Newborn Care for Bawadia Kalan Families",
     introParagraphs: [
       "Bawadia Kalan is a premier residential locality in South Bhopal with a large population of young families and newborns. When infants require medical attention, parents often face a dilemma: visiting a general pediatrician for older children while seeking a separate neonatologist for newborn or preterm follow-ups.",
@@ -133,8 +133,8 @@ export const localitiesData: Record<string, LocalityItem> = {
     slug: "neelbad",
     h1: "Pediatrician in Neelbad, Bhopal",
     subtitle: "Clinical Newborn & Pediatric Care for families in Neelbad",
-    metaTitle: "Pediatrician in Neelbad, Bhopal | Baby Steps Clinic",
-    metaDescription: "Local pediatrician in Neelbad, Bhopal. Zero transit stress for sick infants. Walk-ins welcome Mon–Sat 10AM–9PM, Sun 10AM–1PM. Call +91 62625 60101.",
+    metaTitle: "Pediatrician in Neelbad, Bhopal | Baby Steps",
+    metaDescription: "Experienced newborn & child care in Neelbad, Bhopal. IAP vaccination, growth monitoring, and pediatric consultations at Baby Steps Clinic near Durga Mandir.",
     introHeading: "Trusted Pediatric & Newborn Care in the Heart of Neelbad",
     introParagraphs: [
       "For parents living in Neelbad and surrounding neighborhoods, having direct, immediate access to senior pediatric care right in the locality is invaluable. When an infant has a sudden fever, feeding difficulty, or requires scheduled vaccinations, avoiding long commutes across Bhopal prevents unnecessary stress for both child and parents.",

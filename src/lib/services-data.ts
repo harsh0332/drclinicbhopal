@@ -23,6 +23,7 @@ export interface ServiceFAQ {
 export interface ServiceItem {
   title: string;
   slug: string;
+  metaTitle: string;
   description: string;
   metaDescription: string;
   whatItIs: string;
@@ -36,8 +37,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "vaccination-clinic": {
     title: "Vaccination Clinic",
     slug: "vaccination-clinic",
+    metaTitle: "Vaccination Clinic in Neelbad, Bhopal | Baby Steps",
     description: "On-schedule, as-painless-as-possible immunisation with a properly maintained cold chain, so your child stays protected at every age.",
-    metaDescription: "Complete IAP schedule with Indian and imported brands, including Meningococcal, Rabies and HPV. WHO cold chain at 2–8°C, monitored. Call 62625 60101.",
+    metaDescription: "Complete childhood vaccination in Neelbad, Bhopal. IAP cold-chain vaccines with digital reminder tracking at Baby Steps Clinic. Book your slot today.",
     whatItIs: "A dedicated immunizations service covering routine, catch-up, and seasonal vaccines from birth through adolescence. We stock the complete Indian Academy of Pediatrics (IAP) recommended immunisation schedule, including vaccines that many clinics only supply on order — Meningococcal, Rabies and HPV among them. Both Indian and imported brands are available, and our pediatricians explain the options for your child before administration. All vaccines are stored under WHO-compliant cold-chain conditions in medical-grade refrigeration with continuous temperature logs.",
     whyItMatters: "Immunization is the most effective clinical method to build immunity against life-threatening childhood conditions including polio, tuberculosis, measles, and hepatitis. Proper cold-chain storage preserves vaccine potency.",
     whatToExpect: [
@@ -81,8 +83,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "newborn-care": {
     title: "Newborn Care",
     slug: "newborn-care",
+    metaTitle: "Newborn Care Clinic in Neelbad, Bhopal | Baby Steps",
     description: "Gentle first-days care for your baby — feeding, weight and jaundice checks, plus reassurance for new parents.",
-    metaDescription: "Clinical neonatal exams across the first 28 days: weight plotting, head circumference, jaundice screening, and cord healing checks. Call 62625 60101.",
+    metaDescription: "Specialized newborn care in Neelbad, Bhopal. Expert weight checks, jaundice screening, and developmental support by senior neonatologists at Baby Steps.",
     whatItIs: "Specialized pediatric monitoring and wellness examinations during the critical first 28 days of life (the neonatal period). We track initial reflexes, growth curves, and metabolic indicators.",
     whyItMatters: "The neonatal phase involves rapid physiological adaptations. Early clinical monitoring identifies feeding problems, neonatal jaundice, and metabolic conditions early to prevent complications.",
     whatToExpect: [
@@ -109,8 +112,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "nicu-follow-up": {
     title: "NICU Follow-up",
     slug: "nicu-follow-up",
+    metaTitle: "NICU Follow-up Clinic in Neelbad, Bhopal | Baby Steps",
     description: "Close, specialised follow-up for babies who needed intensive care, tracking growth and development after discharge.",
-    metaDescription: "Specialized post-discharge surveillance for preterm and low-birth-weight infants with growth tracking adjusted for corrected age. Call 62625 60101.",
+    metaDescription: "Specialized NICU follow-up in Neelbad, Bhopal. Comprehensive developmental and respiratory care for premature infants by fellowship-trained specialists.",
     whatItIs: "Specialized clinical surveillance for premature infants, low birth weight babies, or newborns discharged from neonatal intensive care units (NICUs).",
     whyItMatters: "NICU graduates have higher risks for developmental delays, feeding difficulties, and respiratory complications. Regular clinical follow-ups facilitate early physical and cognitive support.",
     whatToExpect: [
@@ -137,8 +141,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "growth-monitoring": {
     title: "Growth Monitoring",
     slug: "growth-monitoring",
+    metaTitle: "Child Growth Monitoring in Neelbad, Bhopal | Baby Steps",
     description: "Regular height, weight and head-circumference tracking against WHO charts to ensure your child is growing just right.",
-    metaDescription: "Track child height, weight, and head circumference against official WHO percentile curves to identify growth faltering early. Call 62625 60101.",
+    metaDescription: "Clinical growth monitoring in Neelbad, Bhopal. WHO percentile tracking for height, weight, and head circumference at Baby Steps Newborn & Child Clinic.",
     whatItIs: "Routine physical growth screening at scheduled intervals to plot weight-for-age, height-for-age, and head circumference against World Health Organization (WHO) growth charts.",
     whyItMatters: "Consistent plotting detects growth faltering, childhood obesity, and metabolic conditions early. Deviations from percentile curves are key clinical indicators of health shifts.",
     whatToExpect: [
@@ -165,8 +170,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "child-nutrition": {
     title: "Child Nutrition",
     slug: "child-nutrition",
+    metaTitle: "Child Nutrition Guidance in Neelbad, Bhopal | Baby Steps",
     description: "Practical, age-wise feeding and diet guidance — from starting solids to help with fussy eaters.",
-    metaDescription: "Evidence-based guidance on starting solids at 6 months, balanced weaning diets, toddler picky eating, and deficiency screening. Call 62625 60101.",
+    metaDescription: "Pediatric nutrition counseling in Neelbad, Bhopal. Practical weaning advice, picky eating solutions, and diet plans by experienced child specialists.",
     whatItIs: "Expert dietary guidance covering healthy feeding habits starting at 6 months, weaning practices, picky eating, and managing micronutrient needs.",
     whyItMatters: "Adequate macro- and micronutrient intake is required for brain development, bone density, and immune function. Balanced nutrition counseling prevents stunting and wasting.",
     whatToExpect: [
@@ -193,8 +199,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "development-assessment": {
     title: "Development Assessment",
     slug: "development-assessment",
+    metaTitle: "Development Assessment in Neelbad, Bhopal | Baby Steps",
     description: "Milestone and developmental checks to spot and support any delays early, with warmth and patience.",
-    metaDescription: "Clinical screening across gross motor, fine motor, speech, and social domains to detect and address developmental delays early. Call 62625 60101.",
+    metaDescription: "Child development assessment in Neelbad, Bhopal. Structured milestone screening and early developmental intervention support at Baby Steps Clinic.",
     whatItIs: "Clinical screening of developmental milestones across gross motor, fine motor, speech/language, and personal-social domains.",
     whyItMatters: "Early identification of motor delays, language delays, or developmental delays allows for early intervention when brain plasticity is highest.",
     whatToExpect: [
@@ -221,8 +228,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "breastfeeding-counseling": {
     title: "Breastfeeding Counseling",
     slug: "breastfeeding-counseling",
+    metaTitle: "Breastfeeding Counseling in Neelbad, Bhopal | Baby Steps",
     description: "Hands-on latch, supply and feeding support so breastfeeding feels easier for you and your baby.",
-    metaDescription: "One-on-one lactation support covering latch technique, infant swallowing coordination, engorgement care, and milk storage guidance. Call 62625 60101.",
+    metaDescription: "Lactation and breastfeeding counseling in Neelbad, Bhopal. Professional latch support and newborn feeding guidance by certified pediatric consultants.",
     whatItIs: "Clinical support for breastfeeding mothers covering latch techniques, positions, maternal nutrition, and managing lactation challenges.",
     whyItMatters: "Exclusive breastfeeding is recommended for the first 6 months. Lactation support resolves maternal discomfort (like sore nipples or breast engorgement) and ensures the infant receives adequate nutrition.",
     whatToExpect: [
@@ -249,8 +257,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "fever-management": {
     title: "Fever Management",
     slug: "fever-management",
+    metaTitle: "Pediatric Fever Care in Neelbad, Bhopal | Baby Steps",
     description: "Clear guidance on managing your child's fever safely at home — and knowing exactly when to come in.",
-    metaDescription: "Clinical evaluation of child fevers, infection source screening, and weight-based medication dosage guidelines for safe home care. Call 62625 60101.",
+    metaDescription: "Pediatric fever care in Neelbad, Bhopal. Evidence-based diagnosis, infection screening, and safe management protocols at Baby Steps Child Clinic.",
     whatItIs: "Clinical evaluation, monitoring, and fever management guidelines for pediatric patients presenting with elevated temperatures.",
     whyItMatters: "Fever is an immune response, not a disease. Clinical evaluation identifies underlying viral or bacterial infections, ensuring safe management and avoiding self-medication risks.",
     whatToExpect: [
@@ -277,8 +286,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "allergy-asthma-care": {
     title: "Allergy & Asthma Care",
     slug: "allergy-asthma-care",
+    metaTitle: "Child Allergy & Asthma in Neelbad, Bhopal | Baby Steps",
     description: "Diagnosis and ongoing care for allergies, wheezing and asthma, so your child breathes easy.",
-    metaDescription: "Clinical care for childhood asthma, recurrent wheezing, and allergic rhinitis, including spacer training and custom Action Plans. Call 62625 60101.",
+    metaDescription: "Pediatric allergy and asthma care in Neelbad, Bhopal. Wheezing management, trigger identification, and customized treatment plans for children.",
     whatItIs: "Long-term monitoring and treatment guidelines for pediatric asthma, recurrent wheezing, allergic rhinitis, and skin allergies.",
     whyItMatters: "Uncontrolled asthma affects school attendance and lung development. Proper inhaler techniques and allergen management reduce acute exacerbations.",
     whatToExpect: [
@@ -305,8 +315,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "adolescent-health": {
     title: "Adolescent Health",
     slug: "adolescent-health",
+    metaTitle: "Adolescent Health Care in Neelbad, Bhopal | Baby Steps",
     description: "Confidential, caring support for teens — growth, puberty, nutrition and overall wellbeing.",
-    metaDescription: "Confidential healthcare for ages 10 to 18: pubertal growth monitoring, anemia screening, posture advice, and Tdap or HPV vaccines. Call 62625 60101.",
+    metaDescription: "Adolescent health guidance in Neelbad, Bhopal. Puberty assessments, nutritional counseling, and teenage wellness care at Baby Steps Child Clinic.",
     whatItIs: "Clinical counseling and health checkups for adolescents (ages 10-18) covering growth spurts, pubertal changes, and lifestyle health.",
     whyItMatters: "Adolescence involves rapid physical and emotional transitions. Safe clinical guidance helps monitor thyroid changes, nutritional requirements, and emotional wellbeing.",
     whatToExpect: [
@@ -333,8 +344,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "emergency-child-care": {
     title: "Emergency Child Care",
     slug: "emergency-child-care",
+    metaTitle: "Emergency Child Care in Neelbad, Bhopal | Baby Steps",
     description: "Prompt attention for urgent childhood concerns, with clear advice on when a hospital visit is needed.",
-    metaDescription: "Daytime pediatric emergency assessment, vital signs triage, febrile seizure stabilization, and coordinated hospital referrals. Call 62625 60101.",
+    metaDescription: "Daytime urgent pediatric care in Neelbad, Bhopal. Rapid assessment for acute fevers, respiratory distress, and dehydration at Baby Steps Clinic.",
     whatItIs: "Immediate clinical assessment, stabilization, and triage guidelines for acutely ill children presenting during clinic hours.",
     whyItMatters: "Accidents, severe breathing difficulty, or dehydration require rapid clinical response. Prompt triage helps stabilize children before safe referral to tertiary emergency rooms.",
     whatToExpect: [
@@ -361,8 +373,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "parent-education": {
     title: "Parent Education",
     slug: "parent-education",
+    metaTitle: "Parent Health Education in Neelbad, Bhopal | Baby Steps",
     description: "Simple, trustworthy answers to everyday parenting questions, so you feel confident at home.",
-    metaDescription: "Practical parenting counseling: home baby-proofing checklists, infant choke prevention advice, and WHO screen-time guidelines. Call 62625 60101.",
+    metaDescription: "Parent education consultations in Neelbad, Bhopal. Clear, practical guidance on newborn care, illness prevention, and child safety at Baby Steps.",
     whatItIs: "Practical guidance programs and counseling covering home baby-proofing, choke prevention, screen-time guidelines, and positive parenting practices.",
     whyItMatters: "Empowered parents make safer homes. Reassuring pediatric counseling helps prevent accidental injuries and supports healthy cognitive development in early childhood.",
     whatToExpect: [
@@ -389,8 +402,9 @@ export const servicesData: Record<string, ServiceItem> = {
   "milestone-tracking": {
     title: "Milestone Tracking",
     slug: "milestone-tracking",
+    metaTitle: "Milestone Tracking Care in Neelbad, Bhopal | Baby Steps",
     description: "Easy month-by-month tracking of your child's motor, speech and social milestones.",
-    metaDescription: "Structured motor, speech, and social milestone tracking at 2, 4, 6, 9, 12, 18, and 24 months to support steady child development. Call 62625 60101.",
+    metaDescription: "Child milestone tracking in Neelbad, Bhopal. Periodic developmental checkups to monitor physical, motor, and speech progress at Baby Steps Clinic.",
     whatItIs: "Structured tracking of gross motor, fine motor, speech, and social skills at key checkup intervals (2, 4, 6, 9, 12, 18, and 24 months).",
     whyItMatters: "Milestone parameters are clinically validated ranges for child development. Documenting them ensures early developmental delays are addressed promptly.",
     whatToExpect: [

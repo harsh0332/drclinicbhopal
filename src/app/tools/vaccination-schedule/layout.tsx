@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Child Vaccination Schedule & Immunization Chart | Baby Steps Clinic",
-  description: "View complete age-wise childhood vaccination schedule based on latest IAP & WHO guidelines. Plan immunization visits online in Bhopal.",
+  title: "Child Vaccination Schedule Calculator | Baby Steps",
+  description: "Generate a personalized childhood immunization chart based on official IAP guidelines. Calculate exact due dates for your baby's vaccines online.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/tools/vaccination-schedule",
   },
   openGraph: {
-    title: "Child Vaccination Schedule & Immunization Chart | Baby Steps Clinic",
-    description: "View complete age-wise childhood vaccination schedule based on latest IAP & WHO guidelines. Plan immunization visits online in Bhopal.",
+    title: "Child Vaccination Schedule Calculator | Baby Steps",
+    description: "Generate a personalized childhood immunization chart based on official IAP guidelines. Calculate exact due dates for your baby's vaccines online.",
     url: "https://babystepsnewbornclinic.com/tools/vaccination-schedule",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Child Vaccination Schedule & Immunization Chart | Baby Steps Clinic",
-    description: "View complete age-wise childhood vaccination schedule based on latest IAP & WHO guidelines. Plan immunization visits online in Bhopal.",
+    title: "Child Vaccination Schedule Calculator | Baby Steps",
+    description: "Generate a personalized childhood immunization chart based on official IAP guidelines. Calculate exact due dates for your baby's vaccines online.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

@@ -12,14 +12,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Pediatric Care Across South Bhopal | Baby Steps Newborn & Child Clinic",
-  description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, Chuna Bhatti, Katara Hills, Bagmugaliya, Lalghati, and AIIMS area.",
+  title: "Pediatric Clinic Serving South Bhopal | Baby Steps",
+  description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, and Katara Hills areas.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/areas",
   },
   openGraph: {
-    title: "Pediatric Care Across South Bhopal | Baby Steps Clinic",
-    description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, Chuna Bhatti, Katara Hills, Bagmugaliya, Lalghati, and AIIMS area.",
+    title: "Pediatric Clinic Serving South Bhopal | Baby Steps",
+    description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, and Katara Hills areas.",
     url: "https://babystepsnewbornclinic.com/areas",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pediatric Care Across South Bhopal | Baby Steps Clinic",
-    description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, Chuna Bhatti, Katara Hills, Bagmugaliya, Lalghati, and AIIMS area.",
+    title: "Pediatric Clinic Serving South Bhopal | Baby Steps",
+    description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, and Katara Hills areas.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

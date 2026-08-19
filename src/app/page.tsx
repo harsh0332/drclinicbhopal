@@ -42,14 +42,14 @@ import JsonLd from "@/components/ui/json-ld";
 import { getHomepageGraphSchema } from "@/lib/schemas";
 
 export const metadata: Metadata = {
-  title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps Newborn & Child Clinic",
-  description: "Baby Steps is a trusted pediatric & child specialist clinic in Neelbad, Bhopal led by senior consultants. Specialized newborn care, WHO vaccination & growth tracking. Call +91 62625 60101.",
+  title: "Pediatrician in Neelbad, Bhopal | Baby Steps Clinic",
+  description: "Newborn & child specialists in Neelbad, Bhopal. IAP vaccination, growth tracking & NICU follow-up. Walk-ins welcome. Call 62625 60101.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com",
   },
   openGraph: {
-    title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps",
-    description: "Baby Steps is a trusted pediatric & child specialist clinic in Neelbad, Bhopal led by senior consultants. Specialized newborn care, WHO vaccination & growth tracking. Call +91 62625 60101.",
+    title: "Pediatrician in Neelbad, Bhopal | Baby Steps Clinic",
+    description: "Newborn & child specialists in Neelbad, Bhopal. IAP vaccination, growth tracking & NICU follow-up. Walk-ins welcome. Call 62625 60101.",
     url: "https://babystepsnewbornclinic.com",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -64,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pediatrician & Child Specialist in Neelbad, Bhopal | Baby Steps",
-    description: "Baby Steps is a trusted pediatric & child specialist clinic in Neelbad, Bhopal led by senior consultants. Specialized newborn care, WHO vaccination & growth tracking. Call +91 62625 60101.",
+    title: "Pediatrician in Neelbad, Bhopal | Baby Steps Clinic",
+    description: "Newborn & child specialists in Neelbad, Bhopal. IAP vaccination, growth tracking & NICU follow-up. Walk-ins welcome. Call 62625 60101.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

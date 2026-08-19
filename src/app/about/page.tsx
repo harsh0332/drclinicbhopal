@@ -8,14 +8,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
-  description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
+  title: "About Baby Steps Pediatric Clinic in Neelbad, Bhopal",
+  description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our certified vaccine cold-chain facility in Bhopal.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/about",
   },
   openGraph: {
-    title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
-    description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
+    title: "About Baby Steps Pediatric Clinic in Neelbad, Bhopal",
+    description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our certified vaccine cold-chain facility in Bhopal.",
     url: "https://babystepsnewbornclinic.com/about",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Baby Steps Newborn & Child Clinic Bhopal",
-    description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our WHO-compliant vaccine cold-chain facility in Neelbad, Bhopal.",
+    title: "About Baby Steps Pediatric Clinic in Neelbad, Bhopal",
+    description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our certified vaccine cold-chain facility in Bhopal.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

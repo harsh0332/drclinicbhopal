@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: LocalityPageProps): Promise<M
   if (!area) return {};
 
   const pageUrl = `https://babystepsnewbornclinic.com/areas/${slug}`;
+  const ogImageUrl = `https://babystepsnewbornclinic.com/api/og?title=${encodeURIComponent(area.metaTitle)}&category=${encodeURIComponent("Area Pediatric Care")}`;
 
   return {
     title: area.metaTitle,
@@ -38,10 +39,10 @@ export async function generateMetadata({ params }: LocalityPageProps): Promise<M
       siteName: "Baby Steps – Newborn & Child Clinic",
       images: [
         {
-          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: "Baby Steps – Newborn & Child Clinic",
+          alt: area.metaTitle,
         }
       ],
       type: "website",
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: LocalityPageProps): Promise<M
       card: "summary_large_image",
       title: area.metaTitle,
       description: area.metaDescription,
-      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+      images: [ogImageUrl],
     },
   };
 }

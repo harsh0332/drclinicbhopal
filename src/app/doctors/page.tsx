@@ -10,14 +10,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Meet Our Pediatric Specialists | Baby Steps Bhopal",
-  description: "Consult our husband-and-wife pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn and child specialist consultants.",
+  title: "Consulting Pediatric Specialists | Baby Steps Bhopal",
+  description: "Consult our experienced pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn, infant, and child health specialists.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/doctors",
   },
   openGraph: {
-    title: "Meet Our Pediatric Specialists | Baby Steps Bhopal",
-    description: "Consult our husband-and-wife pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn and child specialist consultants.",
+    title: "Consulting Pediatric Specialists | Baby Steps Bhopal",
+    description: "Consult our experienced pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn, infant, and child health specialists.",
     url: "https://babystepsnewbornclinic.com/doctors",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meet Our Pediatric Specialists | Baby Steps Bhopal",
-    description: "Consult our husband-and-wife pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn and child specialist consultants.",
+    title: "Consulting Pediatric Specialists | Baby Steps Bhopal",
+    description: "Consult our experienced pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn, infant, and child health specialists.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

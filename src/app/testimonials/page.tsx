@@ -9,14 +9,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Parent Testimonials & Reviews | Baby Steps Clinic",
-  description: "Read verified feedback from parents in Neelbad, Bhopal. Real reviews about our newborn care, child vaccines, and pediatrician guidance.",
+  title: "Parent Reviews & Testimonials | Baby Steps Clinic Bhopal",
+  description: "Read verified parent reviews for Baby Steps Clinic in Neelbad, Bhopal. Real patient experiences for newborn care, vaccinations, and pediatric visits.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/testimonials",
   },
   openGraph: {
-    title: "Parent Testimonials & Reviews | Baby Steps Clinic",
-    description: "Read verified feedback from parents in Neelbad, Bhopal. Real reviews about our newborn care, child vaccines, and pediatrician guidance.",
+    title: "Parent Reviews & Testimonials | Baby Steps Clinic Bhopal",
+    description: "Read verified parent reviews for Baby Steps Clinic in Neelbad, Bhopal. Real patient experiences for newborn care, vaccinations, and pediatric visits.",
     url: "https://babystepsnewbornclinic.com/testimonials",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Parent Testimonials & Reviews | Baby Steps Clinic",
-    description: "Read verified feedback from parents in Neelbad, Bhopal. Real reviews about our newborn care, child vaccines, and pediatrician guidance.",
+    title: "Parent Reviews & Testimonials | Baby Steps Clinic Bhopal",
+    description: "Read verified parent reviews for Baby Steps Clinic in Neelbad, Bhopal. Real patient experiences for newborn care, vaccinations, and pediatric visits.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "validate:metadata": "node scripts/validate-metadata.js",
+    "build": "node scripts/validate-metadata.js && next build",
     "start": "next start",
     "lint": "eslint"
   },

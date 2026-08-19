@@ -1,6 +1,8 @@
 export interface BlogPost {
   title: string;
   slug: string;
+  metaTitle?: string;
+  metaDescription?: string;
   date: string;
   dateModified?: string;
   readTime: string;

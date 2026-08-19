@@ -24,30 +24,34 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const post = blogData[slug];
   if (!post) return {};
 
+  const title = post.metaTitle || `${post.title} | Baby Steps`;
+  const description = post.metaDescription || post.excerpt;
+  const ogImageUrl = `https://babystepsnewbornclinic.com/api/og?title=${encodeURIComponent(post.title)}&category=${encodeURIComponent(post.category)}&doctor=${encodeURIComponent(post.author)}`;
+
   return {
-    title: `${post.title} | Pediatric Health Blog`,
-    description: post.excerpt,
+    title,
+    description,
     alternates: getPageAlternates(`/blog/${slug}`),
     openGraph: {
-      title: `${post.title} | Pediatric Health Blog`,
-      description: post.excerpt,
+      title,
+      description,
       url: `https://babystepsnewbornclinic.com/blog/${slug}`,
       siteName: "Baby Steps – Newborn & Child Clinic",
       images: [
         {
-          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: "Baby Steps – Newborn & Child Clinic",
+          alt: post.title,
         }
       ],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${post.title} | Pediatric Health Blog`,
-      description: post.excerpt,
-      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+      title,
+      description,
+      images: [ogImageUrl],
     },
   };
 }

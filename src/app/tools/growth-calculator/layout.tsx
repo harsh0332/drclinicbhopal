@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Child Growth Calculator & Percentile Tracker | Baby Steps Clinic",
-  description: "Check your child's height, weight, and BMI percentiles using WHO-standard growth benchmarks. Simple and fast online calculator.",
+  title: "Child Growth Percentile Calculator | Baby Steps Bhopal",
+  description: "Calculate your child's height, weight, and BMI percentiles using standard WHO growth charts. Track healthy development with our free pediatric tool.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/tools/growth-calculator",
   },
   openGraph: {
-    title: "Child Growth Calculator & Percentile Tracker | Baby Steps Clinic",
-    description: "Check your child's height, weight, and BMI percentiles using WHO-standard growth benchmarks. Simple and fast online calculator.",
+    title: "Child Growth Percentile Calculator | Baby Steps Bhopal",
+    description: "Calculate your child's height, weight, and BMI percentiles using standard WHO growth charts. Track healthy development with our free pediatric tool.",
     url: "https://babystepsnewbornclinic.com/tools/growth-calculator",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Child Growth Calculator & Percentile Tracker | Baby Steps Clinic",
-    description: "Check your child's height, weight, and BMI percentiles using WHO-standard growth benchmarks. Simple and fast online calculator.",
+    title: "Child Growth Percentile Calculator | Baby Steps Bhopal",
+    description: "Calculate your child's height, weight, and BMI percentiles using standard WHO growth charts. Track healthy development with our free pediatric tool.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

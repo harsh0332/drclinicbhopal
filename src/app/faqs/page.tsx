@@ -10,14 +10,14 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Baby Steps Clinic Bhopal",
-  description: "Get answers to common queries regarding pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
+  title: "Child Health & Clinic FAQs | Baby Steps Clinic Bhopal",
+  description: "Find quick answers to common questions about pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/faqs",
   },
   openGraph: {
-    title: "Frequently Asked Questions | Baby Steps Clinic Bhopal",
-    description: "Get answers to common queries regarding pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
+    title: "Child Health & Clinic FAQs | Baby Steps Clinic Bhopal",
+    description: "Find quick answers to common questions about pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
     url: "https://babystepsnewbornclinic.com/faqs",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Frequently Asked Questions | Baby Steps Clinic Bhopal",
-    description: "Get answers to common queries regarding pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
+    title: "Child Health & Clinic FAQs | Baby Steps Clinic Bhopal",
+    description: "Find quick answers to common questions about pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };

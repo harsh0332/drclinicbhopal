@@ -26,30 +26,34 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const service = servicesData[slug];
   if (!service) return {};
 
+  const title = service.metaTitle;
+  const description = service.metaDescription;
+  const ogImageUrl = `https://babystepsnewbornclinic.com/api/og?title=${encodeURIComponent(service.title)}&category=${encodeURIComponent("Pediatric Service")}`;
+
   return {
-    title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
-    description: service.metaDescription,
+    title,
+    description,
     alternates: getPageAlternates(`/services/${slug}`),
     openGraph: {
-      title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
-      description: service.metaDescription,
+      title,
+      description,
       url: `https://babystepsnewbornclinic.com/services/${slug}`,
       siteName: "Baby Steps – Newborn & Child Clinic",
       images: [
         {
-          url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: "Baby Steps – Newborn & Child Clinic",
+          alt: service.title,
         }
       ],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${service.title} in Neelbad, Bhopal | Baby Steps Clinic`,
-      description: service.metaDescription,
-      images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+      title,
+      description,
+      images: [ogImageUrl],
     },
   };
 }

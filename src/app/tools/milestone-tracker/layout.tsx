@@ -1,14 +1,14 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Child Developmental Milestone Tracker | Baby Steps Clinic",
-  description: "Track your baby's cognitive, motor, language, and social developmental milestones from birth to 5 years. Interactive checklist.",
+  title: "Baby Developmental Milestone Tracker | Baby Steps Bhopal",
+  description: "Track your baby's physical, cognitive, social, and motor development milestones by age. Free pediatric screening tool by Baby Steps Clinic Bhopal.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/tools/milestone-tracker",
   },
   openGraph: {
-    title: "Child Developmental Milestone Tracker | Baby Steps Clinic",
-    description: "Track your baby's cognitive, motor, language, and social developmental milestones from birth to 5 years. Interactive checklist.",
+    title: "Baby Developmental Milestone Tracker | Baby Steps Bhopal",
+    description: "Track your baby's physical, cognitive, social, and motor development milestones by age. Free pediatric screening tool by Baby Steps Clinic Bhopal.",
     url: "https://babystepsnewbornclinic.com/tools/milestone-tracker",
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Child Developmental Milestone Tracker | Baby Steps Clinic",
-    description: "Track your baby's cognitive, motor, language, and social developmental milestones from birth to 5 years. Interactive checklist.",
+    title: "Baby Developmental Milestone Tracker | Baby Steps Bhopal",
+    description: "Track your baby's physical, cognitive, social, and motor development milestones by age. Free pediatric screening tool by Baby Steps Clinic Bhopal.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
 };
