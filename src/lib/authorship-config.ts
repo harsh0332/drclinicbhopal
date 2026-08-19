@@ -137,155 +137,155 @@ export const servicesAuthorship: Record<string, ContentAuthorship> = {
 
 export const blogAuthorship: Record<string, ContentAuthorship> = {
   "child-vaccination-guide-india": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-18"
   },
   "six-month-development-milestones": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-18"
   },
   "missed-vaccine-what-to-do": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-18"
   },
   "vaccine-side-effects-fever-management": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-18"
   },
   "painless-vaccination-for-babies": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-18"
   },
   "baby-weight-gain-tips": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "dengue-in-children-prevention-care": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "monsoon-child-care-tips": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "loose-motion-in-babies-care": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "child-not-eating-food-picky-eater": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "vitamin-d-iron-deficiency-kids": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "child-immunity-booster-guide": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-20"
   },
   "baby-vaccination-schedule-chart-india": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-21"
   },
   "government-vs-private-vaccination-baby": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-19"
   },
   "newborn-care-at-home-guide": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-15"
   },
   "baby-fever-when-to-worry": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-14"
   },
   "is-my-child-growing-normally": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-13"
   },
   "breastfeeding-basics-guide": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-11"
   },
   "baby-cough-cold-home-care": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-07"
   },
   "newborn-skin-eyes-cord-care": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
+    authorId: "dr-manisha-bangarwa-arya",
+    reviewerId: "dr-sudarshan-dev-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-05"
   },
   "child-vaccination-cost-bhopal-guide": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-07-03"
   },
   "child-flu-symptoms-care-vaccine-guide": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-08-19",
     lastUpdated: "2026-08-19",
     datePublished: "2026-08-19"
