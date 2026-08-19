@@ -167,7 +167,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-blue-300 border-t border-blue-900/50 pt-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-blue-300 border-t border-blue-900/50 pt-6">
             <div className="flex items-center gap-2.5">
               <div className="relative w-7 h-7 shrink-0">
                 <ClinicImage
@@ -180,13 +180,28 @@ export default function Footer() {
               </div>
               <p>&copy; {currentYear} {siteConfig.name}. All Rights Reserved.</p>
             </div>
-            <div className="flex items-center gap-4">
+            
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2">
               <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </Link>
+              <span className="text-blue-700 hidden sm:inline">•</span>
               <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Use
               </Link>
+              <span className="text-blue-700 hidden sm:inline">•</span>
+              <p className="text-blue-200 flex items-center gap-1">
+                <span>Website Designed &amp; Developed by</span>
+                <a
+                  href="https://pixellayerss.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-accent-sunshine font-semibold underline decoration-blue-500/60 hover:decoration-accent-sunshine transition-all inline-flex items-center gap-1"
+                >
+                  <span>Pixel Layers</span>
+                  <ExternalLink className="w-3 h-3 text-blue-400" />
+                </a>
+              </p>
             </div>
           </div>
         </div>
