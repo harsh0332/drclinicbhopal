@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Clinic%20Facility%20%26%20Tour%20%7C%20Baby%20Steps%20Neelbad%20Bhopal&category=Clinic%20Gallery",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Clinic Facility & Tour | Baby Steps Neelbad Bhopal",
     description: "Explore Baby Steps Pediatric Clinic in Neelbad, Bhopal. View our child-friendly waiting area, consultation suites, and cold-chain vaccine equipment.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Clinic%20Facility%20%26%20Tour%20%7C%20Baby%20Steps%20Neelbad%20Bhopal&category=Clinic%20Gallery"],
   },
 };
 

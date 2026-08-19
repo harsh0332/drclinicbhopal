@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Pediatric%20Services%20%26%20Child%20Care%20%7C%20Baby%20Steps%20Bhopal&category=Our%20Services",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pediatric Services & Child Care | Baby Steps Bhopal",
     description: "Explore comprehensive pediatric services: IAP vaccinations, newborn care, growth monitoring, and pediatric nutrition guidance in Neelbad, Bhopal.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Pediatric%20Services%20%26%20Child%20Care%20%7C%20Baby%20Steps%20Bhopal&category=Our%20Services"],
   },
 };
 

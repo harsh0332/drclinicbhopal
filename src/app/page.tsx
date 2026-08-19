@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Pediatrician%20in%20Neelbad%2C%20Bhopal%20%7C%20Baby%20Steps%20Clinic&category=Child%20Care%20%26%20Clinic",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pediatrician in Neelbad, Bhopal | Baby Steps Clinic",
     description: "Newborn & child specialists in Neelbad, Bhopal. IAP vaccination, growth tracking & NICU follow-up. Walk-ins welcome. Call 62625 60101.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Pediatrician%20in%20Neelbad%2C%20Bhopal%20%7C%20Baby%20Steps%20Clinic&category=Child%20Care%20%26%20Clinic"],
   },
 };
 

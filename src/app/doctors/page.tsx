@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Consulting%20Pediatric%20Specialists%20%7C%20Baby%20Steps%20Bhopal&category=Our%20Specialists",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Consulting Pediatric Specialists | Baby Steps Bhopal",
     description: "Consult our experienced pediatrician team: Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Dedicated newborn, infant, and child health specialists.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Consulting%20Pediatric%20Specialists%20%7C%20Baby%20Steps%20Bhopal&category=Our%20Specialists"],
   },
 };
 

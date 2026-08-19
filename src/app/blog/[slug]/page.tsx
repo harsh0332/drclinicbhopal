@@ -2,9 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
-import { calculateReadTime } from "@/lib/types";
+import { calculateReadTime, formatDisplayDate } from "@/lib/types";
 import { getBlogPostingSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
-import { blogAuthorship } from "@/lib/authorship-config";
+import { blogAuthorship, ContentAuthorship } from "@/lib/authorship-config";
 import { getPageAlternates } from "@/lib/i18n";
 import JsonLd from "@/components/ui/json-ld";
 import FAQAccordion from "@/components/ui/faq-accordion";
@@ -72,10 +72,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const authorship = blogAuthorship[slug] || {
-    authorId: post.author?.includes("Manisha") ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya",
-    reviewerId: post.author?.includes("Manisha") ? "dr-sudarshan-dev-arya" : "dr-manisha-bangarwa-arya",
-    reviewedDate: "2026-07-20",
+  const authorship: ContentAuthorship = {
+    authorId: (blogAuthorship[slug]?.authorId) || (post.author?.includes("Manisha") ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya"),
+    reviewerId: (blogAuthorship[slug]?.reviewerId) || (post.author?.includes("Manisha") ? "dr-sudarshan-dev-arya" : "dr-manisha-bangarwa-arya"),
+    reviewedDate: blogAuthorship[slug]?.reviewedDate || "2026-07-20",
     lastUpdated: post.dateModified || post.date,
     datePublished: post.date
   };
@@ -137,11 +137,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex flex-wrap items-center gap-4 text-xs text-muted-text font-sans mt-2">
               <span className="flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5" />
-                Published: {authorship.datePublished || post.date}
+                Published: {formatDisplayDate(post.date)}
               </span>
               <span className="flex items-center gap-1 font-medium text-primary-dark">
                 <CalendarDays className="w-3.5 h-3.5 text-primary" />
-                Last updated: {authorship.lastUpdated}
+                Last updated: {formatDisplayDate(post.dateModified || post.date)}
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" />

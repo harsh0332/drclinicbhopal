@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Child%20Health%20%26%20Clinic%20FAQs%20%7C%20Baby%20Steps%20Clinic%20Bhopal&category=FAQs",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Child Health & Clinic FAQs | Baby Steps Clinic Bhopal",
     description: "Find quick answers to common questions about pediatric consultation fees, vaccination bookings, clinic timings, and associated Bhopal hospitals.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Child%20Health%20%26%20Clinic%20FAQs%20%7C%20Baby%20Steps%20Clinic%20Bhopal&category=FAQs"],
   },
 };
 

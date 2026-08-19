@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Parent%20Reviews%20%26%20Testimonials%20%7C%20Baby%20Steps%20Clinic%20Bhopal&category=Parent%20Reviews",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Parent Reviews & Testimonials | Baby Steps Clinic Bhopal",
     description: "Read verified parent reviews for Baby Steps Clinic in Neelbad, Bhopal. Real patient experiences for newborn care, vaccinations, and pediatric visits.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Parent%20Reviews%20%26%20Testimonials%20%7C%20Baby%20Steps%20Clinic%20Bhopal&category=Parent%20Reviews"],
   },
 };
 

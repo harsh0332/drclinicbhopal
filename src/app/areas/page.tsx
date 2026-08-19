@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Pediatric%20Clinic%20Serving%20South%20Bhopal%20%7C%20Baby%20Steps&category=Areas%20We%20Serve",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pediatric Clinic Serving South Bhopal | Baby Steps",
     description: "Baby Steps Clinic in Neelbad serves families across South Bhopal including Kolar Road, Bawadia Kalan, Danish Kunj, Salaiya, and Katara Hills areas.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Pediatric%20Clinic%20Serving%20South%20Bhopal%20%7C%20Baby%20Steps&category=Areas%20We%20Serve"],
   },
 };
 

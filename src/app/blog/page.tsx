@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
-import { calculateReadTime } from "@/lib/types";
+import { calculateReadTime, formatDisplayDate } from "@/lib/types";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Child%20Health%20%26%20Parenting%20Blog%20%7C%20Baby%20Steps%20Clinic%20Bhopal&category=Health%20Blog",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Child Health & Parenting Blog | Baby Steps Clinic Bhopal",
     description: "Read evidence-based child healthcare advice, newborn wellness tips, and IAP vaccination schedules written by registered pediatric consultants in Bhopal.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Child%20Health%20%26%20Parenting%20Blog%20%7C%20Baby%20Steps%20Clinic%20Bhopal&category=Health%20Blog"],
   },
 };
 
@@ -114,7 +114,7 @@ export default function BlogHubPage() {
                   <div className="flex items-center justify-between text-[11px] text-muted-text font-sans">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" />
-                      {post.date}
+                      {formatDisplayDate(post.date)}
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" />

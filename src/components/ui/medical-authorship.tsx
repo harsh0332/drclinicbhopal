@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { UserCheck, ShieldCheck, CalendarDays, ExternalLink } from "lucide-react";
 import { DOCTOR_CREDENTIALS, ContentAuthorship } from "@/lib/authorship-config";
+import { formatDisplayDate } from "@/lib/types";
 
 interface MedicalAuthorshipProps {
   authorship: ContentAuthorship;
@@ -25,7 +26,7 @@ export default function MedicalAuthorship({ authorship, className = "" }: Medica
         </span>
         <div className="flex items-center gap-1.5 text-xs text-muted-text">
           <CalendarDays className="w-3.5 h-3.5 text-primary" />
-          <span>Last updated: <strong className="text-primary-dark font-semibold">{authorship.lastUpdated}</strong></span>
+          <span>Last updated: <strong className="text-primary-dark font-semibold">{formatDisplayDate(authorship.lastUpdated)}</strong></span>
         </div>
       </div>
 
@@ -58,7 +59,7 @@ export default function MedicalAuthorship({ authorship, className = "" }: Medica
           <span className="text-[10px] font-bold text-muted-text uppercase tracking-wider flex items-center justify-between">
             <span>Medically reviewed by</span>
             {authorship.reviewedDate && (
-              <span className="font-normal text-muted-text">Reviewed: {authorship.reviewedDate}</span>
+              <span className="font-normal text-muted-text">Reviewed: {formatDisplayDate(authorship.reviewedDate)}</span>
             )}
           </span>
           {reviewer ? (

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=About%20Baby%20Steps%20Pediatric%20Clinic%20in%20Neelbad%2C%20Bhopal&category=About%20Our%20Clinic",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Baby Steps Pediatric Clinic in Neelbad, Bhopal",
     description: "Meet our senior pediatricians Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya and learn about our certified vaccine cold-chain facility in Bhopal.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=About%20Baby%20Steps%20Pediatric%20Clinic%20in%20Neelbad%2C%20Bhopal&category=About%20Our%20Clinic"],
   },
 };
 
