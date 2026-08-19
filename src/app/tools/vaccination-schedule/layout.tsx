@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Child%20Vaccination%20Schedule%20Calculator&category=Free%20Pediatric%20Tool",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Child Vaccination Schedule Calculator | Baby Steps",
     description: "Generate a personalized childhood immunization chart based on official IAP guidelines. Calculate exact due dates for your baby's vaccines online.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Child%20Vaccination%20Schedule%20Calculator&category=Free%20Pediatric%20Tool"],
   },
 };
 

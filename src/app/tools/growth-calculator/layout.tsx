@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Child%20Growth%20Percentile%20Calculator&category=Free%20Pediatric%20Tool",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Child Growth Percentile Calculator | Baby Steps Bhopal",
     description: "Calculate your child's height, weight, and BMI percentiles using standard WHO growth charts. Track healthy development with our free pediatric tool.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Child%20Growth%20Percentile%20Calculator&category=Free%20Pediatric%20Tool"],
   },
 };
 

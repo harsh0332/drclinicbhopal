@@ -189,6 +189,7 @@ export function getBlogPostingSchema(post: {
   date: string;
   dateModified?: string;
   author?: string;
+  reviewPending?: boolean;
 }) {
   const authorship: ContentAuthorship = blogAuthorship[post.slug] || {
     authorId: post.author?.includes("Manisha") ? "dr-manisha-bangarwa-arya" : "dr-sudarshan-dev-arya",
@@ -199,7 +200,9 @@ export function getBlogPostingSchema(post: {
   };
 
   const authorDoctor = DOCTOR_CREDENTIALS[authorship.authorId] || DOCTOR_CREDENTIALS["dr-sudarshan-dev-arya"];
-  const reviewerDoctor = authorship.reviewerId ? DOCTOR_CREDENTIALS[authorship.reviewerId] : null;
+  const isReviewExpired = authorship.reviewedDate ? authorship.reviewedDate < (authorship.lastUpdated || post.dateModified || post.date) : true;
+  const hideReviewer = post.reviewPending || isReviewExpired || !authorship.reviewerId;
+  const reviewerDoctor = !hideReviewer && authorship.reviewerId ? DOCTOR_CREDENTIALS[authorship.reviewerId] : null;
 
   const publishedIso = new Date(authorship.datePublished || post.date).toISOString();
   const modifiedIso = new Date(authorship.lastUpdated || post.dateModified || post.date).toISOString();
@@ -210,7 +213,7 @@ export function getBlogPostingSchema(post: {
     "headline": post.title,
     "description": post.excerpt,
     "url": `https://babystepsnewbornclinic.com/blog/${post.slug}`,
-    "image": "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+    "image": `https://babystepsnewbornclinic.com/api/og?title=${encodeURIComponent(post.title)}&category=${encodeURIComponent("Child Health")}`,
     "inLanguage": "en-IN",
     "datePublished": publishedIso,
     "dateModified": modifiedIso,
@@ -254,7 +257,7 @@ export function getServiceMedicalWebPageSchema(service: {
     "headline": `${service.title} in Neelbad, Bhopal`,
     "description": service.description || service.whatItIs || `${service.title} at Baby Steps Newborn & Child Clinic.`,
     "url": `https://babystepsnewbornclinic.com/services/${service.slug}`,
-    "image": "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+    "image": `https://babystepsnewbornclinic.com/api/og?title=${encodeURIComponent(service.title)}&category=${encodeURIComponent("Pediatric Service")}`,
     "inLanguage": "en-IN",
     "datePublished": publishedIso,
     "dateModified": modifiedIso,

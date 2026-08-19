@@ -12,6 +12,7 @@ export interface BlogPost {
   authorAffiliation: string;
   contentHtml: string;
   faqs?: { q: string; a: string }[];
+  reviewPending?: boolean;
 }
 
 export function calculateReadTime(contentHtml: string): string {

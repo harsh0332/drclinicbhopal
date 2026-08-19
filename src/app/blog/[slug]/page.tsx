@@ -160,7 +160,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             {/* Left Column: Post content */}
             <div className="lg:col-span-8 flex flex-col gap-8 text-left">
               {/* Medical Authorship & Review Byline */}
-              <MedicalAuthorship authorship={authorship} />
+              <MedicalAuthorship authorship={authorship} reviewPending={post.reviewPending} />
 
               {/* Rich Text Wrapper */}
               <div
@@ -179,12 +179,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
             </div>
 
-            {/* Right Column: Reviewer Byline & CTA */}
+            {/* Right Column: Author Byline & CTA */}
             <div className="lg:col-span-4 flex flex-col gap-6">
-              {/* Reviewer Byline Card */}
+              {/* Author Byline Card */}
               <div className="bg-white border border-gray-150 rounded-2xl p-5 text-left flex flex-col gap-4 shadow-soft">
                 <h3 className="text-xs font-bold text-secondary-dark uppercase tracking-wider border-b border-gray-50 pb-2">
-                  Medical Reviewer
+                  Author Profile
                 </h3>
                 <div className="flex flex-col gap-1">
                   <span className="text-base font-bold font-heading text-primary-dark">

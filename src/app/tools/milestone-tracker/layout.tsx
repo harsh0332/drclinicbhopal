@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Baby%20Developmental%20Milestone%20Tracker&category=Free%20Pediatric%20Tool",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Baby Developmental Milestone Tracker | Baby Steps Bhopal",
     description: "Track your baby's physical, cognitive, social, and motor development milestones by age. Free pediatric screening tool by Baby Steps Clinic Bhopal.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Baby%20Developmental%20Milestone%20Tracker&category=Free%20Pediatric%20Tool"],
   },
 };
 

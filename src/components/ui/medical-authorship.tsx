@@ -5,12 +5,15 @@ import { formatDisplayDate } from "@/lib/types";
 
 interface MedicalAuthorshipProps {
   authorship: ContentAuthorship;
+  reviewPending?: boolean;
   className?: string;
 }
 
-export default function MedicalAuthorship({ authorship, className = "" }: MedicalAuthorshipProps) {
+export default function MedicalAuthorship({ authorship, reviewPending = false, className = "" }: MedicalAuthorshipProps) {
   const author = DOCTOR_CREDENTIALS[authorship.authorId];
-  const reviewer = authorship.reviewerId ? DOCTOR_CREDENTIALS[authorship.reviewerId] : null;
+  const isReviewExpired = authorship.reviewedDate ? authorship.reviewedDate < authorship.lastUpdated : true;
+  const hideReviewer = reviewPending || isReviewExpired || !authorship.reviewerId;
+  const reviewer = !hideReviewer && authorship.reviewerId ? DOCTOR_CREDENTIALS[authorship.reviewerId] : null;
 
   return (
     <div
@@ -31,7 +34,7 @@ export default function MedicalAuthorship({ authorship, className = "" }: Medica
       </div>
 
       {/* Authorship & Review Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+      <div className={`grid ${hideReviewer ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-4 text-xs`}>
         {/* Written By */}
         <div className="flex flex-col gap-1 bg-white/70 rounded-xl p-3.5 border border-primary/5">
           <span className="text-[10px] font-bold text-muted-text uppercase tracking-wider">
@@ -54,35 +57,27 @@ export default function MedicalAuthorship({ authorship, className = "" }: Medica
           )}
         </div>
 
-        {/* Medically Reviewed By */}
-        <div className="flex flex-col gap-1 bg-white/70 rounded-xl p-3.5 border border-primary/5">
-          <span className="text-[10px] font-bold text-muted-text uppercase tracking-wider flex items-center justify-between">
-            <span>Medically reviewed by</span>
-            {authorship.reviewedDate && (
-              <span className="font-normal text-muted-text">Reviewed: {formatDisplayDate(authorship.reviewedDate)}</span>
-            )}
-          </span>
-          {reviewer ? (
-            <>
-              <Link
-                href={reviewer.profileUrl}
-                className="text-sm font-bold font-heading text-primary-dark hover:text-primary transition-colors underline-offset-2 hover:underline flex items-center gap-1"
-              >
-                <span>{reviewer.name}</span>
-                <UserCheck className="w-3.5 h-3.5 text-[#34C7A4] shrink-0" />
-              </Link>
-              <p className="text-muted-text text-[11px] leading-relaxed mt-0.5">
-                {reviewer.credentials}
-              </p>
-            </>
-          ) : (
-            <div className="py-1">
-              <span className="inline-block px-2.5 py-1 bg-amber-100 text-amber-900 border border-amber-300 rounded text-xs font-mono font-bold">
-                [ASSIGN REVIEWER]
-              </span>
-            </div>
-          )}
-        </div>
+        {/* Medically Reviewed By (Only rendered when not pending review) */}
+        {!hideReviewer && reviewer && (
+          <div className="flex flex-col gap-1 bg-white/70 rounded-xl p-3.5 border border-primary/5">
+            <span className="text-[10px] font-bold text-muted-text uppercase tracking-wider flex items-center justify-between">
+              <span>Medically reviewed by</span>
+              {authorship.reviewedDate && (
+                <span className="font-normal text-muted-text">Reviewed: {formatDisplayDate(authorship.reviewedDate)}</span>
+              )}
+            </span>
+            <Link
+              href={reviewer.profileUrl}
+              className="text-sm font-bold font-heading text-primary-dark hover:text-primary transition-colors underline-offset-2 hover:underline flex items-center gap-1"
+            >
+              <span>{reviewer.name}</span>
+              <UserCheck className="w-3.5 h-3.5 text-[#34C7A4] shrink-0" />
+            </Link>
+            <p className="text-muted-text text-[11px] leading-relaxed mt-0.5">
+              {reviewer.credentials}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Footer Disclaimer Link */}

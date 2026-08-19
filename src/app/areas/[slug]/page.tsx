@@ -226,6 +226,43 @@ export default async function LocalityPage({ params }: LocalityPageProps) {
                 </div>
               </div>
 
+              {/* Related Pediatric Care Guides */}
+              <div className="flex flex-col gap-4 border-t border-gray-100 pt-6">
+                <h3 className="text-lg font-bold font-heading text-primary-dark">
+                  Parent Health Guides &amp; Resources
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-sans">
+                  <Link
+                    href="/blog/child-vaccination-guide-india"
+                    className="p-3.5 rounded-xl bg-surface-tint border border-primary/10 text-primary-dark font-medium hover:text-primary hover:border-primary/30 transition-colors flex items-center justify-between"
+                  >
+                    <span>Child Vaccination Guide</span>
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                  </Link>
+                  <Link
+                    href="/blog/baby-fever-when-to-worry"
+                    className="p-3.5 rounded-xl bg-surface-tint border border-primary/10 text-primary-dark font-medium hover:text-primary hover:border-primary/30 transition-colors flex items-center justify-between"
+                  >
+                    <span>Baby Fever &amp; Red Flags</span>
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                  </Link>
+                  <Link
+                    href="/blog/newborn-care-at-home-guide"
+                    className="p-3.5 rounded-xl bg-surface-tint border border-primary/10 text-primary-dark font-medium hover:text-primary hover:border-primary/30 transition-colors flex items-center justify-between"
+                  >
+                    <span>Newborn Care at Home</span>
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                  </Link>
+                  <Link
+                    href="/doctors"
+                    className="p-3.5 rounded-xl bg-surface-tint border border-primary/10 text-primary-dark font-medium hover:text-primary hover:border-primary/30 transition-colors flex items-center justify-between"
+                  >
+                    <span>Meet Our Pediatricians</span>
+                    <ChevronRight className="w-4 h-4 text-primary shrink-0" />
+                  </Link>
+                </div>
+              </div>
+
             </div>
 
             {/* Right Column: Embedded Map & Booking CTAs */}

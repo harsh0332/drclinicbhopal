@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Baby%20Steps%20%E2%80%93%20Newborn%20%26%20Child%20Clinic&category=Neelbad%2C%20Bhopal",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Baby Steps – Newborn & Child Clinic | Neelbad, Bhopal",
     description: "Premium pediatric clinic in Neelbad, Bhopal. Expert care by Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya. Vaccination, newborn care, developmental assessment, and child health counseling.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Baby%20Steps%20%E2%80%93%20Newborn%20%26%20Child%20Clinic&category=Neelbad%2C%20Bhopal"],
   },
 };
 

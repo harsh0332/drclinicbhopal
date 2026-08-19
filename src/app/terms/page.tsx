@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "Baby Steps – Newborn & Child Clinic",
     images: [
       {
-        url: "https://babystepsnewbornclinic.com/images/og/og-default.jpg",
+        url: "https://babystepsnewbornclinic.com/api/og?title=Terms%20of%20Use%20%26%20Medical%20Disclaimer&category=Legal%20%26%20Ethics",
         width: 1200,
         height: 630,
         alt: "Baby Steps – Newborn & Child Clinic",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Terms of Use & Medical Disclaimer | Baby Steps Bhopal",
     description: "Review the Terms of Use for Baby Steps Newborn & Child Clinic website. Understand our medical disclaimer, booking policies, and user agreements.",
-    images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
+    images: ["https://babystepsnewbornclinic.com/api/og?title=Terms%20of%20Use%20%26%20Medical%20Disclaimer&category=Legal%20%26%20Ethics"],
   },
 };
 
