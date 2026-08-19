@@ -102,7 +102,8 @@ for (const d of doctorRoutes) {
 
 // 3. Area Routes from localities-data.ts
 const localitiesContent = fs.readFileSync(path.join(process.cwd(), "src/lib/localities-data.ts"), "utf-8");
-const areaSlugs = ["kolar-road", "bawadia-kalan", "neelbad"];
+const areaSlugMatches = localitiesContent.matchAll(/  "([a-z0-9-]+)":\s*\{/g);
+const areaSlugs = Array.from(areaSlugMatches, m => m[1]);
 for (const slug of areaSlugs) {
   const blockMatch = localitiesContent.match(new RegExp(`"${slug}":\\s*\\{[\\s\\S]*?\\n  \\}`, "g"));
   if (blockMatch) {

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
+import { calculateReadTime } from "@/lib/types";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbSchema } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
@@ -10,13 +11,13 @@ import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 export const metadata: Metadata = {
-  title: "Child Health & Parenting Blog | Baby Steps Bhopal",
+  title: "Child Health & Parenting Blog | Baby Steps Clinic Bhopal",
   description: "Read evidence-based child healthcare advice, newborn wellness tips, and IAP vaccination schedules written by registered pediatric consultants in Bhopal.",
   alternates: {
     canonical: "https://babystepsnewbornclinic.com/blog",
   },
   openGraph: {
-    title: "Child Health & Parenting Blog | Baby Steps Bhopal",
+    title: "Child Health & Parenting Blog | Baby Steps Clinic Bhopal",
     description: "Read evidence-based child healthcare advice, newborn wellness tips, and IAP vaccination schedules written by registered pediatric consultants in Bhopal.",
     url: "https://babystepsnewbornclinic.com/blog",
     siteName: "Baby Steps – Newborn & Child Clinic",
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Child Health & Parenting Blog | Baby Steps Bhopal",
+    title: "Child Health & Parenting Blog | Baby Steps Clinic Bhopal",
     description: "Read evidence-based child healthcare advice, newborn wellness tips, and IAP vaccination schedules written by registered pediatric consultants in Bhopal.",
     images: ["https://babystepsnewbornclinic.com/images/og/og-default.jpg"],
   },
@@ -117,7 +118,7 @@ export default function BlogHubPage() {
                     </span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3.5 h-3.5" />
-                      {post.readTime}
+                      {calculateReadTime(post.contentHtml)}
                     </span>
                   </div>
                   

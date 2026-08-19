@@ -20,13 +20,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      { source: "/areas/danish-kunj", destination: "/areas", permanent: true },
-      { source: "/areas/salaiya", destination: "/areas", permanent: true },
-      { source: "/areas/chuna-bhatti", destination: "/areas", permanent: true },
-      { source: "/areas/katara-hills", destination: "/areas", permanent: true },
-      { source: "/areas/bagmugaliya", destination: "/areas", permanent: true },
-      { source: "/areas/lalghati", destination: "/areas", permanent: true },
-      { source: "/areas/aiims-bhopal", destination: "/areas", permanent: true },
+      { source: "/blog/baby-vaccination-guide", destination: "/blog/child-vaccination-guide-india", permanent: true },
+      { source: "/blog/child-cough-cold-home-care", destination: "/blog/baby-cough-cold-home-care", permanent: true },
+      { source: "/blog/iap-vaccination-schedule-chart", destination: "/blog/baby-vaccination-schedule-chart-india", permanent: true },
+      { source: "/blog/breastfeeding-tips-new-mothers", destination: "/blog/breastfeeding-basics-guide", permanent: true },
+      { source: "/blog/skip-delay-child-vaccination-risks", destination: "/blog/missed-vaccine-what-to-do", permanent: true },
     ];
   },
   async headers() {

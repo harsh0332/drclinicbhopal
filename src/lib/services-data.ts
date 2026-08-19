@@ -230,7 +230,7 @@ export const servicesData: Record<string, ServiceItem> = {
     slug: "breastfeeding-counseling",
     metaTitle: "Breastfeeding Counseling in Neelbad, Bhopal | Baby Steps",
     description: "Hands-on latch, supply and feeding support so breastfeeding feels easier for you and your baby.",
-    metaDescription: "Lactation and breastfeeding counseling in Neelbad, Bhopal. Professional latch support and newborn feeding guidance by certified pediatric consultants.",
+    metaDescription: "Lactation and breastfeeding counseling in Neelbad, Bhopal. Professional latch support and newborn feeding guidance by experienced pediatric consultants.",
     whatItIs: "Clinical support for breastfeeding mothers covering latch techniques, positions, maternal nutrition, and managing lactation challenges.",
     whyItMatters: "Exclusive breastfeeding is recommended for the first 6 months. Lactation support resolves maternal discomfort (like sore nipples or breast engorgement) and ensures the infant receives adequate nutrition.",
     whatToExpect: [

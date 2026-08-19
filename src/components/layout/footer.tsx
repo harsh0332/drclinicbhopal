@@ -131,24 +131,16 @@ export default function Footer() {
             Areas We Serve in Bhopal:
           </h4>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-blue-200 font-sans">
-            <Link
-              href="/areas/neelbad"
-              className="hover:text-white hover:underline transition-colors"
-            >
-              • Pediatrician in Neelbad
-            </Link>
-            <Link
-              href="/areas/kolar-road"
-              className="hover:text-white hover:underline transition-colors"
-            >
-              • Child Specialist in Kolar Road
-            </Link>
-            <Link
-              href="/areas/bawadia-kalan"
-              className="hover:text-white hover:underline transition-colors"
-            >
-              • Pediatrician in Bawadia Kalan
-            </Link>
+            <Link href="/areas/neelbad" className="hover:text-white hover:underline transition-colors">• Pediatrician in Neelbad</Link>
+            <Link href="/areas/kolar-road" className="hover:text-white hover:underline transition-colors">• Child Specialist in Kolar Road</Link>
+            <Link href="/areas/bawadia-kalan" className="hover:text-white hover:underline transition-colors">• Pediatrician in Bawadia Kalan</Link>
+            <Link href="/areas/danish-kunj" className="hover:text-white hover:underline transition-colors">• Pediatrician near Danish Kunj</Link>
+            <Link href="/areas/salaiya" className="hover:text-white hover:underline transition-colors">• Pediatrician in Salaiya</Link>
+            <Link href="/areas/chuna-bhatti" className="hover:text-white hover:underline transition-colors">• Pediatrician in Chuna Bhatti</Link>
+            <Link href="/areas/katara-hills" className="hover:text-white hover:underline transition-colors">• Pediatrician in Katara Hills</Link>
+            <Link href="/areas/bagmugaliya" className="hover:text-white hover:underline transition-colors">• Pediatrician in Bagmugaliya</Link>
+            <Link href="/areas/lalghati" className="hover:text-white hover:underline transition-colors">• Pediatrician in Lalghati</Link>
+            <Link href="/areas/aiims-bhopal" className="hover:text-white hover:underline transition-colors">• Pediatrician near AIIMS Bhopal</Link>
           </div>
         </div>
 

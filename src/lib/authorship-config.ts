@@ -128,20 +128,6 @@ export const servicesAuthorship: Record<string, ContentAuthorship> = {
 
 // Blog Posts Authorship & Review mapping
 export const blogAuthorship: Record<string, ContentAuthorship> = {
-  "baby-vaccination-guide": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
-    reviewedDate: "2026-07-20",
-    lastUpdated: "2026-07-18",
-    datePublished: "2026-07-18"
-  },
-  "breastfeeding-tips-new-mothers": {
-    authorId: "dr-manisha-bangarwa-arya",
-    reviewerId: "dr-sudarshan-dev-arya",
-    reviewedDate: "2026-07-20",
-    lastUpdated: "2026-07-18",
-    datePublished: "2026-07-18"
-  },
   "six-month-development-milestones": {
     authorId: "dr-manisha-bangarwa-arya",
     reviewerId: "dr-sudarshan-dev-arya",
@@ -150,13 +136,6 @@ export const blogAuthorship: Record<string, ContentAuthorship> = {
     datePublished: "2026-07-18"
   },
   "child-vaccination-guide-india": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
-    reviewedDate: "2026-07-20",
-    lastUpdated: "2026-07-20",
-    datePublished: "2026-07-20"
-  },
-  "iap-vaccination-schedule-chart": {
     authorId: "dr-sudarshan-dev-arya",
     reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-07-20",
@@ -206,13 +185,6 @@ export const blogAuthorship: Record<string, ContentAuthorship> = {
     datePublished: "2026-07-20"
   },
   "loose-motion-in-babies-care": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
-    reviewedDate: "2026-07-20",
-    lastUpdated: "2026-07-20",
-    datePublished: "2026-07-20"
-  },
-  "child-cough-cold-home-care": {
     authorId: "dr-sudarshan-dev-arya",
     reviewerId: "dr-manisha-bangarwa-arya",
     reviewedDate: "2026-07-20",
@@ -281,13 +253,6 @@ export const blogAuthorship: Record<string, ContentAuthorship> = {
     reviewedDate: "2026-07-20",
     lastUpdated: "2026-07-18",
     datePublished: "2026-07-18"
-  },
-  "skip-delay-child-vaccination-risks": {
-    authorId: "dr-sudarshan-dev-arya",
-    reviewerId: "dr-manisha-bangarwa-arya",
-    reviewedDate: "2026-07-20",
-    lastUpdated: "2026-07-20",
-    datePublished: "2026-07-20"
   },
   "baby-cough-cold-home-care": {
     authorId: "dr-sudarshan-dev-arya",

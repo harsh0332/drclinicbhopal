@@ -118,8 +118,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const careTeam = manishaFirst ? [drManisha, drSudarshan] : [drSudarshan, drManisha];
 
   const blogMapping: Record<string, string> = {
-    "vaccination-clinic": "baby-vaccination-guide",
-    "breastfeeding-counseling": "breastfeeding-tips-new-mothers",
+    "vaccination-clinic": "child-vaccination-guide-india",
+    "breastfeeding-counseling": "breastfeeding-basics-guide",
     "milestone-tracking": "six-month-development-milestones",
     "fever-management": "child-flu-symptoms-care-vaccine-guide"
   };
@@ -306,7 +306,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   <div className="flex flex-col gap-3">
                     {[
                       { title: "Complete Baby Vaccination Guide", slug: "child-vaccination-guide-india", excerpt: "Immunization standards, cold-chain compliance, and schedule planning in India." },
-                      { title: "Latest IAP Vaccination Chart", slug: "iap-vaccination-schedule-chart", excerpt: "Detailed age-wise breakdown of IAP recommendations from birth up to 18 years." },
+                      { title: "Latest IAP Vaccination Chart", slug: "baby-vaccination-schedule-chart-india", excerpt: "Detailed age-wise breakdown of IAP recommendations from birth up to 18 years." },
                       { title: "Missed Child Vaccine? Rescheduling Tips", slug: "missed-vaccine-what-to-do", excerpt: "Catch-up rules, safety guidelines, and what to do next if you miss a dose." }
                     ].map((article, idx) => (
                       <Link

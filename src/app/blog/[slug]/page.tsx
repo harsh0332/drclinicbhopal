@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Metadata } from "next";
 import { blogData } from "@/lib/blog-data";
+import { calculateReadTime } from "@/lib/types";
 import { getBlogPostingSchema, getFAQSchema, getBreadcrumbNode } from "@/lib/schemas";
 import { blogAuthorship } from "@/lib/authorship-config";
 import { getPageAlternates } from "@/lib/i18n";
@@ -144,7 +145,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </span>
               <span className="flex items-center gap-1">
                 <Clock className="w-3.5 h-3.5" />
-                {post.readTime}
+                {calculateReadTime(post.contentHtml)}
               </span>
             </div>
           </div>

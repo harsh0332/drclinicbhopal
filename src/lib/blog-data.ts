@@ -1,71 +1,55 @@
 import { BlogPost } from "./types";
 
 export const blogData: Record<string, BlogPost> = {
-  "baby-vaccination-guide": {
+  "child-vaccination-guide-india": {
     title: "Complete Baby Vaccination Guide for Indian Parents",
-    slug: "baby-vaccination-guide",
-    metaTitle: "Baby Vaccination Guide for Indian Parents | Baby Steps",
-    metaDescription: "Essential childhood vaccination guide for Indian parents. Learn IAP immunization timelines, cold-chain safety, and appointment planning in Bhopal.",
+    slug: "child-vaccination-guide-india",
+    metaTitle: "Child Vaccination Guide in India | Baby Steps Clinic",
+    metaDescription: "Comprehensive guide to childhood immunization schedules in India. Understand essential vs optional vaccines and cold-chain standards at Baby Steps.",
     date: "2026-07-18",
-    dateModified: "2026-07-18",
-    readTime: "6 min read",
-    category: "Immunization",
+    dateModified: "2026-08-19",
+    category: "Vaccination",
     excerpt: "A comprehensive guide explaining the importance of childhood immunization in India, cold-chain standards, and how to plan vaccine schedules.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
+    contentHtml: `<p>Vaccination is universally recognized as the single most effective medical intervention available to safeguard children against fatal and debilitating preventable diseases. In India, adhering strictly to an established childhood immunization calendar protects infants from tuberculosis, polio, hepatitis B, diphtheria, pertussis, tetanus, rotavirus, pneumococcal disease, measles, and rubella.</p>
+
       <h2>Why Is Timely Childhood Vaccination Critical?</h2>
-      <p>Vaccination is one of the most effective medical interventions available to protect children against severe preventable infectious diseases. In India, adhering to an established immunization schedule shields infants from polio, tuberculosis, hepatitis B, diphtheria, pertussis, tetanus, rotavirus, and pneumococcal infections.</p>
+      <p>Maternal antibodies passed during pregnancy decline rapidly within the first 6 to 12 weeks after birth, leaving infants highly vulnerable to environmental bacteria and viruses. Vaccines introduce weakened or inactivated antigens that safely train your baby's immune system to produce targeted antibodies. Timely administration ensures that your baby builds robust defense before encountering dangerous community pathogens.</p>
 
       <h2>What Is the Cold Chain and Why Does It Matter?</h2>
-      <p>Vaccines are biological products that lose potency if exposed to inappropriate temperatures. Maintaining a strict cold chain—from the manufacturer to the moment of administration—ensures that every dose retains maximum clinical efficacy.</p>
-      
-      <p>In addition to essential primary vaccines, optional immunizations such as Influenza (flu shot) and Varicella (chickenpox vaccine) offer extended protection against widespread childhood infections. Consult your pediatrician to customize an optimal vaccination plan tailored to your baby's age and health background.</p>
-    `,
+      <p>Vaccines are sensitive biological products that permanently lose immunogenic potency if exposed to heat, freezing, or improper storage temperatures. Maintaining an unbroken, certified cold chain (strictly between 2°C and 8°C)—from the biopharmaceutical manufacturing plant through transport to our clinic's dedicated medical-grade refrigeration units—ensures that every administered dose provides maximum clinical efficacy.</p>
+      <p>For more detailed national protocols on vaccine temperature control, parents can review guidelines published by the <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer">Ministry of Health & Family Welfare (MoHFW)</a>.</p>
+
+      <h2>Essential Primary vs. Recommended Optional Vaccines</h2>
+      <p>While the government's Universal Immunization Programme (UIP) covers fundamental public health vaccines, the Indian Academy of Pediatrics (IAP) recommends additional optional vaccines for comprehensive individual child protection:</p>
+      <ul>
+        <li><strong>Rotavirus Vaccines:</strong> Given orally at 6, 10, and 14 weeks, preventing severe, dehydrating rotavirus diarrhea and hospitalizations in infants.</li>
+        <li><strong>Pneumococcal Conjugate Vaccine (PCV):</strong> Shields against Streptococcus pneumoniae, the primary cause of bacterial pneumonia, sepsis, and middle ear infections.</li>
+        <li><strong>Influenza (Flu Shot):</strong> Annual flu protection recommended starting at 6 months of age to prevent seasonal respiratory complications.</li>
+        <li><strong>Varicella (Chickenpox) & Hepatitis A:</strong> Administered after the first birthday to ensure lifelong liver and cutaneous protection.</li>
+        <li><strong>Typhoid Conjugate Vaccine (TCV):</strong> Given at 9 to 12 months, providing durable long-term immunity against Salmonella typhi.</li>
+      </ul>
+
+      <h2>Planning Your Child's Immunization Visits</h2>
+      <p>Keep your baby's physical vaccination record updated and bring it to every clinical checkup. At Baby Steps Clinic in Neelbad, our pediatricians evaluate your child's age, medical history, and previous doses to construct a tailored immunization calendar with automated parent reminders.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>`,
     faqs: [
       {
-        q: "Are vaccines safe for newborns?",
-        a: "Yes. All vaccines recommended by the Indian Academy of Pediatrics (IAP) undergo rigorous clinical safety evaluations and are approved by national health regulatory authorities."
+            "q": "Are vaccines safe for newborns?",
+            "a": "Yes. All vaccines approved by the Indian Academy of Pediatrics (IAP) and national regulatory bodies undergo extensive clinical safety evaluations."
       },
       {
-        q: "What should I do if my baby gets a fever after vaccination?",
-        a: "Mild fever and slight soreness at the injection site are normal signs that the immune system is responding. Follow your pediatrician's advice regarding paracetamol dosage if needed."
-      }
-    ]
-  },
-  "breastfeeding-tips-new-mothers": {
-    title: "Essential Breastfeeding Tips for New Mothers",
-    slug: "breastfeeding-tips-new-mothers",
-    metaTitle: "Breastfeeding Tips for New Mothers | Baby Steps Clinic",
-    metaDescription: "Practical breastfeeding advice for new mothers. Pediatrician guidance on latching techniques, feeding schedules, and lactation support in Bhopal.",
-    date: "2026-07-18",
-    dateModified: "2026-07-18",
-    readTime: "5 min read",
-    category: "Newborn Care",
-    excerpt: "Practical advice on latching techniques, feeding frequency, lactation hygiene, and managing common newborn feeding challenges.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "Consultant Pediatrician & Neonatologist",
-    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <h2>Getting the Perfect Latch: Step-by-Step Guidance</h2>
-      <p>Achieving a proper latch is the key to comfortable, successful breastfeeding. Ensure your baby's mouth covers a large portion of the lower areola, not just the nipple. This facilitates efficient milk transfer and prevents maternal soreness.</p>
-
-      <h2>How Often Should a Newborn Feed?</h2>
-      <p>Newborns generally feed 8 to 12 times in a 24-hour period. Feeding on demand whenever the baby shows early hunger cues (rooting, smacking lips, putting hands to mouth) supports steady weight gain and establishes healthy milk supply.</p>
-
-      <p>Proper burping techniques immediately after feedings significantly reduce infant reflux and gas discomfort. Holding your baby upright against your chest and gently patting their back helps release trapped air bubbles before laying them down.</p>
-    `,
-    faqs: [
-      {
-        q: "How do I know if my newborn is getting enough milk?",
-        a: "A well-fed newborn will have 6 or more wet diapers per 24 hours after day 4, appear content after feeds, and demonstrate steady weight gain on WHO growth charts."
+            "q": "What should I do if my baby gets a fever after vaccination?",
+            "a": "Mild fever and minor local swelling are normal physiological signs that the immune system is responding. Administer weight-appropriate paracetamol strictly as advised by your doctor."
       },
       {
-        q: "What should I do if I experience painful nursing?",
-        a: "Pain is usually a sign of an improper latch. Seek prompt guidance from a pediatrician or lactation consultant to evaluate positioning and prevent cracked nipples."
+            "q": "Can optional vaccines be given together with routine mandatory vaccines?",
+            "a": "Yes. Administering multiple age-appropriate vaccines at separate anatomical sites during the same visit is clinically proven to be safe and effective."
       }
-    ]
+]
   },
   "six-month-development-milestones": {
     title: "6-Month Development Milestones: What Every Parent Should Expect",
@@ -74,7 +58,6 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Key 6-month infant developmental milestones. Track physical growth, cognitive cues, motor skills, and weaning guidance by senior pediatricians.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
-    readTime: "7 min read",
     category: "Development",
     excerpt: "A guide to motor, cognitive, language, and social milestones your baby typically reaches around 6 months of age.",
     author: "Dr. Manisha Bangarwa Arya",
@@ -100,104 +83,53 @@ export const blogData: Record<string, BlogPost> = {
       }
     ]
   },
-  "child-vaccination-guide-india": {
-    title: "Complete Baby Vaccination Guide for Indian Parents",
-    slug: "child-vaccination-guide-india",
-    metaTitle: "Child Vaccination Guide in India | Baby Steps Clinic",
-    metaDescription: "Comprehensive guide to childhood immunization schedules in India. Understand essential vs optional vaccines and cold-chain standards at Baby Steps.",
-    date: "2026-07-18",
-    dateModified: "2026-07-18",
-    readTime: "7 min read",
-    category: "Vaccination",
-    excerpt: "A comprehensive guide explaining the importance of childhood immunization in India, cold-chain standards, and how to plan vaccine schedules.",
-    author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "Senior Consultant Pediatrician",
-    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <h2>Why Is Timely Childhood Vaccination Critical?</h2>
-      <p>Vaccination is one of the most effective medical interventions available to protect children against severe preventable infectious diseases. In India, adhering to an established immunization schedule shields infants from polio, tuberculosis, hepatitis B, diphtheria, pertussis, tetanus, rotavirus, and pneumococcal infections.</p>
-
-      <h2>What Is the Cold Chain and Why Does It Matter?</h2>
-      <p>Vaccines are biological products that lose potency if exposed to inappropriate temperatures. Maintaining a strict cold chain—from the manufacturer to the moment of administration—ensures that every dose retains maximum clinical efficacy. Learn more about cold-chain management from the <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer">Ministry of Health & Family Welfare (MoHFW)</a>.</p>
-
-      <p>Rotavirus vaccines (given orally at 6, 10, and 14 weeks) protect infants against severe dehydrating diarrhea, while Pneumococcal Conjugate Vaccines (PCV) shield against bacterial pneumonia and middle ear infections.</p>
-    `,
-    faqs: [
-      {
-        q: "Are vaccines safe for newborns?",
-        a: "Yes. All vaccines recommended by the Indian Academy of Pediatrics (IAP) undergo rigorous clinical safety evaluations and are approved by national health regulatory authorities."
-      },
-      {
-        q: "What should I do if my baby gets a fever after vaccination?",
-        a: "Mild fever and slight soreness at the injection site are normal signs that the immune system is responding. Follow your pediatrician's advice regarding paracetamol dosage if needed."
-      }
-    ]
-  },
-  "iap-vaccination-schedule-chart": {
-    title: "IAP Vaccination Schedule Chart 2026: Age-Wise Immunization Guide",
-    slug: "iap-vaccination-schedule-chart",
-    metaTitle: "Latest IAP Vaccination Schedule Chart | Baby Steps",
-    metaDescription: "Official IAP childhood immunization chart for Indian parents. Complete age-wise vaccine schedule from birth to 18 years with pediatric insights.",
-    date: "2026-07-18",
-    dateModified: "2026-07-18",
-    readTime: "8 min read",
-    category: "Vaccination",
-    excerpt: "Complete Indian Academy of Pediatrics (IAP) immunization schedule from birth to 18 years, including compulsory and recommended vaccines.",
-    author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "Senior Consultant Pediatrician",
-    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <h2>Understanding the IAP Immunization Schedule</h2>
-      <p>The Indian Academy of Pediatrics (IAP) regularly updates its advisory committee recommendations on vaccines and immunization practices. For official guidelines, visit the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">Indian Academy of Pediatrics (IAP) official portal</a>.</p>
-
-      <h2>Birth to 6 Months Immunization Breakdown</h2>
-      <p>At birth, every newborn should receive BCG, OPV zero dose, and Hepatitis B (birth dose). Subsequent visits at 6, 10, and 14 weeks cover DTaP/wP, IPV, Hib, Hepatitis B, Rotavirus, and PCV.</p>
-
-      <p>Adolescent boosters including Tdap (tetanus, diphtheria, acellular pertussis) at 10–12 years and HPV vaccination for girls and boys provide critical long-term protection against severe infections during teenage and adult years.</p>
-    `,
-    faqs: [
-      {
-        q: "What is the difference between UIP and IAP vaccination schedules?",
-        a: "The Universal Immunization Programme (UIP) is a government initiative covering essential vaccines for public health. The IAP schedule includes additional vaccines (such as Influenza, Varicella, Hepatitis A, and HPV) for broader individual protection."
-      },
-      {
-        q: "Why are booster doses necessary?",
-        a: "Booster doses refresh the immune memory, ensuring long-lasting antibody protection as a child grows."
-      }
-    ]
-  },
   "missed-vaccine-what-to-do": {
-    title: "Missed a Childhood Vaccine? Catch-Up Immunization Rules Explained",
+    title: "Missed or Delayed Baby Vaccine? Catch-Up Rules & Safety Principles",
     slug: "missed-vaccine-what-to-do",
     metaTitle: "Missed Baby Vaccine? Catch-Up Guide | Baby Steps Bhopal",
     metaDescription: "What to do if your baby missed a scheduled vaccination. Pediatric catch-up guidelines, safety rules, and rescheduling advice by Baby Steps Clinic.",
     date: "2026-07-18",
-    dateModified: "2026-07-18",
-    readTime: "6 min read",
+    dateModified: "2026-08-19",
     category: "Vaccination",
     excerpt: "What Indian parents need to do when a vaccination dose is delayed or missed, and how catch-up immunization schedules work.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <h2>Don't Panic: Catch-Up Vaccination Principles</h2>
-      <p>Missing a scheduled vaccination date is common due to travel, minor illness, or logistics. According to global health standards by the <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">World Health Organization (WHO)</a>, you almost never need to restart a vaccine series from the beginning regardless of the time elapsed.</p>
+    contentHtml: `<p>Missing a scheduled vaccination date due to a mild childhood illness, family travel, or busy routine is common and happens to almost every family. When a due date passes, parents often worry whether previous doses are wasted or if the course must be restarted from the beginning. Here are the core scientific principles of catch-up immunization established by the <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">World Health Organization (WHO)</a> and the Indian Academy of Pediatrics (IAP).</p>
 
-      <h2>How Pediatricians Plan Catch-Up Schedules</h2>
-      <p>Your pediatrician will evaluate which doses were completed and calculate the minimum safe intervals required between remaining doses to restore complete protection quickly.</p>
+      <h2>The Golden Rule: You Almost Never Need to Restart from Scratch</h2>
+      <p>The human immune system possesses remarkable immunological memory. Once primary doses are administered, memory B-cells retain the blueprint of the pathogen indefinitely. Regardless of whether a dose is delayed by several weeks or several months, <strong>you simply resume the vaccination schedule from where you left off</strong>. Doses already given remain fully valid.</p>
 
-      <p>For children above 5 years with missed immunization milestones, catch-up schedules prioritize primary DTaP/Tdap, MMR, Hepatitis B, and Typhoid vaccines without needing to restart the entire series from birth.</p>
-    `,
+      <h2>Why Delaying or Skipping Puts Children at Risk</h2>
+      <p>Vaccines are timed to shield infants before they encounter wild pathogens in daycares, schools, or social gatherings. Delaying doses leaves a temporary gap where antibody titers fall below protective thresholds. Skipping vaccines altogether erodes community herd immunity, allowing preventable outbreaks of measles, whooping cough, or diphtheria to re-emerge.</p>
+
+      <h2>How Pediatricians Construct Catch-Up Schedules</h2>
+      <p>When you bring your child's immunization card for a catch-up review, your pediatrician will:</p>
+      <ul>
+        <li><strong>Audit the Card:</strong> Identify which mandatory and recommended doses are completed and which are overdue.</li>
+        <li><strong>Apply Minimum Safe Intervals:</strong> Rather than waiting for standard calendar months, doctors apply accelerated minimum clinical intervals between subsequent doses to restore protective antibody levels rapidly.</li>
+        <li><strong>Safe Co-Administration:</strong> Administer multiple age-appropriate vaccines simultaneously at different anatomical injection sites (e.g., right thigh, left thigh, upper arms) during a single consultation.</li>
+        <li><strong>Prioritize Essential Catch-Up for Older Children:</strong> For children over 5 years who missed early shots, doctors prioritize DTaP/Tdap, MMR, Hepatitis B, PCV, and Typhoid vaccines.</li>
+      </ul>
+
+      <h2>Can a Baby Be Vaccinated During a Mild Cold?</h2>
+      <p>Minor illnesses such as a clear runny nose, mild cough, or low-grade temperature are <em>not</em> clinical reasons to delay scheduled vaccines. Postponing immunization for trivial sniffles needlessly extends your child's window of vulnerability. Vaccination is only delayed if the child has a high-grade fever (≥101°F / 38.3°C) or acute systemic illness requiring hospitalization.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>`,
     faqs: [
       {
-        q: "Can multiple catch-up vaccines be given in a single visit?",
-        a: "Yes. Administering multiple age-appropriate vaccines at different anatomical sites during the same visit is safe and clinically recommended to catch up quickly."
+            "q": "Do we have to restart a vaccine course if several months have passed?",
+            "a": "No. The immune system retains memory of previous doses. Your pediatrician will resume the schedule from where it was left off without restarting."
       },
       {
-        q: "Should we vaccinate a child with a mild cold or runny nose?",
-        a: "Mild illness without high fever (such as a minor cold or cough) is not a contraindication for vaccination."
+            "q": "Is it safe to give multiple catch-up vaccines in one visit?",
+            "a": "Yes. Administering multiple age-appropriate vaccines at separate anatomical sites during the same consultation is clinically proven to be safe and effective."
+      },
+      {
+            "q": "How can I schedule a catch-up vaccination consultation in Bhopal?",
+            "a": "Bring your child's vaccination card to Baby Steps \u2013 Newborn & Child Clinic in Neelbad, Bhopal, or call 62625 60101 for an unhurried catch-up plan."
       }
-    ]
+]
   },
   "vaccine-side-effects-fever-management": {
     title: "Post-Vaccination Fever & Side Effects: Parent Care Guide",
@@ -206,120 +138,115 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Managing fever, swelling, and fussiness after childhood vaccination. Safe home remedies and pediatrician-approved care tips by Baby Steps Clinic.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
-    readTime: "5 min read",
     category: "Vaccination",
-    excerpt: "How to manage mild fever, localized swelling, and fussiness in babies following routine immunizations.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "Consultant Pediatrician & Neonatologist",
-    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    excerpt: "Learn how to manage normal post-vaccination side effects such as low-grade fever, local soreness, and fussiness in infants safely.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Normal vs Red-Flag Post-Vaccine Symptoms</h2>
-      <p>Mild fever (below 101°F), localized redness, mild swelling, and temporary irritability are expected responses indicating immune system activation.</p>
+      <h2>Expected Reactions vs. Adverse Events</h2>
+      <p>Most post-immunization reactions—such as mild fever, localized swelling at the injection site, and mild fussiness—are physiological signs that your baby's immune system is actively building protective antibodies.</p>
 
-      <h2>Home Care Protocols for Post-Vaccine Mild Fever</h2>
-      <p>Keep your baby in comfortable cotton clothing, maintain frequent breastfeeds or water intake, and apply a cool, damp cloth to the injection site if mild swelling occurs.</p>
+      <h2>Home Management of Post-Vaccination Fever</h2>
+      <p>Dress your baby in light, breathable cotton clothing and ensure adequate hydration with breast milk or formula. If temperature exceeds 38°C (100.4°F) or your baby is uncomfortable, administer weight-appropriate paracetamol drops strictly as prescribed by your pediatrician.</p>
 
-      <p>If a child experiences a febrile reaction following vaccination, keep them comfortable in lightweight cotton clothing, maintain frequent hydration, and administer pediatrician-prescribed paracetamol dosage. Never give aspirin or unprescribed medications.</p>
+      <p>Apply a cool, damp washcloth to the injection site to reduce localized pain and swelling. Avoid applying ice directly to infant skin.</p>
     `,
     faqs: [
       {
-        q: "When should I contact a doctor for post-vaccine fever?",
-        a: "Seek medical advice if fever exceeds 102°F, lasts longer than 48 hours, or is accompanied by inconsolable crying or severe lethargy."
+        q: "How long does fever last after a vaccination?",
+        a: "Post-vaccine fevers usually appear within 12 to 24 hours of administration and typically subside completely within 48 hours."
       },
       {
-        q: "Can I massage the leg where the injection was given?",
-        a: "No. Do not massage or vigorously rub the injection site, as this can increase pain and local tissue inflammation."
+        q: "When should I contact a pediatrician after vaccination?",
+        a: "Contact your doctor if fever exceeds 39°C (102.2°F), persists beyond 48 hours, or if the baby exhibits persistent inconsolable crying for more than 3 hours."
       }
     ]
   },
   "painless-vaccination-for-babies": {
-    title: "Painless vs Painful Vaccine for Babies: Differences, Pros & Cons",
+    title: "Painless vs Painful Vaccines: Key Differences Explained for Parents",
     slug: "painless-vaccination-for-babies",
     metaTitle: "Painless Vaccination for Babies Explained | Baby Steps",
     metaDescription: "Understand painless (acellular) vs conventional baby vaccines in India. Efficacy, fever comparison, and pediatrician recommendations in Bhopal.",
     date: "2026-07-18",
     dateModified: "2026-07-18",
-    readTime: "7 min read",
     category: "Vaccination",
-    excerpt: "A detailed comparison of acellular (painless) vs whole-cell (painful) combination DTP vaccines for Indian babies.",
+    excerpt: "Understanding the difference between painless (acellular DTaP) and conventional (whole-cell DTwP) vaccines for infants.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Understanding Acellular (Painless) vs Whole-Cell (Painful) DTP Vaccines</h2>
-      <p>The term "painless vaccine" refers to the acellular pertussis (aP) component in combination DTP shots, compared to the whole-cell pertussis (wP) formulation. Both options are licensed and safe.</p>
+      <h2>Acellular (DTaP) vs. Whole-Cell (DTwP) Formulations</h2>
+      <p>The distinction between "painless" and "painful" vaccines refers specifically to the pertussis (whooping cough) component in primary DTP combination shots:</p>
+      <ul>
+        <li><strong>Painless Vaccines (DTaP):</strong> Contain acellular, purified pertussis antigens resulting in fewer side effects like high fever and injection-site swelling.</li>
+        <li><strong>Conventional Vaccines (DTwP):</strong> Utilize whole-cell killed bacteria, causing higher rates of transient fever but providing robust long-term antibody levels.</li>
+      </ul>
 
-      <h2>Comparison Table: Painless (aP) vs Painful (wP) Vaccines</h2>
-      <div className="overflow-x-auto my-6">
-        <table className="w-full text-left text-xs sm:text-sm border-collapse border border-gray-200">
-          <thead>
-            <tr className="bg-surface-tint">
-              <th className="p-2.5 border border-gray-200 font-bold">Feature</th>
-              <th className="p-2.5 border border-gray-200 font-bold">Painless (aP - Acellular)</th>
-              <th className="p-2.5 border border-gray-200 font-bold">Painful (wP - Whole-cell)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="p-2.5 font-semibold">Post-Shot Fever &amp; Pain</td>
-              <td className="p-2.5 text-green-700 font-medium">Low / Minimal</td>
-              <td className="p-2.5 text-amber-700 font-medium">Moderate to High</td>
-            </tr>
-            <tr>
-              <td className="p-2.5 font-semibold">Local Swelling &amp; Soreness</td>
-              <td className="p-2.5 text-green-700 font-medium">Low / Minimal</td>
-              <td className="p-2.5 text-amber-700 font-medium">Moderate to High</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>What Does the Indian Academy of Pediatrics (IAP) Recommend?</h2>
+      <p>Both vaccine types provide excellent protection against diphtheria, tetanus, and pertussis. The <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP</a> recommends whole-cell DTwP for primary series while approving acellular DTaP in clinical circumstances where minimizing post-vaccine fever is preferred.</p>
 
-      <h2>Which Vaccine Option Should Parents Choose?</h2>
-      <p>Both vaccine formulations offer effective clinical protection. Painless vaccines are preferred for children prone to febrile reactions or when parents seek to minimize post-shot discomfort.</p>
-
-      <p>When comparing long-term immunity, whole-cell vaccines may provide a slightly more robust initial immune response, but acellular vaccines are highly effective and safer for infants with a history of fever or high sensitivity to pain. Modern pediatric clinical evidence demonstrates that both are excellent at preventing whooping cough, provided the primary and booster doses are completed on time.</p>
+      <p>Consult with your pediatrician at Baby Steps Clinic to evaluate your baby's medical history and choose the optimal vaccine formulation.</p>
     `,
     faqs: [
       {
-        q: "Is the painless vaccine less effective than the painful one?",
-        a: "No, both vaccine formulations build strong protective immunity against whooping cough. Acellular painless versions contain purified bacterial proteins that significantly reduce fever and swelling."
+        q: "Does a painless vaccine hurt less during the injection?",
+        a: "The needle prick itself feels the same, but 'painless' vaccines significantly reduce post-vaccination fever, pain, and swelling at the injection site over the next 48 hours."
       },
       {
-        q: "Which one should we choose for our baby?",
-        a: "If your child has a history of high fever or febrile discomfort following vaccinations, the painless acellular vaccine is highly recommended under pediatric consultation."
+        q: "Are painless vaccines as effective as conventional ones?",
+        a: "Yes. Both forms provide effective clinical protection against whooping cough, tetanus, and diphtheria."
       }
     ]
   },
   "baby-weight-gain-tips": {
-    title: "Baby Weight Gain Tips: Healthy Infant Nutrition & WHO Percentile Trajectory",
+    title: "Healthy Baby Weight Gain: Infant Feeding & Calorie Density Guide",
     slug: "baby-weight-gain-tips",
-    metaTitle: "Healthy Baby Weight Gain Tips for Parents | Baby Steps",
-    metaDescription: "Pediatrician advice on healthy infant weight gain. Learn WHO growth chart percentiles, caloric intake, and complementary feeding strategies.",
+    metaTitle: "Baby Weight Gain Tips: Infant Feeding & Diet Guide",
+    metaDescription: "Pediatrician tips for healthy baby weight gain. Discover nutrient-dense weaning foods, daily feeding routines, and when to seek advice at Baby Steps.",
     date: "2026-07-20",
-    dateModified: "2026-07-20",
-    readTime: "5 min read",
+    dateModified: "2026-08-19",
     category: "Child Nutrition",
-    excerpt: "Evidence-based guidelines for healthy infant and toddler weight gain, complementary feeding milestones, and WHO growth chart evaluation.",
+    excerpt: "Pediatrician guidance on healthy infant weight gain, caloric density, nutrient-rich weaning foods, and daily feeding routines.",
     author: "Dr. Manisha Bangarwa Arya",
     authorTitle: "Consultant Pediatrician & Neonatologist",
     authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>How Do I Know If My Baby Is Gaining Weight Normally?</h2>
-      <p>Tracking your infant's weight trajectory against official <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Child Growth Standards</a> is the gold standard for monitoring health. During the first 3 months, healthy newborns typically gain 20–30 grams per day.</p>
+      <p>Parental anxiety around baby weight gain is very common. Knowing how infants gain weight across their first two years and how to enrich their meals ensures steady, healthy physical development without force-feeding.</p>
 
-      <h2>What Are the Best Foods for Healthy Weight Gain in Toddlers?</h2>
-      <p>For babies over 6 months, nutrient-dense complementary foods aligned with <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">Indian Academy of Pediatrics (IAP) nutrition guidelines</a> help maintain ideal weight gain without digestive stress.</p>
+      <h2>Expected Weight Gain Trajectories</h2>
+      <ul>
+        <li><strong>0–3 Months:</strong> Healthy newborns typically gain 20–30 grams per day, regaining their birth weight by day 10–14.</li>
+        <li><strong>4–6 Months:</strong> Most infants double their birth weight by 5 to 6 months of age.</li>
+        <li><strong>1 Year:</strong> By 12 months, healthy babies generally triple their birth weight.</li>
+      </ul>
 
-      <p>For underweight toddlers, increasing caloric density is key. Incorporate healthy fats by adding a teaspoon of desi ghee or cold-pressed oil to porridges, using full-fat yogurt, nut powders, or mashed avocado in daily meals. These nutrient-dense additions provide essential calories without excessive volume, helping infants meet their growth percentiles sustainably.</p>
+      <h2>Nutrient-Dense Foods for Healthy Weight Gain</h2>
+      <p>Starting complementary feeding at 6 months under <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP pediatric nutrition standards</a> builds sustained growth:</p>
+      <ul>
+        <li><strong>Healthy Fats:</strong> Add a half-teaspoon of pure desi ghee or cold-pressed oil to dal-khichdi, mashed potatoes, and vegetable purées.</li>
+        <li><strong>Energy-Dense Grains:</strong> Sprouted ragi porridge, oats with breast milk/formula, and suji kheer provide slow-burning carbohydrates.</li>
+        <li><strong>Protein Sources:</strong> Mashed paneer, boiled egg yolk (after 7 months), cooked lentils, and whole curd support lean tissue building.</li>
+        <li><strong>Nut Powders:</strong> Finely powdered almonds and walnuts stirred into porridges add vital micronutrients and healthy calories for toddlers.</li>
+      </ul>
+
+      <h2>Tracking Overall Milestones & Stature</h2>
+      <p>To evaluate your child's overall height curve, head circumference, and motor milestones, explore our companion article on <a href="/blog/is-my-child-growing-normally">Is My Child Growing Normally?</a>.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
     `,
     faqs: [
       {
-        q: "What should I do if my baby is not gaining weight?",
-        a: "Consult your pediatrician for a detailed WHO growth percentile review. Weight gain issues can stem from inadequate latching, calorie density gaps, or underlying digestion concerns."
+        q: "What should I do if my baby is not gaining weight steadily?",
+        a: "Consult your pediatrician to review latch efficiency, feeding frequency, and caloric density before introducing supplements."
       },
       {
-        q: "When should we start solid foods for weight gain?",
-        a: "Complementary feeding should begin at 6 months alongside continued breastfeeding, introducing mashed bananas, khichdi, and ragi porridge under pediatric guidance."
+        q: "How can I increase calories in toddler meals without junk food?",
+        a: "Add healthy fats such as homemade ghee, paneer, nut powders, and avocado to natural meals rather than sugary processed snacks."
+      },
+      {
+        q: "Where can I get pediatric diet counseling in Bhopal?",
+        a: "Baby Steps Clinic in Neelbad offers personalized child nutrition and weight management guidance. Call 62625 60101."
       }
     ]
   },
@@ -330,128 +257,92 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Pediatric guide on recognizing early dengue symptoms in children, monitoring warning signs, preventing dehydration, and home recovery protocols.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
-    readTime: "6 min read",
-    category: "Child Health",
-    excerpt: "Pediatric guidelines on recognizing early dengue symptoms in children, monitoring warning signs, and maintaining oral hydration.",
+    category: "Pediatric Care",
+    excerpt: "How to identify early signs of dengue in infants and children, when to seek urgent care, and essential home hydration protocols.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>What Are the Early Symptoms of Dengue Fever in Children?</h2>
-      <p>Dengue in children can present with high fever, severe headache, retro-orbital pain, body aches, and skin rash. Aligned with <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer">Ministry of Health & Family Welfare (MoHFW) guidelines</a>, early diagnosis is essential for safe recovery.</p>
+      <h2>Recognizing Pediatric Dengue Symptoms</h2>
+      <p>Dengue in children can present with high fever, facial flushing, severe retro-orbital pain, body aches, vomiting, and skin rashes. According to clinical protocols by the <a href="https://www.nvbdcp.gov.in" target="_blank" rel="noopener noreferrer">National Vector Borne Disease Control Programme (NVBDCP)</a>, early detection prevents complications.</p>
 
-      <h2>What Danger Signs Require Immediate Emergency Consultation?</h2>
-      <p>Persistent vomiting, abdominal pain, lethargy, or mucosal bleeding require immediate medical evaluation as advised by <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Dengue Clinical Management protocols</a>.</p>
+      <h2>Critical Warning Signs (Day 3 to Day 7)</h2>
+      <p>The most dangerous phase of dengue occurs when the fever subsides (the critical phase). Seek emergency medical care immediately if you observe persistent vomiting, severe abdominal pain, mucosal bleeding (bleeding gums/nose), or extreme lethargy.</p>
 
-      <p>Fluid management is critical. Parents should calculate maintenance fluids (ORS, coconut water, soups) based on the child's weight and ensure frequent intake to prevent dehydration. Watch closely for Dengue Shock Syndrome (DSS) symptoms: cold or clammy extremities, rapid/weak pulse, sudden blood pressure drop, or severe restlessness. If these signs occur, proceed directly to emergency care for intravenous fluid resuscitation.</p>
+      <p>Maintaining adequate fluid intake using Oral Rehydration Solution (ORS), coconut water, and soups is the cornerstone of safe pediatric dengue management. Avoid NSAIDs such as Ibuprofen and Mefenamic Acid; use Paracetamol only under medical supervision.</p>
     `,
     faqs: [
       {
-        q: "Can children recover from dengue at home?",
-        a: "Mild dengue cases can be managed at home with strict bed rest, paracetamol for fever, and continuous oral fluid intake. Aspirin or ibuprofen must NEVER be given."
+        q: "What fluid is best for a child recovering from dengue?",
+        a: "ORS, coconut water, buttermilk, dal soup, and plain water are recommended to maintain optimal electrolyte balance and prevent dehydration."
       },
       {
-        q: "When should blood platelet tests be done?",
-        a: "Complete Blood Count (CBC) and platelet monitoring should be ordered by your pediatrician based on fever onset and clinical examination."
+        q: "When is hospitalization required for pediatric dengue?",
+        a: "Hospitalization is indicated if there are signs of dehydration, rapid drop in platelet counts, bleeding manifestations, or inability to tolerate oral fluids."
       }
     ]
   },
   "monsoon-child-care-tips": {
-    title: "Monsoon Child Care Guide: Preventing Flu, Infections & Waterborne Illnesses",
+    title: "Monsoon Child Care: Preventing Infections, Waterborne Illnesses & Fevers",
     slug: "monsoon-child-care-tips",
     metaTitle: "Monsoon Child Care & Infection Prevention | Baby Steps",
     metaDescription: "Essential monsoon health practices for babies and children to prevent seasonal viral fevers, stomach infections, and mosquito-borne illnesses.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
-    readTime: "5 min read",
-    category: "Preventive Health",
+    category: "Pediatric Care",
     excerpt: "Essential monsoon health practices for babies and children to prevent seasonal viral fevers, stomach infections, and mosquito-borne illnesses.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>How Can Parents Protect Children From Seasonal Monsoon Fevers?</h2>
-      <p>Monsoon humidity increases viral transmission and vector breeding. Annual seasonal Influenza vaccination recommended by <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP India</a> provides strong protection against flu strains.</p>
+      <h2>Preventing Waterborne Gastrointestinal Infections</h2>
+      <p>During monsoon months, contamination of drinking water sources leads to spikes in pediatric diarrhea, typhoid, and viral hepatitis. Always provide boiled or purified water and ensure thorough hand hygiene before meals.</p>
 
-      <h2>What Water and Hygiene Safety Protocols Should Families Follow?</h2>
-      <p>Boiling drinking water and enforcing hand hygiene protocols aligned with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO infection control guidelines</a> significantly reduce gastrointestinal infections.</p>
+      <h2>Mosquito Protection Strategies for Infants</h2>
+      <p>Protect against dengue and malaria by dressing children in light-colored, long-sleeved clothing, using pediatrician-approved mosquito repellents (DEET or Picaridin-based for children over 2 months), and installing window screens at home.</p>
 
-      <p>Monsoon conditions often cause fungal skin infections and viral rashes due to humidity and trapped moisture in skin folds. Ensure infants are bathed with mild soap, dried thoroughly in skin folds, and dressed in clean, light cotton clothing. For viral fevers, focus on hydration and temperature management using paracetamol as directed by your pediatrician if fever causes distress.</p>
+      <p>Ensure your child's Typhoid, Hepatitis A, and annual Influenza vaccinations are up to date before the peak of the rainy season.</p>
     `,
     faqs: [
       {
-        q: "Is the annual flu shot necessary for children during monsoon?",
-        a: "Yes, the IAP recommends an annual flu vaccination before the monsoon season for all children above 6 months to reduce influenza severity."
+        q: "Are mosquito repellent patches safe for infants?",
+        a: "Patches applied to clothing (never directly on skin) or physical barriers like mosquito nets over cribs are safest for infants under 2 months."
       },
       {
-        q: "How to prevent mosquito bites in infants?",
-        a: "Use full-sleeved cotton clothing, mosquito nets over cribs, and child-safe repellent patches approved for infant skin."
+        q: "Which vaccines are most important before the monsoon season?",
+        a: "Influenza (flu shot), Typhoid Conjugate Vaccine, Hepatitis A, and Rotavirus vaccines are crucial for monsoon disease prevention."
       }
     ]
   },
   "loose-motion-in-babies-care": {
-    title: "Loose Motion in Babies: Dehydration Prevention, ORS & Parent Guidelines",
+    title: "Loose Motion in Babies: Oral Rehydration, Diet & Red Flag Indicators",
     slug: "loose-motion-in-babies-care",
     metaTitle: "Loose Motion in Babies: ORS & Home Care | Baby Steps",
     metaDescription: "Clinical guidance on managing pediatric diarrhea, calculating WHO-standard ORS fluid intake, and recognizing dehydration warning signs in babies.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
-    readTime: "5 min read",
-    category: "Infant Care",
-    excerpt: "Clinical guidance on managing pediatric diarrhea, calculating WHO-standard ORS fluid intake, and recognizing dehydration warning signs.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "Consultant Pediatrician & Neonatologist",
-    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <h2>What Should Parents Do Immediately When a Baby Develops Loose Motion?</h2>
-      <p>The foremost clinical priority in infant diarrhea is preventing dehydration. Administering low-osmolarity Oral Rehydration Salts (ORS) alongside continuous breastfeeding follows <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Diarrheal Disease Management</a>.</p>
-
-      <h2>Why Is Zinc Supplementation Recommended During Diarrhea Episodes?</h2>
-      <p>According to <a href="https://main.mohfw.gov.in" target="_blank" rel="noopener noreferrer">MoHFW guidelines</a>, 14-day Zinc supplementation reduces the duration and severity of acute diarrhea in infants.</p>
-
-      <p>Using low-osmolarity ORS is essential for effective intestinal water absorption. Alongside hydration, a 14-day course of elemental Zinc (typically 10mg for infants under 6 months, 20mg for older infants) is vital. Zinc significantly strengthens the intestinal lining, reduces the frequency of stools, and prevents future diarrhea episodes, making it a critical component of diarrhea management.</p>
-    `,
-    faqs: [
-      {
-        q: "What are the early signs of dehydration in a baby?",
-        a: "Sunken eyes, dry mouth, absence of tears when crying, decreased wet diapers (fewer than 6 in 24 hours), and extreme lethargy require immediate medical care."
-      },
-      {
-        q: "Should I stop feeding my baby during loose motion?",
-        a: "No. Never stop breastfeeding or age-appropriate soft feeds during diarrhea. Continued feeding maintains gut integrity and speeds up recovery."
-      }
-    ]
-  },
-  "child-cough-cold-home-care": {
-    title: "Child Cough & Cold Care: Safe Home Guidelines & When to Consult",
-    slug: "child-cough-cold-home-care",
-    metaTitle: "Child Cough & Cold: Safe Home Care | Baby Steps Bhopal",
-    metaDescription: "Pediatric safe-care advice for managing cold and cough in infants and toddlers without unprescribed OTC medications at Baby Steps Clinic Bhopal.",
-    date: "2026-07-20",
-    dateModified: "2026-07-20",
-    readTime: "5 min read",
-    category: "Pediatric Care",
-    excerpt: "Pediatric safe-care advice for managing cold and cough in infants and toddlers without unprescribed OTC medications.",
+    category: "Child Health",
+    excerpt: "Pediatric guidance on managing loose motions in infants, calculating WHO-standard ORS fluid intake, and recognizing dehydration warning signs.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Why Are Over-the-Counter Cough Syrups Discouraged for Young Children?</h2>
-      <p><a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP medical alerts</a> strongly advise against giving OTC combination cough and cold syrups to infants under 2 years due to respiratory risks. Saline nasal drops and hydration are preferred.</p>
+      <h2>Why Is Dehydration the Primary Concern in Infant Diarrhea?</h2>
+      <p>In young children, loose stools lead to rapid loss of water and essential electrolytes. The cornerstone of treatment is preventing dehydration using <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO-standard Low Osmolarity Oral Rehydration Salts (ORS)</a>.</p>
 
-      <h2>When Does a Child's Cough Require a Specialist Pediatric Visit?</h2>
-      <p>Fast breathing, chest indrawing, wheezing, or fever lasting over 3 days require clinical evaluation aligned with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Acute Respiratory Infection protocols</a>.</p>
+      <h2>How to Prepare and Administer ORS Correctly</h2>
+      <p>Dissolve the entire packet of ORS in exactly 1 liter of clean drinking water. Administer small, frequent sips after each loose stool. For infants under 6 months, continue exclusive breastfeeding with increased frequency.</p>
 
-      <p>Watch for signs of respiratory distress: intercostal or subcostal retractions (skin sucking in around the ribs during breaths), nasal flaring, grunting, or a bluish tint around the lips. These are indicators that the child is struggling to maintain oxygen levels. If these signs occur, seek emergency care immediately as they may signal bronchiolitis, pneumonia, or severe asthma exacerbation.</p>
+      <p>Oral Zinc supplementation prescribed by your pediatrician for 14 days reduces the duration and severity of acute diarrheal episodes and prevents recurrence for up to 3 months.</p>
     `,
     faqs: [
       {
-        q: "How to clear a blocked nose in a newborn safely?",
-        a: "Use pediatrician-approved saline nasal drops (1–2 drops per nostril) followed by gentle bulb suction before feeds and sleep."
+        q: "What foods should I give a toddler with loose motions?",
+        a: "Offer bland, easily digestible foods such as curd-rice, banana, boiled potatoes, khichdi, and clear dal soup. Avoid sugary juices and fatty foods."
       },
       {
-        q: "Is steam inhalation safe for toddlers?",
-        a: "Direct steam inhalation carries burn risks for young children. Running a hot shower to create a warm humid bathroom environment is much safer."
+        q: "When is loose motion considered an emergency in babies?",
+        a: "Seek immediate emergency care if your baby has dry mouth, crying without tears, sunken eyes, no wet diaper for over 6 hours, or blood in the stool."
       }
     ]
   },
@@ -462,163 +353,166 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Clinical strategies for managing toddler picky eating, establishing healthy mealtime routines, and meeting daily nutritional needs for children.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
-    readTime: "5 min read",
-    category: "Child Nutrition",
-    excerpt: "Clinical strategies for managing toddler picky eating, establishing mealtime routines, and meeting daily caloric and micronutrient needs.",
+    category: "Nutrition",
+    excerpt: "Practical behavioral strategies and pediatric nutrition advice for parents managing picky eating, food refusal, and appetite concerns in toddlers.",
     author: "Dr. Manisha Bangarwa Arya",
     authorTitle: "Consultant Pediatrician & Neonatologist",
     authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Is Picky Eating Normal for Toddlers Between 1 to 3 Years?</h2>
-      <p>Appetite fluctuations are common as toddler growth rates slow down compared to infancy. Following <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP Infant & Young Child Feeding (IYCF) guidelines</a> prevents forced-feeding struggles.</p>
+      <h2>Understanding Toddler Appetite Fluctuations</h2>
+      <p>Between ages 1 and 3, growth rates naturally slow compared to infancy, leading to a physiological decrease in appetite. Picky eating is often a normal developmental phase of expressing autonomy.</p>
 
-      <h2>How Can Parents Ensure Balanced Micronutrient Intake Without Forced Feeding?</h2>
-      <p>Offering small, nutrient-dense meal portions rich in iron, zinc, and protein aligns with <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Child Health Recommendations</a>.</p>
+      <h2>Effective Mealtime Strategies for Parents</h2>
+      <ul>
+        <li><strong>Division of Responsibility:</strong> Parents decide what, when, and where to eat; the child decides whether and how much to eat. Avoid force-feeding.</li>
+        <li><strong>No Screen Distractions:</strong> Keep mealtimes screen-free to allow children to tune into their natural fullness cues.</li>
+        <li><strong>Repeated Exposure:</strong> A child may need to see a new food 10–15 times before tasting it. Serve small portions without pressure.</li>
+      </ul>
 
-      <p>Implement behavioral strategies like eating with your child, maintaining calm mealtimes without screen distractions, and offering 10–15 exposures to new vegetables before expecting acceptance. If concerns persist regarding micronutrient intake, your pediatrician may recommend supplementation, but avoid 'appetite boosters' which are often medically unsubstantiated and ineffective for true picky eating behavior.</p>
+      <p>If food refusal is accompanied by weight loss, lethargy, or chronic constipation, schedule a clinical growth evaluation to rule out underlying nutritional deficiencies.</p>
     `,
     faqs: [
       {
-        q: "Should I give appetite-booster syrups to my child?",
-        a: "Appetite syrups should never be given without pediatric consultation. True appetite loss is best evaluated through blood counts and physical growth checks."
+        q: "Is it normal for a toddler to eat only one meal a day?",
+        a: "Yes. Toddler appetite varies daily. Look at food intake across an entire week rather than a single day."
       },
       {
-        q: "How many meals should a 1-year-old child eat per day?",
-        a: "A typical schedule includes 3 main meals and 2 healthy nutrient-dense snacks, alongside milk feeds."
+        q: "Should I give appetite stimulant syrups to my child?",
+        a: "No. Routine appetite stimulants are not recommended by pediatric guidelines and may cause side effects. Focus on behavioral mealtime strategies and nutrient-dense foods."
       }
     ]
   },
   "vitamin-d-iron-deficiency-kids": {
-    title: "Vitamin D & Iron Deficiency in Children: Clinical Signs & Dietary Sources",
+    title: "Vitamin D and Iron Deficiency in Children: Signs, Diet & Supplements",
     slug: "vitamin-d-iron-deficiency-kids",
     metaTitle: "Vitamin D & Iron Deficiency in Kids | Baby Steps Bhopal",
     metaDescription: "Identifying early clinical signs of Vitamin D and Iron deficiency in infants and children, supplementation guidelines, and fortified dietary advice.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
-    readTime: "5 min read",
-    category: "Child Nutrition",
-    excerpt: "Identifying early clinical signs of Vitamin D and Iron deficiency in infants and children, supplementation guidelines, and fortified dietary options.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "Consultant Pediatrician & Neonatologist",
-    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    category: "Nutrition",
+    excerpt: "How to spot early clinical signs of Vitamin D and iron deficiencies in children, age-wise dietary requirements, and safe supplementation protocols.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Why Is Vitamin D Supplementation Recommended for All Breastfed Infants?</h2>
-      <p>Breast milk provides optimal nutrition but is low in Vitamin D. <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP clinical guidelines</a> recommend daily Vitamin D supplementation (400 IU/day) from birth to prevent rickets.</p>
+      <h2>Why Are Vitamin D and Iron Vital for Growing Children?</h2>
+      <p>Vitamin D is essential for bone mineralization and immune health, while iron is crucial for hemoglobin production and cognitive brain development. According to <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO nutritional surveys</a>, iron-deficiency anemia affects over 50% of young children in India.</p>
 
-      <h2>What Are the Clinical Signs of Nutritional Anemia in Young Children?</h2>
-      <p>Pallor, fatigue, reduced appetite, and poor weight gain indicate iron deficiency anemia. <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Anemia Control Protocols</a> advocate early dietary iron enrichment.</p>
+      <h2>Recognizing the Symptoms of Deficiency</h2>
+      <ul>
+        <li><strong>Iron Deficiency Anemia:</strong> Pale skin/conjunctiva, fatigue, poor concentration, brittle nails, and pica (eating non-food items like mud or chalk).</li>
+        <li><strong>Vitamin D Deficiency:</strong> Delayed walking, bowed legs, muscle weakness, frequent respiratory infections, and delayed tooth eruption.</li>
+      </ul>
 
-      <p>For Vitamin D, 400 IU daily is standard for infants to ensure proper bone health and immunity until age one. For iron deficiency, pediatricians may prescribe elemental iron drops (calculated at 3–6 mg/kg/day) based on laboratory blood results. Pairing iron drops with Vitamin C-rich foods—like citrus juice or fresh fruit—can significantly enhance intestinal absorption rates.</p>
+      <h2>Supplementation Guidelines</h2>
+      <p>The Indian Academy of Pediatrics recommends routine Vitamin D3 drops (400 IU daily) for all breastfed infants during the first year of life. Iron supplementation should follow clinical evaluation of blood parameters.</p>
     `,
     faqs: [
       {
-        q: "How long should Vitamin D drops be continued for babies?",
-        a: "Vitamin D drops (400 IU daily) are usually recommended for the first 12 months of life, as advised by your pediatrician."
+        q: "Can children get enough Vitamin D from sunlight alone?",
+        a: "Sunlight exposure helps, but atmospheric pollution and limited outdoor sun exposure make dietary drops necessary for infants in urban India."
       },
       {
-        q: "What rich foods provide natural iron for toddlers?",
-        a: "Jaggery, green leafy vegetables, lentils, egg yolk, fortified cereals, and Vitamin C-rich foods (which enhance iron absorption) are excellent."
+        q: "What foods are rich in iron for vegetarians?",
+        a: "Include green leafy vegetables, lentils (dal), ragi, jaggery, beetroot, and pomegranate. Pair iron-rich foods with Vitamin C (like lemon juice) to enhance absorption."
       }
     ]
   },
   "child-immunity-booster-guide": {
-    title: "Child Immunity Booster Guide: Science-Backed Habits for Healthy Kids",
+    title: "Child Immunity Booster: Evidence-Based Nutrition & Lifestyle Guide",
     slug: "child-immunity-booster-guide",
     metaTitle: "Child Immunity Booster Guide for Parents | Baby Steps",
     metaDescription: "Evidence-based strategies to build natural childhood immunity through WHO-scheduled vaccinations, balanced nutrition, and healthy sleep hygiene.",
     date: "2026-07-20",
     dateModified: "2026-07-20",
-    readTime: "5 min read",
-    category: "Preventive Health",
-    excerpt: "Evidence-based strategies to build natural childhood immunity through WHO-scheduled vaccinations, balanced nutrition, and healthy sleep hygiene.",
+    category: "Pediatric Care",
+    excerpt: "Evidence-based medical advice on strengthening your child's natural immune defenses through balanced nutrition, sleep, vaccines, and outdoor play.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <h2>Do Commercial Immunity Booster Powders Really Work for Children?</h2>
-      <p>There are no magical quick-fix immunity supplements. True pediatric immunity builds through <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP-scheduled immunizations</a>, balanced whole foods, physical activity, and adequate sleep.</p>
+      <h2>The Science of Childhood Immunity</h2>
+      <p>Immunity develops naturally as a child's body encounters everyday microorganisms. Marketing claims of commercial "immunity booster" supplements are largely unproven; robust pediatric immunity is built on foundational health habits.</p>
 
-      <h2>What Are the Most Effective Clinical Habits to Reduce Frequent Infections?</h2>
-      <p>Completing routine vaccinations, maintaining hand hygiene, and limiting passive smoke exposure follow proven <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Child Health Interventions</a>.</p>
-
-      <p>Support your child's gut microbiome—which hosts 70% of the immune system—with probiotic foods like fresh yogurt, and prioritize sleep hygiene. Toddlers need 11–14 hours, while preschoolers need 10–13 hours daily to allow immune cytokines to regenerate and maintain defense mechanisms against pathogens.</p>
+      <h2>Key Pillars of Natural Immunity</h2>
+      <ul>
+        <li><strong>Complete Vaccination:</strong> Staying up to date on WHO and IAP immunization schedules is the most scientifically proven way to build targeted disease resistance.</li>
+        <li><strong>Balanced Nutrition:</strong> Provide colorful fruits, vegetables, eggs, pulses, and nuts rich in zinc, Vitamin C, and Vitamin A.</li>
+        <li><strong>Adequate Sleep:</strong> Children need 10–14 hours of quality sleep depending on age for cellular repair and cytokine production.</li>
+        <li><strong>Physical Activity & Sunshine:</strong> At least 60 minutes of active outdoor play daily encourages bone strength and healthy microbiome diversity.</li>
+      </ul>
     `,
     faqs: [
       {
-        q: "Is it normal for a toddler to get sick 6 to 8 times a year?",
-        a: "Yes. Young children attending playschools or daycares naturally experience 6–8 mild viral colds annually as their immune memory develops."
+        q: "Do commercial immunity syrups really work?",
+        a: "There is no clinical evidence that over-the-counter immunity supplements prevent illnesses in healthy children. Wholesome nutrition and timely vaccination are far more effective."
       },
       {
-        q: "What role does sleep play in child immunity?",
-        a: "Deep sleep releases cytokines required for immune defense. Toddlers need 11–14 hours of daily sleep (including naps) for optimal health."
+        q: "How many colds a year is normal for a school-going child?",
+        a: "It is normal for healthy children in daycare or school to experience 6 to 8 viral colds or mild fevers per year as their immune system matures."
       }
     ]
   },
-
   "baby-vaccination-schedule-chart-india": {
-    title: "Complete Baby Vaccination Schedule (0–18 Years): IAP Chart for Indian Parents",
+    title: "Complete Baby Vaccination Schedule (0\u201318 Years): IAP Chart for Indian Parents",
     slug: "baby-vaccination-schedule-chart-india",
     metaTitle: "Baby Vaccination Schedule India (0-18y) | Baby Steps",
     metaDescription: "Complete age-wise childhood vaccination chart from birth to 18 years in India. Understand essential vaccines, booster doses, and due dates at Baby Steps.",
     date: "2026-07-21",
-    dateModified: "2026-07-21",
-    readTime: "6 min read",
+    dateModified: "2026-08-19",
     category: "Vaccination",
-    excerpt: "A clear, age-wise vaccination chart from birth to 18 years — what each vaccine protects against and when it's due.",
+    excerpt: "A clear, age-wise vaccination chart from birth to 18 years \u2014 what each vaccine protects against and when it's due.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <p>Vaccination is one of the simplest, most effective ways to protect your child from serious illnesses. But the schedule can feel confusing — so many injections, so many ages. This guide lays it out clearly, following the Indian Academy of Pediatrics (IAP) recommendations.</p>
-      
-      <h2>Why Timing Matters for Childhood Vaccination</h2>
-      <p>Vaccines are timed to protect your child exactly when they're most vulnerable to each disease. Giving them on schedule builds immunity before your child is likely to be exposed. Delays leave gaps in protection.</p>
+    contentHtml: `<p>Childhood immunization is an essential cornerstone of preventive pediatric healthcare. While keeping track of multiple vaccine appointments across your child's first years can feel overwhelming, understanding the schedule makes planning straightforward. This comprehensive guide details the complete childhood immunization framework recommended by the <a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">Indian Academy of Pediatrics (IAP)</a>.</p>
 
-      <h2>Age-Wise Vaccination Chart (IAP-Aligned)</h2>
+      <h2>Understanding the IAP Schedule vs. Government UIP</h2>
+      <p>The Government of India's Universal Immunization Programme (UIP) focuses on core public health priorities (such as Polio, BCG, and Pentavalent). The IAP schedule includes additional vaccines—such as annual Influenza, Varicella (chickenpox), Hepatitis A, Typhoid Conjugate, and HPV—to provide broader individual protection against severe viral and bacterial infections.</p>
+
+      <h2>Age-Wise Vaccination Chart (IAP-Aligned from Birth to 18 Years)</h2>
       <ul>
-        <li><strong>Birth:</strong> BCG, Oral Polio (OPV-0), Hepatitis B (1st dose)</li>
-        <li><strong>6 weeks:</strong> DTwP/DTaP-1, IPV-1, Hib-1, Hepatitis B-2, Rotavirus-1, PCV-1</li>
-        <li><strong>10 weeks:</strong> DTwP/DTaP-2, IPV-2, Hib-2, Rotavirus-2, PCV-2</li>
-        <li><strong>14 weeks:</strong> DTwP/DTaP-3, IPV-3, Hib-3, Rotavirus-3, PCV-3</li>
-        <li><strong>6 months:</strong> Hepatitis B-3, OPV-1, Influenza-1</li>
-        <li><strong>7 months:</strong> Influenza-2</li>
-        <li><strong>9 months:</strong> MMR-1, OPV-2</li>
-        <li><strong>9–12 months:</strong> Typhoid Conjugate Vaccine (TCV)</li>
-        <li><strong>12 months:</strong> Hepatitis A-1</li>
-        <li><strong>12–15 months:</strong> PCV booster</li>
-        <li><strong>15 months:</strong> MMR-2, Varicella-1 (chickenpox)</li>
-        <li><strong>16–18 months:</strong> DTwP/DTaP booster-1, IPV booster-1, Hib booster</li>
-        <li><strong>18 months:</strong> Hepatitis A-2</li>
-        <li><strong>4–6 years:</strong> DTwP/DTaP booster-2, OPV-3, Varicella-2, MMR-3</li>
-        <li><strong>9–14 years:</strong> HPV (2 doses, girls and boys)</li>
-        <li><strong>10–12 years:</strong> Tdap</li>
-        <li><strong>16 years:</strong> Td</li>
-        <li><strong>Yearly:</strong> Influenza, especially up to 5 years</li>
+        <li><strong>Birth:</strong> BCG (Tuberculosis), Oral Polio Vaccine (OPV-0), Hepatitis B (1st birth dose)</li>
+        <li><strong>6 Weeks:</strong> DTwP/DTaP-1, IPV-1 (Injectable Polio), Hib-1, Hepatitis B-2, Rotavirus-1, PCV-1 (Pneumococcal)</li>
+        <li><strong>10 Weeks:</strong> DTwP/DTaP-2, IPV-2, Hib-2, Rotavirus-2, PCV-2</li>
+        <li><strong>14 Weeks:</strong> DTwP/DTaP-3, IPV-3, Hib-3, Rotavirus-3, PCV-3</li>
+        <li><strong>6 Months:</strong> Hepatitis B-3, OPV-1, Influenza-1 (annual flu shot)</li>
+        <li><strong>7 Months:</strong> Influenza-2 (booster dose 4 weeks after first shot)</li>
+        <li><strong>9 Months:</strong> MMR-1 (Measles, Mumps, Rubella), OPV-2</li>
+        <li><strong>9–12 Months:</strong> Typhoid Conjugate Vaccine (TCV)</li>
+        <li><strong>12 Months:</strong> Hepatitis A (1st dose)</li>
+        <li><strong>12–15 Months:</strong> Pneumococcal Conjugate (PCV Booster)</li>
+        <li><strong>15 Months:</strong> MMR-2, Varicella-1 (Chickenpox)</li>
+        <li><strong>16–18 Months:</strong> DTwP/DTaP Booster-1, IPV Booster-1, Hib Booster</li>
+        <li><strong>18 Months:</strong> Hepatitis A (2nd dose)</li>
+        <li><strong>4–6 Years:</strong> DTwP/DTaP Booster-2, OPV-3, Varicella-2, MMR-3</li>
+        <li><strong>9–14 Years:</strong> HPV Vaccine (Human Papillomavirus, 2 doses for girls and boys)</li>
+        <li><strong>10–12 Years:</strong> Tdap Booster (Tetanus, Diphtheria, Acellular Pertussis)</li>
+        <li><strong>16 Years:</strong> Td Booster (Tetanus and adult Diphtheria)</li>
+        <li><strong>Annual:</strong> Influenza Vaccine (recommended yearly up to 5 years of age)</li>
       </ul>
-      <p><em>Some brands vary (e.g. Rotavirus 2 vs 3 doses). Your pediatrician confirms the exact plan for your child.</em></p>
 
-      <h2>What to Expect After a Vaccine</h2>
-      <p>Mild fever, a little fussiness, or soreness at the injection site for a day or two is common and usually settles on its own. Serious reactions are rare. If your child seems very unwell, has a high fever that won't settle, or you're worried, call your doctor.</p>
+      <h2>Why Booster Doses Are Essential</h2>
+      <p>Primary infant vaccines build the initial baseline antibodies. Over time, circulating antibody levels gradually wane. Booster doses stimulate immune memory cells (B-cells and T-cells) to produce rapid, high-affinity protective antibodies that endure throughout school age and adolescence.</p>
 
-      <h2>Keeping Track of Due Dates</h2>
-      <p>Keep your child's vaccination card safe and bring it to every visit. At Baby Steps, we maintain each child's record and remind you when the next dose is due — so nothing gets missed.</p>
+      <h2>What to Expect After Your Child's Vaccination</h2>
+      <p>Mild fever, localized swelling, and brief irritability for 24 to 48 hours are common physiological signs that your child's immune system is responding actively. For detailed guidance on delayed doses, explore our companion guide on <a href="/blog/missed-vaccine-what-to-do">Catch-Up Immunization Rules</a>.</p>
 
-      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
-    `,
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>`,
     faqs: [
       {
-        q: "What if we miss a vaccine date?",
-        a: "Don't worry — vaccinations can usually be caught up. Bring your child in and the doctor will restart the schedule from where you left off; most vaccines don't need to be started over."
+            "q": "What is the key difference between government UIP and private IAP schedules?",
+            "a": "UIP covers essential public health vaccines. The IAP schedule includes additional vaccines such as Influenza, Chickenpox, Hepatitis A, and HPV for comprehensive protection."
       },
       {
-        q: "Are these vaccines safe?",
-        a: "Childhood vaccines are extensively tested and used worldwide. Mild, short-lived side effects like low fever are normal; serious reactions are rare."
+            "q": "Why are booster doses necessary for growing children?",
+            "a": "Booster doses refresh immune memory, ensuring long-lasting protective antibody titers throughout childhood and teenage years."
       },
       {
-        q: "Where can I get these vaccines in Bhopal?",
-        a: "We provide IAP-schedule vaccinations with a properly maintained cold chain at Baby Steps, Neelbad. Call 62625 60101 to check your child's due vaccines."
+            "q": "Where can I get IAP-schedule vaccines in Bhopal?",
+            "a": "Baby Steps Clinic in Neelbad provides all IAP-recommended vaccines with strict continuous 2\u00b0C to 8\u00b0C cold-chain surveillance. Call 62625 60101."
       }
-    ]
+]
   },
   "government-vs-private-vaccination-baby": {
     title: "Government vs Private Vaccination: Which Should You Choose for Your Baby?",
@@ -627,339 +521,273 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Detailed comparison between government UIP vaccines and private clinic immunization in India. Learn key differences in combinations, pricing, and timing.",
     date: "2026-07-19",
     dateModified: "2026-07-19",
-    readTime: "5 min read",
     category: "Vaccination",
-    excerpt: "Confused between free government vaccines and private clinic vaccination? Here's an honest comparison to help you decide.",
-    author: "Dr. Manisha Bangarwa Arya",
-    authorTitle: "Consultant Pediatrician & Neonatologist",
-    authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
+    excerpt: "Comparing government UIP vaccines and private clinic options — what's included, differences in combinations, and how to decide.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <p>Every parent wants to protect their child — and one common question is whether to use the free government vaccination programme or a private pediatric clinic. Both are valid. Here's the honest picture.</p>
+      <p>Both government health centres and private clinics in India provide life-saving childhood vaccinations. Understanding the differences helps you choose the right approach for your family.</p>
 
-      <h2>The Government Programme (UIP)</h2>
-      <p>India's Universal Immunization Programme provides several essential vaccines free of cost at government health centres — including BCG, OPV, Hepatitis B, DPT, measles/MR, and more. These protect against the most dangerous childhood diseases and are given by trained staff.</p>
+      <h2>What the Government UIP Covers</h2>
+      <p>The Universal Immunization Programme (UIP) offers free protection against major diseases including Polio, Tuberculosis, Hepatitis B, Diphtheria, Pertussis, Tetanus, Measles-Rubella, and Rotavirus in selected states.</p>
 
-      <h2>Private (Pediatric Clinic) Vaccination</h2>
-      <p>Private clinics follow the fuller IAP schedule, which includes some vaccines not always part of the free programme (such as certain doses of Rotavirus, PCV, Hepatitis A, Typhoid conjugate, Varicella, HPV, and combination injections that mean fewer pricks). You typically also get shorter waits, personalised timing reminders, and a consistent doctor who knows your child.</p>
+      <h2>What Private Clinics Offer in Addition</h2>
+      <p>Private pediatric clinics follow the broader Indian Academy of Pediatrics (IAP) schedule, which includes additional vaccines such as Influenza, Varicella (chickenpox), Hepatitis A, HPV, and Typhoid Conjugate Vaccine, alongside combination injections (e.g., 6-in-1 Hexavalent) that reduce needle pricks.</p>
 
-      <h2>How to Decide What's Best for Your Family</h2>
-      <p>There's no single right answer. Many families use a mix. What matters most is that <strong>your child is vaccinated on time</strong> — whichever route ensures that. If you want the fuller IAP schedule, combination vaccines (fewer injections), and a doctor who tracks your child's record, a pediatric clinic is convenient. If cost is the priority, the government programme covers the essentials well.</p>
-
-      <p>At Baby Steps, we're happy to look at your child's card and simply tell you what's already done and what's due — no pressure.</p>
+      <h2>Making the Right Choice</h2>
+      <p>Both options protect your child against serious illnesses. Many families use a combination—receiving core vaccines at government centres and supplemental ones privately.</p>
 
       <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
     `,
     faqs: [
       {
-        q: "Are private vaccines better than government ones?",
-        a: "The core vaccines protect against the same diseases. Private clinics offer some additional vaccines and combination options; the government programme covers the essentials free. Both are effective when given on time."
+        q: "Are government vaccines safe and effective?",
+        a: "Yes. Government vaccines meet stringent national quality standards and protect millions of Indian children every year."
       },
       {
-        q: "Can I mix government and private vaccines?",
-        a: "Yes, many parents do. Bring your child's vaccination card so the doctor can see what's been given and plan the rest."
+        q: "Can I switch between government and private vaccination?",
+        a: "Yes. Always carry your child's vaccination card so your doctor knows exactly which doses have been given."
       }
     ]
   },
   "newborn-care-at-home-guide": {
-    title: "Newborn Care at Home: A First-Week and First-Month Guide for New Parents",
+    title: "Newborn Care at Home: The Complete First-Month Parent Guide",
     slug: "newborn-care-at-home-guide",
     metaTitle: "Newborn Care at Home: First Month Guide | Baby Steps",
     metaDescription: "Calm, practical newborn care guide for new parents. Essential advice on umbilical cord care, sponge bathing, feeding cues, and sleep safety.",
-    date: "2026-07-17",
-    dateModified: "2026-07-17",
-    readTime: "7 min read",
-    category: "Newborn Care",
-    excerpt: "Bringing your baby home is joyful and overwhelming. Here's a calm, practical guide to the first few weeks.",
-    author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "Senior Consultant Pediatrician",
-    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <p>The first few weeks with a newborn are precious — and a little nerve-wracking. Here's what's normal and what to keep an eye on.</p>
-
-      <h2>Newborn Feeding Basics</h2>
-      <p>Newborns feed often — roughly every 2–3 hours, including at night. Look for signs your baby is feeding well: steady weight gain over the weeks, 6+ wet nappies a day after the first week, and settling after feeds. If breastfeeding feels difficult, that's common and help is available — you don't have to struggle alone.</p>
-
-      <h2>Safe Sleep Guidelines</h2>
-      <p>Newborns sleep a lot (16+ hours a day) but in short stretches. Always place your baby on their back to sleep, on a firm flat surface, without loose bedding. Day-night confusion is normal early on and settles with time.</p>
-
-      <h2>Understanding Newborn Jaundice</h2>
-      <p>Mild yellowing of the skin/eyes is common in the first week and usually harmless. But if the yellow spreads to the arms/legs, your baby is very sleepy or feeding poorly, or it appears in the first 24 hours, get them checked promptly.</p>
-
-      <h2>Umbilical Cord Care</h2>
-      <p>Keep the umbilical stump clean and dry; it usually falls off within 1–2 weeks. You don't need to apply anything unless your doctor advises. Redness spreading around the base, swelling, or a bad smell needs a check.</p>
-
-      <h2>When to Call the Doctor</h2>
-      <p>Contact your pediatrician if your newborn: has a fever or feels cold, is feeding very poorly, is unusually sleepy or floppy, has fast or laboured breathing, or if you're simply worried. Trust your instinct — it's always okay to ask.</p>
-
-      <h2>Looking After Yourself</h2>
-      <p>Rest when you can, accept help, and remember that the early weeks are demanding for parents too. If you feel persistently low or overwhelmed, please talk to someone — it matters.</p>
-
-      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
-    `,
-    faqs: [
-      {
-        q: "How often should a newborn feed?",
-        a: "Roughly every 2–3 hours, including overnight — that's normal and helps establish milk supply."
-      },
-      {
-        q: "Is newborn jaundice dangerous?",
-        a: "Mild jaundice in the first week is usually harmless, but if it spreads, appears very early, or your baby feeds poorly, get it checked the same day."
-      },
-      {
-        q: "When is the first newborn check-up?",
-        a: "Soon after birth and again in the first couple of weeks. We offer newborn and NICU follow-up care at Baby Steps — call 62625 60101."
-      }
-    ]
-  },
-  "baby-fever-when-to-worry": {
-    title: "Baby Fever: When to Worry and When to See a Child Doctor",
-    slug: "baby-fever-when-to-worry",
-    metaTitle: "Baby Fever: When to Worry & See a Doctor | Baby Steps",
-    metaDescription: "Pediatrician guide on managing baby fever safely at home. Learn temperature measurement, safe paracetamol use, and danger signs to watch for.",
     date: "2026-07-15",
     dateModified: "2026-07-15",
-    readTime: "5 min read",
-    category: "Child Health",
-    excerpt: "Fever in children is common and often harmless — but here's how to know when it needs a doctor.",
+    category: "Newborn Care",
+    excerpt: "Bringing your baby home is exciting and overwhelming. Here's a calm, practical guide to the first few weeks.",
     author: "Dr. Manisha Bangarwa Arya",
     authorTitle: "Consultant Pediatrician & Neonatologist",
     authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <p>Few things worry parents more than a hot, unsettled baby. The good news: most fevers are the body's normal response to fighting an infection. Here's how to think about it calmly.</p>
+      <p>Bringing a newborn home brings immense joy alongside many questions. Here is a calm, practical medical guide for your baby's first month.</p>
 
-      <h2>What Counts as Fever?</h2>
-      <p>A temperature of 100.4°F (38°C) or above is generally considered fever. How your child looks and behaves matters more than the exact number.</p>
+      <h2>Umbilical Cord Care</h2>
+      <p>Keep the cord stump clean and dry. Fold the diaper below the stump so air circulates. Avoid applying powders, oils, or turmeric. The stump naturally falls off in 7 to 14 days.</p>
 
-      <h2>Home Care Protocols</h2>
-      <p>Keep your child comfortable and hydrated with regular feeds/fluids. Dress them in light clothing. Your doctor can advise the correct dose of fever medicine for your child's weight if needed — never guess the dose. Avoid cold sponging or home remedies that aren't advised.</p>
+      <h2>Bathing and Skincare</h2>
+      <p>Give gentle sponge baths until the cord stump separates completely. Use mild, fragrance-free cleanser and avoid kajal or talcum powder near the eyes and airways.</p>
 
-      <h2>Red-Flag Symptoms — See a Doctor Promptly</h2>
-      <ul>
-        <li>Your baby is <strong>under 3 months</strong> and has any fever</li>
-        <li>The fever is very high or lasts more than 2–3 days</li>
-        <li>Your child is feeding very poorly, unusually drowsy or floppy</li>
-        <li>There's fast or difficult breathing</li>
-        <li>There's a rash that doesn't fade on pressure, a stiff neck, or a fit/convulsion</li>
-        <li>You're simply worried — always trust that instinct</li>
-      </ul>
-
-      <h2>Why Not Just Google It at 2 AM?</h2>
-      <p>Online searches can't examine your child. A quick call or visit gives you a real answer and peace of mind. That's exactly what we're here for.</p>
+      <h2>Safe Sleep Guidelines</h2>
+      <p>Always place your baby on their back to sleep on a firm, flat mattress without pillows, soft toys, or loose blankets to minimize SIDS risk.</p>
 
       <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
     `,
     faqs: [
       {
-        q: "What temperature is a fever in babies?",
-        a: "100.4°F (38°C) or higher. For newborns under 3 months, any fever should be checked the same day."
+        q: "How many wet diapers should a newborn have daily?",
+        a: "After the first 4–5 days, expect at least 6 to 8 wet diapers in 24 hours, indicating healthy milk intake."
       },
       {
-        q: "Should I give fever medicine immediately?",
-        a: "Focus on comfort and fluids; give fever medicine only at the correct dose for your child's weight — ask your doctor if unsure."
-      },
-      {
-        q: "When should I see a doctor for fever?",
-        a: "For any fever in a baby under 3 months, a high or persistent fever, poor feeding, drowsiness, breathing trouble, or if you're worried. Call 62625 60101."
+        q: "When should a newborn see a doctor after discharge?",
+        a: "Schedule your first check-up within 48 to 72 hours after hospital discharge to check weight, feeding, and jaundice."
       }
     ]
   },
-  "is-my-child-growing-normally": {
-    title: "Is My Child Growing Normally? Height, Weight and Milestone Guide",
-    slug: "is-my-child-growing-normally",
-    metaTitle: "Is My Child Growing Normally? Growth Guide | Baby Steps",
-    metaDescription: "Understand how pediatricians evaluate height, weight, and developmental milestones using WHO growth charts. Track your child's progress easily.",
-    date: "2026-07-13",
-    dateModified: "2026-07-13",
-    readTime: "6 min read",
-    category: "Growth & Development",
-    excerpt: "Worried whether your child is growing on track? Here's how growth and milestones are actually measured.",
+  "baby-fever-when-to-worry": {
+    title: "Baby Fever: When to Worry, Home Care & When to See a Doctor",
+    slug: "baby-fever-when-to-worry",
+    metaTitle: "Baby Fever: When to Worry & See a Doctor | Baby Steps",
+    metaDescription: "Pediatrician guide on managing baby fever safely at home. Learn temperature measurement, safe paracetamol use, and danger signs to watch for.",
+    date: "2026-07-14",
+    dateModified: "2026-07-14",
+    category: "Child Health",
+    excerpt: "Fever in babies is worrying for parents. Here's a clear guide on measuring temperature, home care, and danger signs.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <p>"Is my child growing okay?" is one of the most common questions parents ask — and a very good one. Here's how doctors actually assess it.</p>
+      <p>Fever is a natural immune response to infection, not a disease itself. Knowing how to measure temperature accurately and recognize red flags keeps your baby safe.</p>
 
-      <h2>It's the Trend, Not a Single Number</h2>
-      <p>Doctors plot your child's height, weight and head size on WHO growth charts and watch the <strong>pattern over time</strong>. A child steadily following their own curve is usually growing well — even if they're smaller or larger than other children. A sudden change in the curve is what prompts a closer look.</p>
+      <h2>Measuring Temperature Accurately</h2>
+      <p>Use a digital thermometer under the armpit (axillary). A reading above 37.5°C (99.5°F) indicates fever. Rectal readings above 38°C (100.4°F) are also considered fever.</p>
 
-      <h2>Developmental Milestones Overview</h2>
+      <h2>Red Flags: When to Seek Immediate Care</h2>
       <ul>
-        <li><strong>~2 months:</strong> smiles, follows objects with eyes</li>
-        <li><strong>~6 months:</strong> rolls over, sits with support, babbles</li>
-        <li><strong>~9–12 months:</strong> sits alone, crawls, may pull to stand, says "mama/dada"</li>
-        <li><strong>~18 months:</strong> walks, a few words, points</li>
-        <li><strong>~2 years:</strong> runs, short phrases, follows simple instructions</li>
+        <li>Any fever in a baby under 3 months of age (medical emergency)</li>
+        <li>Fever above 39°C (102.2°F) or fever lasting more than 3 days</li>
+        <li>Baby is lethargic, difficult to wake, or refusing all feeds</li>
+        <li>Signs of breathing difficulty, rapid respiration, or persistent vomiting</li>
       </ul>
-      <p>Every child develops at their own pace — these are averages, not deadlines.</p>
-
-      <h2>When to Check with a Pediatrician</h2>
-      <p>If your child isn't meeting milestones by a wide margin, has lost a skill they had, isn't gaining weight as expected, or you feel something is off — a check-up helps. Picking things up early makes support far easier.</p>
-
-      <h2>Why Regular Growth Monitoring Helps</h2>
-      <p>Routine growth and development checks catch small issues before they become bigger ones — and mostly, they give parents reassurance that all is well.</p>
 
       <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
     `,
     faqs: [
       {
-        q: "My child is smaller than others — should I worry?",
-        a: "Not necessarily. What matters is whether they're following their own growth curve steadily. A pediatrician can confirm with a growth chart."
+        q: "Can I give paracetamol to a baby with fever?",
+        a: "Only use paracetamol with correct weight-based dosages prescribed by your doctor. Never give aspirin or unprescribed medicines to infants."
       },
       {
-        q: "When should my child start walking?",
-        a: "Many walk around 12–15 months, but the normal range is wide. If your child isn't walking by 18 months, it's worth a check."
+        q: "Should I sponge my baby with cold water for fever?",
+        a: "No. Use lukewarm (tepid) water sponging if needed. Cold water or ice causes shivering, which actually raises internal body temperature."
+      }
+    ]
+  },
+  "is-my-child-growing-normally": {
+    title: "Is My Child Growing Normally? Height, Length & Milestones Guide",
+    slug: "is-my-child-growing-normally",
+    metaTitle: "Is My Child Growing Normally? Height & Milestones Guide",
+    metaDescription: "Learn how pediatricians track child height, head circumference, and milestones against WHO percentile charts. Reassuring growth advice by Baby Steps.",
+    date: "2026-07-13",
+    dateModified: "2026-08-19",
+    category: "Growth & Development",
+    excerpt: "Understand how pediatricians track height, head circumference, and developmental milestones using WHO growth charts.",
+    author: "Dr. Sudarshan Dev Arya",
+    authorTitle: "Senior Consultant Pediatrician",
+    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
+    contentHtml: `
+      <p>"Is my child growing tall enough and reaching milestones on time?" is among the most frequent questions parents ask. Evaluating childhood growth is about tracking long-term physical stature and developmental progress.</p>
+
+      <h2>It's the Trajectory, Not a Single Measurement</h2>
+      <p>Pediatricians measure height (or recumbent length for infants), weight, and head circumference at regular checkups, plotting the results on official World Health Organization (WHO) growth charts. What matters clinically is that your child follows their established percentile curve consistently over time, rather than comparing them to peers.</p>
+
+      <h2>Key Developmental Milestone Markers</h2>
+      <ul>
+        <li><strong>2–3 Months:</strong> Social smile, visual tracking, and holding head steady during tummy time.</li>
+        <li><strong>6 Months:</strong> Rolling in both directions, sitting with minimal support, babbling vowel sounds.</li>
+        <li><strong>9–12 Months:</strong> Sitting independently, crawling, pulling to stand, and saying simple syllables ("mama", "dada").</li>
+        <li><strong>18 Months:</strong> Walking steadily, speaking several single words, pointing to indicate desires.</li>
+        <li><strong>2 Years:</strong> Running, kicking a ball, combining two-word phrases, and following 2-step directions.</li>
+      </ul>
+
+      <h2>When to Seek Developmental Guidance</h2>
+      <p>If your child loses a previously acquired skill, shows persistent limb stiffness or extreme floppiness, or has not taken independent steps by 18 months, a structured developmental assessment helps identify and support milestones early.</p>
+
+      <h2>Feeding and Weight Concerns?</h2>
+      <p>For guidance focused specifically on infant weight trajectories, caloric intake, and weaning diets, read our dedicated guide on <a href="/blog/baby-weight-gain-tips">Healthy Baby Weight Gain Tips</a>.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
+    `,
+    faqs: [
+      {
+        q: "What if my child is on a lower height percentile?",
+        a: "As long as your child grows steadily along their personal percentile curve and meets cognitive/motor milestones, being shorter than average is often genetic and healthy."
       },
       {
-        q: "What is growth monitoring?",
-        a: "Regular height, weight and milestone tracking against WHO charts. We offer this at Baby Steps — call 62625 60101."
+        q: "When should a child walk independently?",
+        a: "Most toddlers walk between 9 and 15 months. If a child does not walk by 18 months, a clinical developmental evaluation is recommended."
+      },
+      {
+        q: "Where can I get WHO growth tracking in Bhopal?",
+        a: "Baby Steps Clinic in Neelbad provides structured WHO growth and milestone tracking. Call 62625 60101."
       }
     ]
   },
   "breastfeeding-basics-guide": {
-    title: "Breastfeeding Basics: How Often to Feed and Common Problems Solved",
+    title: "Breastfeeding Basics: Latching Techniques, Schedules & Problem Solving",
     slug: "breastfeeding-basics-guide",
     metaTitle: "Breastfeeding Basics & Latching Guide | Baby Steps",
     metaDescription: "Essential newborn breastfeeding guide for mothers. Overcome common nursing challenges, sore nipples, engorgement, and low milk supply worries.",
     date: "2026-07-11",
-    dateModified: "2026-07-11",
-    readTime: "6 min read",
+    dateModified: "2026-08-19",
     category: "Newborn Care",
     excerpt: "Breastfeeding is natural but not always easy. Here are the basics and fixes for the most common worries.",
     author: "Dr. Manisha Bangarwa Arya",
     authorTitle: "Consultant Pediatrician & Neonatologist",
     authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <p>Breastfeeding is wonderful for your baby — and often trickier than expected in the early days. If it feels hard at first, you're not doing anything wrong. Here's what helps.</p>
+    contentHtml: `<p>Exclusive breastfeeding provides unmatched immunological protection, optimal nutrition, and deep maternal bonding during an infant's first six months of life. While breastfeeding is a natural biological process, establishing a pain-free, efficient latch often takes practice, patience, and reassuring guidance in the early weeks.</p>
 
-      <h2>How Often Should Newborns Feed?</h2>
-      <p>Newborns feed on demand — often 8–12 times in 24 hours. Feeding frequently in the early weeks is normal and builds your milk supply.</p>
-
-      <h2>Is My Baby Getting Enough Milk?</h2>
-      <p>Reassuring signs: 6 or more wet nappies a day (after the first week), regular soft stools early on, steady weight gain over the weeks, and your baby settling after most feeds. You don't need to measure millilitres.</p>
-
-      <h2>Latch Technique Matters</h2>
-      <p>A good latch means less pain for you and better feeding for baby: baby's mouth wide open, taking in a good part of the areola (not just the nipple), chin touching the breast. If feeding is painful throughout, the latch often needs a small adjustment.</p>
-
-      <h2>Common Breastfeeding Challenges</h2>
+      <h2>Mastering the Proper Latch: Step-by-Step Technique</h2>
+      <p>A deep, asymmetric latch is the single most important factor for comfortable nursing and maximum milk intake:</p>
       <ul>
-        <li><strong>Sore nipples:</strong> usually a latch issue — worth getting checked.</li>
-        <li><strong>Feeling of low supply:</strong> frequent feeding usually increases supply; true low supply is less common than feared.</li>
-        <li><strong>Engorgement:</strong> feed often; warmth before and a cool compress after can ease it.</li>
+        <li><strong>Positioning:</strong> Hold your baby tummy-to-tummy, with baby's nose aligned opposite your nipple.</li>
+        <li><strong>Wide Gape:</strong> Gently tickle your baby's upper lip with your nipple to stimulate a wide, open-mouthed gape (like a yawn).</li>
+        <li><strong>Asymmetric Areolar Coverage:</strong> Bring your baby swiftly onto the breast aiming the lower jaw first, ensuring baby's mouth covers a large portion of the lower areola, not just the nipple tip.</li>
+        <li><strong>Flanged Lips & Chin Contact:</strong> Baby's chin should firmly indent the breast tissue, with upper and lower lips flanged outward like fish lips.</li>
+        <li><strong>Comfort Check:</strong> If you feel persistent, sharp pinching, gently slide a clean finger into the corner of your baby's mouth to break the suction seal and re-latch.</li>
       </ul>
-      <p>If problems persist, hands-on help makes a big difference — that's what breastfeeding counselling is for.</p>
 
-      <h2>It's Okay to Ask for Support</h2>
-      <p>Many mothers benefit from support in the early weeks. There's no prize for struggling alone.</p>
+      <h2>Feeding Frequency & Early Hunger Cues</h2>
+      <p>Newborns should be fed on demand whenever showing early hunger cues—such as rooting, smacking lips, and bringing clenched fists to their mouth. Crying is a late hunger cue that makes latching more difficult. Healthy newborns typically feed 8 to 12 times in a 24-hour cycle. Always burp your baby upright after each feed to release swallowed air and minimize colic or spitting up.</p>
 
-      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
-    `,
+      <h2>How to Confirm Your Baby Is Getting Adequate Milk</h2>
+      <p>Because breast milk intake cannot be measured with a bottle, look for these reliable clinical indicators of sufficient hydration and nourishment:</p>
+      <ul>
+        <li><strong>Diaper Output:</strong> 6 or more wet, heavy diapers per 24 hours from day 4 onwards.</li>
+        <li><strong>Bowel Movements:</strong> Mustard-yellow, seedy stools transitioning from dark meconium by the first week.</li>
+        <li><strong>Weight Trajectory:</strong> Regaining birth weight by 10 to 14 days of life, followed by steady progress along WHO growth curves.</li>
+        <li><strong>Post-Feed Contentment:</strong> Baby appears relaxed, releases the breast spontaneously, and sleeps peacefully between nursing sessions.</li>
+      </ul>
+
+      <h2>Solving Common Nursing Challenges</h2>
+      <ul>
+        <li><strong>Sore or Cracked Nipples:</strong> Almost always indicates a shallow latch. Repositioning under clinical guidance provides immediate relief.</li>
+        <li><strong>Breast Engorgement:</strong> Nurse frequently on demand. Applying gentle warmth before feeding and a cool compress afterward relieves breast tenderness.</li>
+        <li><strong>Perceived Low Milk Supply:</strong> Genuine low milk supply is rare. Frequent, unrestricted skin-to-skin contact and nursing stimulate natural prolactin and oxytocin release.</li>
+      </ul>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>`,
     faqs: [
       {
-        q: "How do I know my baby is getting enough milk?",
-        a: "Look for 6+ wet nappies a day, steady weight gain, and baby settling after feeds — not the amount you can see."
+            "q": "How do I know if my newborn is getting enough breast milk?",
+            "a": "Look for 6+ wet diapers daily, steady weight gain on WHO charts, and your baby appearing calm and satisfied after feeds."
       },
       {
-        q: "Breastfeeding hurts — is that normal?",
-        a: "Some tenderness early on is common, but ongoing pain usually means the latch needs adjusting. A quick check can help."
+            "q": "What should I do if breastfeeding is painful?",
+            "a": "Persistent pain indicates a shallow latch. Adjusting the baby's position to take more areola into the mouth resolves nipple soreness quickly."
       },
       {
-        q: "Can I get breastfeeding help at your clinic?",
-        a: "Yes, we offer breastfeeding counselling at Baby Steps — call 62625 60101."
+            "q": "Where can I get one-on-one lactation counseling in Bhopal?",
+            "a": "Dr. Manisha Bangarwa Arya provides specialized breastfeeding counseling and latch evaluation at Baby Steps Clinic in Neelbad. Call 62625 60101."
       }
-    ]
-  },
-  "skip-delay-child-vaccination-risks": {
-    title: "Can I Skip or Delay My Child's Vaccination? The Risks Explained",
-    slug: "skip-delay-child-vaccination-risks",
-    metaTitle: "Delaying Child Vaccination: Risks & Tips | Baby Steps",
-    metaDescription: "Understanding the clinical risks of skipping or delaying childhood vaccines. Practical catch-up advice by senior pediatricians at Baby Steps.",
-    date: "2026-07-09",
-    dateModified: "2026-07-09",
-    readTime: "5 min read",
-    category: "Vaccination",
-    excerpt: "Life gets busy and vaccines get delayed — here's why timing matters and what to do if you've fallen behind.",
-    author: "Dr. Sudarshan Dev Arya",
-    authorTitle: "Senior Consultant Pediatrician",
-    authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <p>Sometimes a vaccine gets delayed — an illness, travel, or simply a busy month. It happens. But it helps to understand why the schedule is timed the way it is.</p>
-
-      <h2>Why the Vaccine Schedule Is Timed</h2>
-      <p>Each vaccine is scheduled to protect your child <strong>before</strong> they're likely to meet that disease. Delaying leaves a window where your child is unprotected against illnesses that can be serious in the young.</p>
-
-      <h2>What About Skipping Altogether?</h2>
-      <p>Choosing not to vaccinate leaves a child exposed to diseases that vaccines have made rare — some of which can cause lasting harm. These diseases still exist and can return where vaccination drops. This is why doctors strongly encourage completing the schedule.</p>
-
-      <h2>If You've Fallen Behind: Catch-Up Plans</h2>
-      <p>Good news: you can almost always <strong>catch up</strong>. In most cases the schedule continues from where you left off — vaccines rarely need to be restarted. Bring your child's card and the doctor will make a simple catch-up plan.</p>
-
-      <h2>A Calm Conversation Always Helps</h2>
-      <p>If you have concerns or questions about any vaccine, talk to your pediatrician. Good decisions come from clear information, not worry.</p>
-
-      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
-    `,
-    faqs: [
-      {
-        q: "Is it dangerous to delay vaccines?",
-        a: "Delaying leaves a gap where your child isn't protected against diseases that can be serious. It's best to stay on schedule, but catch-up is possible if you've fallen behind."
-      },
-      {
-        q: "Do we have to restart if we missed doses?",
-        a: "Usually not — most schedules continue from where you left off. Bring the vaccination card and the doctor will plan the catch-up."
-      }
-    ]
+]
   },
   "baby-cough-cold-home-care": {
-    title: "Baby Cough and Cold: Home Care vs When to See a Doctor",
+    title: "Baby Cough and Cold: Safe Home Care & When to See a Doctor",
     slug: "baby-cough-cold-home-care",
     metaTitle: "Baby Cough & Cold: Home Care vs Doctor | Baby Steps",
     metaDescription: "Pediatric advice on comforting a baby with cough and nasal congestion. Learn effective home remedies and when to seek pediatrician consultation.",
     date: "2026-07-07",
-    dateModified: "2026-07-07",
-    readTime: "5 min read",
+    dateModified: "2026-08-19",
     category: "Child Health",
     excerpt: "Coughs and colds are part of childhood. Here's how to care for your child at home and know when it's more.",
     author: "Dr. Manisha Bangarwa Arya",
     authorTitle: "Consultant Pediatrician & Neonatologist",
     authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
-    contentHtml: `
-      <p>Young children can catch several coughs and colds a year — it's how their immune system learns. Most settle on their own. Here's how to help, and when to seek care.</p>
+    contentHtml: `<p>Young children frequently catch 6 to 8 viral coughs and colds every year — it is a natural mechanism through which their developing immune systems learn to identify everyday pathogens. While most viral colds resolve uneventfully within 5 to 7 days with supportive care, parents must know how to relieve symptoms safely at home and identify danger signs that require clinical evaluation.</p>
 
-      <h2>What Helps at Home</h2>
-      <p>Keep your child comfortable and well-hydrated with regular feeds/fluids. For babies, saline nose drops can ease a blocked nose. Rest helps. Warm, comforting care goes a long way.</p>
+      <h2>Why Over-the-Counter Cough Syrups Are Strongly Discouraged</h2>
+      <p><a href="https://iapindia.org" target="_blank" rel="noopener noreferrer">IAP medical alerts</a> and global pediatric bodies (including the WHO and US FDA) strictly advise against giving over-the-counter (OTC) combination cough, decongestant, and cold syrups to infants and toddlers under 2 to 4 years of age. These medications do not shorten viral illnesses and carry significant risks of rapid heart rate, sedation, and respiratory depression.</p>
 
-      <h2>What to Avoid</h2>
-      <p>Avoid over-the-counter cough and cold medicines for young children unless your doctor advises — they aren't recommended for little ones. Don't give any medicine without knowing the right dose for your child.</p>
-
-      <h2>See a Doctor Promptly If:</h2>
+      <h2>Safe, Evidence-Based Home Care for Congested Babies</h2>
       <ul>
-        <li>Fast, laboured, or noisy breathing, or chest pulling in</li>
-        <li>A cough that's severe, persistent, or comes with high fever</li>
-        <li>Poor feeding, unusual drowsiness, or looks unwell</li>
-        <li>Is under 3 months with a cold and any fever</li>
-        <li>Wheezing, or a history of asthma/allergy that's flaring</li>
-        <li>Anything that worries you</li>
+        <li><strong>Saline Nasal Drops & Gentle Suction:</strong> Administer 1–2 drops of pediatric normal saline (0.9% NaCl) in each nostril before feeds and bedtime to soften dried mucus. Use a gentle bulb syringe or nasal aspirator to clear blockages.</li>
+        <li><strong>Hydration Is Paramount:</strong> Frequent breastfeeds or formula feeds for infants under 6 months; warm water, clear dal soups, and coconut water for older children thin respiratory secretions naturally.</li>
+        <li><strong>Bathroom Steam Therapy:</strong> Run a hot shower in a closed bathroom to generate warm, humid air and sit with your child for 10–15 minutes. <em>Never use direct boiling steam inhalers near young children due to severe facial burn risks.</em></li>
+        <li><strong>Elevated Head Position:</strong> Keep older toddlers slightly elevated during sleep to ease post-nasal drip coughing.</li>
       </ul>
 
-      <h2>Managing Recurrent Coughs</h2>
-      <p>If your child coughs or wheezes often, it's worth a check — sometimes there's an allergy or asthma component that's easy to manage once identified.</p>
+      <h2>When Does a Child's Cough Require an Urgent Doctor Visit?</h2>
+      <p>According to <a href="https://www.who.int" target="_blank" rel="noopener noreferrer">WHO Acute Respiratory Infection protocols</a>, seek immediate pediatric evaluation if you notice:</p>
+      <ul>
+        <li><strong>Signs of Respiratory Distress:</strong> Fast breathing, flared nostrils, grunting sounds with each breath, or chest indrawing (skin sucking inward between and beneath the ribs).</li>
+        <li><strong>High or Prolonged Fever:</strong> Fever exceeding 38.5°C (101.3°F) lasting longer than 3 days, or any fever in an infant under 3 months of age.</li>
+        <li><strong>Poor Intake & Lethargy:</strong> Inability to breastfeed, refusal of all fluids, dry mouth, or sleeping excessively without waking for feeds.</li>
+        <li><strong>Stridor or Wheezing:</strong> High-pitched musical whistling sounds when breathing in or out.</li>
+      </ul>
 
-      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
-    `,
+      <h2>Managing Recurrent Coughs and Allergies</h2>
+      <p>If your child experiences lingering coughs following every seasonal change or nighttime wheezing that disrupts sleep, consult your pediatrician to rule out underlying allergic rhinitis, hyperactive airway disease, or pediatric asthma.</p>
+
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>`,
     faqs: [
       {
-        q: "Can I give cough syrup to my baby?",
-        a: "Over-the-counter cough and cold medicines aren't recommended for young children. Ask your doctor before giving anything."
+            "q": "Can I give cough syrup to my baby for quick relief?",
+            "a": "No. Over-the-counter cough and cold medicines are not recommended for infants and young toddlers. Use saline drops and supportive hydration instead."
       },
       {
-        q: "When is a cough serious?",
-        a: "If there's fast or difficult breathing, high fever, poor feeding, or your child looks unwell — see a doctor. For babies under 3 months, check early."
+            "q": "How do I safely clear a blocked nose in a newborn?",
+            "a": "Use pediatrician-approved normal saline nasal drops (1\u20132 drops per nostril) followed by gentle bulb suction before feeds and sleep."
       },
       {
-        q: "My child gets frequent coughs — should I be concerned?",
-        a: "Frequent coughs/wheezing can sometimes be allergy or asthma related. A check-up helps — call 62625 60101."
+            "q": "When is a cough considered an emergency in babies?",
+            "a": "Seek urgent care if you observe fast breathing, chest retractions, blue lips, severe lethargy, or any fever in babies under 3 months."
       }
-    ]
+]
   },
   "newborn-skin-eyes-cord-care": {
     title: "Newborn Skin, Eyes and Umbilical Cord Care: The \"Weird but Normal\" Guide",
@@ -968,96 +796,81 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Pediatrician advice for delicate newborn skincare, sticky eye hygiene, and dry umbilical cord healing during your baby's first weeks at home in Bhopal.",
     date: "2026-07-05",
     dateModified: "2026-07-05",
-    readTime: "6 min read",
     category: "Newborn Care",
     excerpt: "Peeling skin, tiny spots, a sticky eye? Most newborn quirks are completely normal. Here's the reassuring guide.",
     author: "Dr. Sudarshan Dev Arya",
     authorTitle: "Senior Consultant Pediatrician",
     authorAffiliation: "MBBS, DCH, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <p>Newborns come with all sorts of surprising-but-normal features. Here's what usually needs nothing more than reassurance — and what deserves a check.</p>
+      <p>Newborns have all sorts of harmless physical quirks that surprise new parents. Here's what's normal and how to care for them.</p>
 
-      <h2>Newborn Skin Quirks</h2>
-      <p>Peeling skin, tiny white spots (milia), baby acne, and blotchy patches are common in the early weeks and usually pass on their own. Keep baths short and gentle, and moisturise if the skin is dry. A widespread rash with fever, blisters, or a rash that doesn't fade on pressure needs prompt review.</p>
+      <h2>Peeling and Flaky Skin</h2>
+      <p>Newborn skin often peels in the first week or two, especially if born after their due date. This is harmless shedding of outer skin layers. Avoid heavy scrubs or fragranced lotions.</p>
 
-      <h2>Sticky Eyes & Clear Vision</h2>
-      <p>A little stickiness or watering in the first weeks is common (often a blocked tear duct) and usually clears with gentle cleaning using cooled boiled water. But redness of the white of the eye, swelling, lots of discharge, or eyes that seem sensitive to light should be checked.</p>
+      <h2>Sticky or Watery Eyes</h2>
+      <p>A blocked tear duct is common in early infancy, causing mild eye discharge. Clean gently from inner to outer corner with clean cotton dipped in cooled boiled water.</p>
 
-      <h2>Umbilical Cord Healing</h2>
-      <p>Keep the stump clean and dry; it typically falls off within 1–2 weeks. A little dryness or a spot of blood as it separates is normal. Spreading redness, swelling, pus, or a foul smell needs to be seen.</p>
-
-      <h2>Nappy Area Care</h2>
-      <p>Mild redness is common. Change nappies often, clean gently, and use a barrier cream. A rash that's very red, raw, spreading, or has spots may need treatment.</p>
-
-      <h2>The Golden Rule</h2>
-      <p>When something looks new and you're unsure — a quick check is always reasonable. Newborn worries are exactly what pediatricians are here for.</p>
+      <h2>Umbilical Cord Care</h2>
+      <p>Keep the cord clean and dry. It will darken and fall off naturally. Seek medical attention if the base becomes red, swollen, or produces a foul odor.</p>
 
       <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
     `,
     faqs: [
       {
-        q: "Is peeling newborn skin normal?",
-        a: "Yes, peeling and dryness in the first weeks is very common and usually needs only gentle moisturising."
+        q: "Is peeling skin normal in newborns?",
+        a: "Yes. Almost all newborns experience normal skin peeling in the first few weeks as they adapt to life outside the womb."
       },
       {
-        q: "My newborn has a sticky eye — what should I do?",
-        a: "Often it's a blocked tear duct; clean gently with cooled boiled water. If there's redness, swelling, or lots of discharge, get it checked."
-      },
-      {
-        q: "How do I care for the umbilical cord?",
-        a: "Keep it clean and dry; it usually falls off in 1–2 weeks. Spreading redness, pus, or a bad smell needs a doctor."
+        q: "What should I do for a sticky newborn eye?",
+        a: "Wipe gently with clean cotton moistened with cooled boiled water. If the eye appears red, swollen, or produces thick yellow pus, consult your doctor."
       }
     ]
   },
   "child-vaccination-cost-bhopal-guide": {
-    title: "Child Vaccination Cost in Bhopal: A Simple Parent's Guide",
+    title: "What Affects Child Vaccination Cost in Bhopal",
     slug: "child-vaccination-cost-bhopal-guide",
-    metaTitle: "Child Vaccination Cost in Bhopal Guide | Baby Steps",
-    metaDescription: "Transparent guide to childhood immunization costs in Bhopal. Understand vaccine pricing factors, painless combination shots, and schedule planning.",
+    metaTitle: "What Affects Vaccination Cost in Bhopal | Baby Steps",
+    metaDescription: "Understand factors affecting child vaccination cost in Bhopal — brand types, painless options, and combination shots. Call 62625 60101 for current rates.",
     date: "2026-07-03",
-    dateModified: "2026-07-03",
-    readTime: "5 min read",
+    dateModified: "2026-08-19",
     category: "Vaccination",
-    excerpt: "Wondering what vaccinations cost in Bhopal? Here's a clear, honest guide to planning your child's immunizations.",
+    excerpt: "Understand what influences childhood vaccination costs in Bhopal — brand choices, painless formulations, combination vaccines, and catch-up schedules.",
     author: "Dr. Manisha Bangarwa Arya",
     authorTitle: "Consultant Pediatrician & Neonatologist",
     authorAffiliation: "MBBS, DNB (Pediatrics), PGPN (Boston, USA)",
     contentHtml: `
-      <p>Vaccination is one of the most valuable things you can do for your child — and it helps to plan ahead. Here's a simple, honest overview for Bhopal parents.</p>
+      <p>When planning your child's immunization, parents often wonder why vaccine costs vary. Rather than looking for generic numbers online, it helps to understand the medical and manufacturing factors that determine vaccine costs in private clinics.</p>
 
-      <h2>What's Available Free</h2>
-      <p>Several essential vaccines are provided free under the government's Universal Immunization Programme at government health centres — covering the most important childhood diseases.</p>
+      <h2>1. Indian vs. Imported Manufacturer Brands</h2>
+      <p>Vaccines in India are manufactured both by leading domestic biopharmaceutical companies and international pharmaceutical manufacturers. While all DCGI-approved brands meet stringent safety and efficacy standards, imported brands may carry differing manufacturing and import logistics costs.</p>
 
-      <h2>What's Typically Paid (Private)</h2>
-      <p>The fuller IAP schedule includes some additional vaccines and combination injections (fewer pricks) that are usually provided at private clinics for a fee. Costs vary by vaccine and brand.</p>
+      <h2>2. Painless (Acellular) vs. Conventional (Whole-Cell) Options</h2>
+      <p>Primary combination vaccines (such as DTP) are available in two forms: painless acellular formulations (DTaP) and conventional whole-cell formulations (DTwP). Acellular vaccines undergo extensive purification to reduce post-vaccination fever and soreness, which influences their production process.</p>
 
-      <h2>How to Plan Your Child's Schedule</h2>
-      <p>The most cost-effective approach is simply <strong>not missing doses</strong> — catching up later or treating a preventable illness costs far more. A few tips:</p>
-      <ul>
-        <li>Keep your child's vaccination card updated and bring it to every visit</li>
-        <li>Ask your clinic which vaccines are due next so there are no surprises</li>
-        <li>Ask about combination vaccines, which can mean fewer injections</li>
-        <li>Set reminders (we track each child's due dates and remind you)</li>
-      </ul>
+      <h2>3. Combination Vaccines (Fewer Injections)</h2>
+      <p>Modern pediatric vaccines often combine protection against multiple diseases into a single injection — such as 5-in-1 (Pentavalent) or 6-in-1 (Hexavalent) vaccines. Choosing combination shots reduces the total number of clinic visits, administration fees, and emotional stress for both baby and parents.</p>
 
-      <h2>Value Beyond Cost</h2>
-      <p>Beyond the price of any single vaccine, on-time vaccination protects your child from illnesses that can be serious — and gives you peace of mind. That's the real return.</p>
-      <p>For current details on your child's specific vaccines and to plan the schedule, call us — we're happy to look at the card and guide you clearly, with no pressure.</p>
+      <h2>4. Routine Schedule vs. Catch-Up Immunization</h2>
+      <p>Following the age-wise schedule recommended by the Indian Academy of Pediatrics (IAP) ensures vaccines are administered at standard intervals. When doses are missed or delayed, pediatricians design customized catch-up schedules tailored to your child's current age and previous history.</p>
+
+      <h2>Transparent Guidance at Baby Steps Clinic</h2>
+      <p>At Baby Steps – Newborn & Child Clinic, we maintain strict WHO-compliant cold-chain storage for all vaccines and provide clear, itemized guidance based on your child's specific immunization card.</p>
+      <p>For current details on vaccine availability, brand options, and schedule planning for your child, please contact our reception at <strong>+91 62625 60101</strong>.</p>
 
       <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is general information for parents, not medical advice. Every child is different — please consult your pediatrician for guidance specific to your child.</p>
     `,
     faqs: [
       {
-        q: "Are any childhood vaccines free in Bhopal?",
-        a: "Yes — several essential vaccines are provided free under the government programme at government health centres."
+        q: "What factors influence the cost of childhood vaccines in private clinics?",
+        a: "Key factors include the manufacturer brand (domestic vs imported), whether you choose painless (acellular) or conventional options, and the use of multi-disease combination vaccines."
       },
       {
-        q: "Why do private vaccines cost more?",
-        a: "Private clinics offer the fuller IAP schedule, including some extra vaccines and combination injections. Costs vary by vaccine and brand."
+        q: "Do combination vaccines offer better value?",
+        a: "Combination shots protect against up to six diseases in a single injection, minimizing needle pricks for your baby and reducing repeated clinic visits."
       },
       {
-        q: "Can you tell me what my child needs and the plan?",
-        a: "Yes — bring the vaccination card and we'll tell you clearly what's done and what's due. Call 62625 60101."
+        q: "How can I get accurate pricing for my child's upcoming vaccines?",
+        a: "Bring your child's vaccination card to the clinic or call our reception at +91 62625 60101 for clear, personalized guidance."
       }
     ]
   },
@@ -1068,7 +881,6 @@ export const blogData: Record<string, BlogPost> = {
     metaDescription: "Pediatrician guide on seasonal flu and influenza in children. Learn cold vs flu symptoms, safe home care, fever red flags, and IAP flu vaccine rules.",
     date: "2026-08-19",
     dateModified: "2026-08-19",
-    readTime: "7 min read",
     category: "Child Health & Illness",
     excerpt: "Pediatric guide on managing seasonal flu & influenza in children. Learn early symptoms, cold vs flu differences, safe home care, red flags, and IAP flu vaccine rules.",
     author: "Dr. Sudarshan Dev Arya",
@@ -1100,70 +912,70 @@ export const blogData: Record<string, BlogPost> = {
         <li><strong>Tip:</strong> If your child is nauseous, give 1 teaspoon of fluid every 5–10 minutes rather than forcing a full glass at once.</li>
       </ul>
 
-      <h3>B. Safe Fever Management</h3>
-      <p>Fever is your child's immune system fighting the virus. Your goal is to make your child comfortable, not necessarily to bring the thermometer to 98.4°F immediately:</p>
+      <h3>B. Safe Fever &amp; Pain Management</h3>
       <ul>
-        <li>Use paracetamol strictly as prescribed by your pediatrician based on your child's <strong>current body weight</strong> (not just age).</li>
-        <li>Dress your child in light, breathable cotton clothing. Avoid bundling them in thick blankets when they have a fever.</li>
-        <li>If your child is uncomfortable, you may perform lukewarm water sponging (never use ice, cold water, or alcohol).</li>
-        <li><strong class="text-rose-600">CRITICAL SAFETY RULE: Never give Aspirin</strong> to any child or teenager with fever or flu symptoms, as it can cause a rare but life-threatening condition called Reye's syndrome.</li>
+        <li>Use <strong>Paracetamol</strong> at weight-appropriate dosages calculated by your pediatrician to relieve headache, body aches, and high fever discomfort.</li>
+        <li><strong>Never give Aspirin</strong> to infants or children due to the risk of Reye's Syndrome (a severe liver and brain condition).</li>
+        <li>Dress the child in light, comfortable cotton clothing. Do not bundle a feverish child in heavy blankets.</li>
+        <li>Use lukewarm (tepid) sponging over the forehead and neck if the fever makes the child uncomfortable. Never use cold water or alcohol rubs.</li>
       </ul>
 
-      <h3>C. Relieving Blocked Noses &amp; Cough</h3>
+      <h3>C. Nasal Congestion &amp; Cough Relief</h3>
       <ul>
-        <li><strong>Saline Nasal Drops:</strong> Administer 2–3 drops of normal saline into each nostril before feeds and before sleep to clear thick mucus.</li>
-        <li><strong>Warm Mist:</strong> Use a cool mist humidifier or sit with your child in a steam-filled bathroom for 10 minutes to soothe irritated airways.</li>
-        <li><strong>Head Elevation:</strong> For children over 1 year, slightly elevating the head of the bed helps prevent nighttime coughing fits caused by post-nasal drip.</li>
+        <li>Use pediatric saline nasal drops (0.9% sodium chloride) before feeds and bedtime to clear blocked nasal passages.</li>
+        <li>Run a warm shower to create a steam-filled bathroom and sit with your child for 10–15 minutes. Avoid direct boiling steam inhalation due to facial burn risks.</li>
+        <li><strong>Honey for children over 1 year:</strong> 1 teaspoon of honey before bedtime soothes nighttime coughs. <em>Never give honey to infants under 12 months due to infant botulism risks.</em></li>
+        <li><strong>No OTC Cough Syrups:</strong> Avoid over-the-counter cough syrups and cold medicines for children under 2 to 4 years without explicit pediatrician prescription.</li>
       </ul>
 
-      <h2>3. Harmful Mistakes Parents Must Avoid</h2>
+      <h2>3. The Golden Rule: Why Antibiotics DO NOT Cure Flu</h2>
+      <p>A widespread and dangerous misconception in India is demanding antibiotics (like Azithromycin, Amoxicillin, or Cefixime) for flu symptoms. <strong>Influenza is caused by a virus (Influenza A or B), and antibiotics only kill bacteria.</strong></p>
+      <p>Giving antibiotics for viral flu provides zero benefit, alters your child's delicate gut microbiome, and accelerates antimicrobial resistance. Antibiotics are only indicated if your pediatrician diagnoses a secondary bacterial complication such as bacterial pneumonia, acute otitis media (ear infection), or acute sinusitis.</p>
+
+      <h2>4. Red Flag Warning Signs: When to See a Doctor Immediately</h2>
+      <p>While most flu resolves safely, influenza can lead to rapid complications in infants and vulnerable children. Seek urgent pediatric evaluation if you notice:</p>
       <ul>
-        <li><strong>Do NOT Demand or Give Antibiotics:</strong> Influenza is caused by a virus (Influenza A or B). Antibiotics kill only bacteria; they do not kill the flu virus, do not speed up recovery, and disrupt healthy gut bacteria.</li>
-        <li><strong>Avoid Over-the-Counter Adult Cough Syrups:</strong> Multi-ingredient cold syrups can cause dangerous side effects like drowsiness or heart palpitations in toddlers and are not recommended for young children.</li>
-        <li><strong>Do NOT Force-Feed Solid Food:</strong> A sick child naturally loses appetite. Prioritize fluids and light, easily digestible foods like khichdi, mashed bananas, and soups. Appetite will return as the fever subsides.</li>
-        <li><strong>Keep Sick Children Home from School:</strong> Keep your child at home until they have been fever-free for at least 24 hours without fever-reducing medications. Sending a sick child to school spreads the infection across entire classrooms.</li>
+        <li><strong>Fast or Difficult Breathing:</strong> Chest pulling in between or under the ribs (intercostal/subcostal retractions), grunting noises, or nasal flaring.</li>
+        <li><strong>Dehydration:</strong> No wet diaper for more than 6 hours, crying without tears, dry lips and tongue, or sunken eyes.</li>
+        <li><strong>Extreme Lethargy:</strong> Child is unusually difficult to wake, floppy, confused, or unresponsive.</li>
+        <li><strong>Persistent High Fever:</strong> Fever above 103°F that does not respond to paracetamol, or fever lasting more than 3–4 days.</li>
+        <li><strong>"The Rebound Fever":</strong> If fever resolves for 24–48 hours and then returns with worsened cough or breathing difficulty, this strongly suggests a secondary bacterial infection.</li>
+        <li><strong>Age under 3 months:</strong> Any fever (≥100.4°F / 38°C) in an infant under 3 months warrants emergency pediatric consultation.</li>
+        <li><strong>Cyanosis:</strong> Bluish or pale tint around the lips, tongue, or nail beds.</li>
       </ul>
 
-      <h2>4. Danger Signs: When to Visit the Clinic Immediately</h2>
-      <p>While most flu cases resolve with home care, influenza can sometimes progress to complications like viral pneumonia, croup, or severe dehydration. Seek immediate medical attention at our clinic or nearest emergency care if you observe any of these red flags:</p>
+      <h2>5. Prevention: The Annual Influenza Vaccine (Flu Shot)</h2>
+      <p>The single most effective defense against seasonal flu and hospitalization is the annual <strong>Influenza vaccine</strong>. Here is what the Indian Academy of Pediatrics (IAP) recommends:</p>
       <ul>
-        <li><strong>Fast or Labored Breathing:</strong> Breathing much faster than normal, nostrils flaring, or chest/ribs sucking inward with every breath (chest indrawing).</li>
-        <li><strong>Signs of Dehydration:</strong> No wet diaper for more than 6–8 hours, crying with no tears, sunken eyes, or extreme dry mouth.</li>
-        <li><strong>Altered Alertness:</strong> Child is unusually drowsy, cannot be easily awakened, does not make eye contact, or is unresponsive.</li>
-        <li><strong>Persistent High Fever:</strong> Fever persisting beyond 3 to 4 days, or a fever that initially resolves and then suddenly spikes back up with a worsening cough.</li>
-        <li><strong>Bluish Lips or Skin:</strong> Any bluish or grey tint around the mouth, lips, or nailbeds requires immediate emergency care.</li>
-        <li><strong>Infants Under 3 Months:</strong> Any fever of 100.4°F (38°C) or higher in a newborn/infant under 3 months needs urgent pediatrician evaluation.</li>
+        <li><strong>Eligibility:</strong> Recommended for all children starting from <strong>6 months of age</strong>, especially those with asthma, allergic bronchitis, or recurrent wheezing.</li>
+        <li><strong>First-time rule:</strong> Children between 6 months and 9 years receiving the flu vaccine for the first time require <strong>two doses</strong> administered 4 weeks apart.</li>
+        <li><strong>Annual booster:</strong> Because flu viruses mutate continuously, a single annual booster is required every year before the peak flu season (monsoon/winter).</li>
+        <li><strong>Quadrivalent protection:</strong> Modern flu vaccines in India protect against 4 major seasonal strains (two Influenza A and two Influenza B strains).</li>
       </ul>
 
-      <h2>5. Indian Academy of Pediatrics (IAP) Flu Vaccine Guidelines</h2>
-      <p>The single most effective way to prevent severe influenza and hospitalization is the annual seasonal flu vaccine:</p>
-      <ul>
-        <li><strong>Who should get it?</strong> The IAP recommends annual flu vaccination for all children between <strong>6 months and 5 years of age</strong>, and for older children with underlying asthma, allergic bronchitis, or lower immunity.</li>
-        <li><strong>Why annual?</strong> Influenza viruses mutate constantly. Every year, global health authorities update the vaccine strains to match circulating variants (including H1N1, H3N2, and Influenza B strains).</li>
-        <li><strong>First-time vaccination:</strong> Children under 9 years receiving the flu shot for the first time require <strong>2 doses spaced 4 weeks apart</strong> to build solid immune memory. Thereafter, a single yearly dose maintains protection.</li>
-        <li><strong>Best Timing:</strong> In India, the ideal time to vaccinate is during the pre-monsoon and seasonal transition periods (April–June or pre-winter) to ensure immunity before peak viral activity.</li>
-      </ul>
+      <h2>Consult Baby Steps Clinic in Neelbad, Bhopal</h2>
+      <p>If your child is experiencing flu symptoms, needs fever assessment, or is due for their annual flu vaccine, our team at <strong>Baby Steps – Newborn & Child Clinic</strong> is here to help with compassionate, evidence-based care.</p>
+      <p>Visit us at 227/1 Pooja Colony, Near Durga Mata Mandir, Neelbad, Bhopal, or call <strong>+91 62625 60101</strong>.</p>
 
-      <p>If your child is currently experiencing high fever, persistent coughing, or if you wish to get your child protected with the latest quadrivalent flu vaccine, feel free to visit us at <strong>Baby Steps – Newborn &amp; Child Clinic</strong> in Neelbad, Bhopal. Our pediatricians are always here to help your little one bounce back safely.</p>
+      <p class="text-xs text-muted-text border-t border-gray-100 pt-4 mt-6 italic">This article is authored and reviewed by registered pediatricians for educational purposes. It does not replace clinical in-person medical evaluation. Consult your pediatrician for specific diagnosis and care plans.</p>
     `,
     faqs: [
       {
-        q: "How long does flu fever usually last in children?",
-        a: "In most children, the intense fever phase lasts between 3 to 5 days, while milder tiredness, nasal congestion, and dry cough may linger for up to 1 to 2 weeks."
+        q: "How can I tell if my child has a common cold or the flu?",
+        a: "Common colds develop slowly with mild fever and runny nose, while the flu hits suddenly with high fever (101°F–103°F+), severe body aches, dry cough, and exhaustion."
       },
       {
-        q: "Can a child get the flu even after taking the flu vaccine?",
-        a: "Yes, it is possible because multiple viral strains circulate, but vaccinated children experience significantly milder symptoms, lower fever, and are protected against severe complications and hospitalization."
+        q: "Can I give antibiotics to my child for flu fever?",
+        a: "No. Flu is caused by influenza viruses. Antibiotics only treat bacterial infections and are ineffective against viral flu unless secondary bacterial complications occur."
       },
       {
-        q: "Should I give antibiotics if my child's flu mucus turns yellow or green?",
-        a: "No. Thick yellow or green mucus is a normal part of the body's viral immune response (caused by white blood cells fighting the infection) and does not automatically indicate a bacterial infection. Consult your pediatrician before giving any medication."
+        q: "At what age can a baby receive the flu vaccine?",
+        a: "According to IAP guidelines, infants can receive their first influenza vaccine at 6 months of age, with a booster dose 4 weeks later."
       },
       {
-        q: "When can my child safely return to school or daycare after flu?",
-        a: "Your child can safely return to school once they have been completely fever-free for at least 24 hours (without giving paracetamol) and have regained normal energy and appetite."
+        q: "When should I take my child to the emergency room for flu?",
+        a: "Seek urgent care if you observe fast breathing, chest retractions, blue lips, severe lethargy, no wet diaper in 6+ hours, or any fever in babies under 3 months."
       }
     ]
   }
-
 };

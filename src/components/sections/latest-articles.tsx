@@ -29,7 +29,7 @@ export default function LatestArticles() {
     },
     {
       title: "Breastfeeding Techniques: Clinical Tips for New Mothers",
-      slug: "breastfeeding-tips-new-mothers",
+      slug: "breastfeeding-basics-guide",
       excerpt: "Understanding proper latch, positioning, feed frequency, and growth monitoring criteria for breastfed infants.",
       date: "Jun 08, 2026",
       readTime: "6 min read",
