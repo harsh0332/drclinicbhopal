@@ -116,7 +116,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
   const blogMapping: Record<string, string> = {
     "vaccination-clinic": "baby-vaccination-guide",
     "breastfeeding-counseling": "breastfeeding-tips-new-mothers",
-    "milestone-tracking": "six-month-development-milestones"
+    "milestone-tracking": "six-month-development-milestones",
+    "fever-management": "child-flu-symptoms-care-vaccine-guide"
   };
   const blogSlug = blogMapping[slug];
   const relatedArticle = blogSlug ? blogData[blogSlug] : null;

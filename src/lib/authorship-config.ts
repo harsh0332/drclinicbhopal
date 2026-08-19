@@ -309,5 +309,12 @@ export const blogAuthorship: Record<string, ContentAuthorship> = {
     reviewedDate: "2026-07-20",
     lastUpdated: "2026-07-20",
     datePublished: "2026-07-20"
+  },
+  "child-flu-symptoms-care-vaccine-guide": {
+    authorId: "dr-sudarshan-dev-arya",
+    reviewerId: "dr-manisha-bangarwa-arya",
+    reviewedDate: "2026-08-19",
+    lastUpdated: "2026-08-19",
+    datePublished: "2026-08-19"
   }
 };
