@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      { source: "/appointment", destination: "/book-appointment", permanent: true },
+      { source: "/appointments", destination: "/book-appointment", permanent: true },
+      { source: "/booking", destination: "/book-appointment", permanent: true },
+      { source: "/book", destination: "/book-appointment", permanent: true },
       { source: "/blog/baby-vaccination-guide", destination: "/blog/child-vaccination-guide-india", permanent: true },
       { source: "/blog/child-cough-cold-home-care", destination: "/blog/baby-cough-cold-home-care", permanent: true },
       { source: "/blog/iap-vaccination-schedule-chart", destination: "/blog/baby-vaccination-schedule-chart-india", permanent: true },

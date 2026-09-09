@@ -129,12 +129,46 @@ export default function BookAppointmentPage() {
                 </div>
               </div>
 
-              {/* Compliance / Registration Badge */}
-              <div className="bg-white border border-gray-150 rounded-3xl p-6 text-xs text-muted-text font-sans leading-relaxed flex gap-2.5">
-                <ShieldCheck className="w-5 h-5 text-secondary shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-semibold text-gray-900 mb-1">NMC Compliance verified:</p>
-                  <p>All bookings follow standard clinical consultation protocols. Fees are charged transparently in-clinic according to standard consultation metrics.</p>
+              {/* Preparing for your visit Card */}
+              <div className="bg-white border border-gray-150 rounded-3xl p-6 sm:p-7 shadow-soft flex flex-col gap-4 text-left">
+                <h3 className="text-sm font-bold font-heading text-primary-dark border-b border-gray-100 pb-2 flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-primary" />
+                  <span>Preparing For Your Visit</span>
+                </h3>
+                <p className="text-xs text-muted-text font-sans leading-relaxed">
+                  To ensure a comprehensive check, please bring along:
+                </p>
+                <ul className="flex flex-col gap-2.5 text-xs text-muted-text font-sans">
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                    <span>Discharge summary from delivery hospital</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                    <span>Vaccination records or baby health card</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
+                    <span>Previous prescriptions or test reports</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Clinic Timings & Location Card */}
+              <div className="bg-surface-tint border border-primary/10 rounded-3xl p-6 text-xs text-muted-text font-sans flex flex-col gap-3">
+                <div className="font-bold text-primary-dark font-heading text-sm">Clinic Consultation Timings</div>
+                <div className="flex flex-col gap-1 text-gray-700">
+                  <div className="flex justify-between">
+                    <span className="font-medium">Mon – Sat:</span>
+                    <span>10:00 AM – 9:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-medium">Sunday:</span>
+                    <span>10:00 AM – 1:00 PM</span>
+                  </div>
+                </div>
+                <div className="text-[11px] text-muted-text pt-2 border-t border-primary/10">
+                  📍 227/1, Near Durga Mata Mandir, Pooja Colony, Neelbad, Bhopal
                 </div>
               </div>
 
