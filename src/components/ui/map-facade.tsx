@@ -48,7 +48,7 @@ export default function MapFacade({
       >
         {isLoaded ? (
           <iframe
-            src="https://maps.google.com/maps?q=Baby%20Steps%20Newborn%20Child%20Clinic,%20Pooja%20Colony,%20Neelbad,%20Bhopal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            src="https://storage.googleapis.com/maps-solutions-xjz656vg70/locator-plus/qpd2/locator-plus.html"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -56,7 +56,7 @@ export default function MapFacade({
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Google Map location for Baby Steps Clinic"
-            className="absolute inset-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
+            className="absolute inset-0 w-full h-full"
           />
         ) : (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-[#F4F8FF] to-[#EAF1FF]">
