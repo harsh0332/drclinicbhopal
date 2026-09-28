@@ -1,11 +1,21 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
+export const runtime = "edge";
+
+function sanitizeText(str: string, maxLen: number): string {
+  return str.replace(/[<>{}\\]/g, "").slice(0, maxLen).trim();
+}
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const title = searchParams.get("title") || "Baby Steps – Newborn & Child Clinic";
-  const category = searchParams.get("category") || "Pediatric Care";
-  const doctor = searchParams.get("doctor") || "Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya";
+  const rawTitle = searchParams.get("title") || "Baby Steps – Newborn & Child Clinic";
+  const rawCategory = searchParams.get("category") || "Pediatric Care";
+  const rawDoctor = searchParams.get("doctor") || "Dr. Sudarshan Dev Arya & Dr. Manisha Bangarwa Arya";
+
+  const title = sanitizeText(rawTitle, 120);
+  const category = sanitizeText(rawCategory, 40);
+  const doctor = sanitizeText(rawDoctor, 80);
 
   return new ImageResponse(
     (

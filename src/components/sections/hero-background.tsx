@@ -273,7 +273,7 @@ function Rainbow({ W, H, cfg, wide, rainbowRef }: RainbowProps) {
   const a0 = (cfg.a0 ?? 26) * Math.PI / 180;   // arc kept to the top so no vertical legs
   const a1 = (cfg.a1 ?? 154) * Math.PI / 180;
   return (
-    <svg width={W} height={H} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
+    <svg width={W} height={H} style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
       <g ref={rainbowRef} fill="none" strokeLinecap="round" style={{ filter: wide ? "blur(2px)" : "none", willChange: "opacity" }}>
         {bands.map((col, k) => {
           const rr = r - k * bw * 1.3;
@@ -571,11 +571,9 @@ function HeroCanvas({
           sunDiscRef={sunDiscRef}
         />
         <Rainbow W={W} H={H} cfg={L.rainbow} wide={wide} rainbowRef={rainbowRef} />
-        {wide && <Balloon W={W} cfg={L.balloon2} balloonRef={balloon2Ref} />}
         <Clouds W={W} defs={L.clouds} wide={wide} cloudRefs={cloudRefs} />
         <Stars W={W} H={H} defs={L.stars} starRefs={starRefs} />
         <Motes defs={L.motes} moteRefs={moteRefs} />
-        <Balloon W={W} cfg={L.balloon} balloonRef={balloon1Ref} />
         <Footprints W={W} H={H} path={L.footpath} footprintRefs={footprintRefs} />
       </div>
       {wide && <Grain />}
