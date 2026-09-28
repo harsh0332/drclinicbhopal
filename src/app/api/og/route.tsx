@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
-export const runtime = "edge";
 
 function sanitizeText(str: string, maxLen: number): string {
   return str.replace(/[<>{}\\]/g, "").slice(0, maxLen).trim();
