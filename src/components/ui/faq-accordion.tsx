@@ -13,9 +13,9 @@ interface FAQAccordionProps {
 }
 
 export default function FAQAccordion({ faqs = [] }: FAQAccordionProps) {
-  if (!faqs.length) return null;
-
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  if (!faqs.length) return null;
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

@@ -10,6 +10,9 @@ import ServicesGrid from "@/components/sections/services-grid";
 const VaccineTeaser = dynamic(() => import("@/components/sections/vaccine-teaser"), {
   loading: () => <div className="w-full h-[400px] bg-surface-tint" />
 });
+const HealthPosters = dynamic(() => import("@/components/sections/health-posters"), {
+  loading: () => <div className="w-full h-[900px] lg:h-[760px] bg-[#FF8A7A]/[0.07]" />
+});
 const ParentGuidance = dynamic(() => import("@/components/sections/parent-guidance"), {
   loading: () => <div className="w-full h-[500px] bg-white" />
 });
@@ -150,6 +153,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 5c. Doctor's Health-Tip Posters (Hindi) */}
+      <HealthPosters />
 
       {/* 6. Vaccination Schedule Teaser Section */}
       <VaccineTeaser />

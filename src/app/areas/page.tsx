@@ -165,25 +165,13 @@ export default function AreasHubPage() {
                     </div>
 
                     <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
-                      {["neelbad", "kolar-road", "bawadia-kalan"].includes(loc.slug) ? (
-                        <Link
-                          href={`/areas/${loc.slug}`}
-                          className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark font-semibold text-xs transition-colors"
-                        >
-                          <span>Explore {loc.name} clinic guide</span>
-                          <ChevronRight className="w-3.5 h-3.5" />
-                        </Link>
-                      ) : (
-                        <a
-                          href={siteConfig.googleMapsLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-primary hover:text-primary-dark font-semibold text-xs transition-colors"
-                        >
-                          <span>Get directions on Google Maps</span>
-                          <ChevronRight className="w-3.5 h-3.5" />
-                        </a>
-                      )}
+                      <Link
+                        href={`/areas/${loc.slug}`}
+                        className="inline-flex items-center gap-1.5 py-2 text-primary hover:text-primary-dark font-semibold text-xs transition-colors"
+                      >
+                        <span>Explore {loc.name} clinic guide</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
                   </div>
                 );

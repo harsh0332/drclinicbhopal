@@ -17,6 +17,8 @@ const nextConfig: NextConfig = {
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [64, 96, 128, 192, 256, 384],
     minimumCacheTTL: 31536000, // 1 year
+    // 85 is used for the Hindi health posters so small poster text stays crisp
+    qualities: [75, 85],
   },
   async redirects() {
     return [

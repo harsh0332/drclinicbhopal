@@ -109,7 +109,7 @@ export default function MapContact() {
                   <Phone className="w-5 h-5 text-primary shrink-0" />
                   <div>
                     <span className="font-semibold text-gray-900 block mb-0.5">Phone Consultation:</span>
-                    <a href={siteConfig.phoneLink} className="hover:text-primary transition-colors font-semibold text-gray-950">
+                    <a href={siteConfig.phoneLink} className="inline-block py-1 hover:text-primary transition-colors font-semibold text-gray-950">
                       +91 {siteConfig.phone}
                     </a>
                   </div>
@@ -119,7 +119,7 @@ export default function MapContact() {
                   <Mail className="w-5 h-5 text-primary shrink-0" />
                   <div>
                     <span className="font-semibold text-gray-900 block mb-0.5">Email Support:</span>
-                    <a href={`mailto:${siteConfig.email}`} className="hover:text-primary transition-colors">
+                    <a href={`mailto:${siteConfig.email}`} className="inline-block py-1 break-all hover:text-primary transition-colors">
                       {siteConfig.email}
                     </a>
                   </div>

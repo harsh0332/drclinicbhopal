@@ -44,4 +44,9 @@ export const existingImages: Record<string, boolean> = {
   "/images/illustrations/parent-guidance-premium.webp": true,
   "/images/illustrations/growth-journey-premium.webp": true,
   "/images/illustrations/empty-state.webp": true,
+  "/images/posters/vaccination.webp": true,
+  "/images/posters/growth-monitoring.webp": true,
+  "/images/posters/child-nutrition.webp": true,
+  "/images/posters/screen-time.webp": true,
+  "/images/posters/clinic-intro.webp": true,
 };

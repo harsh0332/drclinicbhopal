@@ -15,6 +15,11 @@
   --color-emergency: #E5484D;
   --color-surface-tint: #F4F8FF;
   --color-muted-text: #5A6B85;
+  /* Used across the site (border-gray-150) but missing from Tailwind's default
+     scale — without it borders fell back to currentColor (near-black). */
+  --color-gray-150: #EBEEF3;
+  --color-gray-250: #DCE1E8;
+  --color-red-150: #FDD8D8;
   --color-success: #2FB86B;
 
   /* Shadow & Spacing */
@@ -40,6 +45,10 @@
   @keyframes bsTwinkle {
     0%, 100% { opacity: 0.35; transform: scale(0.9); }
     50% { opacity: 1; transform: scale(1.1); }
+  }
+  @keyframes bsPosterProgress {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
   }
   @keyframes bsFadeRise {
     0% { opacity: 0; transform: translateY(12px); }

@@ -46,7 +46,7 @@ export default function Footer() {
             <h3 className="text-lg font-heading font-semibold text-accent-sunshine border-b border-blue-900 pb-2">
               Consultation Hours
             </h3>
-            <ul className="flex flex-col gap-3 text-sm text-blue-150">
+            <ul className="flex flex-col gap-3 text-sm text-blue-100">
               {siteConfig.hours.map((hour, index) => (
                 <li key={index} className="flex flex-col">
                   <span className="font-semibold text-white">{hour.days}</span>
@@ -61,7 +61,7 @@ export default function Footer() {
             <h3 className="text-lg font-heading font-semibold text-accent-sunshine border-b border-blue-900 pb-2">
               Our Services
             </h3>
-            <ul className="grid grid-cols-1 gap-2 text-sm text-blue-200">
+            <ul className="grid grid-cols-1 gap-0.5 text-sm text-blue-200">
               {siteConfig.services.slice(0, 6).map((service, index) => {
                 const slug = service
                   .toLowerCase()
@@ -69,7 +69,7 @@ export default function Footer() {
                   .replace(/\s+/g, "-");
                 return (
                   <li key={index}>
-                    <Link href={`/services/${slug}`} className="hover:text-white transition-colors">
+                    <Link href={`/services/${slug}`} className="inline-block py-1.5 hover:text-white transition-colors">
                       • {service}
                     </Link>
                   </li>
@@ -96,17 +96,17 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 shrink-0 text-secondary mt-1" />
                 <div className="flex flex-col gap-1">
-                  <a href={siteConfig.phoneLink} className="hover:text-white transition-colors font-semibold block">
+                  <a href={siteConfig.phoneLink} className="hover:text-white transition-colors font-semibold block py-1">
                     +91 {siteConfig.phone} (Mobile)
                   </a>
-                  <a href={siteConfig.landlineLink} className="hover:text-white transition-colors font-semibold block">
+                  <a href={siteConfig.landlineLink} className="hover:text-white transition-colors font-semibold block py-1">
                     0755-{siteConfig.landline.split("-")[1]} (Landline)
                   </a>
                 </div>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 shrink-0 text-secondary" />
-                <a href={`mailto:${siteConfig.email}`} className="hover:text-white transition-colors">
+                <a href={`mailto:${siteConfig.email}`} className="inline-block py-1.5 break-all hover:text-white transition-colors">
                   {siteConfig.email}
                 </a>
               </li>
@@ -130,17 +130,17 @@ export default function Footer() {
           <h4 className="text-xs font-bold font-heading text-accent-sunshine uppercase tracking-wider">
             Areas We Serve in Bhopal:
           </h4>
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-blue-200 font-sans">
-            <Link href="/areas/neelbad" className="hover:text-white hover:underline transition-colors">• Pediatrician in Neelbad</Link>
-            <Link href="/areas/kolar-road" className="hover:text-white hover:underline transition-colors">• Child Specialist in Kolar Road</Link>
-            <Link href="/areas/bawadia-kalan" className="hover:text-white hover:underline transition-colors">• Pediatrician in Bawadia Kalan</Link>
-            <Link href="/areas/danish-kunj" className="hover:text-white hover:underline transition-colors">• Pediatrician near Danish Kunj</Link>
-            <Link href="/areas/salaiya" className="hover:text-white hover:underline transition-colors">• Pediatrician in Salaiya</Link>
-            <Link href="/areas/chuna-bhatti" className="hover:text-white hover:underline transition-colors">• Pediatrician in Chuna Bhatti</Link>
-            <Link href="/areas/katara-hills" className="hover:text-white hover:underline transition-colors">• Pediatrician in Katara Hills</Link>
-            <Link href="/areas/bagmugaliya" className="hover:text-white hover:underline transition-colors">• Pediatrician in Bagmugaliya</Link>
-            <Link href="/areas/lalghati" className="hover:text-white hover:underline transition-colors">• Pediatrician in Lalghati</Link>
-            <Link href="/areas/aiims-bhopal" className="hover:text-white hover:underline transition-colors">• Pediatrician near AIIMS Bhopal</Link>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-0 text-xs text-blue-200 font-sans">
+            <Link href="/areas/neelbad" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Neelbad</Link>
+            <Link href="/areas/kolar-road" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Child Specialist in Kolar Road</Link>
+            <Link href="/areas/bawadia-kalan" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Bawadia Kalan</Link>
+            <Link href="/areas/danish-kunj" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician near Danish Kunj</Link>
+            <Link href="/areas/salaiya" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Salaiya</Link>
+            <Link href="/areas/chuna-bhatti" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Chuna Bhatti</Link>
+            <Link href="/areas/katara-hills" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Katara Hills</Link>
+            <Link href="/areas/bagmugaliya" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Bagmugaliya</Link>
+            <Link href="/areas/lalghati" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician in Lalghati</Link>
+            <Link href="/areas/aiims-bhopal" className="inline-block py-1.5 hover:text-white hover:underline transition-colors">• Pediatrician near AIIMS Bhopal</Link>
           </div>
         </div>
 
@@ -174,11 +174,11 @@ export default function Footer() {
             </div>
             
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-4 gap-y-2">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+              <Link href="/privacy" className="inline-block py-2 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
               <span className="text-blue-700 hidden sm:inline">•</span>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="inline-block py-2 hover:text-white transition-colors">
                 Terms of Use
               </Link>
               <span className="text-blue-700 hidden sm:inline">•</span>

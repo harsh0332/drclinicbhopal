@@ -118,17 +118,17 @@ export default function ContactPage() {
                   <li className="flex items-start gap-3">
                     <span className="font-semibold text-gray-900 shrink-0 w-20 mt-1">Phone:</span>
                     <div className="flex flex-col gap-1">
-                      <a href={siteConfig.phoneLink} className="hover:text-primary transition-colors font-semibold text-gray-950 block">
+                      <a href={siteConfig.phoneLink} className="hover:text-primary transition-colors font-semibold text-gray-950 block py-1">
                         +91 {siteConfig.phone} (Mobile)
                       </a>
-                      <a href={siteConfig.landlineLink} className="hover:text-primary transition-colors font-semibold text-gray-950 block">
+                      <a href={siteConfig.landlineLink} className="hover:text-primary transition-colors font-semibold text-gray-950 block py-1">
                         0755-{siteConfig.landline.split("-")[1]} (Landline)
                       </a>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="font-semibold text-gray-900 shrink-0 w-20">Email:</span>
-                    <a href={`mailto:${siteConfig.email}`} className="hover:text-primary transition-colors">
+                    <a href={`mailto:${siteConfig.email}`} className="inline-block py-1 break-all hover:text-primary transition-colors">
                       {siteConfig.email}
                     </a>
                   </li>

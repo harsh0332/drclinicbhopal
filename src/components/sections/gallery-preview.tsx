@@ -1,5 +1,8 @@
 "use client";
 
+import { createPortal } from "react-dom";
+import { useSyncExternalStore } from "react";
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Image as ImageIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -14,8 +17,13 @@ import {
   viewportOnce 
 } from "@/lib/motion";
 
+const noopSubscribe = () => () => {};
+
 export default function GalleryPreview() {
   const shouldReduceMotion = useReducedMotion();
+  // Lightbox is portalled to <body>: sections use `content-visibility: auto`,
+  // which would otherwise trap a position:fixed overlay inside the section.
+  const portalReady = useSyncExternalStore(noopSubscribe, () => true, () => false);
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
@@ -170,7 +178,8 @@ export default function GalleryPreview() {
       </div>
 
       {/* Lightbox Portal Overlay */}
-      <AnimatePresence>
+      {portalReady && createPortal(
+        <AnimatePresence>
         {selectedIdx !== null && (
           <motion.div
             initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0 }}
@@ -243,7 +252,9 @@ export default function GalleryPreview() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+        document.body
+      )}
       {/* Bottom Wave Divider */}
       <SectionDivider
         type="wave"
