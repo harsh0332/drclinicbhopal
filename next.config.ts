@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   // run with plain `node server.js` on any Node host (Hostinger VPS/Business,
   // etc.). Ignored/handled automatically on Vercel — safe to keep on.
   output: "standalone",
+  // Don't advertise the framework/version in an "X-Powered-By" header.
+  poweredByHeader: false,
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -22,6 +24,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Single canonical host: www.* duplicates every page otherwise.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.babystepsnewbornclinic.com" }],
+        destination: "https://babystepsnewbornclinic.com/:path*",
+        permanent: true,
+      },
       { source: "/appointment", destination: "/book-appointment", permanent: true },
       { source: "/appointments", destination: "/book-appointment", permanent: true },
       { source: "/booking", destination: "/book-appointment", permanent: true },
@@ -35,6 +44,18 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      {
+        // Baseline security headers for every response.
+        source: "/:path*",
+        headers: [
+          { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+          { key: "Content-Security-Policy", value: "frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'" },
+        ],
+      },
       {
         source: "/images/:path*",
         headers: [

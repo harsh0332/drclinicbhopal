@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     { name: post.title, item: `/blog/${post.slug}` }
   ]);
 
-  const graphEntities: any[] = [articleSchema, breadcrumbSchema];
+  const graphEntities: unknown[] = [articleSchema, breadcrumbSchema];
   if (faqSchema) {
     graphEntities.push(faqSchema);
   }

@@ -32,10 +32,10 @@ export default function WhatsAppFloating() {
     window.addEventListener("keydown", trigger, { passive: true, once: true });
 
     if ("requestIdleCallback" in window) {
-      const id = (window as any).requestIdleCallback(trigger, { timeout: 3000 });
+      const id = window.requestIdleCallback(trigger, { timeout: 3000 });
       return () => {
         cleanup();
-        (window as any).cancelIdleCallback(id);
+        window.cancelIdleCallback(id);
       };
     } else {
       const timeout = setTimeout(trigger, 2500);

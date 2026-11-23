@@ -18,7 +18,7 @@ export default function Hero() {
     // Defer heavy canvas background animation after LCP paint
     if (typeof window !== "undefined") {
       if ("requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(() => setShowBackground(true));
+        window.requestIdleCallback(() => setShowBackground(true));
       } else {
         setTimeout(() => setShowBackground(true), 200);
       }

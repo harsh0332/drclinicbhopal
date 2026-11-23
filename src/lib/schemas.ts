@@ -1,4 +1,3 @@
-import { siteConfig } from "./site-config";
 import { DOCTOR_CREDENTIALS, blogAuthorship, servicesAuthorship, ContentAuthorship } from "./authorship-config";
 
 // 1. Homepage Schema Builder (MedicalClinic + FAQPage in a unified @graph)
@@ -207,7 +206,7 @@ export function getBlogPostingSchema(post: {
   const publishedIso = new Date(authorship.datePublished || post.date).toISOString();
   const modifiedIso = new Date(authorship.lastUpdated || post.dateModified || post.date).toISOString();
 
-  const node: Record<string, any> = {
+  const node: Record<string, unknown> = {
     "@type": "MedicalWebPage",
     "@id": `https://babystepsnewbornclinic.com/blog/${post.slug}#webpage`,
     "headline": post.title,
@@ -251,7 +250,7 @@ export function getServiceMedicalWebPageSchema(service: {
   const publishedIso = new Date(authorship.datePublished).toISOString();
   const modifiedIso = new Date(authorship.lastUpdated).toISOString();
 
-  const node: Record<string, any> = {
+  const node: Record<string, unknown> = {
     "@type": "MedicalWebPage",
     "@id": `https://babystepsnewbornclinic.com/services/${service.slug}#webpage`,
     "headline": `${service.title} in Neelbad, Bhopal`,

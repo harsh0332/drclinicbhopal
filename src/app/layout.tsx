@@ -7,7 +7,6 @@ import MobileStickyBar from "@/components/layout/mobile-sticky-bar";
 import WhatsAppFloating from "@/components/layout/whatsapp-floating";
 import AmbientBackground from "@/components/layout/ambient-background";
 import SiteChrome from "@/components/layout/site-chrome";
-import { siteConfig } from "@/lib/site-config";
 
 
 const inter = Inter({

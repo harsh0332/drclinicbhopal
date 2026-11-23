@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import { localitiesData } from "@/lib/localities-data";
 import ClinicImage from "@/components/ui/clinic-image";
 import { Phone, Mail, MapPin, ExternalLink, ShieldCheck } from "lucide-react";
 

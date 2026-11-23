@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Plus, Minus, HelpCircle } from "lucide-react";
 
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import ClinicImage from "@/components/ui/clinic-image";
 import SectionDivider from "@/components/ui/decor/SectionDivider";
 import { 

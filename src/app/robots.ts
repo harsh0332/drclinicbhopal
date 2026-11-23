@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/admin"],
       },
       {
         userAgent: [
@@ -19,6 +20,7 @@ export default function robots(): MetadataRoute.Robots {
           "Bingbot"
         ],
         allow: "/",
+        disallow: ["/admin"],
       }
     ],
     sitemap: "https://babystepsnewbornclinic.com/sitemap.xml",

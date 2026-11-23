@@ -4,9 +4,8 @@ import { localitiesData } from "@/lib/localities-data";
 import { siteConfig } from "@/lib/site-config";
 import { getBreadcrumbNode } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
-import ClinicImage from "@/components/ui/clinic-image";
 import MapFacade from "@/components/ui/map-facade";
-import { MapPin, Clock, Calendar, Phone, CheckCircle2, ChevronRight, Car, CreditCard } from "lucide-react";
+import { MapPin, Clock, Calendar, Phone, ChevronRight, Car, CreditCard } from "lucide-react";
 
 import Cloud from "@/components/ui/decor/Cloud";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";

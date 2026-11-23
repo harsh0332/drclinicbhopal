@@ -82,7 +82,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   ]);
   const medicalWebPageSchema = getServiceMedicalWebPageSchema({ ...service, slug });
 
-  const graphEntities: any[] = [serviceSchema, breadcrumbSchema];
+  const graphEntities: unknown[] = [serviceSchema, breadcrumbSchema];
   if (medicalWebPageSchema) {
     graphEntities.push(medicalWebPageSchema);
   }

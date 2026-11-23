@@ -5,6 +5,7 @@ import { getBreadcrumbSchema } from "@/lib/schemas";
 import JsonLd from "@/components/ui/json-ld";
 import { Image as ImageIcon, Calendar } from "lucide-react";
 import Cloud from "@/components/ui/decor/Cloud";
+import HealthPosters from "@/components/sections/health-posters";
 import BabyFootprints from "@/components/ui/decor/BabyFootprints";
 
 
@@ -122,9 +123,16 @@ export default function GalleryPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* Doctor's Hindi health-tip posters (same slideshow as the homepage) */}
+      <HealthPosters />
+
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Inline Booking CTA */}
-          <div className="max-w-3xl mx-auto bg-surface-tint border border-primary/5 rounded-3xl p-8 text-center mt-16 flex flex-col items-center gap-4">
+          <div className="max-w-3xl mx-auto bg-surface-tint border border-primary/5 rounded-3xl p-8 text-center flex flex-col items-center gap-4">
             <h3 className="text-xl font-bold font-heading text-primary-dark">
               Want to visit our clinic?
             </h3>
